@@ -123,3 +123,7 @@ $RECYCLE.BIN/
 /pom.xml
 /target/
 pom.properties
+src/main/webapp/META-INF/maven/com.kh/project/pom.properties
+target/
+*/target/*
+*.class
