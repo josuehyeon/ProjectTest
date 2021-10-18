@@ -1,4 +1,4 @@
-package com.kh.project.potal.service;
+package com.kh.project.portal.service;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

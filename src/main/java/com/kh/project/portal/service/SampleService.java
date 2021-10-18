@@ -1,4 +1,4 @@
-package com.kh.project.potal.service;
+package com.kh.project.portal.service;
 
 public interface SampleService {
 

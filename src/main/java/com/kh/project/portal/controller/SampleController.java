@@ -1,4 +1,4 @@
-package com.kh.project.potal.controller;
+package com.kh.project.portal.controller;
 
 import javax.annotation.Resource;
 

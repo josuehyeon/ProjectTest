@@ -1,4 +1,4 @@
-package com.kh.project.potal.vo;
+package com.kh.project.portal.vo;
 
 public class SampleVO {
 
