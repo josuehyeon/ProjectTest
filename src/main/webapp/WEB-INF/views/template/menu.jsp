@@ -8,17 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-menu.jsp입니다.
+<div>
+	<div class="row">
+		<div class="col-12">
+			<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+				<a class="nav-link" href="/board/portal">HOME</a>
+				<a class="nav-link" href="#">내 정보</a>
+				<a class="nav-link" href="#">학적관리</a>
+				<a class="nav-link" href="#">교과과정/수업</a>
+				<a class="nav-link" href="/board/infoPark">정보광장</a>
+				<a class="nav-link" href="/board/job">취업정보</a> 
+			</nav>
+		</div>
+	</div>
+</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

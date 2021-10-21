@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 모든 SQL문을 mapper태그 안에 작성 -->
+<mapper namespace="boardMapper">
+	<resultMap type="com.kh.project.board.vo.BoardVO" id="board">
+		<id column="BOARD_NO" 					property="boardNo"/>
+		<result column="BOARD_TITLE" 			property="boardTitle"/>
+		<result column="BOARD_CONTENT" 			property="boardContent"/>
+		<result column="BOARD_WRITER" 			property="boardWriter"/>
+		<result column="BOARD_CREATEDATE" 		property="boardDate"/>
+		<result column="BOARD_READ_CNT" 		property="readCnt"/>
+		<result column="CATE_NO" 				property="cateNo"/>
+		<result column="COMMENT_CNT" 			property="commCnt"/>
+	</resultMap>
+	
+	<!--  -->
+	<select id="selectBoardList" resultMap="board">
+		SELECT BOARD_NO
+			, BOARD_TITLE
+			, BOARD_CONTENT
+			, BOARD_WRITER
+			, BOARD_CREATEDATE
+			, BOARD_READ_CNT
+			, CATE_NO
+			, COMMENT_CNT
+		FROM BOARD
+	</select>
+</mapper>
+
+

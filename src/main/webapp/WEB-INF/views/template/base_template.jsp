@@ -19,16 +19,40 @@
 .aaa{
 	background-color: aqua;
 }
+table {
+  text-align: center;
+  margin: auto 0;
+}
 .container-fluid{
 	width: 90%;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 body {
+	text-align: center;
+}
+tr, td{
+	text-align: center;
+}
+.col{
+	text-align: center;
+}
+.row{
+	text-align: center;
+}
+th, td {
+  text-align: center;
+}
+/* body {
   line-height: 1;
   font-family: 'S-CoreDream-5Medium'; 
   font-size: 18px;
-}
+  		background-image: url("C:\Users\admin\Desktop\img\hbdcollage");
+} */
+	body {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 </style>
 </head>
 <body>
@@ -39,13 +63,19 @@ body {
 		</div>
 	</div>
 	<div class="row" style="padding-top: 10px;">
-		<div class="col">
+		<div class="col-2">
+			<tiles:insertAttribute name="side"/>
+		</div>
+		<div class="col-10">
 			<tiles:insertAttribute name="body"/>
 		</div>
 	</div>
 </div>
 </body>
 </html>
+
+
+
 
 
 
