@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-chk_timetable
+학생 로그인>내정보>내정보관리>시간표조회
 </body>
 </html>

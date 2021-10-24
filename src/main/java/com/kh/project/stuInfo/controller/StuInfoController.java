@@ -65,11 +65,12 @@ public class StuInfoController {
 	}
 	
 	//이동 "비밀번호 변경.jsp"
-	@GetMapping("/changePw")
+	@GetMapping("/changePwJsp")
 	public String changePwJsp() {
 		return "stuInfo/change_pw";
 	}
 	
+
 	//처리 "비밀번호 변경"
 	@PostMapping("/changePw")
 	public String changePw(MemberVO memberVO) {
