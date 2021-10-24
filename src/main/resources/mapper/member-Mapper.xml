@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 모든 SQL문을 mapper태그 안에 작성 -->
+<mapper namespace="memberMapper">
+
+<resultMap type="com.kh.project.portal.vo.MemberVO" id="member">
+	<id 	column="MEM_NO" 	property="memNo"/>
+	<result column="MEM_PW" 	property="memPw" />
+	<result column="MEM_EMAIL" 	property="memEmail" />
+	<result column="MEM_ADDR" 	property="memAddr" />
+	<result column="MEM_TEL" 	property="memTel" />
+	<result column="MEM_PHONE" 	property="memPhone" />
+	<result column="POSTCODE" 	property="postcode" />
+	<result column="MEM_IDPIC" 	property="memIdpic" />
+	<result column="MEM_GEN" 	property="memGen" />
+	<result column="MEM_BIRTH" 	property="memBirth" />
+	<result column="MEM_AUTH" 	property="memAuth" />
+	<result column="MEM_NAME" 	property="memName" />
+</resultMap>
+
+	<!-- 로그인 -->
+	<select id="login" resultMap="member">
+		SELECT MEM_NO
+			  ,MEM_NAME
+			  ,MEM_AUTH
+		FROM   MEMBER
+		WHERE  MEM_NO = #{memNo}
+		AND    MEM_PW = #{memPw}
+	</select>
+	
+	<!-- 내정보조회 FROM MEMBER -->
+	<select id="selectMemMyInfo" resultMap="member">
+		SELECT MEM_EMAIL
+			  ,MEM_ADDR
+			  ,MEM_TEL
+			  ,MEM_PHONE
+			  ,POSTCODE
+			  ,TO_CHAR(MEM_BIRTH , 'YYYY-MM-DD') MEM_BIRTH
+		FROM   MEMBER
+		WHERE  MEM_NO = #{memNo}		
+	</select>
+	
+	<!-- 내정보수정 FROM MEMBER -->
+	<update id="updateMemMyInfo">
+		UPDATE  MEMBER
+		SET		
+			MEM_EMAIL = #{memEmail}
+		<if test="memTel != null and !memTel.equals('')">
+			,MEM_TEL = #{memTel}
+		</if>
+			,MEM_PHONE = #{memPhone}
+			,POSTCODE = #{postcode}
+			,MEM_ADDR = #{memAddr}
+		WHERE   MEM_NO = #{memNo}
+	</update>
+	
+	<!-- 현재 비밀번호 확인-->
+	<select id="selectForCheckPw" resultMap="member">
+		SELECT MEM_PW
+		FROM   MEMBER
+		WHERE  MEM_NO = #{memNo}
+		AND    MEM_PW = #{memPw}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="changePw">
+		UPDATE MEMBER
+		SET	   MEM_PW = #{memPw}
+		WHERE  MEM_NO = #{memNo} 
+	</update>
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

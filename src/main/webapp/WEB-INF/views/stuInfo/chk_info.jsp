@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="/portal/loginJsp" />
+학생정보 조회
 </body>
 </html>

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="/portal/loginJsp" />
+change_info
 </body>
 </html>
