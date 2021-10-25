@@ -16,7 +16,7 @@
 				<a class="nav-link" href="#">내 정보</a>
 				<a class="nav-link" href="#">학적관리</a>
 				<a class="nav-link" href="#">교과과정/수업</a>
-				<a class="nav-link" href="//">강의 관리</a>
+				<a class="nav-link" href="/lecture/goMain">강의 관리</a>
 				<a class="nav-link" href="/board/infoPark">정보광장</a>
 				<a class="nav-link" href="/board/job">취업정보</a>
 			</nav>

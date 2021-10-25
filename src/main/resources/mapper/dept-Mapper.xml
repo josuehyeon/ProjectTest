@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 모든 SQL문을 mapper태그 안에 작성 -->
+<mapper namespace="deptMapper">
+	<resultMap type="com.kh.project.stuManage.vo.DeptVO" id="dept">
+		<id column="DEPT_ID" property="deptId"/>
+		<result column="DEPT_NAME" property="deptName"/>
+		<result column="COLL_NO" property="collNo"/>
+	</resultMap>
+	
+	<select id="selectDeptList" resultMap="dept">
+		SELECT DEPT_ID
+			, DEPT_NAME
+		FROM DEPT
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
