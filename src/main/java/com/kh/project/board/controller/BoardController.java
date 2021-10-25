@@ -17,7 +17,7 @@ public class BoardController {
 	
 	//로그인 후 보여질 메인 화면
 	@GetMapping("portal")
-	public String doMainHome() {
+	public String doMainHome(Model md) {
 		return "home/main_page";
 	}
 	
