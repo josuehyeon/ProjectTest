@@ -15,7 +15,8 @@
 		<mapper resource="/mapper/college-Mapper.xml"/>
 		<mapper resource="/mapper/dept-Mapper.xml"/>
 		<mapper resource="/mapper/emp-Mapper.xml"/>
-		<mapper resource="/mapper/cate-Mapper.xml"/>		
+		<mapper resource="/mapper/cate-Mapper.xml"/>
+		<mapper resource="/mapper/deptManage-Mapper.xml"/>		
 	</mappers>
 </configuration>
 
