@@ -3,6 +3,65 @@
 <!-- 모든 SQL문을 mapper태그 안에 작성 -->
 <mapper namespace="gradeMapper">
 
+<!-- 학기 -->
+	<resultMap type="com.kh.project.gradeManage.vo.SemesterVO" id="semester">
+		<id 		column="SEM_ID" 		property="semId"/>
+		<result 	column="YEAR" 			property="year"/>
+		<result 	column="SEMESTER" 		property="semester"/>
+		<collection property="stuGradeList" resultMap="stuGrade"/>
+	</resultMap>
+	
+<!-- 학점 -->
+	<resultMap type="com.kh.project.gradeManage.vo.GradeVO" id="grade">
+		<id 		column="GRADE" 			property="grade"/>
+		<result 	column="SCORE" 			property="score"/>
+	</resultMap>
+	
+<!-- lecture -->
+	<resultMap type="com.kh.project.lecture.vo.LectureVO" id="lecture">
+		<id 		column="LEC_ID" 		property="lecId"/>
+		<result 	column="LEC_NAME" 		property="lecName"/>
+		<result 	column="LEC_CREDIT" 	property="lecCredit"/>
+		<result 	column="COLL_NO" 		property="collNo"/>
+		<result 	column="DEPT_ID" 		property="deptId"/>
+		<result 	column="PROF_NO" 		property="profNo"/>
+		<result 	column="ASSI_NO" 		property="assiNo"/>
+		<result 	column="CREATE_DATE" 	property="createDate"/>
+		<result 	column="MAX_NO" 		property="maxNo"/>
+		<result 	column="NOW_NO" 		property="nowNo"/>
+		<result 	column="LEC_PLAN" 		property="lecPlan"/>
+	</resultMap>
+	
+<!-- 학생 성적 -->
+	<resultMap type="com.kh.project.gradeManage.vo.StuGradeVO" id="stuGrade">
+		<id 		 column="SUBJECT_ID" 	property="subjectId"/>
+		<result 	 column="LEC_ID" 		property="lecId"/>
+		<result 	 column="GRADE" 		property="grade"/>
+		<result 	 column="STU_NO" 		property="stuNo"/>
+		<result 	 column="SEM_ID" 		property="semId"/>
+		<association property="gradeInfo" 	resultMap="grade" />
+		<association property="lectureInfo" resultMap="lecture" />
+	</resultMap>
+	
+	<select id="selectSemId" resultMap="semester">
+		
+	</select>
+	
+	<select id="selectStuGradeList" resultMap="stuGrade">
+		SELECT
+			  SG.LEC_ID
+			,LEC.LEC_NAME
+			,LEC.LEC_CREDIT
+			 ,SG.GRADE
+			  ,G.SCORE
+			 ,SG.STU_NO
+			 ,SG.SEM_ID
+		FROM  STU_GRADE SG , LECTURE LEC , GRADE G, 
+		WHERE SG.LEC_ID = LEC.LEC_ID
+		AND   SG.GRADE  =   G.GRADE
+		ORDER BY SG.SEM_ID DESC , SG.LEC_ID;
+	</select>
+	
 </mapper>
 
 

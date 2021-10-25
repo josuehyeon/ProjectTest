@@ -26,7 +26,7 @@
 
 <span>성적관리</span>
 <div>
-	<a href="#">학기 별 성적</a>
+	<a href="/grade/chkGradeJsp">학기 별 성적</a>
 	<a href="#">학점 포기</a>
 </div>
 

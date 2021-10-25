@@ -14,10 +14,10 @@ import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.service.StuInfoService;
 
 @Controller
-@RequestMapping("stuInfo")
+@RequestMapping("/stuInfo")
 public class StuInfoController {
 	@Resource(name = "stuInfoService")
-	private StuInfoService stuinfoService;
+	private StuInfoService stuInfoService;
 	
 	@Resource(name = "portalService")
 	private PortalService portalService;
@@ -29,10 +29,10 @@ public class StuInfoController {
 			int memNo = member.getMemNo();
 			
 			//학생 테이블에서 가져온 데이터
-			model.addAttribute("studentInfo", stuinfoService.selectStuMyInfo(memNo));
+			model.addAttribute("studentInfo", stuInfoService.selectStuMyInfo(memNo));
 			
 			//멤버 테이블에서 가져온 데이터
-			model.addAttribute("memberInfo", stuinfoService.selectMemMyInfo(memNo));
+			model.addAttribute("memberInfo", stuInfoService.selectMemMyInfo(memNo));
 			
 			return "stuInfo/chk_info";
 		}
@@ -40,14 +40,14 @@ public class StuInfoController {
 	//이동 "학생 정보 수정.jsp"
 	@GetMapping("/changeInfoJsp")
 	public String chnageInfo(MemberVO memberVO) {
-		stuinfoService.updateMemMyInfo(memberVO);
+		stuInfoService.updateMemMyInfo(memberVO);
 		return "stuInfo/change_info" ;
 	}
 	
 	//처리 "학생 정보 수정"
 	@PostMapping("/changeInfo")
 	public String changeInfo(MemberVO memberVO) {
-		stuinfoService.updateMemMyInfo(memberVO);
+		stuInfoService.updateMemMyInfo(memberVO);
 		return "redirect:/stuInfo/chkInfoJsp" ;
 	}
 	
@@ -60,7 +60,7 @@ public class StuInfoController {
 	//처리 "현재 비밀번호 확인"
 	@PostMapping("/chkPw")
 	public String chkPw(MemberVO memberVO , Model model) {
-		model.addAttribute("memberInfo", stuinfoService.chkPw(memberVO));
+		model.addAttribute("memberInfo", stuInfoService.chkPw(memberVO));
 		return "stuInfo/chk_pw_result";
 	}
 	
@@ -74,7 +74,7 @@ public class StuInfoController {
 	//처리 "비밀번호 변경"
 	@PostMapping("/changePw")
 	public String changePw(MemberVO memberVO) {
-		stuinfoService.changePw(memberVO);
+		stuInfoService.changePw(memberVO);
 		return "redirect:/stuInfo/chkInfoJsp";
 	}
 	
