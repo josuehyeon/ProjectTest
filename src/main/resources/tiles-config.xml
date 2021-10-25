@@ -3,7 +3,7 @@
 
 <tiles-definitions>
 	
-	<!--페이지 설정 -->
+	<!-- 홈페이지 기본 템플릿 -->
 	<definition name="baseLayout" template="/WEB-INF/views/template/base_template.jsp">
 		<put-attribute name="title" value="Juses대학교"/>
 		<put-attribute name="menu" value="/WEB-INF/views/template/menu.jsp"/>
@@ -11,21 +11,23 @@
 		<put-attribute name="body" value=""/>
 	</definition>
 
+	<!-- 글 작성 템플릿 -->
+	<definition name="baseLayout1" template="/WEB-INF/views/template/form_template.jsp">
+		<put-attribute name="title" value="Juses대학교"/>
+		<put-attribute name="menu" value="/WEB-INF/views/template/menu.jsp"/>
+		<put-attribute name="body" value=""/>
+	</definition>
+
+
 	<definition name="*/*" extends="baseLayout">
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
 	
+	<!-- 글 작성 템플릿 -->
+	<definition name="boardForm/*/*" extends="baseLayout1">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
 </tiles-definitions>
-
-
-
-
-
-
-
-
-
-
 
 
 
