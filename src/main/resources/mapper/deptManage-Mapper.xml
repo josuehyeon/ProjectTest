@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 모든 SQL문을 mapper태그 안에 작성 -->
+<mapper namespace="deptMapper">
+	<resultMap type="com.kh.project.stuManage.vo.DeptManageVO" id="deptManage">
+		<id column="APPLY_NO" property="applyNo"/>
+		<result column="STU_NO" property="stuNo"/>
+		<result column="APPLY_CODE" property="applyCode"/>
+		<result column="APPLY_DATE" property="applyDate"/>
+		<result column="APPLY_REASON" property="applyReason"/>
+		<result column="APPROVAL_DATE" property="approvalDate"/>
+		<result column="PROCESS_STAT" property="processStat"/>
+		<result column="FROM_COLL" property="fromColl"/>
+		<result column="FROM_DEPT" property="fromDept"/>
+		<result column="TO_COLL" property="toColl"/>
+		<result column="TO_DEPT" property="toDept"/>
+		<result column="DMAJOR_COLL" property="dmajorColl"/>
+		<result column="DMAJOR_DEPT" property="dmajorCept"/>
+	</resultMap>
+	
+	<select id="selectDeptManageList" resultMap="deptManage">
+		SELECT DEPT_ID
+			, DEPT_NAME
+		FROM DEPT
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
