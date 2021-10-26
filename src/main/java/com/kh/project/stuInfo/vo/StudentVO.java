@@ -2,7 +2,6 @@ package com.kh.project.stuInfo.vo;
 
 public class StudentVO {
 	private int stuNo;
-	private String stuName;
 	private int collNo;
 	private String majorCode;
 	private String minorCode;
@@ -10,18 +9,20 @@ public class StudentVO {
 	private int stuSem;
 	private int stuStatus;
 	
+	private int memNo;
 	
+	
+	public int getMemNo() {
+		return memNo;
+	}
+	public void setMemNo(int memNo) {
+		this.memNo = memNo;
+	}
 	public int getStuNo() {
 		return stuNo;
 	}
 	public void setStuNo(int stuNo) {
 		this.stuNo = stuNo;
-	}
-	public String getStuName() {
-		return stuName;
-	}
-	public void setStuName(String stuName) {
-		this.stuName = stuName;
 	}
 	public int getCollNo() {
 		return collNo;

@@ -2,23 +2,26 @@ package com.kh.project.stuManage.vo;
 
 public class EmpVO {
 	private int empNo;
-	private String empName;
 	private int empClass;
 	private String empDept;
 	private int empColl;
 	private int empJob;
+	
+	private int memNo;
+	
+	public int getMemNo() {
+		return memNo;
+	}
+	public void setMemNo(int memNo) {
+		this.memNo = memNo;
+	}
 	public int getEmpNo() {
 		return empNo;
 	}
 	public void setEmpNo(int empNo) {
 		this.empNo = empNo;
 	}
-	public String getEmpName() {
-		return empName;
-	}
-	public void setEmpName(String empName) {
-		this.empName = empName;
-	}
+	
 	public int getEmpClass() {
 		return empClass;
 	}
