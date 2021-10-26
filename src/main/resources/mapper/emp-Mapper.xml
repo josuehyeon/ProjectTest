@@ -12,17 +12,19 @@
 	</resultMap>
 	
 	<select id="selectProfList" resultMap="emp">
-		SELECT EMP_NO
-			, EMP_NAME 
-		FROM EMP
-		WHERE EMP_JOB=1
+		SELECT E.EMP_NO
+			, M.MEM_NAME AS EMP_NAME
+		FROM EMP E, MEMBER M
+		WHERE E.MEM_NO = M.MEM_NO
+		AND EMP_JOB=1
 	</select>
 	
 	<select id="selectAssiList" resultMap="emp">
 		SELECT EMP_NO
-			, EMP_NAME 
-		FROM EMP
-		WHERE EMP_JOB=2
+			, M.MEM_NAME  AS EMP_NAME 
+		FROM EMP E, MEMBER M
+		WHERE E.MEM_NO = M.MEM_NO
+		AND EMP_JOB=2
 	</select>
 	
 </mapper>
