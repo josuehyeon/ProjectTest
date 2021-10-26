@@ -45,6 +45,8 @@ public class StuInfoController {
 		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
 		int memNo = member.getMemNo();
 		
+		//학생 테이블에서 가져온 데이터
+		model.addAttribute("studentInfo", stuInfoService.selectStuMyInfo(memNo));
 		//멤버 테이블에서 가져온 데이터
 		model.addAttribute("memberInfo", portalService.selectMemMyInfo(memNo));
 		

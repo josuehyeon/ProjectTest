@@ -16,7 +16,6 @@
 	
 	<select id="selectStuMyInfo" resultMap="student">
 		SELECT STU_NO
-			  ,STU_NAME
 			  ,COLL_NO
 			  ,MAJOR_CODE
 			  ,MINOR_CODE

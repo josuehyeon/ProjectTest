@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kh.project.empInfo.service.EmpService;
@@ -21,17 +22,19 @@ public class EmpController {
 	@Resource(name = "portalService")
 	private PortalService portalService;
 	
-	// 이동 "직원 내 정보 조회 페이지"
+	// 이동 "직원 내 정보 조회"
 	@GetMapping("/chkInfoJsp")
 	private String chkInfoJsp(HttpSession session , Model model) {
 		//로그인 세션 정보 가져오기
 		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
 		int memNo = member.getMemNo();
 		
+		//직원 테이블에서 가져온 데이터
+		model.addAttribute("empInfo", empService.selectEmpMyInfo(memNo));
 		//멤버 테이블에서 가져온 데이터
 		model.addAttribute("memberInfo", portalService.selectMemMyInfo(memNo));
 		
-		return "emp/chk_emp_info";
+		return "empInfo/chk_emp_info";
 	}
 	
 	//이동 "직원 내 정보 수정"
@@ -40,11 +43,21 @@ public class EmpController {
 		//로그인 세션 정보 가져오기
 		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
 		int memNo = member.getMemNo();
+		//직원 테이블에서 가져온 데이터
+		model.addAttribute("empInfo", empService.selectEmpMyInfo(memNo));
 		//멤버 테이블에서 가져온 데이터
 		model.addAttribute("memberInfo", portalService.selectMemMyInfo(memNo));
 		//멤버 정보 수정 쿼리 실행
 		portalService.updateMemMyInfo(memberVO);
-		return "emp/change_emp_info";
+		return "empInfo/change_emp_info";
 	}
+	
+	//처리 "직원 내 정보 수정"
+	@PostMapping("/changeInfo")
+	public String changeInfo(MemberVO memberVO) {
+		portalService.updateMemMyInfo(memberVO);
+		return "redirect:/emp/chkInfoJsp";
+	}
+	
 
 }

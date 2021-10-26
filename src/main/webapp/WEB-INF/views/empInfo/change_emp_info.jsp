@@ -5,6 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+table{
+	border: 1px solid black;
+	width: 600px;
+}
+tr,td{
+	border: 1px solid black;
+}
+</style>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	function openPostCode(){
@@ -26,45 +35,26 @@
 	    }).open();
 	}
 </script>
-<style type="text/css">
-table{
-	border: 1px solid black;
-	width: 600px;
-}
-tr,td{
-	border: 1px solid black;
-}
-</style>
 </head>
 <body>
-학생 로그인>내정보>내정보관리>내정보 *수정*
-
-<!-- 변경하면 안되는 정보 그냥 표시만 되게 해둘 것 -->
+<!-- 직원 테이블에서 가져온 데이터들 (이름만 멤버) -->
 <div>
 	<table>
 		<tr>
-			<td rowspan="3">이미지첨부</td>
-			<td>학번</td>
-			<td>${studentInfo.stuNo }</td>
+			<td>직원번호</td>
+			<td>${empInfo.empNo}</td>
 			<td>이름</td>
-			<td>${memberInfo.memName }</td>
-		</tr>
-		<tr>
+			<td>${memberInfo.memName}</td>
 			<td>소속</td>
-			<td>${studentInfo.majorCode }</td>
-			<td>부전공</td>
-			<td>${studentInfo.minorCode }</td>
+			<td>${empInfo.empDept} ${empInfo.empColl}</td>
 		</tr>
 		<tr>
-			<td>학년/학기</td>
-			<td>${studentInfo.stuYear }학년/${studentInfo.stuSem }학기</td>
-			<td>학적상태</td>
-			<td>${studentInfo.stuStatus }</td>
 		</tr>
 	</table>
 </div>
+
 <!-- 변경 가능한 정보 -->
-<form action="/stuInfo/changeInfo" method="post">
+<form action="/emp/changeInfo" method="post">
 	<div>
 		<table>
 			<tr>
@@ -88,24 +78,15 @@ tr,td{
 				<td>주소</td>
 				<td>
 					<input type="text" name="memAddr" id="roadAddress" value="${memberInfo.memAddr }" placeholder="주소" required readonly>
-						
 				</td>
 			</tr>
 		</table>
 	</div>
-	<input type="hidden" name="memNo" value="${studentInfo.stuNo }">
+	<input type="hidden" name="memNo" value="${empInfo.empNo }">
 	<input type="submit" value="변경">
 	<div class="eachInputDiv">
 	</div>
 </form>
-
-<br>
-소속: 학과코드로 표시되어 있음. 나중에 학과 이름이 나오게 처리해야함.
-<br>
-학적상태: 0재학 / 1휴학 / 2복학 / 3자퇴 /4제적 (이거도 마찬가지 코드 말고 한글로 나오게)
-<br>
-
-
 
 </body>
 </html>

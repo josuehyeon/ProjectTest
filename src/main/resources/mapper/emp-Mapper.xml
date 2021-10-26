@@ -42,6 +42,16 @@
 		AND EMP_JOB=2
 		AND EMP_COLL=#{collNo}
 	</select>
+	<select id="selectEmpMyInfo" resultMap="emp">
+		SELECT EMP_NO
+  			  ,EMP_CLASS
+			  ,EMP_DEPT
+			  ,EMP_COLL
+			  ,EMP_JOB
+		FROM   EMP
+		WHERE  EMP_NO = #{empNo}
+	</select>
+	
 	
 </mapper>
 

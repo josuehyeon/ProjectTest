@@ -30,7 +30,8 @@
 	
 	<!-- 내정보조회 FROM MEMBER -->
 	<select id="selectMemMyInfo" resultMap="member">
-		SELECT MEM_EMAIL
+		SELECT MEM_NAME 
+			  ,MEM_EMAIL
 			  ,MEM_ADDR
 			  ,MEM_TEL
 			  ,MEM_PHONE

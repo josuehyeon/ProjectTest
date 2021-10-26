@@ -26,7 +26,7 @@ tr,td{
 			<td>학번</td>
 			<td>${studentInfo.stuNo }</td>
 			<td>이름</td>
-			<td>${studentInfo.stuName }</td>
+			<td>${memberInfo.memName }</td>
 		</tr>
 		<tr>
 			<td>소속</td>

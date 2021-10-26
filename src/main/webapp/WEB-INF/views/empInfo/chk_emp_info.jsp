@@ -17,6 +17,20 @@ tr,td{
 </head>
 <body>
 
+<div>
+	<table>
+		<tr>
+			<td>직원번호</td>
+			<td>${empInfo.empNo}</td>
+			<td>이름</td>
+			<td>${memberInfo.memName}</td>
+			<td>소속</td>
+			<td>${empInfo.empDept} ${empInfo.empColl}</td>
+		</tr>
+		<tr>
+		</tr>
+	</table>
+</div>
 <!-- 멤버 테이블에서 오는 정보 -->
 <div>
 	<table>
