@@ -1,5 +1,7 @@
 package com.kh.project.stuManage.vo;
 
+import com.kh.project.portal.vo.MemberVO;
+
 public class EmpVO {
 	private int empNo;
 	private int empClass;
@@ -8,7 +10,13 @@ public class EmpVO {
 	private int empJob;
 	
 	private int memNo;
-	
+	private MemberVO memberVO;
+	public MemberVO getMemberVO() {
+		return memberVO;
+	}
+	public void setMemberVO(MemberVO memberVO) {
+		this.memberVO = memberVO;
+	}
 	public int getMemNo() {
 		return memNo;
 	}

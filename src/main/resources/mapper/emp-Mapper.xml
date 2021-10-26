@@ -4,16 +4,16 @@
 <mapper namespace="empMapper">
 	<resultMap type="com.kh.project.stuManage.vo.EmpVO" id="emp">
 		<id column="EMP_NO" property="empNo"/>
-		<result column="EMP_NAME" property="empName"/>
 		<result column="EMP_CLASS" property="empClass"/>
 		<result column="EMP_DEPT" property="empDept"/>
 		<result column="EMP_COLL" property="empColl"/>
 		<result column="EMP_JOB" property="empJob"/>
+		<association property="memberVO" resultMap="memberMapper.member"/>
 	</resultMap>
 	
 	<select id="selectProfList" resultMap="emp">
 		SELECT E.EMP_NO
-			, M.MEM_NAME AS EMP_NAME
+			, M.MEM_NAME
 		FROM EMP E, MEMBER M
 		WHERE E.MEM_NO = M.MEM_NO
 		AND EMP_JOB=1
@@ -21,7 +21,7 @@
 	
 	<select id="selectAssiList" resultMap="emp">
 		SELECT EMP_NO
-			, M.MEM_NAME  AS EMP_NAME 
+			, M.MEM_NAME
 		FROM EMP E, MEMBER M
 		WHERE E.MEM_NO = M.MEM_NO
 		AND EMP_JOB=2

@@ -51,7 +51,7 @@
                   	 <label for="empList" class="form-label">담당교수</label>
                   <select class="form-select" id="empList" name="profNo">
                   	<c:forEach items="${empList }" var="empInfo">
-                  	  <option value="${empInfo.empNo }">${empInfo.empName }</option>
+                  	  <option value="${empInfo.empNo }">${empInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>
@@ -60,7 +60,7 @@
                   	 <label for="itemCategory" class="form-label">담당조교</label>
                   <select class="form-select" id="itemCategory" name="assiNo">
                   	<c:forEach items="${assiList }" var="assiInfo">
-                  	  <option value="${assiInfo.empNo }">${assiInfo.empName }</option>
+                  	  <option value="${assiInfo.empNo }">${assiInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>
