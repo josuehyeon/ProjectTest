@@ -18,6 +18,7 @@
 		<mapper resource="/mapper/member-Mapper.xml"/>
 		<mapper resource="/mapper/student-Mapper.xml"/>
 		<mapper resource="/mapper/lecture-Mapper.xml"/>
+		<mapper resource="/mapper/stuManage-Mapper.xml"/>
 	</mappers>
 </configuration>
 

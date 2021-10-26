@@ -20,7 +20,7 @@
 			<nav class="navbar navbar-light" style="background-color: #282827;">
 				<a class="nav-link link-light" href="/board/portal">HOME</a>
 				<a class="nav-link link-light" href="#">내 정보</a>
-				<a class="nav-link link-light" href="#">학적관리</a>
+				<a class="nav-link link-light" href="/stuManage/stopStudy">학적관리</a>
 				<a class="nav-link link-light" href="#">교과과정/수업</a>
 				<a class="nav-link link-light" href="/lecture/goMain">강의 관리</a>
 				<a class="nav-link link-light" href="/board/infoPark">정보광장</a>
