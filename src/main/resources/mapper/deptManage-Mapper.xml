@@ -16,21 +16,12 @@
 		<result column="TO_DEPT" 		property="toDept"/>
 		<result column="DMAJOR_COLL" 	property="dmajorColl"/>
 		<result column="DMAJOR_DEPT" 	property="dmajorCept"/>
+		
 	</resultMap>
 	
+	
 	<select id="selectStopStudyList" resultMap="deptManage">
-		SELECT STU_NO
-		    , STU_NAME
-		    , DECODE(STU_STATUS, 0, '재학', 2, '휴학', 3, '복학', 4, '자퇴', 5, '제적') AS STU_STATUS
-		    , DECODE(STU_YEAR, 1, '1학년', 2, '2학년', 3, '3학년', 4, '4학년') AS STU_YEAR
-		    , (SELECT DECODE(COLL_NO, 1, '인문과학대학', 2, '사회과학대학', 3, '자연과학대학', 4, '교육과학대학')
-		        FROM COLLEGE
-		        WHERE COLL_NO = 1) AS COLL_NO
-		    , (SELECT DEPT_NAME
-		        FROM DEPT
-		        WHERE DEPT_NAME = '국어국문학과') AS DEPT_NAME
-		FROM STUDENT
-		WHERE STU_NAME = '김하나'
+		
 	</select>
 </mapper>
 
