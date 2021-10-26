@@ -51,7 +51,7 @@
                   	 <label for="empList" class="form-label">담당교수</label>
                   <select class="form-select" id="empList" name="profNo">
                   	<c:forEach items="${empList }" var="empInfo">
-                  	  <option value="${empInfo.empNo }">${empInfo.memberVO.memName }</option>
+                  	  <option value="${empInfo.memberVO.memNo }">${empInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>
@@ -60,7 +60,7 @@
                   	 <label for="itemCategory" class="form-label">담당조교</label>
                   <select class="form-select" id="itemCategory" name="assiNo">
                   	<c:forEach items="${assiList }" var="assiInfo">
-                  	  <option value="${assiInfo.empNo }">${assiInfo.memberVO.memName }</option>
+                  	  <option value="${assiInfo.memberVO.memNo }">${assiInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>
@@ -74,7 +74,7 @@
                </div>
                <div class="col-6">
                   <label for="formFile" class="form-label">강의자료첨부</label>
-                    <input name="lecPlan" class="form-control" type="file" id="formFile">
+                    <input name="f" class="form-control" type="file" id="formFile">
                </div>
                <div class="col-12 text-center">
                    <input type="submit" class="btn btn-primary" value="REGISTRATION">
