@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-복학 안내 페이지
+복학 안내 뭐라고 적지
 </body>
 </html>

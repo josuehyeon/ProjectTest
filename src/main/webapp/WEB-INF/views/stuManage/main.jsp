@@ -7,14 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/stuManage/stopStudyInfo">휴학 안내</a>
-<a href="/stuManage/goStopStudy">휴학 신청</a>
+<a href="/stuManage/stopStudyInfo">휴학 안내</a><br>
+<a href="/stuManage/goStopStudy">휴학 신청</a><br>
 
-<a href="/stuManage/againStudyInfo">복학 안내</a>
-<a href="/stuManage/goAgainStudy">복학 신청</a>
+<a href="/stuManage/againStudyInfo">복학 안내</a><br>
+<a href="/stuManage/goAgainStudy">복학 신청</a><br>
 
-<a href="/stuManage/exitInfo">자퇴 안내</a>
-<a href="/stuManage/goExit">자퇴 신청</a>
+<a href="/stuManage/exitInfo">자퇴 안내</a><br>
+<a href="/stuManage/goExit">자퇴 신청</a><br>
 
 
 <a href="">전과 안내</a>
