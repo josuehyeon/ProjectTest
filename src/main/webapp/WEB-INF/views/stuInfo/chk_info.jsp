@@ -18,7 +18,7 @@ tr,td{
 <body>
 학생 로그인>내정보>내정보관리>내정보조회
 
-
+<!-- STUDENT 테이블에서 오는 정보 -->
 <div>
 	<table>
 		<tr>
@@ -42,7 +42,7 @@ tr,td{
 		</tr>
 	</table>
 </div>
-
+<!-- 멤버 테이블에서 오는 정보 -->
 <div>
 	<table>
 		<tr>
@@ -63,7 +63,6 @@ tr,td{
 			<td>주소</td>
 			<td>${memberInfo.memAddr }</td>
 		</tr>
-		
 	</table>
 </div>
 

@@ -17,15 +17,7 @@ public class StuInfoServiceImpl implements StuInfoService{
 		return sqlSession.selectOne("studentMapper.selectStuMyInfo", memNo) ;
 	}
 
-	@Override // 학생 정보 조회 (멤버 테이블)
-	public MemberVO selectMemMyInfo(int memNo) {
-		return sqlSession.selectOne("memberMapper.selectMemMyInfo", memNo);
-	}
 
-	@Override // 학생 정보 수정
-	public void updateMemMyInfo(MemberVO memberVO) {
-		sqlSession.update("memberMapper.updateMemMyInfo", memberVO);
-	}
 
 	@Override //현재 비밀번호 확인
 	public MemberVO chkPw(MemberVO memberVO) {

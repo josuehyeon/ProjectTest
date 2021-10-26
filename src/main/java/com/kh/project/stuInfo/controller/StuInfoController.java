@@ -25,6 +25,7 @@ public class StuInfoController {
 	//이동 "학생 정보 조회.jsp"
 	@GetMapping("/chkInfoJsp")
 		public String chkInfoJsp(HttpSession session , Model model) {
+			//로그인 세션 정보 가져오기
 			MemberVO member = (MemberVO)session.getAttribute("loginInfo");
 			int memNo = member.getMemNo();
 			
@@ -32,22 +33,30 @@ public class StuInfoController {
 			model.addAttribute("studentInfo", stuInfoService.selectStuMyInfo(memNo));
 			
 			//멤버 테이블에서 가져온 데이터
-			model.addAttribute("memberInfo", stuInfoService.selectMemMyInfo(memNo));
+			model.addAttribute("memberInfo", portalService.selectMemMyInfo(memNo));
 			
 			return "stuInfo/chk_info";
 		}
 	
 	//이동 "학생 정보 수정.jsp"
 	@GetMapping("/changeInfoJsp")
-	public String chnageInfo(MemberVO memberVO) {
-		stuInfoService.updateMemMyInfo(memberVO);
+	public String chnageInfo(MemberVO memberVO, Model model, HttpSession session) {
+		//로그인 세션 정보 가져오기
+		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
+		int memNo = member.getMemNo();
+		
+		//멤버 테이블에서 가져온 데이터
+		model.addAttribute("memberInfo", portalService.selectMemMyInfo(memNo));
+		
+		//정보 수정 쿼리 실행
+		portalService.updateMemMyInfo(memberVO);
 		return "stuInfo/change_info" ;
 	}
 	
 	//처리 "학생 정보 수정"
 	@PostMapping("/changeInfo")
 	public String changeInfo(MemberVO memberVO) {
-		stuInfoService.updateMemMyInfo(memberVO);
+		portalService.updateMemMyInfo(memberVO);
 		return "redirect:/stuInfo/chkInfoJsp" ;
 	}
 	

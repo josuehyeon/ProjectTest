@@ -17,4 +17,14 @@ public class PortalServiceImpl implements PortalService{
 		return sqlSession.selectOne("memberMapper.login", memberVO);
 	}
 	
+	@Override // 학생 정보 조회 (멤버 테이블)
+	public MemberVO selectMemMyInfo(int memNo) {
+		return sqlSession.selectOne("memberMapper.selectMemMyInfo", memNo);
+	}
+
+	@Override // 학생 정보 수정
+	public void updateMemMyInfo(MemberVO memberVO) {
+		sqlSession.update("memberMapper.updateMemMyInfo", memberVO);
+	}
+	
 }

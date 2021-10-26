@@ -13,7 +13,7 @@
  	<div id="checkPwDiv">
 		현재 비밀번호
 		<input type="hidden" name="memNo" id="memNo" value="${sessionScope.loginInfo.memNo }">
-		<input type="password" name="memPw" id="memPw">
+		<input type="password" name="memPw" id="memPw" autofocus required>
 		<input type="submit" value="비번확인" onclick="checkPw();">
 	</div>
 </form>

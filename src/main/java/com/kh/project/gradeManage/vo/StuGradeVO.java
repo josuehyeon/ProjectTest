@@ -10,7 +10,7 @@ public class StuGradeVO {
 	public int semId;
 	public GradeVO gradeInfo;
 	public LectureVO lectureInfo;
-	
+	public SemesterVO semesterInfo;
 	
 	public String getSubjectId() {
 		return subjectId;
@@ -53,6 +53,12 @@ public class StuGradeVO {
 	}
 	public void setLectureInfo(LectureVO lectureInfo) {
 		this.lectureInfo = lectureInfo;
+	}
+	public SemesterVO getSemesterInfo() {
+		return semesterInfo;
+	}
+	public void setSemesterInfo(SemesterVO semesterInfo) {
+		this.semesterInfo = semesterInfo;
 	}
 	
 
