@@ -1,12 +1,11 @@
 package com.kh.project.stuManage.service;
 
-import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kh.project.stuManage.vo.DeptManageVO;
+import com.kh.project.stuManage.vo.StuManageVO;
 
 @Service("stuManageService")
 public class StuManageServiceImpl implements StuManageService{
@@ -14,8 +13,8 @@ public class StuManageServiceImpl implements StuManageService{
 	private SqlSessionTemplate sqlSession;
 
 	@Override
-	public DeptManageVO selectStopStudyList(DeptManageVO deptManageVO) {
-		return sqlSession.selectOne("deptManageMapper.selectStopStudyList", deptManageVO);
+	public StuManageVO selectStopStudy() {
+		return sqlSession.selectOne("stuManageMapper.selectStopStudy");
 	}
 	
 }
