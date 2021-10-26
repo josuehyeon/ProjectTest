@@ -36,7 +36,7 @@ public class GradeManageController {
 	//이렇게 세팅하면 별도의 Ajax문으로 이해하자
 	@ResponseBody //ajax랑 짝꿍이다. 다시 ajax로 돌아가라 알려주눈 @어노테이션
 	@PostMapping("/gradeListAjax")
-	public List<StuGradeVO> gradeListAjax(StuGradeVO stuGradeVO, SemesterVO semesterVO ) { //int year , int semester 도 가능함 
+	public List<StuGradeVO> gradeListAjax(SemesterVO semesterVO) { //int year , int semester 도 가능함 
 		return  gradeManageService.selectStuGradeList(semesterVO);
 	}
 	

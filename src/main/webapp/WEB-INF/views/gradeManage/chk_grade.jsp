@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/gradeManage/js/chk_grade.js?ver=1"></script>
+<script type="text/javascript" src="/resources/gradeManage/chk_grade.js?ver=4"></script>
 </head>
 <body>
 <!-- <div>
@@ -19,18 +19,18 @@
 
 <!-- 학년, 학기 리스트(feat.foreach) -->
 <div>
-	<select id="yearSelector">
+	<select id="semesterSelector">
 		<option value="0">전체</option>
-		<c:forEach items="${semesterList }" var="semester">
-			<option value="${semester.year}">${semester.year }</option>
+		<c:forEach items="${semesterList}" var="semester">
+			<option value="${semester.semId}">${semester.semId}</option>
 		</c:forEach>
 	</select>
-	<select id="semesterSelector">
+	<%-- <select id="semesterSelector">
 	<option value="0">전체</option>
 		<c:forEach items="${semesterList }" var="semester">
 			<option value="${semester.semester }">${semester.semester }</option>
 		</c:forEach>
-	</select>
+	</select> --%>
 </div>
 <!-- 학생 성적 리스트 테이블(feat.foreach) -->
 <div id="gradeTableDiv">

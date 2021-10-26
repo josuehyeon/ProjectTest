@@ -50,6 +50,7 @@
 	<select id="selectStuGradeList" resultMap="stuGrade">
 		SELECT   S.YEAR
 			 ,   S.SEMESTER
+			 ,   S.SEM_ID
 			 ,  SG.LEC_ID 
 			 ,   L.LEC_NAME
 			 ,   L.LEC_CREDIT 
@@ -60,11 +61,8 @@
 		WHERE SG.LEC_ID = L.LEC_ID
 		  AND SG.GRADE  = G.GRADE
 		  AND SG.SEM_ID = S.SEM_ID
-		  <if test="year != null and year != 0">
-			  AND S.YEAR = #{year}
-		  </if>
-		  <if test="year != null and year != 0">
-			  AND S.SEMESTER = #{semester}
+		  <if test="semId != null and semId != 0">
+			  AND S.SEM_ID = #{semId}
 		  </if>
 	</select>
 	

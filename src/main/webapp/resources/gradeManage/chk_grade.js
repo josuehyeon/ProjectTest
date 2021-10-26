@@ -1,18 +1,19 @@
 //화면 로딩 후 바로 실행
 $(document).ready(function() {
 	//학생목록
-	$(document).on('change', '#yearSelector', function() {
-		var year = $('#yearSelector').val();
+	$(document).on('change', '#semesterSelector', function() {
+		var semId = $('#semesterSelector').val();
 		/* location.href = '/student/studentList?classCode='+classCode;*/
 
 		$.ajax({
 			url: '/grade/gradeListAjax', //콘트롤러 요청경로
 			type: 'post',
 			//''안에는 넘기는 변수의 변수명 변수가 여래개면 ,(쉼표)로 구분한다
-			data: { 'year': year }, //필요한 데이터
+			data: { 'semId': semId }, //필요한 데이터
 			//-------------------------------------------경로를 이해해야함
 			success: function(result) {
 				//ajax 실행 성공 후 실행할 코드 작성
+				//alert('성공');
 
 				//학생 테이블을 지운다.
 				//$('#tableDiv').remove();// 선택한 태그화 하위태그 모든 요소를 지워 버린다.
@@ -40,24 +41,17 @@ $(document).ready(function() {
 					str += 			'<td>' + element.grade + '</td>'
 					str += 			'<td>' + element.gradeInfo.score + '</td>'
 					str += 		'</tr>'
-				});
-
+				}); //result로 for문 돌리는 거 닫기
 				str += '</table>'
 				$('#gradeTableDiv').append(str);
 
-				alert('성공');
-			},
+			}, //success 닫기
 			error: function() {
 				//ajax 실행 실패 시 실행되는 구간
 				alert('실패');
-			}
-		});
-	});//학생목록
+			} //error닫기
+		}); //ajax 닫기
+	});// #semesterSelector 이벤트 닫기
 
-	/*//학생 이름 클릭시
-	$(document).on('click', '.nameDiv', function() {
-		var stuNum = $(this).parent().parent().children().first().text();
-		selectScore(stuNum);
-	});//학생이름 클릭시*/
 
-});
+}); //ready function 닫기
