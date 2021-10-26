@@ -17,6 +17,7 @@
 		<mapper resource="/mapper/grade-Mapper.xml"/>		
 		<mapper resource="/mapper/member-Mapper.xml"/>
 		<mapper resource="/mapper/student-Mapper.xml"/>
+		<mapper resource="/mapper/lecture-Mapper.xml"/>
 	</mappers>
 </configuration>
 

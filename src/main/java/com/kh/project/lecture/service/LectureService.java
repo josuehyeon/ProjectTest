@@ -2,6 +2,7 @@ package com.kh.project.lecture.service;
 
 import java.util.List;
 
+import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
 import com.kh.project.stuManage.vo.EmpVO;
@@ -17,6 +18,12 @@ public interface LectureService {
 	List<EmpVO> selectProfList();
 	//조교리스트 조회
 	List<EmpVO> selectAssiList();
-	
+	//강의등록
+	void regLecture(LectureVO lectureVO);
+	//강의리스트조회
+	List<LectureVO> selectLectureList();
+	//강의 삭제
+	void deleteLecture(LectureVO lectureVO);
+
 	
 }
