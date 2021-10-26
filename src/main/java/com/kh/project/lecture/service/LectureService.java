@@ -24,6 +24,13 @@ public interface LectureService {
 	List<LectureVO> selectLectureList();
 	//강의 삭제
 	void deleteLecture(LectureVO lectureVO);
-
 	
+	
+	
+	//학과리스트조회
+	List<DeptVO> selectDeptList2(CollegeVO collegeVO);
+	//교수리스트 조회
+	List<EmpVO> selectProfList2(CollegeVO collegeVO);
+	//조교리스트 조회
+	List<EmpVO> selectAssiList2(CollegeVO collegeVO);
 }

@@ -13,6 +13,13 @@
 			, DEPT_NAME
 		FROM DEPT
 	</select>
+
+	<select id="selectDeptList2" resultMap="dept">
+		SELECT DEPT_ID
+			, DEPT_NAME
+		FROM DEPT
+		WHERE COLL_NO=#{collNo}
+	</select>
 </mapper>
 
 

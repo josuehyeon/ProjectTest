@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/sample/css/sample.css">
-<script type="text/javascript" src="/resources/sample/js/sample.js"></script>
+<script type="text/javascript" src="/resources/sample/js/sample.js?ver=01"></script>
 <style type="text/css">
 .myContainer{
    background-color: #F9F9F9;
@@ -51,7 +51,7 @@
                   	 <label for="empList" class="form-label">담당교수</label>
                   <select class="form-select" id="empList" name="profNo">
                   	<c:forEach items="${empList }" var="empInfo">
-                  	  <option value="${empInfo.memberVO.memNo }">${empInfo.memberVO.memName }</option>
+                  	  <option value="${empInfo.empNo }">${empInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>
@@ -60,7 +60,7 @@
                   	 <label for="itemCategory" class="form-label">담당조교</label>
                   <select class="form-select" id="itemCategory" name="assiNo">
                   	<c:forEach items="${assiList }" var="assiInfo">
-                  	  <option value="${assiInfo.memberVO.memNo }">${assiInfo.memberVO.memName }</option>
+                  	  <option value="${assiInfo.empNo }">${assiInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>

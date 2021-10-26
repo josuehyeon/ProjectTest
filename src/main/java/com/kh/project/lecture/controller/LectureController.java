@@ -1,16 +1,24 @@
 package com.kh.project.lecture.controller;
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.lecture.service.LectureService;
 import com.kh.project.lecture.vo.LectureVO;
+import com.kh.project.lecture.vo.RegLectureSelectBoxVO;
+import com.kh.project.stuManage.vo.CollegeVO;
+import com.kh.project.stuManage.vo.DeptVO;
+import com.kh.project.stuManage.vo.EmpVO;
 
 @Controller
 @RequestMapping("/lecture")
@@ -32,6 +40,28 @@ public class LectureController {
 		model.addAttribute("assiList", lectureService.selectAssiList());
 		return "lecture/reg_lecture";
 	}
+	
+	//강의등록 
+	@ResponseBody
+	@PostMapping("/selectCollAjax")
+	public RegLectureSelectBoxVO selectCollAjax(Model model, CollegeVO collegeVO) {
+		//학과 목록 조회
+		List<DeptVO> deptList =  lectureService.selectDeptList2(collegeVO);
+		//교수 목록 조회
+		List<EmpVO> profList = lectureService.selectProfList2(collegeVO);
+		//조교 목록 조회
+		List<EmpVO> assiList =  lectureService.selectAssiList2(collegeVO);
+		
+		RegLectureSelectBoxVO vo = new RegLectureSelectBoxVO();
+		vo.setDeptList(deptList);
+		vo.setProfList(profList);
+		vo.setAssiList(assiList);
+		
+		return vo;
+	}
+	
+	
+	
 	//강의 조회
 	@GetMapping("/selectLecture")
 	public String selectLecture(Model model) {
