@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/sample/css/sample.css">
-<script type="text/javascript" src="/resources/sample/js/reg_lecture.js?ver=0122243"></script>
+<script type="text/javascript" src="/resources/sample/js/reg_lecture.js?ver=02122243"></script>
 <style type="text/css">
 .myContainer{
    background-color: #F9F9F9;

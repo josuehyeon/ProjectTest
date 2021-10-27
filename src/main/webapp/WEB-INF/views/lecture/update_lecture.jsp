@@ -7,12 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/sample/css/sample.css">
-<script type="text/javascript" src="/resources/sample/js/sample.js"></script>
+<script type="text/javascript" src="/resources/sample/js/reg_lecture.js?ver=0122243"></script>
 <style type="text/css">
 .myContainer{
    background-color: #F9F9F9;
    border-radius: 6px;
    padding: 16px;
+   margin: 0 auto;
 }
 </style>
 </head>
@@ -37,6 +38,7 @@
                   	</c:forEach>
                   </select>
                   </div>
+              <div id="tableDiv">
                    <div class="col-6">
                   <!-- 학과선택 -->	
                    <label for="deptList" class="form-label">학과</label>
@@ -51,7 +53,7 @@
                   	 <label for="empList" class="form-label">담당교수</label>
                   <select class="form-select" id="empList" name="profNo">
                   	<c:forEach items="${empList }" var="empInfo">
-                  	  <option value="${empInfo.empNo }">${empInfo.empName }</option>
+                  	  <option value="${empInfo.empNo }">${empInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>
@@ -60,25 +62,34 @@
                   	 <label for="itemCategory" class="form-label">담당조교</label>
                   <select class="form-select" id="itemCategory" name="assiNo">
                   	<c:forEach items="${assiList }" var="assiInfo">
-                  	  <option value="${assiInfo.empNo }">${assiInfo.empName }</option>
+                  	  <option value="${assiInfo.empNo }">${assiInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>
+               </div>
+               <div>
                <div class="col-6">
                   <label for="itemName" class="form-label">개설강의명</label>
-                  <input type="text" name="lecName" class="form-control" id="itemName" placeholder="input here...">
+                  <input type="text" name="lecName" class="form-control" id="itemName" placeholder="input here..." 
+                  value="<c:forEach items="${lectureList }" var="lectureInfo">
+                  	  ${lectureInfo.lecName }
+                  	</c:forEach>">
                </div>
                <div class="col-6">
                   <label for="itemPrice" class="form-label">학점</label>
-                  <input type="text" name="lecCredit" class="form-control" id="itemPrice" placeholder="input here...">
+                  <input type="text" name="lecCredit" class="form-control" id="itemPrice" placeholder="input here..." 
+                  value="<c:forEach items="${lectureList }" var="lectureInfo">
+                  	  ${lectureInfo.lecCredit }
+                  	</c:forEach>">
                </div>
                <div class="col-6">
                   <label for="formFile" class="form-label">강의자료첨부</label>
-                    <input name="file1" class="form-control" type="file" id="formFile">
+                    <input name="f" class="form-control" type="file" id="formFile">
                </div>
-               <div class="col-12 text-center">
+               <div class="col-6 text-center">
                    <input type="submit" class="btn btn-primary" value="REGISTRATION">
                  </div>
+                </div>
             </form>
          </div>
       </div>

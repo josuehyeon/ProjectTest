@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.lecture.service.LectureService;
 import com.kh.project.lecture.vo.LectureVO;
+import com.kh.project.lecture.vo.LectureViewVO;
 import com.kh.project.lecture.vo.RegLectureSelectBoxVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
@@ -64,8 +65,8 @@ public class LectureController {
 	
 	//강의 조회
 	@GetMapping("/selectLecture")
-	public String selectLecture(Model model) {
-		model.addAttribute("lectureList", lectureService.selectLectureList());
+	public String selectLecture(Model model, LectureViewVO lectureViewVO) {
+		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
 		return "lecture/lecture_list";
 	}
 	
@@ -88,7 +89,12 @@ public class LectureController {
 	
 	//강의 수정 폼으로 가기 
 	@GetMapping("/updateLecture")
-	public String updateLecture(LectureVO lectureVO) {
+	public String updateLecture(Model model, LectureViewVO lectureViewVO) {
+		model.addAttribute("collegeList", lectureService.selectCollegeList());
+		model.addAttribute("deptList", lectureService.selectDeptList());
+		model.addAttribute("empList", lectureService.selectProfList());
+		model.addAttribute("assiList", lectureService.selectAssiList());
+		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
 		return "lecture/update_lecture";
 	}
 }

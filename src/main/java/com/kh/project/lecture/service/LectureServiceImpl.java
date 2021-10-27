@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kh.project.lecture.vo.LectureVO;
+import com.kh.project.lecture.vo.LectureViewVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
 import com.kh.project.stuManage.vo.EmpVO;
@@ -42,8 +43,8 @@ public class LectureServiceImpl implements LectureService{
 	}
 
 	@Override
-	public List<LectureVO> selectLectureList() {
-		return sqlSession.selectList("lectureMapper.selectLectureList");
+	public List<LectureVO> selectLectureList(LectureViewVO lectureViewVO) {
+		return sqlSession.selectList("lectureMapper.selectLectureList", lectureViewVO);
 	}
 
 	@Override

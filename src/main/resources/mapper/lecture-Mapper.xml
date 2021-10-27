@@ -72,6 +72,9 @@
 		, LEC_ID
 		, COLL_NAME 
 		FROM LECTURE_VIEW
+		<if test="lecId != null and !lecId.equals('')">
+		WHERE LEC_ID = #{lecId}
+		</if>
 		ORDER BY LEC_ID DESC
 	</select>
 	
