@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="/resources/sample/js/lecture_list.js?ver=222222222"></script>
 </head>
 <body>
 
@@ -33,8 +34,8 @@
       <td>${lectureInfo.profName }</td>
       <td>${lectureInfo.assiName }</td>
       <td>
-	      <input type="button" value="삭제" onclick="location.href='/lecture/deleteLecture?lecId=${lectureInfo.lecId }';">
-		  <input type="button" value="수정" onclick="location.href='/lecture/updateLecture?lecId=${lectureInfo.lecId }';">
+	      <input type="button" class="delete" value="삭제" data-lecId="${lectureInfo.lecId }">
+		  <input type="button" class="update" value="수정" data-lecId="${lectureInfo.lecId }">
 	  </td>
     </tr>
 </c:forEach>

@@ -22,7 +22,7 @@
    <div class="col-11">
       <div class="row">
          <div class="col-5" style="border-bottom: 2px solid #0d6efd; font-style: italic; font-weight: bold;">
-            <h5>REGISTRATION LECTURE</h5>
+            <h5>UPDATE LECTURE</h5>
          </div>
       </div>
       <div style="height: 20px;"></div>
@@ -34,7 +34,8 @@
                   <!-- 단과대선택 -->
                   <select class="form-select" id="collegeList" name="collNo">
                   	<c:forEach items="${collegeList }" var="collegeInfo">
-                  	  <option value="${collegeInfo.collNo }">${collegeInfo.collName }</option>
+                  	  <option value="${collegeInfo.collNo }" 
+                  	  <c:if test="${collegeInfo.collNo eq lectureList[0].collNo}">selected</c:if>>${collegeInfo.collName }</option>
                   	</c:forEach>
                   </select>
                   </div>
@@ -44,7 +45,9 @@
                    <label for="deptList" class="form-label">학과</label>
                   <select class="form-select" id="deptList" name="deptId">
                   	<c:forEach items="${deptList }" var="deptInfo">
-                  	  <option value="${deptInfo.deptId }">${deptInfo.deptName }</option>
+                  	  <option value="${deptInfo.deptId }" 
+                  	  <c:if test="${deptInfo.deptId eq lectureList[0].deptId}">selected</c:if>>${deptInfo.deptName }
+                  	  </option>
                   	</c:forEach>
                   </select>
                </div>
@@ -53,7 +56,8 @@
                   	 <label for="empList" class="form-label">담당교수</label>
                   <select class="form-select" id="empList" name="profNo">
                   	<c:forEach items="${empList }" var="empInfo">
-                  	  <option value="${empInfo.empNo }">${empInfo.memberVO.memName }</option>
+                  	  <option value="${empInfo.empNo }"
+                  	  <c:if test="${empInfo.empNo eq lectureList[0].profNo }">selected</c:if>>${empInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>
@@ -62,7 +66,8 @@
                   	 <label for="itemCategory" class="form-label">담당조교</label>
                   <select class="form-select" id="itemCategory" name="assiNo">
                   	<c:forEach items="${assiList }" var="assiInfo">
-                  	  <option value="${assiInfo.empNo }">${assiInfo.memberVO.memName }</option>
+                  	  <option value="${assiInfo.empNo }"
+                  	  <c:if test="${assiInfo.empNo eq lectureList[0].assiNo }">selected</c:if>>${assiInfo.memberVO.memName }</option>
                   	</c:forEach>
                   </select>
                   </div>
@@ -71,16 +76,12 @@
                <div class="col-6">
                   <label for="itemName" class="form-label">개설강의명</label>
                   <input type="text" name="lecName" class="form-control" id="itemName" placeholder="input here..." 
-                  value="<c:forEach items="${lectureList }" var="lectureInfo">
-                  	  ${lectureInfo.lecName }
-                  	</c:forEach>">
+                  value="${lectureList[0].lecName }">
                </div>
                <div class="col-6">
                   <label for="itemPrice" class="form-label">학점</label>
                   <input type="text" name="lecCredit" class="form-control" id="itemPrice" placeholder="input here..." 
-                  value="<c:forEach items="${lectureList }" var="lectureInfo">
-                  	  ${lectureInfo.lecCredit }
-                  	</c:forEach>">
+                  value="${lectureList[0].lecCredit}">
                </div>
                <div class="col-6">
                   <label for="formFile" class="form-label">강의자료첨부</label>
