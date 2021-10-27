@@ -19,7 +19,7 @@
 		<div class="col-12">
 			<nav class="navbar navbar-light" style="background-color: #282827;">
 				<a class="nav-link link-light" href="/board/portal">HOME</a>
-				<a class="nav-link link-light" href="/admin/goMain">학생관리(관리자)</a>
+				<a class="nav-link link-light" href="/admin/goMain">학생관리(Admin)</a>
 				<a class="nav-link link-light" href="#">내 정보</a>
 				<a class="nav-link link-light" href="/stuManage/goMain">학적관리</a>
 				<a class="nav-link link-light" href="#">교과과정/수업</a>
