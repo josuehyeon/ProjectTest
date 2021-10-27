@@ -103,6 +103,9 @@ public class LectureController {
 		lectureService.updateLecture(lectureVO);
 		return "redirect:/lecture/selectLecture";
 	}
+	
+	
+	
 }
 
 
