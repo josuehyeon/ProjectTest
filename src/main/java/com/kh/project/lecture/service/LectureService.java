@@ -37,4 +37,10 @@ public interface LectureService {
 	
 	//강의수정 업데이트
 	void updateLecture(LectureVO lectureVO);
+	
+	//다음 LEC_ID 조회
+	String selectNextLecId();
+	
+	//다음 pdf 그거 조회
+	int selectNextNumber();
 }

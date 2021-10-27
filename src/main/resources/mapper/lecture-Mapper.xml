@@ -35,10 +35,10 @@
 	</resultMap>
 	
 	<resultMap type="com.kh.project.lecture.vo.PdfVO" id="pdf">
-		<id column="PDF_CODE" property="pdf_code"/>
-		<result column="ORIGIN_PDF_NAME" property="origin_pdf_name"/>
-		<result column="ATTACHED_PDF_NAME" property="attached_pdf_name"/>
-		<result column="LEC_ID" property="lec_id"/>
+		<id column="PDF_CODE" property="pdfCode"/>
+		<result column="ORIGIN_PDF_NAME" property="originPdfName"/>
+		<result column="ATTACHED_PDF_NAME" property="attachedPdfName"/>
+		<result column="LEC_ID" property="lecId"/>
 	</resultMap>
 	
 	<insert id="regLecture">

@@ -71,5 +71,15 @@ public class LectureServiceImpl implements LectureService{
 	public void updateLecture(LectureVO lectureVO) {
 		sqlSession.update("lectureMapper.updateLecture", lectureVO);
 	}
+
+	@Override
+	public String selectNextLecId() {
+		return sqlSession.selectOne("lectureMapper.selectNextLecId");
+	}
+
+	@Override
+	public int selectNextNumber() {
+		return sqlSession.selectOne("lectureMapper.selectNextNumber");
+	}
 	
 }

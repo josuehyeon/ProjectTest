@@ -1,34 +1,36 @@
 package com.kh.project.lecture.vo;
 
 public class PdfVO {                
-	private String pdf_code;
-	private String origin_pdf_name;
-	private String attached_pdf_name;
-	private String lec_id;
+	private String pdfCode;
+	private String originPdfName;
+	private String attachedPdfName;
+	private String lecId;
 	
-	public String getPdf_code() {
-		return pdf_code;
+	public String getPdfCode() {
+		return pdfCode;
 	}
-	public void setPdf_code(String pdf_code) {
-		this.pdf_code = pdf_code;
+	public void setPdfCode(String pdfCode) {
+		this.pdfCode = pdfCode;
 	}
-	public String getOrigin_pdf_name() {
-		return origin_pdf_name;
+	public String getOriginPdfName() {
+		return originPdfName;
 	}
-	public void setOrigin_pdf_name(String origin_pdf_name) {
-		this.origin_pdf_name = origin_pdf_name;
+	public void setOriginPdfName(String originPdfName) {
+		this.originPdfName = originPdfName;
 	}
-	public String getAttached_pdf_name() {
-		return attached_pdf_name;
+	public String getAttachedPdfName() {
+		return attachedPdfName;
 	}
-	public void setAttached_pdf_name(String attached_pdf_name) {
-		this.attached_pdf_name = attached_pdf_name;
+	public void setAttachedPdfName(String attachedPdfName) {
+		this.attachedPdfName = attachedPdfName;
 	}
-	public String getLec_id() {
-		return lec_id;
+	public String getLecId() {
+		return lecId;
 	}
-	public void setLec_id(String lec_id) {
-		this.lec_id = lec_id;
+	public void setLecId(String lecId) {
+		this.lecId = lecId;
 	}
+	
+	
                                     
 }
