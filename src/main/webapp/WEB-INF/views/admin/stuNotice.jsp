@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-학사경고 제적
+4 학사경고 / 제적
 </body>
 </html>

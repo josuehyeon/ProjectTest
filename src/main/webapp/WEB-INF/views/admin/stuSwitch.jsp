@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-전과 / 복수전공 페이지
+5 전과 / 복수전공
 </body>
 </html>

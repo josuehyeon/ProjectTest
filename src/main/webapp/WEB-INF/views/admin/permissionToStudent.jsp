@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-학적 변동승인 페이지
+3 학적 변동승인 
 </body>
 </html>

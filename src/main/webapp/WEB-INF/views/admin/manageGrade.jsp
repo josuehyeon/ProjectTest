@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-성적관리 페이지
+2 성적 관리
 </body>
 </html>
