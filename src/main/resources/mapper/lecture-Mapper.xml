@@ -14,6 +14,7 @@
 		<result column="MAX_NO" property="maxNo"/>
 		<result column="NOW_NO" property="nowNo"/>
 		<result column="LEC_PLAN" property="lecPlan"/>
+		<association property="pdfVO" resultMap="pdf"></association>
 	</resultMap>
 	
 	<resultMap type="com.kh.project.lecture.vo.LectureViewVO" id="lectureView">
@@ -31,6 +32,13 @@
 		<result column="DEPT_NAME" property="deptName"/>
 		<result column="LEC_ID" property="lecId"/>
 		<result column="COLL_NAME" property="collName"/>
+	</resultMap>
+	
+	<resultMap type="com.kh.project.lecture.vo.PdfVO" id="pdf">
+		<id column="PDF_CODE" property="pdf_code"/>
+		<result column="ORIGIN_PDF_NAME" property="origin_pdf_name"/>
+		<result column="ATTACHED_PDF_NAME" property="attached_pdf_name"/>
+		<result column="LEC_ID" property="lec_id"/>
 	</resultMap>
 	
 	<insert id="regLecture">

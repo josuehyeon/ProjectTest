@@ -12,7 +12,16 @@ public class LectureVO {
 	private int maxNo;
 	private int nowNo;
 	private String lecPlan;
+	private PdfVO pdfVO;
 	
+	
+	
+	public PdfVO getPdfVO() {
+		return pdfVO;
+	}
+	public void setPdfVO(PdfVO pdfVO) {
+		this.pdfVO = pdfVO;
+	}
 	public String getLecId() {
 		return lecId;
 	}
