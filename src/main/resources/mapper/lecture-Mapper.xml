@@ -16,7 +16,22 @@
 		<result column="LEC_PLAN" property="lecPlan"/>
 	</resultMap>
 	
-	
+	<resultMap type="com.kh.project.lecture.vo.LectureViewVO" id="lectureView">
+		<id column="LEC_NAME" property="lecName"/>
+		<result column="LEC_CREDIT" property="lecCredit"/>
+		<result column="COLL_NO" property="collNo"/>
+		<result column="DEPT_ID" property="deptId"/>
+		<result column="PROF_NO" property="profNo"/>
+		<result column="ASSI_NO" property="assiNo"/>
+		<result column="MAX_NO" property="maxNo"/>
+		<result column="NOW_NO" property="nowNo"/>
+		<result column="LEC_PLAN" property="lecPlan"/>
+		<result column="PROF_NAME" property="profName"/>
+		<result column="ASSI_NAME" property="assiName"/>
+		<result column="DEPT_NAME" property="deptName"/>
+		<result column="LEC_ID" property="lecId"/>
+		<result column="COLL_NAME" property="collName"/>
+	</resultMap>
 	
 	<insert id="regLecture">
 		INSERT INTO LECTURE(
@@ -40,11 +55,24 @@
 		)
 	</insert>
 	
-	<select id="selectLectureList" resultMap="lecture">
-		SELECT LEC_ID
-			, LEC_NAME
-			, LEC_CREDIT
-		FROM LECTURE
+	<select id="selectLectureList" resultMap="lectureView">
+		SELECT 
+		LEC_NAME
+		, LEC_CREDIT
+		, COLL_NO
+		, DEPT_ID
+		, PROF_NO
+		, ASSI_NO
+		, MAX_NO
+		, NOW_NO
+		, LEC_PLAN
+		, PROF_NAME
+		, ASSI_NAME
+		, DEPT_NAME
+		, LEC_ID
+		, COLL_NAME 
+		FROM LECTURE_VIEW
+		ORDER BY LEC_ID DESC
 	</select>
 	
 	<delete id="deleteLecture">
