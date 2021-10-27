@@ -83,7 +83,16 @@
 		WHERE LEC_ID = #{lecId}
 	</delete>
 	
-	
+	<update id="updateLecture">
+		UPDATE LECTURE
+		SET LEC_NAME = #{lecName}
+			, LEC_CREDIT = #{lecCredit}
+			, COLL_NO = #{collNo}
+			, DEPT_ID = #{deptId}
+			, PROF_NO = #{profNo}
+			, ASSI_NO = #{assiNo}
+		WHERE LEC_ID=#{lecId}
+	</update>
 </mapper>
 
 

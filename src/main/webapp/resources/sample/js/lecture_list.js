@@ -7,7 +7,7 @@ $(document).ready(function(){
 		var lecId =  $(this).attr('data-lecId');
 		
 		if(result){
-			location.href='/lecture/updateLecture?lecId='+lecId;
+			location.href='/lecture/updateLectureForm?lecId='+lecId;
 		}
     });
 	

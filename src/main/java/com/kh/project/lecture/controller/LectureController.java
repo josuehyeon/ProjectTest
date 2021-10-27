@@ -63,14 +63,14 @@ public class LectureController {
 	
 	
 	
-	//강의 조회
+	//강의 리스트 조회
 	@GetMapping("/selectLecture")
 	public String selectLecture(Model model, LectureViewVO lectureViewVO) {
 		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
 		return "lecture/lecture_list";
 	}
 	
-	//강의등록하고 강의리스트로오기
+	//강의등록하고 다시 강의등록폼으로 가기
 	@RequestMapping("/regLecture")
 	public String regLecture(LectureVO lectureVO) {
 		System.out.println("111");
@@ -88,14 +88,20 @@ public class LectureController {
 	}
 	
 	//강의 수정 폼으로 가기 
-	@GetMapping("/updateLecture")
-	public String updateLecture(Model model, LectureViewVO lectureViewVO) {
+	@GetMapping("/updateLectureForm")
+	public String updateLectureForm(Model model, LectureViewVO lectureViewVO) {
 		model.addAttribute("collegeList", lectureService.selectCollegeList());
 		model.addAttribute("deptList", lectureService.selectDeptList());
 		model.addAttribute("empList", lectureService.selectProfList());
 		model.addAttribute("assiList", lectureService.selectAssiList());
 		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
 		return "lecture/update_lecture";
+	}
+	//강의 수정하고 리스트로 오기
+	@PostMapping("/updateLecture")
+	public String updateLecture(Model model, LectureVO lectureVO) {
+		lectureService.updateLecture(lectureVO);
+		return "redirect:/lecture/selectLecture";
 	}
 }
 

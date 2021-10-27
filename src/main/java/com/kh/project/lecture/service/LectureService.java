@@ -28,10 +28,13 @@ public interface LectureService {
 	
 	
 	
-	//학과리스트조회
+	//학과리스트조회 ajax
 	List<DeptVO> selectDeptList2(CollegeVO collegeVO);
-	//교수리스트 조회
+	//교수리스트 조회 ajax
 	List<EmpVO> selectProfList2(CollegeVO collegeVO);
-	//조교리스트 조회
+	//조교리스트 조회 ajax
 	List<EmpVO> selectAssiList2(CollegeVO collegeVO);
+	
+	//강의수정 업데이트
+	void updateLecture(LectureVO lectureVO);
 }

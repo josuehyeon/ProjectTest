@@ -28,7 +28,8 @@
       <div style="height: 20px;"></div>
       <div class="row">
          <div class="col myContainer">
-            <form class="row g-3" action="/lecture/regLecture" method="post" enctype="multipart/form-data">
+            <form class="row g-3" action="/lecture/updateLecture" method="post" enctype="multipart/form-data">
+            	<input type="hidden" value="${lectureList[0].lecId }" name="lecId">
                <div class="col-6">
                   <label for="collegeList" class="form-label">단대</label>
                   <!-- 단과대선택 -->

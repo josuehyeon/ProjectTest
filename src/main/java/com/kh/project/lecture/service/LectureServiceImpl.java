@@ -66,5 +66,10 @@ public class LectureServiceImpl implements LectureService{
 	public List<EmpVO> selectAssiList2(CollegeVO collegeVO) {
 		return sqlSession.selectList("empMapper.selectAssiList2", collegeVO);
 	}
+
+	@Override
+	public void updateLecture(LectureVO lectureVO) {
+		sqlSession.update("lectureMapper.updateLecture", lectureVO);
+	}
 	
 }
