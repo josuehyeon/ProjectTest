@@ -1,11 +1,15 @@
 package com.kh.project.stuManage.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuManage.service.StuManageService;
 
 @Controller
@@ -26,8 +30,19 @@ public class StuManageController {
 		return "stuManage/stopStudyInfo";
 	}
 	
-	//휴학 신청
+	//휴학 신청 들어가기
 	@GetMapping("/goStopStudy")
+	public String goStopStudy(HttpSession session , Model model) {
+		//로그인 세션 정보 가져오기
+		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
+		int memNo = member.getMemNo();
+		//휴학 신청에 memNo를 넣어서 특정 학생의 데이터를 가져옴
+		model.addAttribute("stopStudyInfo", stuManageService.goStopStudy(memNo));
+		return "stuManage/stopStudy";
+	}
+	
+	//휴학 신청 목록 나오기
+	@PostMapping("/goStopStudy")
 	public String goStopStudy() {
 		return "stuManage/stopStudy";
 	}

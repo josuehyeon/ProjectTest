@@ -1,8 +1,8 @@
 package com.kh.project.stuManage.service;
 
-import com.kh.project.stuManage.vo.StuManageVO;
+import com.kh.project.stuInfo.vo.StudentVO;
 
 public interface StuManageService {
 	//휴학신청 목록조회
-	StuManageVO selectStopStudy();
+	StudentVO goStopStudy(int memNo);
 }
