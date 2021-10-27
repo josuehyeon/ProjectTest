@@ -15,7 +15,7 @@ public class StuManageController {
 	private StuManageService stuManageService;
 	
 	//메인으로가기
-	@RequestMapping("/goMain")
+	@GetMapping("/goMain")
 	public String goMain() {
 		return "stuManage/main";
 	}

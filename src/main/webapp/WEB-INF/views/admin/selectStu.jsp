@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+학생조회 
 </body>
 </html>
