@@ -14,8 +14,8 @@ public class StuManageServiceImpl implements StuManageService{
 	private SqlSessionTemplate sqlSession;
 
 	@Override
-	public StudentVO goStopStudy(int stuNo) {
-		return sqlSession.selectOne("studentMapper.goStopStudy", stuNo);
+	public StudentVO goStopStudy(int memNo) {
+		return sqlSession.selectOne("studentMapper.goStopStudy", memNo);
 	}
 
 	
