@@ -20,9 +20,9 @@
 	<input type="text" value="학적상태">
 	<input type="text" name="stuStatus" value="${stopStudyInfo.stuStatus}" ><br>
 	<input type="text" value="전공명">
-	<input type="text" name="deptName" value="${stopStudyInfo.majorCode}" ><br>
+	<input type="text" name="deptName" value="${stopStudyInfo.deptInfo.deptName}" ><br>
 	<input type="text" value="단과대학">
-	<input type="text" name="collName" value="${stopStudyInfo.collNo}" ><br>
+	<input type="text" name="collName" value="${stopStudyInfo.collegeInfo.collName}" ><br>
 	<input type="text" value="생일">
 	<input type="text" name="memBirth" value="${stopStudyInfo.memberInfo.memBirth}" ><br>
 	<input type="text" value="부전공">

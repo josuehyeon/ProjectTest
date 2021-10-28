@@ -1,6 +1,8 @@
 package com.kh.project.stuInfo.vo;
 
 import com.kh.project.portal.vo.MemberVO;
+import com.kh.project.stuManage.vo.CollegeVO;
+import com.kh.project.stuManage.vo.DeptVO;
 
 public class StudentVO {
 	private int stuNo;
@@ -9,11 +11,26 @@ public class StudentVO {
 	private String minorCode;
 	private int stuYear;
 	private int stuSem;
-	private int stuStatus;
+	private String stuStatus;
 	
 	private MemberVO memberInfo;
+	private CollegeVO collegeInfo;
+	private DeptVO deptInfo;
 	
 	
+	
+	public DeptVO getDeptInfo() {
+		return deptInfo;
+	}
+	public void setDeptInfo(DeptVO deptInfo) {
+		this.deptInfo = deptInfo;
+	}
+	public CollegeVO getCollegeInfo() {
+		return collegeInfo;
+	}
+	public void setCollegeInfo(CollegeVO collegeInfo) {
+		this.collegeInfo = collegeInfo;
+	}
 	public int getStuNo() {
 		return stuNo;
 	}
@@ -50,10 +67,10 @@ public class StudentVO {
 	public void setStuSem(int stuSem) {
 		this.stuSem = stuSem;
 	}
-	public int getStuStatus() {
+	public String getStuStatus() {
 		return stuStatus;
 	}
-	public void setStuStatus(int stuStatus) {
+	public void setStuStatus(String stuStatus) {
 		this.stuStatus = stuStatus;
 	}
 	public MemberVO getMemberInfo() {

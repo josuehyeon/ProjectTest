@@ -13,6 +13,8 @@
 		<result column="STU_SEM" 	property="stuSem" />
 		<result column="STU_STATUS" property="stuStatus" />
 		<association property="memberInfo" resultMap="member"/>
+		<association property="collegeInfo" resultMap="college"/>
+		<association property="deptInfo" resultMap="dept"/>
 	</resultMap>
 	
 	<resultMap type="com.kh.project.portal.vo.MemberVO" id="member">
@@ -30,7 +32,16 @@
 	<result column="MEM_NAME" 	property="memName" />
 </resultMap>
 	
+	<resultMap type="com.kh.project.stuManage.vo.CollegeVO" id="college">
+		<id column="COLL_NO" property="collNo"/>
+		<result column="COLL_NAME" property="collName"/>
+	</resultMap>
 	
+	<resultMap type="com.kh.project.stuManage.vo.DeptVO" id="dept">
+		<id column="DEPT_ID" property="deptId"/>
+		<result column="DEPT_NAME" property="deptName"/>
+		<result column="COLL_NO" property="collNo"/>
+	</resultMap>
 	
 	<select id="selectStuMyInfo" resultMap="student">
 		SELECT STU_NO
@@ -45,15 +56,17 @@
 	
 	<select id="goStopStudy" resultMap="student">
 		SELECT M.MEM_NAME
-			, S.COLL_NO
-			, S.STU_YEAR
-			, S.MAJOR_CODE
+			, C.COLL_NAME
+			, STU_YEAR
+			, D.DEPT_NAME
 			, S.MINOR_CODE
 			, M.MEM_BIRTH
-			, S.STU_STATUS
+			, DECODE(S.STU_STATUS, 0, '재학', 2, '휴학', 3, '복학', 4, '자퇴', '재적') AS STU_STATUS
 			, S.STU_NO			
-		FROM STUDENT S , MEMBER M
+		FROM STUDENT S , MEMBER M, COLLEGE C, DEPT D
 		WHERE S.MEM_NO = M.MEM_NO
+		AND S.COLL_NO = C.COLL_NO
+		AND S.MAJOR_CODE = D.DEPT_ID
 		AND M.MEM_NO = #{memNo}
 	</select>
 	
