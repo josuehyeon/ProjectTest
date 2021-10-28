@@ -180,8 +180,8 @@ public class LectureController {
 	
 	//강의자료보기
 	@GetMapping("/lecPdf")
-	public String showlecPdf(Model model, LectureViewVO lectureViewVO) {
-		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
+	public String showlecPdf(Model model, LectureVO lectureVO) {
+		model.addAttribute("lecPdf", lectureService.selectLecPdf(lectureVO));
 		return "lecture/lecPdf";
 	}
 

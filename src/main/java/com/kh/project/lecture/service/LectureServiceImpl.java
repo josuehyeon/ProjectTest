@@ -89,8 +89,8 @@ public class LectureServiceImpl implements LectureService{
 	}
 
 	@Override
-	public PdfVO selectLecPdf() {
-		return sqlSession.selectOne("lectureMapper.selectLecPdf");
+	public PdfVO selectLecPdf(LectureVO lectureVO) {
+		return sqlSession.selectOne("lectureMapper.selectLecPdf", lectureVO);
 	}
 	
 }

@@ -127,7 +127,7 @@
 	<select id="selectLecPdf" resultMap="pdf">
 		SELECT ATTACHED_PDF_NAME
 		FROM LECTURE_PDF
-		WHEREE LEC_ID=#{lecId}
+		WHERE LEC_ID=#{lecId}
 	</select>
 </mapper>
 

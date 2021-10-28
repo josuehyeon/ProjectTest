@@ -49,5 +49,5 @@ public interface LectureService {
 	int insertPdf(LectureVO lectureVO);
 	
 	//lec_id 에 따른 pdf 조회
-	PdfVO selectLecPdf();
+	PdfVO selectLecPdf(LectureVO lectureVO);
 }

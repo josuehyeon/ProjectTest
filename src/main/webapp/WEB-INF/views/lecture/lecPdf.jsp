@@ -8,10 +8,9 @@
 </head>
 <body>
 강의 피디엡보기
-<iframe src="/resources/pdfs/"></iframe>
+<iframe src="/resources/pdfs/${lecPdf.attachedPdfName}"></iframe>
 
 
 
-${lectureList[0].attachedPdfName}
 </body>
 </html>
