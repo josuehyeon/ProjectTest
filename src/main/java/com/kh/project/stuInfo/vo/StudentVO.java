@@ -10,8 +10,8 @@ public class StudentVO {
 	private int stuYear;
 	private int stuSem;
 	private int stuStatus;
-	private MemberVO memberInfo;
 	
+	private MemberVO memberInfo;
 	
 	
 	public int getStuNo() {
