@@ -70,17 +70,7 @@
 		WHERE  MEM_NO = #{memNo} 
 	</update>
 	
-	<select id="selectMyInfoForGraduation" resultMap="student">
-		SELECT  S.STU_NO
-			  , M.MEM_NAME
-			  , S.STU_YEAR
-			  , S.COLL_NO
-			  , S.MAJOR_CODE
-			  , S.MINOR_CODE
-		FROM  MEMBER M,  STUDENT S
-		WHERE M.MEM_NO = S.STU_NO
-		AND   S.STU_NO = #{memNo}
-	</select>
+
 	
 
 </mapper>

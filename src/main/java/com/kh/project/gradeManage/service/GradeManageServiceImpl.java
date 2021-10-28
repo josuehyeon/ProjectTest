@@ -29,7 +29,7 @@ public class GradeManageServiceImpl implements GradeManageService {
 
 	@Override //졸업 페이지에 뿌릴 학생 정보
 	public StudentVO selectMyInfoForGraduation(int memNo) {
-		return sqlSession.selectOne("memberMapper.selectMyInfoForGraduation", memNo);
+		return sqlSession.selectOne("studentMapper.selectMyInfoForGraduation", memNo);
 	}
 
 	@Override //학생 성적 리스트(F학점 제외)
