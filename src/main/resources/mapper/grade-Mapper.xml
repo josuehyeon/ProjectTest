@@ -30,6 +30,7 @@
 		<id 		column="SEM_ID" 		property="semId"/>
 		<result 	column="YEAR" 			property="year"/>
 		<result 	column="SEMESTER" 		property="semester"/>
+		<result 	column="SEM_NAME" 		property="semName"/>
 		<!-- <collection property="stuGradeList" resultMap="stuGrade"/> -->
 	</resultMap>
 	
@@ -46,6 +47,15 @@
 	</resultMap>
 	
 	
+
+	<!-- 학년/학기 리스트 -->
+	<select id="selectSemesterList" resultMap="semester">
+		SELECT   SEM_ID
+				,SEM_NAME
+		FROM     SEMESTER
+		ORDER BY SEM_ID DESC			 
+	</select>
+
 	<!-- 학생 학점 목록 -->	
 	<select id="selectStuGradeList" resultMap="stuGrade">
 		SELECT   S.YEAR
@@ -64,15 +74,45 @@
 		  <if test="semId != null and semId != 0">
 			  AND S.SEM_ID = #{semId}
 		  </if>
+		  AND SG.STU_NO = #{stuNo}
 	</select>
 	
-	<!-- 학년/학기 리스트 -->
-	<select id="selectSemesterList" resultMap="semester">
-		SELECT   SEM_ID
-		FROM     SEMESTER
-		ORDER BY SEM_ID DESC			 
+	<!-- 졸업페이지: 학생 학점 목록(F제외) -->	
+	<select id="selectStuGradeListForGraduation" resultMap="stuGrade">
+		SELECT   S.YEAR
+			 ,   S.SEMESTER
+			 ,   S.SEM_ID
+			 ,  SG.LEC_ID 
+			 ,   L.LEC_NAME
+			 ,   L.LEC_CREDIT 
+			 ,  SG.STU_NO 
+			 ,  SG.GRADE 
+			 ,   G.SCORE
+		FROM STU_GRADE SG , LECTURE L , GRADE G, SEMESTER S
+		WHERE SG.LEC_ID = L.LEC_ID
+		  AND SG.GRADE  = G.GRADE
+		  AND SG.SEM_ID = S.SEM_ID
+		  AND SG.GRADE != 'F'
+		  <if test="semId != null and semId != 0">
+			  AND S.SEM_ID = #{semId}
+		  </if>
+		  AND SG.STU_NO = #{stuNo}
 	</select>
-	
+
+	<!-- 총 이수학점, 평점평균 -->
+	<select id="totalSumAvg" resultMap="stuGrade">
+	SELECT  SUM(L.LEC_CREDIT) LEC_CREDIT
+          , AVG(G.SCORE) SCORE
+	FROM STU_GRADE SG , LECTURE L , GRADE G, SEMESTER S
+	WHERE SG.LEC_ID = L.LEC_ID
+	  AND SG.GRADE  = G.GRADE
+	  AND SG.SEM_ID = S.SEM_ID
+	  AND SG.GRADE  != 'F'
+		  <if test="semId != null and semId != 0">
+			  AND S.SEM_ID = #{semId}
+		  </if>
+		  AND SG.STU_NO = #{stuNo}
+	</select>	
 	
 </mapper>
 
