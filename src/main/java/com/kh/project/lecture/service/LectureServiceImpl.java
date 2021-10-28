@@ -81,5 +81,10 @@ public class LectureServiceImpl implements LectureService{
 	public int selectNextNumber() {
 		return sqlSession.selectOne("lectureMapper.selectNextNumber");
 	}
+
+	@Override
+	public int insertPdf(LectureVO lectureVO) {
+		return sqlSession.insert("lectureMapper.insertPdf", lectureVO);
+	}
 	
 }

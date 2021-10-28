@@ -78,7 +78,7 @@
                </div>
                <div class="col-6">
                   <label for="formFile" class="form-label">강의자료첨부</label>
-                    <input name="f" class="form-control" type="file" id="formFile">
+                    <input name="file" class="form-control" type="file" id="formFile">
                </div>
                <div class="col-6 text-center">
                    <input type="submit" class="btn btn-primary" value="REGISTRATION">

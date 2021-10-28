@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.lecture.vo.LectureViewVO;
+import com.kh.project.lecture.vo.PdfVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
 import com.kh.project.stuManage.vo.EmpVO;
@@ -43,4 +44,7 @@ public interface LectureService {
 	
 	//다음 pdf 그거 조회
 	int selectNextNumber();
+	
+	//pdf 등록
+	int insertPdf(LectureVO lectureVO);
 }
