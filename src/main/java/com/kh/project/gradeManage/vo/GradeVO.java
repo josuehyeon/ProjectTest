@@ -2,7 +2,7 @@ package com.kh.project.gradeManage.vo;
 
 public class GradeVO {
 	public String grade;
-	public int score;
+	public double score;
 	
 	public String getGrade() {
 		return grade;
@@ -10,10 +10,10 @@ public class GradeVO {
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
 	
