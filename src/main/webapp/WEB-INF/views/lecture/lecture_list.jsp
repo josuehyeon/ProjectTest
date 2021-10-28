@@ -27,7 +27,7 @@
 <c:forEach items="${lectureList}" var="lectureInfo">
     <tr>
       <th scope="row">${lectureInfo.lecId }</th>
-      <td><a href="">${lectureInfo.lecName }</a></td>
+      <td><a href="/lecture/lecPdf?lecId=${lectureInfo.lecId }">${lectureInfo.lecName }</a></td>
       <td>${lectureInfo.lecCredit }</td>
       <td>${lectureInfo.collName }</td>
       <td>${lectureInfo.deptName }</td>

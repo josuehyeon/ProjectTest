@@ -82,9 +82,8 @@ public class LectureController {
 	@RequestMapping("/regLecture")
 	public String regLecture(LectureVO lectureVO, MultipartHttpServletRequest multi) {
 		// 첨부파일 upload---------
-		// 파일이 첨부되는 input 태그의 name 속성 값
-		Iterator<String> inputNames = multi.getFileNames();
-		/* inputNames 안에는 file1, file2들어있다 */
+		
+		
 
 		// 첨부될 폴더 지정
 		String uploadPath = "C:\\Users\\조현재\\git\\ProjectTest\\src\\main\\webapp\\resources\\pdfs\\";
@@ -103,8 +102,7 @@ public class LectureController {
 		// 다음에 들어갈 LEC_ID 조회
 		String lecId = lectureService.selectNextLecId();
 
-		while (inputNames.hasNext()) { /* input태그 file속성 갯수만큼 돈다 */
-			String inputName = inputNames.next();
+		
 
 			/*
 			 * file.getOriginalFilename(); 원래파일이름 file.getName(); 첨부된파일이름 file.getSize();
@@ -112,9 +110,9 @@ public class LectureController {
 
 			// 실제 첨부 기능
 			try {
-
+				// 파일이 첨부되는 input 태그의 name 속성 값
 				// 단일 첨부
-				MultipartFile file = multi.getFile(inputName); // 모든 첨부파일에대한 객체정보 multi 이 줄이 진짜 파일정보 들고옴
+				MultipartFile file = multi.getFile("file"); // 모든 첨부파일에대한 객체정보 multi 이 줄이 진짜 파일정보 들고옴
 				// 경로+시간+이름
 				String attachedFileName = FileUploadUtil.getNowDateTime() + "_" + file.getOriginalFilename();
 				// 경로+시간+이름
@@ -137,8 +135,7 @@ public class LectureController {
 				e.printStackTrace();
 			}
 
-		}
-
+		
 		// 강의정보 insert
 		
 		lectureVO.setLecId(lecId);
@@ -179,6 +176,13 @@ public class LectureController {
 	public String updateLecture(Model model, LectureVO lectureVO) {
 		lectureService.updateLecture(lectureVO);
 		return "redirect:/lecture/selectLecture";
+	}
+	
+	//강의자료보기
+	@GetMapping("/lecPdf")
+	public String showlecPdf(Model model, LectureViewVO lectureViewVO) {
+		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
+		return "lecture/lecPdf";
 	}
 
 }

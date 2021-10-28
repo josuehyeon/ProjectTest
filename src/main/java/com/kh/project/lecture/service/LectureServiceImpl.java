@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.lecture.vo.LectureViewVO;
+import com.kh.project.lecture.vo.PdfVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
 import com.kh.project.stuManage.vo.EmpVO;
@@ -85,6 +86,11 @@ public class LectureServiceImpl implements LectureService{
 	@Override
 	public int insertPdf(LectureVO lectureVO) {
 		return sqlSession.insert("lectureMapper.insertPdf", lectureVO);
+	}
+
+	@Override
+	public PdfVO selectLecPdf() {
+		return sqlSession.selectOne("lectureMapper.selectLecPdf");
 	}
 	
 }

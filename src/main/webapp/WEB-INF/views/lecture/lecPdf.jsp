@@ -7,12 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-메인 
-강의리스트
-<a href="/lecture/selectLecture">강의리스트</a>
-<a href="/lecture/goRegLecture">강의등록</a>
-<a href="/lecture/lecPdf">강의자료보기</a>
-강의수정
-강의삭제 
+강의 피디엡보기
+<iframe src="/resources/pdfs/"></iframe>
+
+
+
+${lectureList[0].attachedPdfName}
 </body>
 </html>
