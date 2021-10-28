@@ -67,7 +67,7 @@
 			  , S.MINOR_CODE
 		FROM  MEMBER M,  STUDENT S
 		WHERE M.MEM_NO = S.STU_NO
-		AND   S.STU_NO = #{memNo}
+		AND   S.STU_NO = #{memNo} 
 	</select>
 
 </mapper>

@@ -36,8 +36,8 @@ public class StuManageController {
 		//로그인 세션 정보 가져오기
 		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
 		//휴학 신청에 memNo를 넣어서 특정 학생의 데이터를 가져옴
-		int memNo = member.getMemNo();
-		model.addAttribute("stopStudyInfo", stuManageService.goStopStudy(memNo));
+		int stuNo = member.getMemNo();
+		model.addAttribute("stopStudyInfo", stuManageService.goStopStudy(stuNo));
 		return "stuManage/stopStudy";
 	}
 	
