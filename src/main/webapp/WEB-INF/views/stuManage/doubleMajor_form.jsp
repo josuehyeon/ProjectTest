@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/stuManage/js/changeMajor_form.js?ver=013"></script>
+<script type="text/javascript" src="/resources/stuManage/js/doubleMajor_form.js?ver=013"></script>
 <style type="text/css">
 .stuInfo{
 	width: 900px;
@@ -60,7 +60,7 @@ tr, td{
 </tr>
 </table>
 <table> 
-	<caption align="top">전과 신청</caption>
+	<caption align="top">복수전공 신청</caption>
  	<colgroup>
 		<col width="10%">
 		<col width="20%">
@@ -92,7 +92,7 @@ tr, td{
 	</td>
 </tr>
 <tr>
-	<td>전과사유</td>
+	<td>복수전공사유</td>
 	<td colspan="3">
 		<input type="text" name="" style="border-color: white; width: 100%;">
 	</td>
@@ -101,7 +101,7 @@ tr, td{
 
 
 <table class="table">
-	<caption align="top">전과 신청 내역</caption>	
+	<caption align="top">복수전공 신청 내역</caption>	
   <thead>
     <tr>
       <th scope="col">No</th>
