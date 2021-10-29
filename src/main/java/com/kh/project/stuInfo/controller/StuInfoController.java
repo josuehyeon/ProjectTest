@@ -91,7 +91,9 @@ public class StuInfoController {
 	
 	//이동 "시간표 조회"
 	@GetMapping("/chkTimetableJsp")
-	public String chkTimetableJsp() {
+	public String chkTimetableJsp(Model model) {
+		//시간표에 필요한 강의 정보 목록
+		model.addAttribute("timetable", stuInfoService.selectTimetableList());
 		return "stuInfo/chk_timetable";
 	}
 	
