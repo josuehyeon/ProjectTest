@@ -1,5 +1,7 @@
 package com.kh.project.stuManage.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -8,9 +10,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kh.project.lecture.service.LectureService;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuManage.service.StuManageService;
+import com.kh.project.stuManage.vo.CollegeVO;
+import com.kh.project.stuManage.vo.DeptVO;
 
 @Controller
 @RequestMapping("/stuManage")
@@ -72,7 +78,27 @@ public class StuManageController {
 		return "stuManage/goExit";
 	}
 	
+	//수현10-29
 	
+	@Resource(name = "lectureService")
+	private LectureService lectureService;
+	
+	//전과신청하러가기
+	@GetMapping("/goChangeMajor")
+	public String goChangeMajor(Model model) {
+		model.addAttribute("collegeList", lectureService.selectCollegeList());
+		model.addAttribute("deptList", lectureService.selectDeptList());
+		return "stuManage/changeMajor_form";
+	}
+	
+	//전과신청페이지 에이작스
+	@ResponseBody
+	@GetMapping("/selectCollAjax")
+	public List<DeptVO> selectCollAjax(CollegeVO collegeVO) {
+		// 학과 목록 조회
+		List<DeptVO> deptList = lectureService.selectDeptList2(collegeVO);
+		return deptList;
+	}
 	
 	
 	
