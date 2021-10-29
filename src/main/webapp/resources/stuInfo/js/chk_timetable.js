@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 	$('.each').each(function(index, element){
 		// 색깔을 담는 배열
-		var colorArray = ["#ffadad", "#fcbf49", "#FFE08C", "#ccff33", "#bbdefb", "#9381ff", "#ffa6c1", "#B2CCFF", "#B5B2FF", "#D1B2FF", "#FFB2F5", "#FFB2D9", "#D5D5D5", "#BDBDBD"];
+		var colorArray = ["#dc2f02", "#ffd60a", "#c1fba4", "#90f1ef", "#9381ff", "#ffa6c1", "#B2CCFF", "#B5B2FF", "#D1B2FF", "#FFB2F5", "#FFB2D9", "#D5D5D5", "#BDBDBD"];
 	
 		var day = $(element).children().eq(0).text(); //mon , tue
 		var timeStart = $(element).children().eq(1).text(); //9, 10

@@ -26,7 +26,7 @@ td{
 	height: 50px;
 }
 </style>
-<script type="text/javascript" src="/resources/stuInfo/js/chk_timetable.js?ver=55"></script>
+<script type="text/javascript" src="/resources/stuInfo/js/chk_timetable.js?ver=58"></script>
 </head>
 <body>
 	
