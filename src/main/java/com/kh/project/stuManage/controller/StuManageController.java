@@ -101,6 +101,13 @@ public class StuManageController {
 	}
 	
 	
+	//복수전공신청하러가기
+	@GetMapping("/goDoubleMajor")
+	public String goDoubleMajor(Model model) {
+		model.addAttribute("collegeList", lectureService.selectCollegeList());
+		model.addAttribute("deptList", lectureService.selectDeptList());
+		return "stuManage/doubleMajor_form";
+	}
 	
 }
 

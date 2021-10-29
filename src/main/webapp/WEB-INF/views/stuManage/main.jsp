@@ -18,8 +18,8 @@
 
 
 <a href="">전과 안내</a>
-<a href="">전과 신청</a>
+<a href="/stuManage/goChangeMajor">전과 신청</a>
 <a href="">복수전공 안내</a>
-<a href="">복수전공 신청</a>
+<a href="/stuManage/goDoubleMajor">복수전공 신청</a>
 </body>
 </html>
