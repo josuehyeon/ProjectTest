@@ -17,6 +17,16 @@
 		<association property="pdfVO" resultMap="pdf"></association>
 	</resultMap>
 	
+		<!-- 강의 시간표 테스트용 임시 -->
+	<resultMap type="com.kh.project.lecture.vo.LectureTimeVO" id="lectureTime">
+		<id 	column="TIME_ID" 		property="timeId"/>
+		<result column="DAY" 			property="day"/>
+		<result column="TIME_START" 	property="timeStart"/>
+		<result column="LEC_ROOM" 		property="lecRoom"/>
+		<result column="LEC_ID" 		property="lecId"/>
+		<result column="TIME" 			property="time"/>
+	</resultMap>	
+	
 	<resultMap type="com.kh.project.lecture.vo.LectureViewVO" id="lectureView">
 		<id column="LEC_NAME" property="lecName"/>
 		<result column="LEC_CREDIT" property="lecCredit"/>
@@ -129,6 +139,17 @@
 		FROM LECTURE_PDF
 		WHERE LEC_ID=#{lecId}
 	</select>
+	
+	<!-- 강의시간표 작동 확인용 임시 -->
+	<select id="selectTimetableList" resultMap="lectureTime">
+		SELECT   TIME_ID 
+        	    ,DAY
+            	,TIME_START
+            	,TIME
+            	,LEC_ROOM
+            	,LEC_ID
+		FROM     LECTURE_TIME
+	</select>		
 </mapper>
 
 
