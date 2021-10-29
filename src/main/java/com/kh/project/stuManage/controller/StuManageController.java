@@ -18,6 +18,7 @@ public class StuManageController {
 	@Resource(name = "stuManageService")
 	private StuManageService stuManageService;
 	
+	
 	//메인으로가기
 	@GetMapping("/goMain")
 	public String goMain() {
@@ -41,10 +42,10 @@ public class StuManageController {
 		return "stuManage/stopStudy";
 	}
 	
-	//휴학 신청 목록 나오기
+	//휴학 신청 페이지 머무르기
 	@PostMapping("/goStopStudy")
-	public String goStopStudy() {
-		return "stuManage/stopStudy";
+	public String goStopStudy(Model model) {
+		return "redirect:/stuManage/goStopStudy";
 	}
 	
 	//복학 안내
