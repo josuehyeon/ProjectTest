@@ -179,10 +179,10 @@ public class LectureController {
 	}
 	
 	//강의자료보기
+	@ResponseBody
 	@GetMapping("/lecPdf")
-	public String showlecPdf(Model model, LectureVO lectureVO) {
-		model.addAttribute("lecPdf", lectureService.selectLecPdf(lectureVO));
-		return "lecture/lecPdf";
+	public PdfVO showlecPdf(LectureVO lectureVO) {
+		return lectureService.selectLecPdf(lectureVO);
 	}
 
 }

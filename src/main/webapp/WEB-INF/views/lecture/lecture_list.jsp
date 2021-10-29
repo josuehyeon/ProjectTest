@@ -6,7 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/sample/js/lecture_list.js?ver=222222222"></script>
+<style type="text/css">
+iframe {
+	width: 100%;
+	height: 95%;
+	
+}
+.modal-content{
+	height: 900px;
+}
+</style>
+<script type="text/javascript" src="/resources/sample/js/lecture_list.js?ver=222222222222259"></script>
 </head>
 <body>
 
@@ -27,7 +37,7 @@
 <c:forEach items="${lectureList}" var="lectureInfo">
     <tr>
       <th scope="row">${lectureInfo.lecId }</th>
-      <td><a href="/lecture/lecPdf?lecId=${lectureInfo.lecId }">${lectureInfo.lecName }</a></td>
+      <td><a data-lecId="${lectureInfo.lecId }" class="pdf">${lectureInfo.lecName }</a></td>
       <td>${lectureInfo.lecCredit }</td>
       <td>${lectureInfo.collName }</td>
       <td>${lectureInfo.deptName }</td>
@@ -39,7 +49,29 @@
 	  </td>
     </tr>
 </c:forEach>
+
+
+
+
+
+
+
   </tbody>
 </table>
+
+<div class="modal" tabindex="-1" id="pdfModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h10 class="modal-title">강의자료</h10>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe src="/resources/pdfs/${lecPdf.attachedPdfName}"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
