@@ -107,22 +107,16 @@ tr, td{
       <th scope="col">No</th>
       <th scope="col">소속대학</th>
       <th scope="col">소속학과</th>
-      <th scope="col">학번</th>
-      <th scope="col">이름</th>
-      <th scope="col">학년</th>
-      <th scope="col">학적상태</th>
       <th scope="col">변경대학</th>
       <th scope="col">변경학과</th>
-      <th scope="col">신청상태</th>
       <th scope="col">신청일</th>
+      <th scope="col">승인일</th>
+      <th scope="col">승인여부</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
       <td></td>
       <td></td>
       <td></td>

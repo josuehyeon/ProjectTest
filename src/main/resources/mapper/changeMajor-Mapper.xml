@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 모든 SQL문을 mapper태그 안에 작성 -->
+<mapper namespace="changeMajorMapper">
+	<resultMap type="com.kh.project.stuManage.vo.ChangeMajorVO" id="changeMajor">
+		<id column="CHANGE_ID" property="changeId"/>
+		<result column="STATUS" property="status"/>
+		<result column="INSERT_DATE" property="insertDate"/>
+		<result column="UPDATE_DATE" property="updateDate"/>
+		<result column="REASON" property="reason"/>
+		<result column="STU_NO" property="stuNo"/>
+		<result column="COLL_NO" property="collNo"/>
+		<result column="DEPT_ID" property="deptId"/>
+	</resultMap>
+
+	<!-- 2021-10-30 수현-->
+	<!-- 학생정보 SELECT -->
+	<select id="selectStuInfoForChange" resultMap="studentMapper.student">
+	SELECT 
+	    MEM_NAME
+	    , DECODE(MEM_GEN, 'F', '여자', 'M', '남자') AS MEM_GEN
+	    , MEM_BIRTH
+	    , C.COLL_NO
+	    , COLL_NAME
+	    , S.STU_NO
+	    , S.MAJOR_CODE
+	    , (SELECT DEPT_NAME
+	        FROM DEPT
+	        WHERE DEPT_ID = (SELECT MAJOR_CODE
+	                        FROM STUDENT
+	                        WHERE STU_NO = S.STU_NO
+	                        )) AS MAJOR_NAME
+	    , MINOR_CODE
+	    , (SELECT DEPT_NAME
+	        FROM DEPT
+	        WHERE DEPT_ID = (SELECT MINOR_CODE
+	                        FROM STUDENT
+	                        WHERE STU_NO = S.STU_NO
+	                        )) AS MINOR_NAME
+	    , DECODE(STU_STATUS, 0, '재학', 1, '휴학', 2, '복학', 3, '자퇴', '제적') AS STU_STATUS
+	FROM MEMBER M, STUDENT S, COLLEGE C, DEPT D
+	WHERE M.MEM_NO=S.MEM_NO
+	AND C.COLL_NO=S.COLL_NO
+	AND D.DEPT_ID=S.MAJOR_CODE
+	</select>
+	
+	<!-- 전과신청하면 정보저장될것 -->
+	<insert id="insertChangeMajorTable">
+	INSERT INTO CHANGE_MAJOR
+	(CHANGE_ID
+		, STATUS
+		, INSERT_DATE
+		, UPDATE_DATE
+		, REASON
+		, STU_NO
+		, COLL_NO
+		, DEPT_ID
+	)VALUES(
+	(SELECT NVL(MAX(TO_NUMBER(SUBSTR(CHANGE_ID, 5, 3))) + 1, 1) FROM CHANGE_MAJOR) AS CHANGE_ID
+		, #{status}
+		, #{insertDate}
+		, #{updateDate}
+		, #{reason}
+		, #{stuNo}
+		, #{collNo}
+		, #{deptId}
+	)
+	</insert>
+	
+	<!-- 전과신청내역 조회 -->
+	<select id="selectChangeMajorList" resultMap="changeMajor">
+	SELECT * FROM
+	CHANGE_MAJOR
+	WHERE STU_NO=#{stuNo}
+	</select>
+	
+</mapper>
+
+
