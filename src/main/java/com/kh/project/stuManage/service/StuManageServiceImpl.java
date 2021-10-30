@@ -1,6 +1,8 @@
 package com.kh.project.stuManage.service;
 
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,11 @@ public class StuManageServiceImpl implements StuManageService{
 	@Override
 	public void insertChangeMajorTable(ChangeMajorVO changeMajorVO) {
 		sqlSession.insert("changeMajorMapper.insertChangeMajorTable", changeMajorVO);
+	}
+
+	@Override
+	public List<ChangeMajorVO> selectChangeMajorList(MemberVO memberVO) {
+		return sqlSession.selectList("changeMajorMapper.selectChangeMajorList", memberVO);
 	}
 
 	

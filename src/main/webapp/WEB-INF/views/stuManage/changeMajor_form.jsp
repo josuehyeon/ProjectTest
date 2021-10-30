@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/stuManage/js/changeMajor_form.js?ver=013"></script>
+<script type="text/javascript" src="/resources/stuManage/js/changeMajor_form.js?ver=0123"></script>
 <style type="text/css">
 .stuInfo{
 	width: 900px;
@@ -123,16 +123,18 @@ tr, td{
     </tr>
   </thead>
   <tbody>
+  <c:forEach items="${changeMajorList }" var="changeMajorInfo">
     <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row">${changeMajorInfo.changeId }</th>
+      <td>${changeMajorInfo.collNo }</td>
+      <td>${changeMajorInfo.deptId }</td>
+      <td>${changeMajorInfo.upColl }</td>
+      <td>${changeMajorInfo.upDept }</td>
+      <td>${changeMajorInfo.insertDate }</td>
+      <td>${changeMajorInfo.updateDate }</td>
+      <td>${changeMajorInfo.status }</td>
     </tr>
+    </c:forEach>
   </tbody>
 </table>
 </div>

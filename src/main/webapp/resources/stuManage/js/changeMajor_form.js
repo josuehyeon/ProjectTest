@@ -14,7 +14,7 @@ $(document).ready(function(){
 	        	$('#tableDiv').empty();
 	        	
 	        	var str ='';
-		        str += '<select class="form-select" name="deptId" id="deptList">';
+		        str += '<select class="form-select" name="upDept" id="deptList">';
 		        $(result.deptList).each(function(index, element){
 	          	  str += '<option value="'+ element.deptId + '">' + element.deptName + '</option>';	
 	            });

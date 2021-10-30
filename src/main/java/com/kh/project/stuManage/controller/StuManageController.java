@@ -93,13 +93,16 @@ public class StuManageController {
 		model.addAttribute("deptList", lectureService.selectDeptList());
 		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
 		model.addAttribute("stuInfo", stuManageService.selectStuInfoForChange(result));
+		model.addAttribute("changeMajorList", stuManageService.selectChangeMajorList(result));
 		return "stuManage/changeMajor_form";
 	}
 
 	//전과신청
 	@PostMapping("/changeMajor")
-	public String changeMajor(ChangeMajorVO changeMajorVO) {
+	public String changeMajor(ChangeMajorVO changeMajorVO, StudentVO studentVO, Model model, HttpSession session) {
+		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
 		stuManageService.insertChangeMajorTable(changeMajorVO);
+		model.addAttribute("changeMajorList", stuManageService.selectChangeMajorList(result));
 		return "redirect:/stuManage/goChangeMajor";
 	}
 	

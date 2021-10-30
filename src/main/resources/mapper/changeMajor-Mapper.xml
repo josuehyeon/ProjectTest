@@ -79,7 +79,7 @@
 	<select id="selectChangeMajorList" resultMap="changeMajor">
 	SELECT * FROM
 	CHANGE_MAJOR
-	WHERE STU_NO=#{stuNo}
+	WHERE STU_NO=#{memNo}
 	</select>
 	
 </mapper>
