@@ -24,6 +24,7 @@ tr, td{
 </head>
 <body>
 <div class="stuInfo">
+<form action=""></form>
 <table> 
 	<caption align="top">학생정보</caption>
  	<colgroup>
