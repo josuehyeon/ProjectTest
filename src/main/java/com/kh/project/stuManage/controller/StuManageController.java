@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.lecture.service.LectureService;
+import com.kh.project.portal.service.PortalService;
 import com.kh.project.portal.vo.MemberVO;
+import com.kh.project.stuInfo.service.StuInfoService;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.service.StuManageService;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
@@ -28,6 +30,14 @@ public class StuManageController {
 	@Resource(name = "stuManageService")
 	private StuManageService stuManageService;
 	
+	@Resource(name = "stuInfoService")
+	private StuInfoService stuInfoService;
+	
+	@Resource(name = "portalService")
+	private PortalService portalService;
+	
+	@Resource(name = "lectureService")
+	private LectureService lectureService;
 	
 	//메인으로가기
 	@GetMapping("/goMain")
@@ -84,8 +94,6 @@ public class StuManageController {
 	
 	//수현10-29
 	
-	@Resource(name = "lectureService")
-	private LectureService lectureService;
 	
 	//전과신청하러가기
 	@GetMapping("/goChangeMajor")
@@ -133,6 +141,37 @@ public class StuManageController {
 			stuManageService.insertDoubleMajorTable(doubleMajorVO);
 			return "redirect:/stuManage/goDoubleMajor";
 		}
+	//학생 조회
+	@GetMapping("/showStuList")
+	public String showStuList(DeptVO deptVO , Model model) {
+		//단과 대학 목록 조회
+		model.addAttribute("collList", stuManageService.selectCollegeList());
+		//학과 목록 조회
+		model.addAttribute("deptList", stuManageService.selectDeptList2(deptVO));
+		//학생 목록 조회
+		//model.addAttribute("studentList", stuManageService.selectStudentList());
+		return "stuManage/show_stu_info";
+	}		
+	//학생 상세 조회 //ksj
+	@GetMapping("/showStuDetail")
+	public String showStuDetail(HttpSession session , Model model,  int memNo) {
+
+		//학생 테이블에서 가져온 데이터
+		model.addAttribute("studentInfo", stuInfoService.selectStuMyInfo(memNo));
+		//멤버 테이블에서 가져온 데이터
+		model.addAttribute("memberInfo", portalService.selectMemMyInfo(memNo));
+		
+		return "stuManage/show_stu_detail";
+	}	
+	
+	@ResponseBody
+	@PostMapping("/selectCollegeAjax")
+	public List<DeptVO> selectCollegeAjax(CollegeVO collegeVO) {
+		// 학과 목록 조회
+		return lectureService.selectDeptList2(collegeVO);
+	}	
+		
+		
 }
 
 

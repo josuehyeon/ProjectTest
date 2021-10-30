@@ -21,5 +21,9 @@
 <a href="/stuManage/goChangeMajor">전과 신청</a>
 <a href="">복수전공 안내</a>
 <a href="/stuManage/goDoubleMajor">복수전공 신청</a>
+
+<br><br>
+<a href="/stuManage/showStuList">학생조회</a>
+<!-- <a href="/stuManage/showStuDetail?memNo=blabla">학생 상세 조회 -->
 </body>
 </html>

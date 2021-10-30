@@ -5,6 +5,8 @@ import java.util.List;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
+import com.kh.project.stuManage.vo.CollegeVO;
+import com.kh.project.stuManage.vo.DeptVO;
 import com.kh.project.stuManage.vo.DoubleMajorVO;
 
 public interface StuManageService {
@@ -25,4 +27,13 @@ public interface StuManageService {
 	
 	//복수전공 리스트 조회
 	List<DoubleMajorVO> selectDoubleMajorList(MemberVO memberVO);
+
+	//단과 대학 목록 조회 (ksj)
+	List<CollegeVO> selectCollegeList();
+	
+	//학과 목록 조회 (ksj)
+	List<DeptVO> selectDeptList2(DeptVO deptVO);
+	
+	//학생 목록 조회 (ksj)
+	List<StudentVO> selectStudentList();
 }

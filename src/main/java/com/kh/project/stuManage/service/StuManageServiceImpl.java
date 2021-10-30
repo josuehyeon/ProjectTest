@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
+import com.kh.project.stuManage.vo.CollegeVO;
+import com.kh.project.stuManage.vo.DeptVO;
 import com.kh.project.stuManage.vo.DoubleMajorVO;
 
 
@@ -48,7 +50,20 @@ public class StuManageServiceImpl implements StuManageService{
 		return sqlSession.selectList("doubleMajorMapper.selectDoubleMajorList", memberVO);
 	}
 
-	
+	@Override	//단과 대학 목록 조회
+	public List<CollegeVO> selectCollegeList() {
+		return sqlSession.selectList("collegeMapper.selectCollegeList");
+	}
+
+	@Override	//학과 목록 조회
+	public List<DeptVO> selectDeptList2(DeptVO deptVO) {
+		return sqlSession.selectList("deptMapper.selectDeptList2", deptVO);
+	}
+
+	@Override	//학생 목록 조회
+	public List<StudentVO> selectStudentList() {
+		return sqlSession.selectList("memberMapper.selectStudentList");
+	}	
 
 	
 }
