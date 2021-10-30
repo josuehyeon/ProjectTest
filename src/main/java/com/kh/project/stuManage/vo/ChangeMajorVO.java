@@ -11,8 +11,36 @@ public class ChangeMajorVO {
 	private String deptId;
 	private int upColl;
 	private String upDept;
+	private String collName;
+	private String deptName;
+	private String upCollName;
+	private String upDeptName;
 	
 	
+	public String getCollName() {
+		return collName;
+	}
+	public void setCollName(String collName) {
+		this.collName = collName;
+	}
+	public String getDeptName() {
+		return deptName;
+	}
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+	public String getUpCollName() {
+		return upCollName;
+	}
+	public void setUpCollName(String upCollName) {
+		this.upCollName = upCollName;
+	}
+	public String getUpDeptName() {
+		return upDeptName;
+	}
+	public void setUpDeptName(String upDeptName) {
+		this.upDeptName = upDeptName;
+	}
 	public int getUpColl() {
 		return upColl;
 	}

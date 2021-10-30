@@ -19,6 +19,7 @@
 		<mapper resource="/mapper/student-Mapper.xml"/>
 		<mapper resource="/mapper/lecture-Mapper.xml"/>
 		<mapper resource="/mapper/changeMajor-Mapper.xml"/>
+		<mapper resource="/mapper/doubleMajor-Mapper.xml"/>
 	</mappers>
 </configuration>
 

@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/stuManage/js/changeMajor_form.js?ver=0123"></script>
+<script type="text/javascript" src="/resources/stuManage/js/changeMajor_form.js?ver=01223"></script>
 <style type="text/css">
 .stuInfo{
 	width: 900px;
@@ -24,8 +24,7 @@ tr, td{
 </head>
 <body>
 <div class="stuInfo">
-<form action="/stuManage/changeMajor" method="post">
-<input type="hidden" name="status" value="${stuInfo.stuStatus }">
+<form action="/stuManage/changeMajor" method="post" id="changeMajor">
 <input type="hidden" name="stuNo" value="${stuInfo.stuNo }">
 <input type="hidden" name="collNo" value="${stuInfo.collegeInfo.collNo }">
 <input type="hidden" name="deptId" value="${stuInfo.majorCode }">
@@ -103,7 +102,7 @@ tr, td{
 	</td>
 </tr>
 <tr>
-	<td colspan="4"><input type="submit" value="신청하기"></td>
+	<td colspan="4"><input type="button" value="신청하기" onclick="changeMajor();"></td>
 </tr>
 </table>
 </form>
@@ -126,10 +125,10 @@ tr, td{
   <c:forEach items="${changeMajorList }" var="changeMajorInfo">
     <tr>
       <th scope="row">${changeMajorInfo.changeId }</th>
-      <td>${changeMajorInfo.collNo }</td>
-      <td>${changeMajorInfo.deptId }</td>
-      <td>${changeMajorInfo.upColl }</td>
-      <td>${changeMajorInfo.upDept }</td>
+      <td>${changeMajorInfo.collName }</td>
+      <td>${changeMajorInfo.deptName }</td>
+      <td>${changeMajorInfo.upCollName }</td>
+      <td>${changeMajorInfo.upDeptName }</td>
       <td>${changeMajorInfo.insertDate }</td>
       <td>${changeMajorInfo.updateDate }</td>
       <td>${changeMajorInfo.status }</td>

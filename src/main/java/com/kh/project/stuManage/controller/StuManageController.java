@@ -20,6 +20,7 @@ import com.kh.project.stuManage.service.StuManageService;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
+import com.kh.project.stuManage.vo.DoubleMajorVO;
 
 @Controller
 @RequestMapping("/stuManage")
@@ -88,7 +89,7 @@ public class StuManageController {
 	
 	//전과신청하러가기
 	@GetMapping("/goChangeMajor")
-	public String goChangeMajor(Model model, StudentVO studentVO, HttpSession session) {
+	public String goChangeMajor(Model model, HttpSession session) {
 		model.addAttribute("collegeList", lectureService.selectCollegeList());
 		model.addAttribute("deptList", lectureService.selectDeptList());
 		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
@@ -99,10 +100,8 @@ public class StuManageController {
 
 	//전과신청
 	@PostMapping("/changeMajor")
-	public String changeMajor(ChangeMajorVO changeMajorVO, StudentVO studentVO, Model model, HttpSession session) {
-		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
+	public String changeMajor(ChangeMajorVO changeMajorVO, Model model, HttpSession session) {
 		stuManageService.insertChangeMajorTable(changeMajorVO);
-		model.addAttribute("changeMajorList", stuManageService.selectChangeMajorList(result));
 		return "redirect:/stuManage/goChangeMajor";
 	}
 	
@@ -118,12 +117,22 @@ public class StuManageController {
 	
 	//복수전공신청하러가기
 	@GetMapping("/goDoubleMajor")
-	public String goDoubleMajor(Model model) {
+	public String goDoubleMajor(Model model, HttpSession session) {
+		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
+		model.addAttribute("stuInfo", stuManageService.selectStuInfoForChange(result));
+		model.addAttribute("changeMajorList", stuManageService.selectChangeMajorList(result));
 		model.addAttribute("collegeList", lectureService.selectCollegeList());
 		model.addAttribute("deptList", lectureService.selectDeptList());
+		model.addAttribute("doubleMajorList", stuManageService.selectDoubleMajorList(result));
 		return "stuManage/doubleMajor_form";
 	}
 	
+	//복수전공신청
+		@PostMapping("/doubleMajor")
+		public String doubleMajor(DoubleMajorVO doubleMajorVO, Model model, HttpSession session) {
+			stuManageService.insertDoubleMajorTable(doubleMajorVO);
+			return "redirect:/stuManage/goDoubleMajor";
+		}
 }
 
 

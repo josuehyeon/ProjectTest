@@ -14,7 +14,7 @@ $(document).ready(function(){
 	        	$('#tableDiv').empty();
 	        	
 	        	var str ='';
-		        str += '<select class="form-select" name="deptId" id="deptList">';
+		        str += '<select class="form-select" name="doubleDept" id="deptList">';
 		        $(result.deptList).each(function(index, element){
 	          	  str += '<option value="'+ element.deptId + '">' + element.deptName + '</option>';	
 	            });
@@ -36,8 +36,13 @@ $(document).ready(function(){
 
 //함수 선언 영역
 (function($){
-	//aaa = function(){
-	//};
+	doubleMajor = function(){
+		var result = confirm('전과신청하시겠습니까?');
+		
+		if(result){
+			$('#doubleMajor').submit();
+		}
+	};
    
 })(jQuery);
 

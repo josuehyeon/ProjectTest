@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 모든 SQL문을 mapper태그 안에 작성 -->
+<mapper namespace="doubleMajorMapper">
+	<resultMap type="com.kh.project.stuManage.vo.DoubleMajorVO" id="doubleMajor">
+		<id column="DOUBLE_ID" property="doubleId"/>
+		<result column="STATUS" property="status"/>
+		<result column="INSERT_DATE" property="insertDate"/>
+		<result column="UPDATE_DATE" property="updateDate"/>
+		<result column="REASON" property="reason"/>
+		<result column="STU_NO" property="stuNo"/>
+		<result column="COLL_NO" property="collNo"/>
+		<result column="DEPT_ID" property="deptId"/>
+		<result column="DOUBLE_COLL" property="doubleColl"/>
+		<result column="DOUBLE_DEPT" property="doubleDept"/>
+		<result column="COLL_NAME" property="collName"/>
+		<result column="DEPT_NAME" property="deptName"/>
+		<result column="DOUBLE_COLL_NAME" property="doubleCollName"/>
+		<result column="DOUBLE_DEPT_NAME" property="doubleDeptName"/>
+	</resultMap>
+
+	
+	
+	<!-- 복수전공신청하면 정보저장될것 -->
+	<insert id="insertDoubleMajorTable">
+	INSERT INTO DOUBLE_MAJOR
+	(DOUBLE_ID
+		, UPDATE_DATE
+		, REASON
+		, STU_NO
+		, COLL_NO
+		, DEPT_ID
+		, DOUBLE_COLL
+		, DOUBLE_DEPT
+	)VALUES(
+	(SELECT 'DOUBLE_'||LPAD(NVL(MAX(TO_NUMBER(SUBSTR(DOUBLE_ID, 8, 3))), 0)+1, 3, '0') FROM DOUBLE_MAJOR)
+		, #{updateDate}
+		, #{reason}
+		, #{stuNo}
+		, #{collNo}
+		, #{deptId}
+		, #{doubleColl}
+		, #{doubleDept}
+	)
+	</insert>
+	
+	<!-- 복수전공신청내역 조회 -->
+	<select id="selectDoubleMajorList" resultMap="doubleMajor">
+	SELECT 
+		 DOUBLE_ID
+		 , TO_CHAR(INSERT_DATE, 'YYYY-MM-DD') AS INSERT_DATE
+		 , UPDATE_DATE
+		 , STATUS
+	    , (SELECT COLL_NAME FROM COLLEGE WHERE COLL_NO = DM.COLL_NO) AS COLL_NAME
+	    , (SELECT DEPT_NAME FROM DEPT WHERE DEPT_ID = DM.DEPT_ID) AS DEPT_NAME
+	    , (SELECT COLL_NAME FROM COLLEGE WHERE COLL_NO= DM.DOUBLE_COLL) AS DOUBLE_COLL_NAME
+	    , (SELECT DEPT_NAME FROM DEPT WHERE DEPT_ID = DM. DOUBLE_DEPT) AS DOUBLE_DEPT_NAME 	 	
+	FROM
+	DOUBLE_MAJOR DM
+	WHERE STU_NO=#{memNo}
+	ORDER BY DOUBLE_ID DESC
+	</select>
+	
+</mapper>
+
+

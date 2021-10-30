@@ -36,8 +36,13 @@ $(document).ready(function(){
 
 //함수 선언 영역
 (function($){
-	//aaa = function(){
-	//};
+	changeMajor = function(){
+		var result = confirm('복수전공 신청하시겠습니까?');
+		
+		if(result){
+			$('#changeMajor').submit();
+		}
+	};
    
 })(jQuery);
 

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
+import com.kh.project.stuManage.vo.DoubleMajorVO;
 
 
 @Service("stuManageService")
@@ -35,6 +36,16 @@ public class StuManageServiceImpl implements StuManageService{
 	@Override
 	public List<ChangeMajorVO> selectChangeMajorList(MemberVO memberVO) {
 		return sqlSession.selectList("changeMajorMapper.selectChangeMajorList", memberVO);
+	}
+
+	@Override
+	public void insertDoubleMajorTable(DoubleMajorVO doubleMajorVO) {
+		sqlSession.insert("doubleMajorMapper.insertDoubleMajorTable", doubleMajorVO);
+	}
+
+	@Override
+	public List<DoubleMajorVO> selectDoubleMajorList(MemberVO memberVO) {
+		return sqlSession.selectList("doubleMajorMapper.selectDoubleMajorList", memberVO);
 	}
 
 	
