@@ -42,10 +42,10 @@
 	<interceptors>
 		<interceptor>
 			<mapping path="/*/*"/>
-			<exclude-mapping path="/grade/gradeListForGraduationAjax"/>
-			<exclude-mapping path="/grade/gradeListAjax"/>
+			<exclude-mapping path="/*/*Ajax"/>
 			<exclude-mapping path="/portal/loginJsp"/>
 			<exclude-mapping path="/portal/login"/>
+			<exclude-mapping path="/portal/sendMail"/>
 			<beans:ref bean="loginInterceptor"/>
 		</interceptor>
 	</interceptors>

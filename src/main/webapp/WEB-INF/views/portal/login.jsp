@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/portal/js/login.js?ver=4"></script>
+<script type="text/javascript" src="/resources/portal/js/login.js?ver=5"></script>
 </head>
 <body>
 
@@ -17,9 +17,9 @@
 </form>
 
 <!-- 아이디 찾기 Modal 버튼 -->
-<span data-bs-toggle="modal" data-bs-target="#passwordModal">아이디 찾기</span>
+<span data-bs-toggle="modal" data-bs-target="#idModal">아이디 찾기</span>
 <!--아이디 찾기 Modal 내용 -->
-<div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="idModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog"> 
 		<div class="modal-content"> 
 			<div class="modal-header"> 
@@ -61,19 +61,19 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
 			</div>
 			<div class="modal-body">
-				<form action="/member/login" method="post">
+			
+			
+				<form action="/portal/sendMail" method="post">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="ID" name="id" required>
-						<label for="floatingInput">Input your ID</label>
-					</div>
-					<div class="form-floating mb-3">
-						<input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pw" required>
-						<label for="floatingPassword">Input your Password</label>
+						<input type="text" class="form-control" id="floatingInput" placeholder="Email" name="to" required>
+						<label for="floatingInput">Input your Email</label>
 					</div>
 					<div class="col-12 d-grid">
-						<input type="submit" class="btn btn-primary" value="Login" onclick="">
+						<input type="submit" class="btn btn-primary" value="임시 비밀번호 발급">
 					</div>
 				</form>
+				
+				
 			</div>
 			<!-- <div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

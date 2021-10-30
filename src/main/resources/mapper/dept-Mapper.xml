@@ -16,9 +16,11 @@
 
 	<select id="selectDeptList2" resultMap="dept">
 		SELECT DEPT_ID
-			, DEPT_NAME
+			 , DEPT_NAME
 		FROM DEPT
-		WHERE COLL_NO=#{collNo}
+		<if test="collNo != 0 and collNo != null">
+			WHERE COLL_NO=#{collNo}
+		</if>
 	</select>
 </mapper>
 
