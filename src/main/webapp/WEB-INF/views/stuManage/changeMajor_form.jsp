@@ -24,7 +24,11 @@ tr, td{
 </head>
 <body>
 <div class="stuInfo">
-<form action=""></form>
+<form action="/stuManage/changeMajor" method="post">
+<input type="hidden" name="status" value="${stuInfo.stuStatus }">
+<input type="hidden" name="stuNo" value="${stuInfo.stuNo }">
+<input type="hidden" name="collNo" value="${stuInfo.collegeInfo.collNo }">
+<input type="hidden" name="deptId" value="${stuInfo.majorCode }">
 <table> 
 	<caption align="top">학생정보</caption>
  	<colgroup>
@@ -77,7 +81,7 @@ tr, td{
 <tr>
 	<td>변경대학</td>
 	<td>
-		  <select class="form-select" name="collNo" id="collegeList">
+		  <select class="form-select" name="upColl" id="collegeList">
           	<c:forEach items="${collegeList }" var="collegeInfo">
           	  <option value="${collegeInfo.collNo }">${collegeInfo.collName }</option>
           	</c:forEach>
@@ -85,7 +89,7 @@ tr, td{
 	</td>
 	<td>변경학과</td>
 	<td id="tableDiv">
-		 <select class="form-select" name="deptId" id="deptList">
+		 <select class="form-select" name="upDept" id="deptList">
          	<c:forEach items="${deptList }" var="deptInfo">
          	  <option value="${deptInfo.deptId }">${deptInfo.deptName }</option>
          	</c:forEach>
@@ -95,14 +99,14 @@ tr, td{
 <tr>
 	<td>전과사유</td>
 	<td colspan="3">
-		<input type="text" name="" style="border-color: white; width: 100%;">
+		<input type="text" name="reason" style="border-color: white; width: 100%;">
 	</td>
 </tr>
 <tr>
 	<td colspan="4"><input type="submit" value="신청하기"></td>
 </tr>
 </table>
-
+</form>
 
 <table class="table">
 	<caption align="top">전과 신청 내역</caption>	

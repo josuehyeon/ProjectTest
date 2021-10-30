@@ -17,6 +17,7 @@ import com.kh.project.lecture.service.LectureService;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.service.StuManageService;
+import com.kh.project.stuManage.vo.ChangeMajorVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
 
@@ -90,12 +91,16 @@ public class StuManageController {
 	public String goChangeMajor(Model model, StudentVO studentVO, HttpSession session) {
 		model.addAttribute("collegeList", lectureService.selectCollegeList());
 		model.addAttribute("deptList", lectureService.selectDeptList());
-		
-		
 		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
-		
 		model.addAttribute("stuInfo", stuManageService.selectStuInfoForChange(result));
 		return "stuManage/changeMajor_form";
+	}
+
+	//전과신청
+	@PostMapping("/changeMajor")
+	public String changeMajor(ChangeMajorVO changeMajorVO) {
+		stuManageService.insertChangeMajorTable(changeMajorVO);
+		return "redirect:/stuManage/goChangeMajor";
 	}
 	
 	//전과신청페이지 에이작스

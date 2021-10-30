@@ -9,7 +9,22 @@ public class ChangeMajorVO {
 	private int stuNo;
 	private int collNo;
 	private String deptId;
+	private int upColl;
+	private String upDept;
 	
+	
+	public int getUpColl() {
+		return upColl;
+	}
+	public void setUpColl(int upColl) {
+		this.upColl = upColl;
+	}
+	public String getUpDept() {
+		return upDept;
+	}
+	public void setUpDept(String upDept) {
+		this.upDept = upDept;
+	}
 	public String getChangeId() {
 		return changeId;
 	}
