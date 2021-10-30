@@ -12,6 +12,8 @@
 		<result column="STU_YEAR" 	property="stuYear" />
 		<result column="STU_SEM" 	property="stuSem" />
 		<result column="STU_STATUS" property="stuStatus" />
+		<result column="MAJOR_NAME" property="majorName" />
+		<result column="MINOR_NAME" property="minorName" />
 		<association property="memberInfo" resultMap="member"/>
 		<association property="collegeInfo" resultMap="college"/>
 		<association property="deptInfo" resultMap="dept"/>

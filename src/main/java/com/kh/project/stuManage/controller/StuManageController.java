@@ -3,6 +3,7 @@ package com.kh.project.stuManage.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.lecture.service.LectureService;
 import com.kh.project.portal.vo.MemberVO;
+import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.service.StuManageService;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
@@ -85,9 +87,14 @@ public class StuManageController {
 	
 	//전과신청하러가기
 	@GetMapping("/goChangeMajor")
-	public String goChangeMajor(Model model) {
+	public String goChangeMajor(Model model, StudentVO studentVO, HttpSession session) {
 		model.addAttribute("collegeList", lectureService.selectCollegeList());
 		model.addAttribute("deptList", lectureService.selectDeptList());
+		
+		
+		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
+		
+		model.addAttribute("stuInfo", stuManageService.selectStuInfoForChange(result));
 		return "stuManage/changeMajor_form";
 	}
 	

@@ -5,6 +5,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 
 
@@ -16,6 +17,11 @@ public class StuManageServiceImpl implements StuManageService{
 	@Override
 	public StudentVO goStopStudy(int memNo) {
 		return sqlSession.selectOne("studentMapper.goStopStudy", memNo);
+	}
+
+	@Override
+	public StudentVO selectStuInfoForChange(MemberVO memberVO) {
+		return sqlSession.selectOne("changeMajorMapper.selectStuInfoForChange", memberVO);
 	}
 
 	

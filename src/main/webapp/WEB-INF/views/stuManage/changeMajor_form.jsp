@@ -36,27 +36,27 @@ tr, td{
 	</colgroup>
 <tr>
 	<td>이름</td>
-	<td>1</td>
+	<td>${stuInfo.memberInfo.memName }</td>
 	<td>학번</td>
-	<td>1</td>
+	<td>${stuInfo.stuNo }</td>
 	<td>학년</td>
-	<td>1</td>
+	<td>${stuInfo.stuYear }</td>
 </tr>
 <tr>
 	<td>대학</td>
-	<td>1</td>
+	<td>${stuInfo.collegeInfo.collName }</td>
 	<td>전공</td>
-	<td></td>
+	<td>${stuInfo.majorName }</td>
 	<td>부전공</td>
-	<td>1</td>
+	<td>${stuInfo.minorName }</td>
 </tr>
 <tr>
 	<td>성별</td>
-	<td>1</td>
+	<td>${stuInfo.memberInfo.memGen }</td>
 	<td>생일</td>
-	<td>1</td>
+	<td>${stuInfo.memberInfo.memBirth }</td>
 	<td>학적상태</td>
-	<td>1</td>
+	<td>${stuInfo.stuStatus }</td>
 </tr>
 </table>
 <table> 
@@ -69,9 +69,9 @@ tr, td{
 	</colgroup>
 <tr>
 	<td>현재대학</td>
-	<td>1</td>
+	<td>${stuInfo.collegeInfo.collName }</td>
 	<td>현재학과</td>
-	<td>1</td>
+	<td>${stuInfo.majorName }</td>
 </tr>
 <tr>
 	<td>변경대학</td>
@@ -96,6 +96,9 @@ tr, td{
 	<td colspan="3">
 		<input type="text" name="" style="border-color: white; width: 100%;">
 	</td>
+</tr>
+<tr>
+	<td colspan="4"><input type="submit" value="신청하기"></td>
 </tr>
 </table>
 

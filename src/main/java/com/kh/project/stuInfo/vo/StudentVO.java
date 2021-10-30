@@ -17,8 +17,24 @@ public class StudentVO {
 	private CollegeVO collegeInfo;
 	private DeptVO deptInfo;
 	
+	private String majorName;
+	private String minorName;
 	
 	
+	
+	
+	public String getMajorName() {
+		return majorName;
+	}
+	public void setMajorName(String majorName) {
+		this.majorName = majorName;
+	}
+	public String getMinorName() {
+		return minorName;
+	}
+	public void setMinorName(String minorName) {
+		this.minorName = minorName;
+	}
 	public DeptVO getDeptInfo() {
 		return deptInfo;
 	}

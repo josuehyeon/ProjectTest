@@ -18,8 +18,9 @@
 	<select id="selectStuInfoForChange" resultMap="studentMapper.student">
 	SELECT 
 	    MEM_NAME
+	    , STU_YEAR
 	    , DECODE(MEM_GEN, 'F', '여자', 'M', '남자') AS MEM_GEN
-	    , MEM_BIRTH
+	    , TO_CHAR(MEM_BIRTH, 'YYYY-MM-DD') AS MEM_BIRTH
 	    , C.COLL_NO
 	    , COLL_NAME
 	    , S.STU_NO
@@ -42,6 +43,7 @@
 	WHERE M.MEM_NO=S.MEM_NO
 	AND C.COLL_NO=S.COLL_NO
 	AND D.DEPT_ID=S.MAJOR_CODE
+	AND M.MEM_NO=#{memNo}
 	</select>
 	
 	<!-- 전과신청하면 정보저장될것 -->
