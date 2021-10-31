@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/portal/js/login.js?ver=5"></script>
+<script type="text/javascript" src="/resources/portal/js/login.js?ver=12"></script>
 </head>
 <body>
 
@@ -62,17 +62,21 @@
 			</div>
 			<div class="modal-body">
 			
-			
-				<form action="/portal/sendMail" method="post">
+				<form action="/portal/sendMail" method="post" id="sendMail">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingInput" placeholder="Email" name="to" required>
-						<label for="floatingInput">Input your Email</label>
+						<input type="text" class="form-control" name="memNo" id="floatingMemNo" placeholder="학번" required>
+						<label for="floatingMemNo">Input your student Number</label>
+						
+						<input type="text" class="form-control" name="memName" id="floatingName" placeholder="이름" required>
+						<label for="floatingName">Input your Name </label>
+						
+						<input type="text" class="form-control" name="to" id="floatingEmail" placeholder="이메일" required>
+						<label for="floatingEmail">Input your Email</label>
 					</div>
 					<div class="col-12 d-grid">
-						<input type="submit" class="btn btn-primary" value="임시 비밀번호 발급">
+						<input type="button" class="btn btn-primary" id="sendEmailBtn" value="임시 비밀번호 발급">
 					</div>
 				</form>
-				
 				
 			</div>
 			<!-- <div class="modal-footer">

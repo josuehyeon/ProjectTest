@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.portal.service.PortalService;
 import com.kh.project.portal.vo.EmailVO;
@@ -98,7 +99,11 @@ public class PortalController {
 		return sb.toString();
 	}
 	
-	
+	@ResponseBody	//Ajax "임시 비밀번호 관련"
+	@PostMapping("/chkEmailAjax")
+	public MemberVO chkEmailAjax(MemberVO memberVO) {
+		return portalSerivce.selectEmailToFindPw(memberVO) ;
+	}	
 	
 }
 

@@ -12,5 +12,7 @@ public interface PortalService {
 	
 	//학생> 내정보-수정> MEMBER 테이블에 해당
 	void updateMemMyInfo (MemberVO memberVO);
-
+	
+	//임시 비밀번호 발급 관련
+	MemberVO selectEmailToFindPw (MemberVO memberVO);
 }

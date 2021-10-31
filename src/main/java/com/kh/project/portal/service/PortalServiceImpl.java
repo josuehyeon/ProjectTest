@@ -26,5 +26,9 @@ public class PortalServiceImpl implements PortalService{
 	public void updateMemMyInfo(MemberVO memberVO) {
 		sqlSession.update("memberMapper.updateMemMyInfo", memberVO);
 	}
-	
+
+	@Override	// 임시 비밀번호 발급 관련
+	public MemberVO selectEmailToFindPw(MemberVO memberVO) {
+		return  sqlSession.selectOne("memberMapper.selectEmailToFindPw", memberVO);
+	}	
 }
