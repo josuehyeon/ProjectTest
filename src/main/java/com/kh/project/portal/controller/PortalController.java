@@ -79,7 +79,7 @@ public class PortalController {
 		}; 
 		mailSender.send(preparator); 
 		
-		return "redirect:/portal/loginJsp"; 
+		return "portal/send_mail_result"; 
 		
 	}
 	

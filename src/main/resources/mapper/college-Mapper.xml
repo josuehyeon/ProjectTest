@@ -9,7 +9,7 @@
 	
 	<select id="selectCollegeList" resultMap="college">
 		SELECT COLL_NO
-			, COLL_NAME 
+			 , COLL_NAME 
 		FROM COLLEGE
 	</select>
 </mapper>
