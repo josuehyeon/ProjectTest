@@ -149,7 +149,7 @@ public class StuManageController {
 		//학과 목록 조회
 		model.addAttribute("deptList", stuManageService.selectDeptList2(deptVO));
 		//학생 목록 조회
-		//model.addAttribute("studentList", stuManageService.selectStudentList());
+		model.addAttribute("studentList", stuManageService.selectStudentList());
 		return "stuManage/show_stu_info";
 	}		
 	//학생 상세 조회 //ksj

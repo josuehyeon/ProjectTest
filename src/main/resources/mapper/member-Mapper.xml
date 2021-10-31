@@ -28,6 +28,7 @@
 	<result 		column="STU_STATUS" 	property="stuStatus" />
 	<association 	property="memberInfo" 	resultMap="member"/>
 </resultMap>
+
 	<!-- 로그인 -->
 	<select id="login" resultMap="member">
 		SELECT MEM_NO
