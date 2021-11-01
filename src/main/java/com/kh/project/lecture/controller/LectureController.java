@@ -184,5 +184,12 @@ public class LectureController {
 	public PdfVO showlecPdf(LectureVO lectureVO) {
 		return lectureService.selectLecPdf(lectureVO);
 	}
+	
+	//수강신청
+	@GetMapping("/goEnrolment")
+	public String goEnrolment(Model model, LectureViewVO lectureViewVO) {
+		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
+		return "lecture/lecture_enrolment";
+	}
 
 }

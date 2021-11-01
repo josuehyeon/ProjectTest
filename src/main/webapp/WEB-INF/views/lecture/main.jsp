@@ -11,8 +11,6 @@
 강의리스트
 <a href="/lecture/selectLecture">강의리스트</a>
 <a href="/lecture/goRegLecture">강의등록</a>
-<a href="/lecture/lecPdf">강의자료보기</a>
-강의수정
-강의삭제 
+<a href="/lecture/goEnrolment">수강신청</a>
 </body>
 </html>

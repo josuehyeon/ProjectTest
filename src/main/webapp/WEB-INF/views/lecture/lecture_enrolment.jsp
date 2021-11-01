@@ -16,7 +16,7 @@ iframe {
 	height: 900px;
 }
 </style>
-<script type="text/javascript" src="/resources/sample/js/lecture_list.js?ver=222222222222259"></script>
+<script type="text/javascript" src="/resources/sample/js/lecture_enrolment.js?ver=222259"></script>
 </head>
 <body>
 
@@ -48,18 +48,11 @@ iframe {
       <td>${lectureInfo.lecDay }</td>
       <td>${lectureInfo.lecPeriod }</td>
       <td>
-	      <input type="button" class="delete" value="삭제" data-lecId="${lectureInfo.lecId }">
-		  <input type="button" class="update" value="수정" data-lecId="${lectureInfo.lecId }">
+	      <input type="button" class="enrolment" value="신청" data-lecId="${lectureInfo.lecId }">
+		  
 	  </td>
     </tr>
 </c:forEach>
-
-
-
-
-
-
-
   </tbody>
 </table>
 

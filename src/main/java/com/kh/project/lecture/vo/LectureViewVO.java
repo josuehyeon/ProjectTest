@@ -15,6 +15,22 @@ public class LectureViewVO {
 	private String deptName;
 	private String lecId;
 	private String collName;
+	private String lecDay;
+	private String lecPeriod;
+	
+	
+	public String getLecDay() {
+		return lecDay;
+	}
+	public void setLecDay(String lecDay) {
+		this.lecDay = lecDay;
+	}
+	public String getLecPeriod() {
+		return lecPeriod;
+	}
+	public void setLecPeriod(String lecPeriod) {
+		this.lecPeriod = lecPeriod;
+	}
 	public String getLecName() {
 		return lecName;
 	}

@@ -88,6 +88,30 @@
                   <label for="formFile" class="form-label">강의자료첨부</label>
                     <input name="f" class="form-control" type="file" id="formFile">
                </div>
+                <div class="col-6">
+                  <label for="lecDay" class="form-label">강의요일선택</label>
+               <select class="form-select" id="" name="lecDay">
+                  	  <option value="월">월</option>
+                  	  <option value="화">화</option>
+                  	  <option value="수">수</option>
+                  	  <option value="목">목</option>
+                  	  <option value="금">금</option>
+                  </select>
+                 </div>
+               <div class="col-6">
+                  <label for="lecPeriod" class="form-label">강의교시선택</label>
+               <select class="form-select" id="" name="lecPeriod">
+                  	  <option value="9">1</option>
+                  	  <option value="10">2</option>
+                  	  <option value="11">3</option>
+                  	  <option value="12">4</option>
+                  	  <option value="13">5</option>
+                  	  <option value="14">6</option>
+                  	  <option value="15">7</option>
+                  	  <option value="16">8</option>
+                  	  <option value="17">9</option>
+                  </select>
+                 </div>
                <div class="col-6 text-center">
                    <input type="submit" class="btn btn-primary" value="REGISTRATION">
                  </div>

@@ -13,9 +13,23 @@ public class LectureVO {
 	private int nowNo;
 	private String lecPlan;
 	private PdfVO pdfVO;
+	private String lecDay;
+	private String lecPeriod;
 	
 	
 	
+	public String getLecDay() {
+		return lecDay;
+	}
+	public void setLecDay(String lecDay) {
+		this.lecDay = lecDay;
+	}
+	public String getLecPeriod() {
+		return lecPeriod;
+	}
+	public void setLecPeriod(String lecPeriod) {
+		this.lecPeriod = lecPeriod;
+	}
 	public PdfVO getPdfVO() {
 		return pdfVO;
 	}
