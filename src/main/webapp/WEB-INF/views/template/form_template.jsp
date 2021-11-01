@@ -16,12 +16,20 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <style type="text/css">
+body {
+	font-family: 'NanumBarunpen';
+	text-align: center;
+	background-color: #e1e2e1;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 .aaa{
 	background-color: aqua;
 }
 table {
   text-align: center;
   margin: auto 0;
+  
 }
 .container-fluid{
 	width: 90%;

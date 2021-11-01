@@ -1,6 +1,8 @@
 package com.kh.project.board.vo;
 
-public class BoardVO {
+import com.kh.project.common.vo.PageVO;
+
+public class BoardVO extends PageVO{
 	private int boardNo;
 	private String boardTitle;
 	private String boardContent;
@@ -9,7 +11,15 @@ public class BoardVO {
 	private int readCnt;
 	private int cateNo;
 	private int commCnt;
+	private int rowNum;
 	
+	
+	public int getRowNum() {
+		return rowNum;
+	}
+	public void setRowNum(int rowNum) {
+		this.rowNum = rowNum;
+	}
 	public int getBoardNo() {
 		return boardNo;
 	}

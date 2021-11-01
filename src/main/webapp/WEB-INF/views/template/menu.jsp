@@ -17,7 +17,7 @@
 <div>
 	<div class="row">
 		<div class="col-12">
-			<nav class="navbar navbar-light" style="background-color: #282827;">
+			<nav class="navbar navbar-light" style="background-color: #212529;">
 				<a class="nav-link link-light" href="/board/portal">HOME</a>
 				<a class="nav-link link-light" href="/admin/goMain">학생관리(Admin)</a>
 				<a class="nav-link link-light" href="#">내 정보</a>

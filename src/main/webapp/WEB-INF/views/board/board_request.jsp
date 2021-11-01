@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-
-</script>
 <style type="text/css">
 body {
 	text-align: center;
@@ -70,7 +67,7 @@ a.sltedPage{
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="Ht">✦ 자유게시판 ✦</div>
+				<div class="Ht">✦ 건의게시판 ✦</div>
 				<table>
 					<thead>
 						<tr>
@@ -84,7 +81,8 @@ a.sltedPage{
 					</thead>
 					<tbody>
 					<c:choose>
-						<c:when test="${not empty boardList and cateNo eq 1}">
+						<c:when test="${not empty boardList and cateNo eq 2}">
+							<tr>
 							<c:forEach items="${boardList }" var="board">
 								<tbody>
 									<tr class="trh">
@@ -97,6 +95,7 @@ a.sltedPage{
 									</tr>
 								</tbody>
 							</c:forEach>
+							</tr>
 						</c:when>
 						<c:otherwise>
 							<tr>

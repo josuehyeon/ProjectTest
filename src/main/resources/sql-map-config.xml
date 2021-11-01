@@ -20,6 +20,8 @@
 		<mapper resource="/mapper/lecture-Mapper.xml"/>
 		<mapper resource="/mapper/changeMajor-Mapper.xml"/>
 		<mapper resource="/mapper/doubleMajor-Mapper.xml"/>
+		<mapper resource="/mapper/cate-Mapper.xml"/>
+		<mapper resource="/mapper/menu-Mapper.xml"/>		
 	</mappers>
 </configuration>
 

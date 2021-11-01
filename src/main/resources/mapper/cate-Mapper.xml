@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 모든 SQL문을 mapper태그 안에 작성 -->
+<mapper namespace="cateMapper">
+	
+	<resultMap type="com.kh.project.board.vo.CateVO" id="cate">
+		<id column="CATE_NO" 					property="cateNo"/>
+		<result column="CATE_NAME" 				property="cateName"/>
+	</resultMap>
+
+	<select id="sltCateList" resultMap="cate">
+		SELECT CATE_NO
+			, CATE_NAME
+		FROM CATEGORY
+	</select>
+	
+	<select id="sltCate" resultMap="cate">
+		SELECT CATE_NO
+			, CATE_NAME
+		FROM CATEGORY
+		WHERE CATE_NO = ${cateNo}
+	</select>
+	
+<!-- 	<insert id="">
+		INSERT INTO BOARD (
+			BOARD_NO
+			, BOARD_TITLE
+			, BOARD_CONTENT
+			, BOARD_WRITER
+			, BOARD_CREATEDATE
+			, CATE_NO
+		) VALUES (
+			#{boardTitle}
+			, #{boardContent}
+			, #{boardWriter}
+			, #{boardDate}
+			, #{cateNo}
+		)
+	</insert> -->
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

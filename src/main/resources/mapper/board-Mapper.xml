@@ -11,20 +11,119 @@
 		<result column="BOARD_READ_CNT" 		property="readCnt"/>
 		<result column="CATE_NO" 				property="cateNo"/>
 		<result column="COMMENT_CNT" 			property="commCnt"/>
+		<result column="ROW_NUM" 			property="rowNum"/>
 	</resultMap>
 	
-	<!--  -->
+	<resultMap type="com.kh.project.board.vo.CommVO" id="comm">
+			<id column="COMM_NO" 					property="commNo"/>
+		<result column="BOARD_NO" 					property="boardNo"/>
+		<result column="COMM_CONTENT" 				property="commContent"/>
+		<result column="COMM_CREATEDATE" 			property="commDate"/>
+		<result column="COMM_WRITER" 				property="commWriter"/>
+		
+	</resultMap>
 	<select id="selectBoardList" resultMap="board">
 		SELECT BOARD_NO
+		    , BOARD_TITLE
+		    , BOARD_CONTENT
+		    , BOARD_WRITER
+		    , BOARD_CREATEDATE
+		    , CATE_NO
+		    , ROW_NUM
+		FROM
+		(
+			SELECT BOARD_NO
+			    , BOARD_TITLE
+			    , BOARD_CONTENT
+			    , BOARD_WRITER
+			    , BOARD_CREATEDATE
+			    , CATE_NO
+			    , ROWNUM AS ROW_NUM
+			FROM
+			(
+				SELECT BOARD_NO
+				    , BOARD_TITLE
+				    , BOARD_CONTENT
+				    , BOARD_WRITER
+				    , TO_CHAR(BOARD_CREATEDATE, 'YYYY.MM.DD') AS BOARD_CREATEDATE
+				    , CATE_NO
+				FROM BOARD
+				<if test="searchValue != null and !searchValue.equals('')">
+					WHERE ${searchKeyWord} LIKE '%'||#{searchValue}||'%'
+				</if>
+				ORDER BY BOARD_NO DESC
+			)
+		)
+		WHERE ROW_NUM &gt;= #{startNum} AND ROW_NUM &lt;= #{endNum}
+	</select>
+
+  	<insert id="istBoard">
+		INSERT INTO BOARD (
+			BOARD_NO
 			, BOARD_TITLE
 			, BOARD_CONTENT
 			, BOARD_WRITER
-			, TO_CHAR(BOARD_CREATEDATE, 'YYYY.MM.DD') AS BOARD_CREATEDATE
-			, BOARD_READ_CNT
+			, BOARD_CREATEDATE
 			, CATE_NO
-			, COMMENT_CNT
+		) VALUES (
+			(SELECT NVL(MAX(BOARD_NO), 0) + 1 FROM BOARD)
+			, #{boardTitle}
+			, #{boardContent}
+			, ${boardWriter}
+			, ${boardDate}
+			, ${cateNo}
+		)
+	</insert>
+	
+	<delete id="dltBoard">
+		DELETE BOARD
+		WHERE BOARD_NO = #{boardNo}
+	</delete>
+	
+	<!-- 게시글 상세 보기 -->
+	<select id="detailBoard" resultMap="board">
+		SELECT BOARD_NO 
+			, BOARD_TITLE
+			, BOARD_CONTENT
+			, BOARD_WRITER
+			, BOARD_CREATEDATE
+			, CATE_NO
 		FROM BOARD
+		WHERE BOARD_NO = #{boardNo}
 	</select>
+	
+	<!--페이징 처리를 위한 전체 데이터의 수  -->	
+	<select id="totalBoardCnt" resultType="int">
+		SELECT COUNT(BOARD_NO)
+		FROM BOARD
+		<if test="searchValue != null and !searchValue.equals('')">
+		WHERE ${searchKeyWord} LIKE '%'||#{searchValue}||'%'
+		</if>
+	</select>
+	<!--                           댓글은 여기 !                                -->
+	<select id="sltCommList" resultMap="comm">
+		SELECT COMM_NO
+			, BOARD_NO
+			, COMM_CONTENT
+			, COMM_CREATEDATE
+			, COMM_WRITER
+		FROM COMM
+		WHERE BOARD_NO = #{boardNo}
+	</select>
+	
+	<insert id="istComm">
+		INSERT INTO COMM (
+			COMM_NO
+			, BOARD_NO
+			, COMM_CONTENT
+			, COMM_CREATEDATE
+			, COMM_WRITER
+		) VALUES (
+			(SELECT NVL(MAX(BOARD_NO), 0) + 1 FROM BOARD)
+			, #{boardNo}
+			, #{commContent}
+			, #{commDate}
+			, #{commWriter}
+		)
+	</insert>
 </mapper>
-
-
