@@ -14,46 +14,23 @@
 		<result column="STU_STATUS" property="stuStatus" />
 		<result column="MAJOR_NAME" property="majorName" />
 		<result column="MINOR_NAME" property="minorName" />
-		<association property="memberInfo" resultMap="member"/>
-		<association property="collegeInfo" resultMap="college"/>
-		<association property="deptInfo" resultMap="dept"/>
-	</resultMap>
-	
-	<resultMap type="com.kh.project.portal.vo.MemberVO" id="member">
-	<id 	column="MEM_NO" 	property="memNo"/>
-	<result column="MEM_PW" 	property="memPw" />
-	<result column="MEM_EMAIL" 	property="memEmail" />
-	<result column="MEM_ADDR" 	property="memAddr" />
-	<result column="MEM_TEL" 	property="memTel" />
-	<result column="MEM_PHONE" 	property="memPhone" />
-	<result column="POSTCODE" 	property="postcode" />
-	<result column="MEM_IDPIC" 	property="memIdpic" />
-	<result column="MEM_GEN" 	property="memGen" />
-	<result column="MEM_BIRTH" 	property="memBirth" />
-	<result column="MEM_AUTH" 	property="memAuth" />
-	<result column="MEM_NAME" 	property="memName" />
-</resultMap>
-	
-	<resultMap type="com.kh.project.stuManage.vo.CollegeVO" id="college">
-		<id column="COLL_NO" property="collNo"/>
-		<result column="COLL_NAME" property="collName"/>
-	</resultMap>
-	
-	<resultMap type="com.kh.project.stuManage.vo.DeptVO" id="dept">
-		<id column="DEPT_ID" property="deptId"/>
-		<result column="DEPT_NAME" property="deptName"/>
-		<result column="COLL_NO" property="collNo"/>
+		<association property="memberInfo" resultMap="memberMapper.member"/>
+		<association property="collegeInfo" resultMap="collegeMapper.college"/>
+		<association property="deptInfo" resultMap="deptMapper.dept"/>
 	</resultMap>
 	
 	<select id="selectStuMyInfo" resultMap="student">
-		SELECT STU_NO
-			  ,COLL_NO <!-- 단대 번호 -->
-			  ,MAJOR_CODE
-			  ,MINOR_CODE
-			  ,STU_YEAR
-			  ,STU_SEM
-		FROM   STUDENT
-		WHERE  STU_NO = #{stuNo}
+		SELECT   STU_NO
+			  , (SELECT COLL_NAME FROM COLLEGE WHERE COLL_NO = S.COLL_NO) AS COLL_NAME
+			  , (SELECT DEPT_NAME FROM DEPT WHERE DEPT_ID= S.MAJOR_CODE) AS MAJOR_CODE
+              , (SELECT DEPT_NAME FROM DEPT WHERE DEPT_ID = S.MINOR_CODE) AS MINOR_CODE
+			  ,  STU_YEAR
+			  ,  STU_SEM 
+			  ,  STU_STATUS             
+		FROM     STUDENT S , COLLEGE C , DEPT D
+		WHERE    S.COLL_NO = C.COLL_NO
+		AND      S.MAJOR_CODE = D.DEPT_ID
+		AND      STU_NO = #{stuNo}
 	</select>
 	
 	<select id="goStopStudy" resultMap="student">
