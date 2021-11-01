@@ -9,6 +9,7 @@
 table{
 	border: 1px solid black;
 	width: 600px;
+	empty-cells: show;
 }
 tr,td{
 	border: 1px solid black;

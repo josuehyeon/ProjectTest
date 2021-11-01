@@ -9,6 +9,7 @@
 table{
 	border: 1px solid black;
 	width: 600px;
+	empty-cells: show;
 }
 tr,td{
 	border: 1px solid black;
@@ -67,9 +68,6 @@ tr,td{
 </div>
 
 
-<br>
-학적상태: 0재학 / 1휴학 / 2복학 / 3자퇴 /4제적 (이거도 마찬가지 코드 말고 한글로 나오게)
-<br>
 
 <a href="/stuInfo/changeInfoJsp">내 정보 수정</a>
 
