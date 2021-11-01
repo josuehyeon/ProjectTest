@@ -11,7 +11,7 @@ public class StudentVO {
 	private String minorCode;
 	private int stuYear;
 	private int stuSem;
-	private int stuStatus;
+	private String stuStatus;
 	
 	private MemberVO memberInfo;
 	private CollegeVO collegeInfo;
@@ -55,10 +55,10 @@ public class StudentVO {
 	public void setStuSem(int stuSem) {
 		this.stuSem = stuSem;
 	}
-	public int getStuStatus() {
+	public String getStuStatus() {
 		return stuStatus;
 	}
-	public void setStuStatus(int stuStatus) {
+	public void setStuStatus(String stuStatus) {
 		this.stuStatus = stuStatus;
 	}
 	public MemberVO getMemberInfo() {
