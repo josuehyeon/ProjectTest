@@ -44,7 +44,7 @@
 	                        FROM STUDENT
 	                        WHERE STU_NO = S.STU_NO
 	                        )) AS MINOR_NAME
-	    , DECODE(STU_STATUS, 1, '재학', 1, '휴학', 2, '복학', 3, '자퇴', '제적') AS STU_STATUS
+	    , STU_STATUS
 	FROM MEMBER M, STUDENT S, COLLEGE C, DEPT D
 	WHERE M.MEM_NO=S.MEM_NO
 	AND C.COLL_NO=S.COLL_NO

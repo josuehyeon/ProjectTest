@@ -11,7 +11,7 @@ public class StudentVO {
 	private String minorCode;
 	private int stuYear;
 	private int stuSem;
-	private String stuStatus;
+	private int stuStatus;
 	
 	private MemberVO memberInfo;
 	private CollegeVO collegeInfo;
@@ -19,34 +19,6 @@ public class StudentVO {
 	
 	private String majorName;
 	private String minorName;
-	
-	
-	
-	
-	public String getMajorName() {
-		return majorName;
-	}
-	public void setMajorName(String majorName) {
-		this.majorName = majorName;
-	}
-	public String getMinorName() {
-		return minorName;
-	}
-	public void setMinorName(String minorName) {
-		this.minorName = minorName;
-	}
-	public DeptVO getDeptInfo() {
-		return deptInfo;
-	}
-	public void setDeptInfo(DeptVO deptInfo) {
-		this.deptInfo = deptInfo;
-	}
-	public CollegeVO getCollegeInfo() {
-		return collegeInfo;
-	}
-	public void setCollegeInfo(CollegeVO collegeInfo) {
-		this.collegeInfo = collegeInfo;
-	}
 	public int getStuNo() {
 		return stuNo;
 	}
@@ -83,10 +55,10 @@ public class StudentVO {
 	public void setStuSem(int stuSem) {
 		this.stuSem = stuSem;
 	}
-	public String getStuStatus() {
+	public int getStuStatus() {
 		return stuStatus;
 	}
-	public void setStuStatus(String stuStatus) {
+	public void setStuStatus(int stuStatus) {
 		this.stuStatus = stuStatus;
 	}
 	public MemberVO getMemberInfo() {
@@ -95,6 +67,34 @@ public class StudentVO {
 	public void setMemberInfo(MemberVO memberInfo) {
 		this.memberInfo = memberInfo;
 	}
+	public CollegeVO getCollegeInfo() {
+		return collegeInfo;
+	}
+	public void setCollegeInfo(CollegeVO collegeInfo) {
+		this.collegeInfo = collegeInfo;
+	}
+	public DeptVO getDeptInfo() {
+		return deptInfo;
+	}
+	public void setDeptInfo(DeptVO deptInfo) {
+		this.deptInfo = deptInfo;
+	}
+	public String getMajorName() {
+		return majorName;
+	}
+	public void setMajorName(String majorName) {
+		this.majorName = majorName;
+	}
+	public String getMinorName() {
+		return minorName;
+	}
+	public void setMinorName(String minorName) {
+		this.minorName = minorName;
+	}
+	
+	
+	
+	
 	
 	
 
