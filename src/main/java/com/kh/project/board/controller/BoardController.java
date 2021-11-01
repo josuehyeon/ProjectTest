@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.kh.project.board.service.BoardService;
 import com.kh.project.board.vo.BoardVO;
 import com.kh.project.board.vo.CateVO;
-import com.kh.project.common.service.CommonSvc;
+import com.kh.project.common.service.CommonService;
 
 @Controller
 @RequestMapping("/board")
@@ -19,18 +19,18 @@ public class BoardController {
 	@Resource(name = "boardService")
 	private BoardService boardService;
 	
-	@Resource(name = "commSvc")
-	private CommonSvc commSvc;
+	@Resource(name = "commonService")
+	private CommonService commonService;
 	
 	//로그인 후 보여질 메인 화면
 	@GetMapping("portal")
 	public String doMainHome(Model md) {
-		md.addAttribute("menuList", commSvc.sltMenuList()); //메뉴 목록 조회 후 전달
+		md.addAttribute("menuList", commonService.sltMenuList()); //메뉴 목록 조회 후 전달
 		return "home/main_page";
 	}
 	
 	//정보광장 게시판
-	@GetMapping("infoPark")
+	@RequestMapping("infoPark")
 	public String doInfoPark(Model md, BoardVO boardVO) {
 		//전체 데이터 수
 		int dataCnt = boardService.totalBoardCnt(boardVO);
@@ -41,7 +41,7 @@ public class BoardController {
 		return "board/info_park";
 	}
 	//건의 게시판
-	@GetMapping("infoPark")
+	@RequestMapping("bdRequest")
 	public String doRequest(Model md, BoardVO boardVO) {
 		//전체 데이터 수
 		int dataCnt = boardService.totalBoardCnt(boardVO);
