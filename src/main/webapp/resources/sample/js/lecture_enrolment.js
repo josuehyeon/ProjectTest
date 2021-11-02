@@ -7,7 +7,8 @@ $(document).ready(function(){
 		var lecId =  $(this).attr('data-lecId');
 		
 		if(result){
-			location.href='/바꾸기lecture/updateLectureForm?lecId='+lecId;
+			$('#enrolment').submit();
+			location.href='/lecture/enrolment';
 		}
     });
 	
@@ -44,8 +45,14 @@ $(document).ready(function(){
 
 //함수 선언 영역
 (function($){
-	//aaa = function(){
-	//};
+	
+	/*enrolment = function(){
+		var result = confirm=('수강신청하시겠습니까?');
+		
+		if(result) {
+			//$('#enrolment').submit();
+		}
+	};*/
    
 })(jQuery);
 
