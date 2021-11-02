@@ -6,9 +6,11 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kh.project.lecture.vo.EnrolmentVO;
 import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.lecture.vo.LectureViewVO;
 import com.kh.project.lecture.vo.PdfVO;
+import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
 import com.kh.project.stuManage.vo.EmpVO;
@@ -91,6 +93,21 @@ public class LectureServiceImpl implements LectureService{
 	@Override
 	public PdfVO selectLecPdf(LectureVO lectureVO) {
 		return sqlSession.selectOne("lectureMapper.selectLecPdf", lectureVO);
+	}
+
+	@Override
+	public void enrolment(EnrolmentVO enrolmentVO) {
+		sqlSession.insert("lectureMapper.enrolment", enrolmentVO);
+	}
+
+	@Override
+	public List<EnrolmentVO> selectEnrolList(MemberVO memberVO) {
+		return sqlSession.selectList("lectureMapper.selectEnrolList", memberVO);
+	}
+
+	@Override
+	public void deleteEnrolmentOne(EnrolmentVO enrolmentVO) {
+		sqlSession.delete("lectureMapper.deleteEnrolmentOne", enrolmentVO);
 	}
 	
 }
