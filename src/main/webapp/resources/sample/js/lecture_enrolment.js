@@ -37,6 +37,39 @@ $(document).ready(function(){
 	
 	});
 	
+	//단과대선택하면 학과나오도록
+	//이벤트 처리
+	$(document).on('change', '#collegeList', function() {
+		var collNo = $('#collegeList').val();
+		
+		//ajax 사용
+		$.ajax({
+	        url: '/lecture/selectCollAjax', //요청경로
+	        type: 'post',
+	        data:{'collNo':collNo}, //필요한 데이터
+	        success: function(result) {
+	        	//ajax 실행 성공 시 실행되는 구간
+	        	$('#tableDiv').empty();
+	        	
+	        	  var str ='';
+	              str += '<label for="deptList" class="form-label">학과</label>';
+	              str += '<select class="form-select" id="deptList" name="deptId">';
+	              console.log(result.deptList);
+	              $(result.deptList).each(function(index, element){
+	            	  str += '<option value="'+ element.deptId + '">' + element.deptName + '</option>';	
+	              });
+	              str += '</select>';
+	            
+	              
+	              $('#tableDiv').append(str);
+	        },
+	        error: function(){
+	        	//ajax 실행 실패 시 실행되는 구간
+	        	alert('실패');
+	        }
+	  });
+    });
+	
 	
 	
 });

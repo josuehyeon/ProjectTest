@@ -107,6 +107,12 @@
 		<if test="lecId != null and !lecId.equals('')">
 		WHERE LEC_ID = #{lecId}
 		</if>
+		<if test="deptId != null and !deptId.equals('')">
+	    WHERE DEPT_ID LIKE '%'||UPPER(#{deptId})||'%'
+	    </if>
+	     <if test="lecName != null and !lecName.equals('')">
+	    AND UPPER(LEC_NAME) LIKE '%'||UPPER(#{lecName})||'%'
+	    </if>
 		ORDER BY LEC_ID DESC
 	</select>
 	

@@ -192,13 +192,16 @@ public class LectureController {
 	}
 	
 	//수강신청하는폼
-	@GetMapping("/goEnrolment")
+	@RequestMapping("/goEnrolment")
 	public String goEnrolment(Model model, LectureViewVO lectureViewVO, HttpSession session) {
 		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
 		model.addAttribute("stuInfo", stuManageService.selectStuInfoForChange(result));
 		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
 		
 		model.addAttribute("enrolmentList", lectureService.selectEnrolList(result));
+		
+		model.addAttribute("collegeList", lectureService.selectCollegeList());
+		model.addAttribute("deptList", lectureService.selectDeptList());
 		return "lecture/lecture_enrolment";
 	}
 	
@@ -215,6 +218,9 @@ public class LectureController {
 		lectureService.deleteEnrolmentOne(enrolmentVO);
 		return "redirect:/lecture/goEnrolment";
 	}
+	
+	
+	
 	
 	
 

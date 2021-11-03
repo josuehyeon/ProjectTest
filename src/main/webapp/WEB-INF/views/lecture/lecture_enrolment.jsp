@@ -16,9 +16,35 @@ iframe {
 	height: 900px;
 }
 </style>
-<script type="text/javascript" src="/resources/sample/js/lecture_enrolment.js?ver=223222222222592"></script>
+<script type="text/javascript" src="/resources/sample/js/lecture_enrolment.js?ver=2223222222222593"></script>
 </head>
 <body>
+<form action="/lecture/goEnrolment" method="post">
+<div class="row">
+  <div class="col">
+    <label for="collegeList" class="form-label">단대</label>
+      <!-- 단과대선택 -->
+      <select class="form-select" id="collegeList" name="collNo">
+      	<c:forEach items="${collegeList }" var="collegeInfo">
+      	  <option value="${collegeInfo.collNo }">${collegeInfo.collName }</option>
+      	</c:forEach>
+      </select>
+  </div>
+  <div class="col" id="tableDiv">
+    <label for="deptList" class="form-label">학과</label>
+       <select class="form-select" id="deptList" name="deptId">
+       	<c:forEach items="${deptList }" var="deptInfo">
+       	  <option value="${deptInfo.deptId }">${deptInfo.deptName }</option>
+       	</c:forEach>
+       </select>
+  </div>
+<div class="col">
+ <label for="" class="form-label">강의이름</label>
+	<input class="form-control" type="text" name="lecName">
+	<input type="submit" class="btn btn-primary" value="검색">
+</div>
+</div>
+</form>
 
 <table class="table">
 <caption align="top">강의리스트</caption>

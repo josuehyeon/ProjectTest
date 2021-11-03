@@ -62,4 +62,5 @@ public interface LectureService {
 	//수강신청테이블에서 하나씩 삭제
 	void deleteEnrolmentOne(EnrolmentVO enrolmentVO);
 	
+	
 }
