@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kh.project.admin.vo.EditStatusVO;
 import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
@@ -35,4 +36,8 @@ public class StuInfoServiceImpl implements StuInfoService {
 		return sqlSession.selectList("lectureMapper.selectTimetableList");
 	}
 
+	
+
+	
+	
 }

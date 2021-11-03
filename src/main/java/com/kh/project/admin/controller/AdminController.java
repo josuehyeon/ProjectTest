@@ -3,10 +3,12 @@ package com.kh.project.admin.controller;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kh.project.admin.service.AdminService;
+import com.kh.project.admin.vo.EditStatusVO;
 
 @Controller
 @RequestMapping("/admin")
@@ -32,11 +34,40 @@ public class AdminController {
 		return "admin/manageGrade";
 	}
 	
-	//학적 변동승인
-	@GetMapping("/permissionToStudent")
-	public String permissionToStudent() {
-		return "admin/permissionToStudent";
-	}
+	//학적 변동승인 페이지 이동
+		@GetMapping("/editStatus")
+		public String editStatus(Model model) {
+			model.addAttribute("selectEditList", adminService.selectEditList());
+//			model.addAttribute("insertEdit", adminService.insertEdit(editStatusVO));
+			return "admin/editStatus"; 
+		} 
+		
+		//학적변동 승인완료
+		@GetMapping("/editStatus1")
+		public String editStatus1(Model model, EditStatusVO editStatusVO) {
+			int[] a = editStatusVO.getStuNoList();
+			System.out.println(a);
+			
+			model.addAttribute("updateEdit", adminService.updateEdit(editStatusVO));
+			return "redirect:/admin/editStatus";
+		}
+		
+		//학적변동 승인대기중으로 돌리기
+		@GetMapping("/editStatus2")
+		public String editStatus2(Model model, EditStatusVO editStatusVO) {
+			int[] a = editStatusVO.getStuNoList();
+			model.addAttribute("cancelEdit", adminService.cancelEdit(editStatusVO));
+			return "redirect:/admin/editStatus";
+		}
+		
+		//학적변동 목록삭제
+		@GetMapping("editStatus3")
+		public String editStatus3(Model model, EditStatusVO editStatusVO) {
+			int[] a = editStatusVO.getStuNoList();
+			
+			model.addAttribute("deleteEdit", adminService.deleteEdit(editStatusVO));
+			return "redirect:/admin/editStatus";
+		}
 	
 	//학사경고, 제적
 	@GetMapping("/stuNotice")

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 모든 SQL문을 mapper태그 안에 작성 -->
+<mapper namespace="editStatusMapper">
+
+	<resultMap type="com.kh.project.admin.vo.EditStatusVO" id="editStatus">
+		<id 	column="EDIT_NO" 		property="editNo" />
+		<result column="STU_NO" 		property="stuNo" />
+		<result column="NOW_STATUS" 	property="nowStatus" />
+		<result column="AFTER_STATUS" 	property="afterStatus" />
+		<result column="APPLY_DATE" 	property="applyDate" />
+		<result column="APPROVAL_DATE" 	property="approvalDate" />
+		<result column="ING_STATUS" 	property="ingStatus" />
+
+		<!-- <association property="memberInfo" resultMap="memberMapper.member"></association> -->
+		<result column="MEM_NAME" 	property="memName" />
+	</resultMap>
+	
+	<select id="selectEditList" resultMap="editStatus">
+		SELECT EDIT_NO
+		    , STU_NO
+		    , (SELECT M.MEM_NAME FROM MEMBER WHERE MEM_NO = STU_NO) AS MEM_NAME
+		    , NOW_STATUS
+		    , AFTER_STATUS
+		    , TO_CHAR(APPLY_DATE, 'YYYY/MM/DD') AS APPLY_DATE
+		    , TO_CHAR(APPROVAL_DATE, 'YYYY/MM/DD') AS APPROVAL_DATE
+		    , ING_STATUS
+		FROM EDIT_STATUS E, MEMBER M
+		WHERE E.STU_NO = M.MEM_NO
+		ORDER BY APPLY_DATE
+	</select>
+
+	<!-- <insert id="insertEdit">
+		INSERT INTO EDIT_STATUS (
+			EDIT_NO
+			, STU_NO
+			, (SELECT M.MEM_NAME FROM MEMBER WHERE MEM_NO = STU_NO) AS MEM_NAME
+			, NOW_STATUS
+		    , AFTER_STATUS
+		    , TO_CHAR(APPLY_DATE, 'YYYY/MM/DD') AS APPLY_DATE
+		    , TO_CHAR(APPROVAL_DATE, 'YYYY/MM/DD') AS APPROVAL_DATE
+			, ING_STATUS
+		) VALUES (
+			(SELECT NVL(MAX(EDIT_NO) + 1, 1) FROM EDIT_STATUS)
+			, #{stuNo}
+			, #{memName}
+			, '휴학'
+			, '휴학'
+			, #{approvalDate}
+			, '승인완료'
+		)
+	</insert> -->
+
+	<update id="updateEdit">
+		UPDATE EDIT_STATUS
+		SET
+		ING_STATUS = '승인완료'
+		, APPROVAL_DATE = SYSDATE
+		<!-- <if test="ingStatus = '승인완료'">
+		</if> -->
+		WHERE STU_NO IN 
+		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
+			#{stuNo}
+		</foreach>
+		
+	</update>
+	
+	<update id="cancelEdit">
+		UPDATE EDIT_STATUS
+		SET
+		ING_STATUS = '승인대기중'
+		<!-- <if test="ingStatus = '승인대기중'">
+		, APPROVAL_DATE = TO_CHAR(APPROVAL_DATE, '-') AS APPROVAL_DATE
+		</if> -->
+		, APPROVAL_DATE = NULL
+		WHERE STU_NO IN 
+		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
+			#{stuNo}
+		</foreach>
+	</update>
+	
+	<delete id="deleteEdit">
+		DELETE EDIT_STATUS
+		WHERE STU_NO IN 
+		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
+			#{stuNo}
+		</foreach>
+	</delete>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

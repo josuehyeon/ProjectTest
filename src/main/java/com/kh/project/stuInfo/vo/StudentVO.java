@@ -1,5 +1,6 @@
 package com.kh.project.stuInfo.vo;
 
+import com.kh.project.admin.vo.EditStatusVO;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
@@ -19,6 +20,14 @@ public class StudentVO {
 	
 	private String majorName;
 	private String minorName;
+	private EditStatusVO editStatusInfo;
+	
+	public EditStatusVO getEditStatusInfo() {
+		return editStatusInfo;
+	}
+	public void setEditStatusInfo(EditStatusVO editStatusInfo) {
+		this.editStatusInfo = editStatusInfo;
+	}
 	public int getStuNo() {
 		return stuNo;
 	}

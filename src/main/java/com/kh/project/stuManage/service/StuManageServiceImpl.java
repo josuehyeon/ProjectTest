@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kh.project.admin.vo.EditStatusVO;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
@@ -25,6 +26,23 @@ public class StuManageServiceImpl implements StuManageService{
 		return sqlSession.selectOne("studentMapper.goStopStudy", memNo);
 	}
 
+	@Override
+	public int insertStatus(EditStatusVO editStatusVO) {
+		return sqlSession.insert("studentMapper.insertStatus", editStatusVO);
+	}
+
+	@Override
+	public int selectWaitCnt(int memNo) {
+		return sqlSession.selectOne("studentMapper.selectWaitCnt", memNo);
+	}
+
+	@Override
+	public void updateStopStudy(int stuNo) {
+		sqlSession.update("studentMapper.updateStopStudy", stuNo);
+	}
+	
+	
+	
 	@Override
 	public StudentVO selectStuInfoForChange(MemberVO memberVO) {
 		return sqlSession.selectOne("changeMajorMapper.selectStuInfoForChange", memberVO);
