@@ -22,7 +22,7 @@
 body {
 	font-family: 'NanumBarunpen';
 	text-align: center;
-	background-color: #e1e2e1;
+	background-color: #decebf;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -32,7 +32,6 @@ body {
 table {
   text-align: center;
   margin: auto 0;
-  
 }
 .container-fluid{
 	width: 90%;
@@ -41,7 +40,7 @@ table {
 }
 body {
 	text-align: center;
-	background-color: #e1e2e1;
+	background-color: #decebf;
 }
 tr, td{
 	text-align: center;
