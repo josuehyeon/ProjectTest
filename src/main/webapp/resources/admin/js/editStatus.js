@@ -46,7 +46,7 @@ $(document).ready(function(){
 
    
    $(document).on('click', '.notOkayBtn', function(){
-	   alert('승인대기중 변경');
+	   alert('승인대기 변경');
 	   var stuNoList = new Array();
 	   
 	   $('.check:checked').each(function(index, element){

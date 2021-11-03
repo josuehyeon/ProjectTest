@@ -64,13 +64,13 @@
 		)
 	</insert>
 	
-	<!-- 승인대기 중인 정보가 있는지 조회 -->
-	<!-- 승인대기중인 데이터가 0개 일때만 신청 가능 -->
+	<!-- 승인대기인 정보가 있는지 조회 -->
+	<!-- 승인대기인 데이터가 0개 일때만 신청 가능 -->
 	<select id="selectWaitCnt" resultType="int">
 		SELECT COUNT(EDIT_NO)
 		FROM EDIT_STATUS
 		WHERE STU_NO = #{stuNo}
-		AND ING_STATUS = '승인대기중'
+		AND ING_STATUS = '승인대기'
 	</select>
 	
 	<update id="updateStopStudy">

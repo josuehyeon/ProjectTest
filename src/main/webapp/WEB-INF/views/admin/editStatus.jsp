@@ -48,7 +48,7 @@ table{
 			<td>${edit.afterStatus}</td>
 			<td>${edit.applyDate}</td>
 			<td>${edit.approvalDate}</td>
-			<c:if test="${edit.ingStatus eq '승인대기중'}" >
+			<c:if test="${edit.ingStatus eq '승인대기'}" >
 				<td><span style="color: red; font-weight: bold;">${edit.ingStatus}</span></td>
 			</c:if>
 			<c:if test="${edit.ingStatus eq '승인완료'}" >

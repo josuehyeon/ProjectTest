@@ -52,7 +52,7 @@ public class AdminController {
 			return "redirect:/admin/editStatus";
 		}
 		
-		//학적변동 승인대기중으로 돌리기
+		//학적변동 승인대기로 돌리기
 		@GetMapping("/editStatus2")
 		public String editStatus2(Model model, EditStatusVO editStatusVO) {
 			int[] a = editStatusVO.getStuNoList();

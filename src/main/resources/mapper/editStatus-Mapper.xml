@@ -68,8 +68,8 @@
 	<update id="cancelEdit">
 		UPDATE EDIT_STATUS
 		SET
-		ING_STATUS = '승인대기중'
-		<!-- <if test="ingStatus = '승인대기중'">
+		ING_STATUS = '승인대기'
+		<!-- <if test="ingStatus = '승인대기'">
 		, APPROVAL_DATE = TO_CHAR(APPROVAL_DATE, '-') AS APPROVAL_DATE
 		</if> -->
 		, APPROVAL_DATE = NULL
