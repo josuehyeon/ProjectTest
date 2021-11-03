@@ -1,5 +1,6 @@
 package com.kh.project.lecture.vo;
 
+
 public class LectureVO {
 	private String lecId;
 	private String lecName;

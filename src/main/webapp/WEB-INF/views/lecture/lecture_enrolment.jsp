@@ -16,10 +16,10 @@ iframe {
 	height: 900px;
 }
 </style>
-<script type="text/javascript" src="/resources/sample/js/lecture_enrolment.js?ver=222222259"></script>
+<script type="text/javascript" src="/resources/sample/js/lecture_enrolment.js?ver=223222222222592"></script>
 </head>
 <body>
-<form action="/lecture/enrolment" method="post" id="enrolment">
+
 <table class="table">
 <caption align="top">강의리스트</caption>
   <thead>
@@ -39,23 +39,27 @@ iframe {
   <tbody>
 <c:forEach items="${lectureList}" var="lectureInfo">
     <tr>
-      <th scope="row">${lectureInfo.lecId }</th>
-      <td><input type="hidden" name="lecId" value="${lectureInfo.lecId }"><a data-lecId="${lectureInfo.lecId }" class="pdf">${lectureInfo.lecName }</a></td>
-      <td><input type="hidden" name="lecCredit" value="${lectureInfo.lecCredit }">${lectureInfo.lecCredit }</td>
-      <td><input type="hidden" name="collName" value="${lectureInfo.collName }">${lectureInfo.collName }</td>
-      <td><input type="hidden" name="deptName" value="${lectureInfo.deptName }">${lectureInfo.deptName }</td>
-      <td><input type="hidden" name="profName" value="${lectureInfo.profName }">${lectureInfo.profName }</td>
-      <td><input type="hidden" name="assiName" value="${lectureInfo.assiName }">${lectureInfo.assiName }</td>
-      <td><input type="hidden" name="lecDay" value="${lectureInfo.lecDay }">${lectureInfo.lecDay }</td>
-      <td><input type="hidden" name="lecPeriod" value="${lectureInfo.lecPeriod }">${lectureInfo.lecPeriod }</td>
+      <th scope="row">
+      ${lectureInfo.lecId }</th>
+      <td><a data-lecId="${lectureInfo.lecId }" class="pdf">${lectureInfo.lecName }</a></td>
+      <td>${lectureInfo.lecCredit }</td>
+      <td>${lectureInfo.collName }</td>
+      <td>${lectureInfo.deptName }</td>
+      <td>${lectureInfo.profName }</td>
+      <td>${lectureInfo.assiName }</td>
+      <td>${lectureInfo.lecDay }</td>
+      <td>${lectureInfo.lecPeriod }</td>
       <td>
-	      <input type="button" class="enrolment" value="신청" data-lecId="${lectureInfo.lecId }" onclick="enrolment(); ">
+      	<form action="/lecture/enrolment" method="post" id="enrolment">
+	      	 <input type="hidden" name="lecId" value="${lectureInfo.lecId }">
+	   		 <input type="hidden" name="stuNo" value="${stuInfo.stuNo }">
+	    	<input type="button" class="enrolment" value="신청">
+		</form>
 	  </td>
     </tr>
 </c:forEach>
   </tbody>
 </table>
-</form>
 
 
 <table class="table">
@@ -75,23 +79,23 @@ iframe {
     </tr>
   </thead>
   <tbody>
-<%-- <c:forEach items="${lectureList}" var="lectureInfo">
+<c:forEach items="${enrolmentList}" var="enrolmentInfo">
     <tr>
-      <th scope="row">${lectureInfo.lecId }</th>
-      <td><a data-lecId="${lectureInfo.lecId }" class="pdf">${lectureInfo.lecName }</a></td>
-      <td>${lectureInfo.lecCredit }</td>
-      <td>${lectureInfo.collName }</td>
-      <td>${lectureInfo.deptName }</td>
-      <td>${lectureInfo.profName }</td>
-      <td>${lectureInfo.assiName }</td>
-      <td>${lectureInfo.lecDay }</td>
-      <td>${lectureInfo.lecPeriod }</td>
+      <th scope="row">${enrolmentInfo.lecId }</th>
+      <td><a data-lecId="${enrolmentInfo.lecId }" class="pdf">${enrolmentInfo.lectureViewVO.lecName }</a></td>
+      <td>${enrolmentInfo.lectureViewVO.lecCredit }</td>
+      <td>${enrolmentInfo.lectureViewVO.collName }</td>
+      <td>${enrolmentInfo.lectureViewVO.deptName }</td>
+      <td>${enrolmentInfo.lectureViewVO.profName }</td>
+      <td>${enrolmentInfo.lectureViewVO.assiName }</td>
+      <td>${enrolmentInfo.lectureViewVO.lecDay }</td>
+      <td>${enrolmentInfo.lectureViewVO.lecPeriod }</td>
       <td>
-	      <input type="button" class="enrolment" value="빼기" data-lecId="${lectureInfo.lecId }">
+	      <input type="button" value="빼기" onclick="deleteEnrol('${enrolmentInfo.enrolmentId}');">
 		  
 	  </td>
     </tr>
-</c:forEach> --%>
+</c:forEach>
   </tbody>
 </table>
 

@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +21,13 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.kh.project.common.util.FileUploadUtil;
 import com.kh.project.lecture.service.LectureService;
+import com.kh.project.lecture.vo.EnrolmentVO;
 import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.lecture.vo.LectureViewVO;
 import com.kh.project.lecture.vo.PdfVO;
 import com.kh.project.lecture.vo.RegLectureSelectBoxVO;
+import com.kh.project.portal.vo.MemberVO;
+import com.kh.project.stuManage.service.StuManageService;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
 import com.kh.project.stuManage.vo.EmpVO;
@@ -31,6 +35,8 @@ import com.kh.project.stuManage.vo.EmpVO;
 @Controller
 @RequestMapping("/lecture")
 public class LectureController {
+	@Resource(name = "stuManageService")
+	private StuManageService stuManageService;
 
 	@Resource(name = "lectureService")
 	private LectureService lectureService;
@@ -185,11 +191,31 @@ public class LectureController {
 		return lectureService.selectLecPdf(lectureVO);
 	}
 	
-	//수강신청
+	//수강신청하는폼
 	@GetMapping("/goEnrolment")
-	public String goEnrolment(Model model, LectureViewVO lectureViewVO) {
+	public String goEnrolment(Model model, LectureViewVO lectureViewVO, HttpSession session) {
+		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
+		model.addAttribute("stuInfo", stuManageService.selectStuInfoForChange(result));
 		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
+		
+		model.addAttribute("enrolmentList", lectureService.selectEnrolList(result));
 		return "lecture/lecture_enrolment";
 	}
+	
+	//수강신청
+	@PostMapping("/enrolment")
+	public String enrolment(EnrolmentVO enrolmentVO) {
+		lectureService.enrolment(enrolmentVO);
+		return "redirect:/lecture/goEnrolment";
+	}
+	
+	//수강신청하나씩삭제
+	@GetMapping("/deleteEnrol")
+	public String deleteEnrol(EnrolmentVO enrolmentVO) {
+		lectureService.deleteEnrolmentOne(enrolmentVO);
+		return "redirect:/lecture/goEnrolment";
+	}
+	
+	
 
 }

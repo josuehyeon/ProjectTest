@@ -4,11 +4,9 @@ $(document).ready(function(){
 	//강의 신청
 	$(document).on('click', '.enrolment', function() {
 		var result = confirm('강의신청하시겠습니까?');
-		var lecId =  $(this).attr('data-lecId');
 		
 		if(result){
-			$('#enrolment').submit();
-			location.href='/lecture/enrolment';
+			$(this).parent().submit();
 		}
     });
 	
@@ -46,13 +44,13 @@ $(document).ready(function(){
 //함수 선언 영역
 (function($){
 	
-	/*enrolment = function(){
-		var result = confirm=('수강신청하시겠습니까?');
-		
+	deleteEnrol = function(enrolmentId){
+		var result = confirm('취소하시겠습니까?');
+
 		if(result) {
-			//$('#enrolment').submit();
+			location.href='/lecture/deleteEnrol?enrolmentId='+enrolmentId;
 		}
-	};*/
+	};
    
 })(jQuery);
 

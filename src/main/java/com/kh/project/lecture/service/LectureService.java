@@ -2,9 +2,11 @@ package com.kh.project.lecture.service;
 
 import java.util.List;
 
+import com.kh.project.lecture.vo.EnrolmentVO;
 import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.lecture.vo.LectureViewVO;
 import com.kh.project.lecture.vo.PdfVO;
+import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
 import com.kh.project.stuManage.vo.EmpVO;
@@ -50,4 +52,14 @@ public interface LectureService {
 	
 	//lec_id 에 따른 pdf 조회
 	PdfVO selectLecPdf(LectureVO lectureVO);
+	
+	//수강신청하기
+	void enrolment(EnrolmentVO enrolmentVO);
+	
+	//수강신청테이블 리트스 조회
+	List<EnrolmentVO> selectEnrolList(MemberVO memberVO);
+	
+	//수강신청테이블에서 하나씩 삭제
+	void deleteEnrolmentOne(EnrolmentVO enrolmentVO);
+	
 }
