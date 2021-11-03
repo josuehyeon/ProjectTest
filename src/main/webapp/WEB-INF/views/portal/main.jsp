@@ -44,7 +44,7 @@
 
 <span>관리자 내 정보관리</span>
 	<a href="/emp/chkInfoJsp">내 정보 조회</a>
-	<a href="/emp/changeInfoJsp">내 정보 조회</a>
+	<a href="/emp/changeInfoJsp">내 정보 수정</a>
 
 
 </body>

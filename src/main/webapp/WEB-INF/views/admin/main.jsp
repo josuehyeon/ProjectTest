@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/admin/selectStu">학생 조회</a><br>
+<a class="link-navy" href="/admin/selectStu">학생 조회</a><br>
 <a href="/admin/manageGrade">성적 관리</a><br>
 <a href="/admin/permissionToStudent">학적 변동승인</a><br>
 <a href="/admin/stuNotice">학사경고 / 제적</a><br>
