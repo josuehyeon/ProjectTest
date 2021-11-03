@@ -30,34 +30,11 @@
 		ORDER BY APPLY_DATE
 	</select>
 
-	<!-- <insert id="insertEdit">
-		INSERT INTO EDIT_STATUS (
-			EDIT_NO
-			, STU_NO
-			, (SELECT M.MEM_NAME FROM MEMBER WHERE MEM_NO = STU_NO) AS MEM_NAME
-			, NOW_STATUS
-		    , AFTER_STATUS
-		    , TO_CHAR(APPLY_DATE, 'YYYY/MM/DD') AS APPLY_DATE
-		    , TO_CHAR(APPROVAL_DATE, 'YYYY/MM/DD') AS APPROVAL_DATE
-			, ING_STATUS
-		) VALUES (
-			(SELECT NVL(MAX(EDIT_NO) + 1, 1) FROM EDIT_STATUS)
-			, #{stuNo}
-			, #{memName}
-			, '휴학'
-			, '휴학'
-			, #{approvalDate}
-			, '승인완료'
-		)
-	</insert> -->
-
 	<update id="updateEdit">
 		UPDATE EDIT_STATUS
 		SET
 		ING_STATUS = '승인완료'
 		, APPROVAL_DATE = SYSDATE
-		<!-- <if test="ingStatus = '승인완료'">
-		</if> -->
 		WHERE STU_NO IN 
 		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
 			#{stuNo}
@@ -65,13 +42,20 @@
 		
 	</update>
 	
+	<update id="updateStudentStatus">
+		UPDATE STUDENT
+		SET
+		STU_STATUS = '휴학'
+		WHERE STU_NO IN
+		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
+			#{stuNo}
+		</foreach>
+	</update>
+	
 	<update id="cancelEdit">
 		UPDATE EDIT_STATUS
 		SET
 		ING_STATUS = '승인대기'
-		<!-- <if test="ingStatus = '승인대기'">
-		, APPROVAL_DATE = TO_CHAR(APPROVAL_DATE, '-') AS APPROVAL_DATE
-		</if> -->
 		, APPROVAL_DATE = NULL
 		WHERE STU_NO IN 
 		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">

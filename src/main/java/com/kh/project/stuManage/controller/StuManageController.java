@@ -53,40 +53,28 @@ public class StuManageController {
 	}
 	
 	//휴학 신청 들어가기
-		@GetMapping("/goStopStudy")
-		public String goStopStudy(HttpSession session , Model model) {
-			//로그인 세션 정보 가져오기
-			MemberVO member = (MemberVO)session.getAttribute("loginInfo");
-			//휴학 신청에 memNo를 넣어서 특정 학생의 데이터를 가져옴
-			int memNo = member.getMemNo();
-			model.addAttribute("stopStudyInfo", stuManageService.goStopStudy(memNo));
-			
-			//일단 학생번호가 필요한데, 학생번호가 회원번호랑 동일하다는 가정...
-			//승인 대기 중인 데이터 조회
-			int waitCnt = stuManageService.selectWaitCnt(memNo);
-			model.addAttribute("waitCnt", waitCnt);
-			return "stuManage/stopStudy";
-		}
+	@GetMapping("/goStopStudy")
+	public String goStopStudy(HttpSession session , Model model) {
+		//로그인 세션 정보 가져오기
+		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
+		//휴학 신청에 memNo를 넣어서 특정 학생의 데이터를 가져옴
+		int memNo = member.getMemNo();
+		model.addAttribute("stopStudyInfo", stuManageService.goStopStudy(memNo));
 		
-		//휴학 신청 
-		@PostMapping("/goStopStudy")
-		public String goStopStudy(Model model, EditStatusVO editStatusVO) {
-			model.addAttribute("insertStatusInfo", stuManageService.insertStatus(editStatusVO));
-			return "redirect:/stuManage/goStopStudy";
-		}
-		
-		//휴학 신청페이지에서 학적상태를 휴학으로 변경
-		@GetMapping("/updateStop")
-		public String updateStop(HttpSession session, int stuNo) {
-			//로그인 세션 정보 가져오기
-			MemberVO member = (MemberVO)session.getAttribute("loginInfo");
-			//휴학 신청에 memNo를 넣어서 특정 학생의 데이터를 가져옴
-			int memNo = member.getMemNo();
-			
-			stuManageService.updateStopStudy(stuNo);
-			return "redirect:/stuManage/goStopStudy";
-		}
+		//일단 학생번호가 필요한데, 학생번호가 회원번호랑 동일하다는 가정...
+		//승인 대기 중인 데이터 조회
+		int waitCnt = stuManageService.selectWaitCnt(memNo);
+		model.addAttribute("waitCnt", waitCnt);
+		return "stuManage/stopStudy";
+	}
 	
+	//휴학 신청 
+	@PostMapping("/goStopStudy")
+	public String goStopStudy(Model model, EditStatusVO editStatusVO) {
+		model.addAttribute("insertStatusInfo", stuManageService.insertStatus(editStatusVO));
+		return "redirect:/stuManage/goStopStudy";
+	}
+		
 	//복학 안내
 	@GetMapping("/againStudyInfo")
 	public String againStudyInfo() {

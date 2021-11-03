@@ -44,6 +44,5 @@ public interface StuManageService {
 
 	int selectWaitCnt(int memNo);
 	
-	void updateStopStudy(int stuNo);
 	
 }

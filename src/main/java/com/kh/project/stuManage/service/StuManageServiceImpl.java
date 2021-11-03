@@ -36,12 +36,6 @@ public class StuManageServiceImpl implements StuManageService{
 		return sqlSession.selectOne("studentMapper.selectWaitCnt", memNo);
 	}
 
-	@Override
-	public void updateStopStudy(int stuNo) {
-		sqlSession.update("studentMapper.updateStopStudy", stuNo);
-	}
-	
-	
 	
 	@Override
 	public StudentVO selectStuInfoForChange(MemberVO memberVO) {

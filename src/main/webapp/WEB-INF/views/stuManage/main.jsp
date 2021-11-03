@@ -15,7 +15,7 @@
 </head>
 <body>
 <a href="/stuManage/stopStudyInfo">휴학 안내</a><br>
-<div class="goStopStudy"><a href="/stuManage/goStopStudy">휴학 신청</a></div>
+<a href="/stuManage/goStopStudy">휴학 신청</a><br>
 
 
 <a href="/stuManage/againStudyInfo">복학 안내</a><br>

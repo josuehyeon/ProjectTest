@@ -38,7 +38,6 @@ public class AdminController {
 		@GetMapping("/editStatus")
 		public String editStatus(Model model) {
 			model.addAttribute("selectEditList", adminService.selectEditList());
-//			model.addAttribute("insertEdit", adminService.insertEdit(editStatusVO));
 			return "admin/editStatus"; 
 		} 
 		
@@ -46,9 +45,11 @@ public class AdminController {
 		@GetMapping("/editStatus1")
 		public String editStatus1(Model model, EditStatusVO editStatusVO) {
 			int[] a = editStatusVO.getStuNoList();
-			System.out.println(a);
 			
 			model.addAttribute("updateEdit", adminService.updateEdit(editStatusVO));
+			//휴학 신청페이지에서 학적상태를 휴학으로 변경
+			adminService.updateStudentStatus(editStatusVO);
+			
 			return "redirect:/admin/editStatus";
 		}
 		

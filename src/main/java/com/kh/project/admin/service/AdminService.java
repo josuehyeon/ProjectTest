@@ -13,4 +13,6 @@ public interface AdminService {
 	int cancelEdit(EditStatusVO editStatusVO);
 	
 	int deleteEdit(EditStatusVO editStatusVO);
+	
+	void updateStudentStatus(EditStatusVO editStatusVO);
 }

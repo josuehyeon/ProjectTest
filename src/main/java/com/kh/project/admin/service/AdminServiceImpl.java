@@ -33,4 +33,9 @@ public class AdminServiceImpl implements AdminService{
 		return sqlSession.delete("editStatusMapper.deleteEdit", editStatusVO);
 	}
 	
+	@Override
+	public void updateStudentStatus(EditStatusVO editStatusVO) {
+		sqlSession.update("editStatusMapper.updateStudentStatus", editStatusVO);
+	}
+	
 }

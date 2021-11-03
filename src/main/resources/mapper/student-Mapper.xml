@@ -73,14 +73,6 @@
 		AND ING_STATUS = '승인대기'
 	</select>
 	
-	<update id="updateStopStudy">
-		UPDATE STUDENT
-		SET 
-		STU_STATUS = '휴학'
-        FROM STUDENT 
-		WHERE STU_NO = #{stuNo}
-	</update>
-	
 	<select id="selectMyInfoForGraduation" resultMap="student">
 		SELECT  S.STU_NO
 			  , M.MEM_NAME
