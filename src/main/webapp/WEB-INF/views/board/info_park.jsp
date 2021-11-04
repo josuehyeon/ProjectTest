@@ -36,7 +36,6 @@ thead{
 	background-color: #212529; 
 	color: white;
 	margin-bottom: 20px;
-	
 }
 .Ht{
 	border-top: 30px; border-bottom: 30px;

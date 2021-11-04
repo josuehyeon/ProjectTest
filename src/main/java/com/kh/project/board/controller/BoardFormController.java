@@ -37,12 +37,11 @@ public class BoardFormController {
 		return "boardForm/board/board_detail";
 	}
 	//댓글 등록
-	@ResponseBody
 	@PostMapping("/istComm")
-	public List<CommVO> doIstComm(Model md, int boardNo, CommVO cvo) {
+	public String doIstComm(Model md, int boardNo, CommVO cvo) {
 		boardService.istComm(cvo);
 		md.addAttribute("nowDate", getNowDateToString());
-		return boardService.sltCommList(cvo);
+		return "redirect:/form/detail";
 	}
 	
 	   private String getNowDateToString() {

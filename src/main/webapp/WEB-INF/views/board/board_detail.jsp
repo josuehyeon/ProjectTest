@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/comm/student_manage.js"></script>
 <style type="text/css">
 .title{
 	background-color: #4f4d4b;
@@ -37,18 +36,6 @@
 	</div>
 	<input type="submit" value="댓글 등록" id="commIst">
 	<div>
-		<c:choose>
-			<c:when test="${not empty commList }">
-				<c:forEach items="${commList }" var="comm">
-					<div class="tableDiv">
-						
-					</div>
-				</c:forEach>
-			</c:when>
-			<c:otherwise>
-				등록된 댓글이 없습니다.
-			</c:otherwise>
-		</c:choose>
 	</div>
 </form>
 </body>
