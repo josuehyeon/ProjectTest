@@ -32,9 +32,9 @@
 	<input type="hidden" name="boardNo" value="${board.boardNo }">
 	<input type="submit" value="글 삭제"> <a href="/board/dltBd?boardNo=${board.boardNo }"></a>
 	<div>
-		<textarea rows="5" cols="120" style="resize: none; margin: 0 auto; verrical-align" placeholder="타인에게 상처를 입히는 발언은 제재 당할 수 있음을 알립니다."></textarea>
+		<textarea rows="5" cols="120" style="resize: none; margin: 0 auto; verrical-align" placeholder="타인에게 상처를 입히는 발언은 제재 당할 수 있음을 알립니다." id="isComm"></textarea>
 	</div>
-	<input type="submit" value="댓글 등록">
+	<input type="submit" value="댓글 등록" id="commIst">
 </form>
 </body>
 </html>

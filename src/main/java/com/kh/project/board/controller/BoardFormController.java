@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.board.service.BoardService;
 import com.kh.project.board.vo.CommVO;
@@ -35,6 +36,7 @@ public class BoardFormController {
 		return "boardForm/board/board_detail";
 	}
 	//댓글 등록
+	@ResponseBody
 	@PostMapping("/istComm")
 	public String doIstComm(Model md, int boardNo, CommVO cvo) {
 		boardService.istComm(cvo);
