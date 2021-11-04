@@ -3,6 +3,7 @@ package com.kh.project.board.controller;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -38,10 +39,10 @@ public class BoardFormController {
 	//댓글 등록
 	@ResponseBody
 	@PostMapping("/istComm")
-	public String doIstComm(Model md, int boardNo, CommVO cvo) {
+	public List<CommVO> doIstComm(Model md, int boardNo, CommVO cvo) {
 		boardService.istComm(cvo);
 		md.addAttribute("nowDate", getNowDateToString());
-		return "redirect:/form/detail";
+		return boardService.sltCommList(cvo);
 	}
 	
 	   private String getNowDateToString() {

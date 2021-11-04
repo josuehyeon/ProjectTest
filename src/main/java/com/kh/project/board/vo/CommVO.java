@@ -7,9 +7,20 @@ public class CommVO {
 	private String commDate;
 	private int commWriter;
 	
+	
+	public CommVO(int commNo, int boardNo, String commContent, String commDate, int commWriter) {
+		super();
+		this.commNo = commNo;
+		this.boardNo = boardNo;
+		this.commContent = commContent;
+		this.commDate = commDate;
+		this.commWriter = commWriter;
+	}
+	
 	public int getCommNo() {
 		return commNo;
 	}
+
 	public void setCommNo(int commNo) {
 		this.commNo = commNo;
 	}
