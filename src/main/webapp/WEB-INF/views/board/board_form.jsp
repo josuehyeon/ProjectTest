@@ -63,7 +63,7 @@ table {
 				</tr>
 				<tr>
 					<td colspan="6" class="tt">
-						임의 작성자 : <input type="text" name="boardWriter" value="20101111" readonly="readonly">
+						임의 작성자 : <input type="text" name="boardWriter" value="${sessionScope.loginInfo.memNo }" readonly="readonly">
 					</td>
 				</tr>
 			</table>

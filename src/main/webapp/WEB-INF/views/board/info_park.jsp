@@ -84,7 +84,7 @@ a.sltedPage{
 					</thead>
 					<tbody>
 					<c:choose>
-						<c:when test="${not empty boardList and cateNo eq 1}">
+						<c:when test="${not empty boardList or cateNo eq 1}">
 							<c:forEach items="${boardList }" var="board">
 								<tbody>
 									<tr class="trh">
