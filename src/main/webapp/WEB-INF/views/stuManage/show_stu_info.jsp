@@ -75,14 +75,14 @@ td{
 	<table>
 		<tr>
 			<td>검색</td>
-			<td> <input type="text" name="searchValue" value=""> </td>
-			<td> <input type="button" value="조회"> </td>
+			<td> <input style="width: 515px;" type="text" name="searchValue" value="" placeholder="학번 또는 이름을 검색하세요."> </td>
+			<td> <input type="button" value="검색"> </td>
 		</tr>
 	</table>
 </div>
 <!-- 학생 목록 조회 -->
 <div>
-	<span>*학생의 이름을 클릭하면 학생의 상세페이지로 이동</span>
+	<span style="color: red;">*학생의 이름을 클릭하면 학생의 상세페이지로 이동</span>
 	<table>
 		<tr>
 			<td>학번</td>
