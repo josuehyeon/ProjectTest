@@ -104,11 +104,12 @@
 		, LEC_DAY
     	, LEC_PERIOD
 		FROM LECTURE_VIEW
+		WHERE 1 = 1
 		<if test="lecId != null and !lecId.equals('')">
-		WHERE LEC_ID = #{lecId}
+		AND LEC_ID = #{lecId}
 		</if>
 		<if test="deptId != null and !deptId.equals('')">
-	    WHERE DEPT_ID LIKE '%'||UPPER(#{deptId})||'%'
+	    AND DEPT_ID LIKE '%'||UPPER(#{deptId})||'%'
 	    </if>
 	     <if test="lecName != null and !lecName.equals('')">
 	    AND UPPER(LEC_NAME) LIKE '%'||UPPER(#{lecName})||'%'
