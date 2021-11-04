@@ -14,7 +14,6 @@ $(document).ready(function() {
 			url: '/form/istComm', //요청경로
 			type: 'post', // 컨트롤러에서 데이터를 받을때, @PostMapping("/studentListAjax")으로 받아야됨
 			data: { 'boardNo': comm.boardNo, 'commContent':comm.commContent }, //필요한 데이터 ('넘기는 데이터 이름' : 변수이름(예 : var classCode))
-			// 한개 이상이 될때 data: { 'classCode': classCode, 'age' : 20 }
 			// 실행2 콘솔로 갔다가 다시 와서 실행3을 진행 한다.
 			// 실행3
 			success: function(result) { // result 값은 컨트롤에서 리턴하는 값이 넘어 온다.
