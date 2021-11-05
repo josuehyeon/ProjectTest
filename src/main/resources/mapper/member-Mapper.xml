@@ -6,6 +6,7 @@
 <resultMap type="com.kh.project.portal.vo.MemberVO" id="member">
 	<id 	column="MEM_NO" 	property="memNo"/>
 	<result column="MEM_PW" 	property="memPw" />
+	<result column="MEM_NAME" 	property="memName" />
 	<result column="MEM_EMAIL" 	property="memEmail" />
 	<result column="MEM_ADDR" 	property="memAddr" />
 	<result column="MEM_TEL" 	property="memTel" />
