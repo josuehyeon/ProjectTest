@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.admin.service.AdminService;
 import com.kh.project.admin.vo.EditStatusVO;
@@ -92,6 +93,14 @@ public class AdminController {
 		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
 		return "admin/stuSwitch";
 	}
+	
+	@ResponseBody
+	@PostMapping("/stuSwitchAjax")
+	public void stuSwitchAjax() {
+		
+	}
+	
+	
 }
 
 
