@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kh.project.admin.vo.EditStatusVO;
+import com.kh.project.stuManage.vo.ChangeMajorVO;
 
 @Service("adminService")
 public class AdminServiceImpl implements AdminService{
@@ -36,6 +37,18 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public void updateStudentStatus(EditStatusVO editStatusVO) {
 		sqlSession.update("editStatusMapper.updateStudentStatus", editStatusVO);
+	}
+
+	//전과 신청 목록
+	@Override
+	public List<ChangeMajorVO> AdminChangeMajorRequestList() {
+		return sqlSession.selectList("changeMajorMapper.AdminChangeMajorRequestList");
+	}
+
+	//전과 신청목록에서 모달로 개인정보 띄우기
+	@Override
+	public ChangeMajorVO modalStuInfo() {
+		return sqlSession.selectOne("changeMajorMapper.modalStuInfo");
 	}
 	
 }

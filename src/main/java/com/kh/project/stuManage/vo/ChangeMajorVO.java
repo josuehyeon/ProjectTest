@@ -1,5 +1,8 @@
 package com.kh.project.stuManage.vo;
 
+import com.kh.project.portal.vo.MemberVO;
+import com.kh.project.stuInfo.vo.StudentVO;
+
 public class ChangeMajorVO {
 	private String changeId;
 	private String status;
@@ -16,7 +19,43 @@ public class ChangeMajorVO {
 	private String upCollName;
 	private String upDeptName;
 	
+	private CollegeVO collegeInfo;
+	private DeptVO deptInfo;
+	private StudentVO studentInfo;
+	private MemberVO memberInfo;
+	private DoubleMajorVO doubleMajorInfo;
 	
+	
+	public DoubleMajorVO getDoubleMajorInfo() {
+		return doubleMajorInfo;
+	}
+	public void setDoubleMajorInfo(DoubleMajorVO doubleMajorInfo) {
+		this.doubleMajorInfo = doubleMajorInfo;
+	}
+	public MemberVO getMemberInfo() {
+		return memberInfo;
+	}
+	public void setMemberInfo(MemberVO memberInfo) {
+		this.memberInfo = memberInfo;
+	}
+	public CollegeVO getCollegeInfo() {
+		return collegeInfo;
+	}
+	public void setCollegeInfo(CollegeVO collegeInfo) {
+		this.collegeInfo = collegeInfo;
+	}
+	public DeptVO getDeptInfo() {
+		return deptInfo;
+	}
+	public void setDeptInfo(DeptVO deptInfo) {
+		this.deptInfo = deptInfo;
+	}
+	public StudentVO getStudentInfo() {
+		return studentInfo;
+	}
+	public void setStudentInfo(StudentVO studentInfo) {
+		this.studentInfo = studentInfo;
+	}
 	public String getCollName() {
 		return collName;
 	}

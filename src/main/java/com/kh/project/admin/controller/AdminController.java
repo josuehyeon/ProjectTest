@@ -5,10 +5,12 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kh.project.admin.service.AdminService;
 import com.kh.project.admin.vo.EditStatusVO;
+import com.kh.project.stuManage.vo.ChangeMajorVO;
 
 @Controller
 @RequestMapping("/admin")
@@ -76,12 +78,20 @@ public class AdminController {
 		return "admin/stuNotice";
 	}
 	
-	//전과, 복수전공
+	//전과, 복수전공 페이지
 	@GetMapping("/stuSwitch")
-	public String stuSwitch() {
+	public String stuSwitch(Model model) {
+		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
+		model.addAttribute("modalStuInfo", adminService.modalStuInfo());
 		return "admin/stuSwitch";
 	}
 	
+	//전과신청 목록 띄우기
+	@PostMapping("/stuSwitch1")
+	public String stuSwitch1(Model model) {
+		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
+		return "admin/stuSwitch";
+	}
 }
 
 

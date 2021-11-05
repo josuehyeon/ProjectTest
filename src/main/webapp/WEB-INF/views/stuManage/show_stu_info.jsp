@@ -82,7 +82,7 @@ td{
 </div>
 <!-- 학생 목록 조회 -->
 <div>
-	<span style="color: red;">*학생의 이름을 클릭하면 학생의 상세페이지로 이동</span>
+	<span style="color: red; text-align: left;">*학생의 이름을 클릭하면 학생의 상세페이지로 이동</span>
 	<table>
 		<tr>
 			<td>학번</td>
