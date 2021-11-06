@@ -102,7 +102,7 @@
 	<!-- 총 이수학점, 평점평균 -->
 	<select id="totalSumAvg" resultMap="stuGrade">
 	SELECT  SUM(L.LEC_CREDIT) LEC_CREDIT
-          , AVG(G.SCORE) SCORE
+          , TO_CHAR(AVG(G.SCORE),99.99) SCORE
 	FROM STU_GRADE SG , LECTURE L , GRADE G, SEMESTER S
 	WHERE SG.LEC_ID = L.LEC_ID
 	  AND SG.GRADE  = G.GRADE

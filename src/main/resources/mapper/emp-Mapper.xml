@@ -42,14 +42,17 @@
 		AND EMP_JOB=2
 		AND EMP_COLL=#{collNo}
 	</select>
+	
+	<!-- 직원이 로그인했을 때 내 정보 조회 -->
 	<select id="selectEmpMyInfo" resultMap="emp">
-		SELECT EMP_NO
-  			  ,EMP_CLASS
-			  ,EMP_DEPT
-			  ,EMP_COLL
-			  ,EMP_JOB
-		FROM   EMP
-		WHERE  EMP_NO = #{empNo}
+		SELECT  EMP_NO
+  			  , EMP_CLASS
+			  ,(SELECT COLL_NAME FROM COLLEGE WHERE COLL_NO = E.EMP_COLL ) AS COLL_NAME
+			  ,(SELECT DEPT_NAME FROM DEPT WHERE DEPT_ID= E.EMP_DEPT) AS DEPT_NAME
+			  , EMP_JOB
+		FROM    EMP E, COLLEGE C
+		WHERE E.EMP_COLL = C.COLL_NO
+        AND     EMP_NO = #{empNo}
 	</select>
 	
 	

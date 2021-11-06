@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,6 @@
 table{
 	border: 1px solid black;
 	width: 600px;
-	empty-cells: show;
 }
 tr,td{
 	border: 1px solid black;
@@ -26,7 +25,7 @@ tr,td{
 			<td>이름</td>
 			<td>${memberInfo.memName}</td>
 			<td>소속</td>
-			<td>${empInfo.empDept} ${empInfo.empColl}</td>
+			<td>${empInfo.collegeInfo.collName} ${empInfo.deptInfo.deptName} </td>
 		</tr>
 		<tr>
 		</tr>

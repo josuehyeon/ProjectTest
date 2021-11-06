@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +30,6 @@
 table{
 	border: 1px solid black;
 	width: 600px;
-	empty-cells: show;
 }
 tr,td{
 	border: 1px solid black;
@@ -52,7 +51,7 @@ tr,td{
 		</tr>
 		<tr>
 			<td>소속</td>
-			<td>${studentInfo.majorCode }</td>
+			<td>${studentInfo.collegeInfo.collName } / ${studentInfo.majorCode }</td>
 			<td>부전공</td>
 			<td>${studentInfo.minorCode }</td>
 		</tr>
@@ -100,11 +99,6 @@ tr,td{
 	</div>
 </form>
 
-<br>
-소속: 학과코드로 표시되어 있음. 나중에 학과 이름이 나오게 처리해야함.
-<br>
-학적상태: 0재학 / 1휴학 / 2복학 / 3자퇴 /4제적 (이거도 마찬가지 코드 말고 한글로 나오게)
-<br>
 
 
 

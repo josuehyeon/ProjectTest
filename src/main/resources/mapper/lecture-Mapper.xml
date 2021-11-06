@@ -198,6 +198,10 @@
 		WHERE ENROLMENT_ID=#{enrolmentId}
 	</delete>
 	
+	<select id="">
+	
+	</select>
+	
 			
 </mapper>
 

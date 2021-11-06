@@ -12,8 +12,8 @@ public class EmpServiceImpl implements EmpService {
 	private SqlSessionTemplate sqlSession;
 
 	@Override
-	public EmpVO selectEmpMyInfo(int memNo) {
-		return sqlSession.selectOne("empMapper.selectEmpMyInfo", memNo);
+	public EmpVO selectEmpMyInfo(int empNo) {
+		return sqlSession.selectOne("empMapper.selectEmpMyInfo", empNo);
 	}
 	
 	

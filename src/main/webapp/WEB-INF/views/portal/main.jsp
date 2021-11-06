@@ -46,6 +46,11 @@
 	<a href="/emp/chkInfoJsp">내 정보 조회</a>
 	<a href="/emp/changeInfoJsp">내 정보 수정</a>
 
+<br>
+<br>
+
+<span>관리자 내 정보관리</span>
+	<a href="/stuManage/">내 정보 조회</a>
 
 </body>
 </html>
