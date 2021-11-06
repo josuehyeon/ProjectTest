@@ -151,15 +151,17 @@ section {
 			    	<li><a href="#">MENU6</a></li>
 					</c:when>
 					<c:when test="${sessionScope.loginInfo.memAuth eq 2}">
-						<li><a class="nav-link link-light mmn" href="/admin/goMain">학생관리(Admin)</a>
+						<li>
 				    	<ul id="sub-menu">
-				        	<li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
+				    		<li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li>
+				        	
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
 					    </ul>
-		    		</li>
+		    			</li>
 					</c:when>
+					
 					<c:otherwise>
 						<li><a class="nav-link link-light mmn" href="#">내 정보</a>
 	      				<ul id="sub-menu">
