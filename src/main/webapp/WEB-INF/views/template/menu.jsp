@@ -152,7 +152,7 @@ section {
 			    	<li><a href="#">MENU6</a></li>
 					</c:when>
 					<c:when test="${sessionScope.loginInfo.memAuth eq 2}">
-						<li><a class="nav-link link-#00154a mm" href="/admin/permissionToStudent">학적 변동승인</a>
+						<li><a class="nav-link link-#00154a mm" href="/admin/editStatus">학적 변동승인</a>
 				    	<ul id="sub-menu">
 				    		<li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
