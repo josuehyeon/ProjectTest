@@ -151,7 +151,14 @@ section {
 			    	<li><a href="#">MENU6</a></li>
 					</c:when>
 					<c:when test="${sessionScope.loginInfo.memAuth eq 2}">
-						교수자리라네
+						<li><a class="nav-link link-light mmn" href="/admin/goMain">학생관리(Admin)</a>
+				    	<ul id="sub-menu">
+				        	<li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
+					    </ul>
+		    		</li>
 					</c:when>
 					<c:otherwise>
 						<li><a class="nav-link link-light mmn" href="#">내 정보</a>
@@ -166,7 +173,6 @@ section {
 				    	<ul id="sub-menu">
 				        	<li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuSwitch" aria-label="subemnu">전과 / 복수전공</a></li>
 					    </ul>
