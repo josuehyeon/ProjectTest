@@ -152,12 +152,11 @@ section {
 			    	<li><a href="#">MENU6</a></li>
 					</c:when>
 					<c:when test="${sessionScope.loginInfo.memAuth eq 2}">
-						<li>
+						<li><a class="nav-link link-#00154a mm" href="/admin/permissionToStudent">학적 변동승인</a>
 				    	<ul id="sub-menu">
 				    		<li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li>
-				        	
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
+				        	<li></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuSwitch" aria-label="subemnu">전과 / 복수전공</a></li>
 					    </ul>
