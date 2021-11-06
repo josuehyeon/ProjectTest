@@ -1,11 +1,11 @@
 /* 페이지 로딩 후 실행 */
-$(document).ready(function(){
-   $(document).on('click', '#modal', function() { 
-      var a = confirm('승인하시겠습니까?');
-      if(a){
-    	  alert('승인 완료');
-    	  /*$(this).val('승인 완료');*/
-    	  location.href = '/admin/stuSwitch';
+//$(document).ready(function(){
+//   $(document).on('click', '#modal', function() { 
+//      var a = confirm('승인하시겠습니까?');
+//      if(a){
+//    	  alert('승인 완료');
+//    	  /*$(this).val('승인 완료');*/
+//    	  location.href = '/admin/stuSwitch';
     	/*//ajax 사용
   		$.ajax({
   	        url: '/admin/stuSwitchAjax', //요청경로
@@ -26,7 +26,7 @@ $(document).ready(function(){
   	        	alert('error');
   	        } //error 닫기
   		}); //ajax 닫기
-*/      }
+      }
       else{
     	  alert('승인 취소');
       }
@@ -38,7 +38,15 @@ $(document).ready(function(){
 
 /* 함수선언 영역*/
 (function($){
-     /*aaa = function(){
-   
-     };*/
+     edit = function(stuNo){
+    	 var a = confirm('승인하시겠습니까?');
+    	 if(a){
+    		 alert('승인 완료');
+    		 location.href = '/admin/stuSwitch';
+    	 }
+    	 else {
+    		 alert('beep');
+    	 }
+    	 
+     }
 })(jQuery);

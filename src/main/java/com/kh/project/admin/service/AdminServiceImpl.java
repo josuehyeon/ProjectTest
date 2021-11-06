@@ -47,8 +47,8 @@ public class AdminServiceImpl implements AdminService{
 
 	//전과 신청목록에서 모달로 개인정보 띄우기
 	@Override
-	public ChangeMajorVO modalStuInfo() {
-		return sqlSession.selectOne("changeMajorMapper.modalStuInfo");
+	public ChangeMajorVO modalStuInfo(ChangeMajorVO changeMajorVO) {
+		return sqlSession.selectOne("changeMajorMapper.modalStuInfo", changeMajorVO);
 	}
 	
 }

@@ -20,5 +20,5 @@ public interface AdminService {
 	
 	List<ChangeMajorVO> AdminChangeMajorRequestList();
 	
-	ChangeMajorVO modalStuInfo();
+	ChangeMajorVO modalStuInfo(ChangeMajorVO changeMajorVO);
 }

@@ -81,9 +81,9 @@ public class AdminController {
 	
 	//전과, 복수전공 페이지
 	@GetMapping("/stuSwitch")
-	public String stuSwitch(Model model) {
+	public String stuSwitch(Model model, ChangeMajorVO changeMajorVO) {
 		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
-		model.addAttribute("modalStuInfo", adminService.modalStuInfo());
+		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
 		return "admin/stuSwitch";
 	}
 	
