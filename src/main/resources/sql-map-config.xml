@@ -22,7 +22,6 @@
 		<mapper resource="/mapper/doubleMajor-Mapper.xml"/>
 		<mapper resource="/mapper/cate-Mapper.xml"/>
 		<mapper resource="/mapper/menu-Mapper.xml"/>		
-	
 		<mapper resource="/mapper/editStatus-Mapper.xml"/>
 	</mappers>
 </configuration>

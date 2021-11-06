@@ -178,7 +178,9 @@ ul {
 </style>
 </head>
 <body>
-<div class="sideDiv">
+불필요하다 판단되어 사이드, 서브 병합 시킴
+추후 삭제 할 영역
+<%-- <div class="sideDiv">
  ✧ ━━━━━━━━━━━ ✧
  <c:if test="${not empty sessionScope.loginInfo }">
 	<c:choose>
@@ -197,7 +199,7 @@ ul {
 		</c:otherwise>
 	</c:choose>
 </c:if>
-</div>
+</div> --%>
 <!--  <div id="wrapper">
 	<div class="topbar" style="position: absolute; top:0;">
 	    왼쪽 메뉴

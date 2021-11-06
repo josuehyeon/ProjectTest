@@ -22,12 +22,12 @@ public class BoardController {
 	@Resource(name = "commonService")
 	private CommonService commonService;
 	
-	//로그인 후 보여질 메인 화면
-	@GetMapping("portal")
-	public String doMainHome(Model md) {
-		md.addAttribute("menuList", commonService.sltMenuList()); //메뉴 목록 조회 후 전달
-		return "home/main_page";
-	}
+//	//로그인 후 보여질 메인 화면
+//	@GetMapping("portal")
+//	public String doMainHome(Model md) {
+//		md.addAttribute("menuList", commonService.sltMenuList()); //메뉴 목록 조회 후 전달
+//		return "home/main_page";
+//	}portal controller로 이동
 	
 	//정보광장 게시판
 	@RequestMapping("infoPark")
@@ -51,10 +51,15 @@ public class BoardController {
 		md.addAttribute("boardList", boardService.selectBoardList(boardVO));
 		return "board/board_request";
 	}
-	//취업 정보 게시판
+	//취업 정보 게시판 / 잡코리아
 	@GetMapping("job")
 	public String doCommunity() {
-		return "board/daily_board";
+		return "board/job_korea";
+	}
+	//사람인 이동
+	@GetMapping("saramin")
+	public String dosaram() {
+		return "board/saramin";
 	}
 	//게시글 등록 후 이동
 	@PostMapping("istBd")
