@@ -110,58 +110,58 @@ section {
 	</div>
 </div>
 <div class="nav">
-<nav role="navigation" class="nav">
-	<ul id="main-menu" class="nav">
-	    <li><a class="nav-link link-light" href="/portal/mainJsp">HOME</a></li>
-		<c:if test="${not empty sessionScope.loginInfo }">
-		<c:choose>
-			<c:when test="${sessionScope.loginInfo.memAuth eq 3}">
-				<li><a class="nav-link link-light mmn" href="#">내 정보</a>
-	      			<ul id="sub-menu">
-				        <li><a href="#" aria-label="subemnu">submenu</a></li>
-				        <li><a href="#" aria-label="subemnu">submenu</a></li>
-				        <li><a href="#" aria-label="subemnu">submenu</a></li>
-				        <li><a href="#" aria-label="subemnu">submenu</a></li>
-				    </ul>
-				</li>
-		    	<li><a class="nav-link link-light mmn" href="/admin/goMain">학생관리(Admin)</a>
-				    <ul id="sub-menu">
-				        <li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
-				        <li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
-				        <li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
-				        <li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
-				        <li><a class="nav-link link-#00154a" href="/admin/stuSwitch" aria-label="subemnu">전과 / 복수전공</a></li>
-				    </ul>
-		    	</li>
-			    <li><a class="nav-link link-light mmn" href="/board/infoPark">정보광장</a>
-		      		<ul id="sub-menu">
-				        <li><a class="nav-link link-#00154a" href="/board/infoPark" aria-label="subemnu">자유게시판</a></li>
-				        <li><a class="nav-link link-#00154a" href="/board/bdRequest" aria-label="subemnu">건의게시판</a></li>
-				        <li><a href="#" aria-label="subemnu">submenu</a></li>
-				        <li><a href="#" aria-label="subemnu">submenu</a></li>
-				    </ul>
-		    	</li>
-			    <li><a class="nav-link link-light mmn" href="/board/job">취업정보</a>
-			    	<ul id="sub-menu">
-				        <li><a class="nav-link link-light" aria-label="subemnu" href="/board/job">JobKorea</a></li>
-				        <li><a class="nav-link link-light" aria-label="subemnu" href="/board/saramin">Saramin</a></li>
-				        <li><a href="#" aria-label="subemnu">그리핀도르</a></li>
-				        <li><a href="#" aria-label="subemnu">래번클로</a></li>
-			        </ul>
-			    </li>
-			    <li><a href="#">MENU6</a></li>
-				</c:when>
-				<c:when test="${sessionScope.loginInfo.memAuth eq 2}">
-					교수자리라네
-				</c:when>
-				<c:choose>
-					학생이군 풉 ㅋ
-				</c:choose>
-		</c:choose>
-		</c:if>
-	</ul>
-</nav>
-</div>
+	<nav role="navigation" class="nav">
+		<ul id="main-menu" class="nav">
+	    	<li><a class="nav-link link-light" href="/portal/mainJsp">HOME</a></li>
+			<c:if test="${not empty sessionScope.loginInfo }">
+			<c:choose>
+				<c:when test="${sessionScope.loginInfo.memAuth eq 3}">
+					<li><a class="nav-link link-light mmn" href="#">내 정보</a>
+	      				<ul id="sub-menu">
+					        <li><a href="#" aria-label="subemnu">submenu</a></li>
+				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+					    </ul>
+					</li>
+		    		<li><a class="nav-link link-light mmn" href="/admin/goMain">학생관리(Admin)</a>
+				    	<ul id="sub-menu">
+				        	<li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/stuSwitch" aria-label="subemnu">전과 / 복수전공</a></li>
+					    </ul>
+		    		</li>
+			    	<li><a class="nav-link link-light mmn" href="/board/infoPark">정보광장</a>
+		      			<ul id="sub-menu">
+				        	<li><a class="nav-link link-#00154a" href="/board/infoPark" aria-label="subemnu">자유게시판</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/board/bdRequest" aria-label="subemnu">건의게시판</a></li>
+				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+					    </ul>
+		    		</li>
+			    	<li><a class="nav-link link-light mmn" href="/board/job">취업정보</a>
+			    		<ul id="sub-menu">
+				        	<li><a class="nav-link link-light" aria-label="subemnu" href="/board/job">JobKorea</a></li>
+				        	<li><a class="nav-link link-light" aria-label="subemnu" href="/board/saramin">Saramin</a></li>
+				        	<li><a href="#" aria-label="subemnu">그리핀도르</a></li>
+				        	<li><a href="#" aria-label="subemnu">래번클로</a></li>
+			        	</ul>
+				    </li>
+			    	<li><a href="#">MENU6</a></li>
+					</c:when>
+					<c:when test="${sessionScope.loginInfo.memAuth eq 2}">
+						교수자리라네
+					</c:when>
+					<c:otherwise>
+						학생이군 풉 ㅋ
+					</c:otherwise>
+			</c:choose>
+			</c:if>
+		</ul>
+	</nav>
+	</div>
 </div>
 </body>
 </html>
