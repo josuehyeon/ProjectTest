@@ -18,20 +18,20 @@
 <a href="/stuManage/goStopStudy">휴학 신청</a><br>
 
 
-<a href="/stuManage/againStudyInfo">복학 안내</a><br>
-<a href="/stuManage/goAgainStudy">복학 신청</a><br>
+<a href="/stuManage/againStudyInfo" aria-label="subemnu">복학 안내</a><br>
+<a href="/stuManage/goAgainStudy" aria-label="subemnu">복학 신청</a><br>
 
-<a href="/stuManage/exitInfo">자퇴 안내</a><br>
-<a href="/stuManage/goExit">자퇴 신청</a><br>
+<a href="/stuManage/exitInfo" aria-label="subemnu">자퇴 안내</a><br>
+<a href="/stuManage/goExit" aria-label="subemnu">자퇴 신청</a><br>
 
 
 <a href="">전과 안내</a>
-<a href="/stuManage/goChangeMajor">전과 신청</a>
+<a href="/stuManage/goChangeMajor" aria-label="subemnu">전과 신청</a>
 <a href="">복수전공 안내</a>
-<a href="/stuManage/goDoubleMajor">복수전공 신청</a>
+<a href="/stuManage/goDoubleMajor" aria-label="subemnu">복수전공 신청</a>
 
 <br><br>
-<a href="/stuManage/showStuList">학생조회</a>
+<a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a>
 <!-- <a href="/stuManage/showStuDetail?memNo=blabla">학생 상세 조회 -->
 </body>
 </html>
