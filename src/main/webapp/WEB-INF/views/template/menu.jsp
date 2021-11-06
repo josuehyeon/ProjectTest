@@ -116,6 +116,14 @@ section {
 			<c:if test="${not empty sessionScope.loginInfo }">
 			<c:choose>
 				<c:when test="${sessionScope.loginInfo.memAuth eq 3}">
+				<li><a class="nav-link link-light mmn" href="/stuManage/goMain">수정씨 jsp 이동하는 경로</a>
+	      				<ul id="sub-menu">
+					        <li><a href="#" aria-label="subemnu">submenu</a></li>
+				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+					    </ul>
+					</li>
 					<li><a class="nav-link link-light mmn" href="#">내 정보</a>
 	      				<ul id="sub-menu">
 					        <li><a href="#" aria-label="subemnu">submenu</a></li>
@@ -130,6 +138,7 @@ section {
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
+				        	
 					    </ul>
 		    		</li>
 			    	<li><a class="nav-link link-light mmn" href="/board/infoPark">정보광장</a>
@@ -158,10 +167,10 @@ section {
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/stuSwitch" aria-label="subemnu">전과 / 복수전공</a></li>
 					    </ul>
 		    			</li>
 					</c:when>
-					
 					<c:otherwise>
 						<li><a class="nav-link link-light mmn" href="#">내 정보</a>
 	      				<ul id="sub-menu">
@@ -171,12 +180,12 @@ section {
 				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
 					    </ul>
 					</li>
-		    		<li><a class="nav-link link-light mmn" href="/admin/goMain">학적관리</a>
+		    		<li><a class="nav-link link-light mmn" href="/stuManage/goMain">학적관리</a>
 				    	<ul id="sub-menu">
 				        	<li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/admin/stuSwitch" aria-label="subemnu">전과 / 복수전공</a></li>
+				        	
 					    </ul>
 		    		</li>
 			    	<li><a class="nav-link link-light mmn" href="/board/infoPark">정보광장</a>
