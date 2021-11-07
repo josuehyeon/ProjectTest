@@ -82,7 +82,7 @@
 	
 	<!-- 게시글 상세 보기 -->
 	<select id="detailBoard" resultMap="board">
-		SELECT BOARD_NO 
+		SELECT BOARD_NO
 			, BOARD_TITLE
 			, BOARD_CONTENT
 			, BOARD_WRITER

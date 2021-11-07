@@ -3,7 +3,14 @@
 <!-- 모든 SQL문을 mapper태그 안에 작성 -->
 <mapper namespace="menuMapper">
 	
-	<resultMap type="com.kh.project.common.vo.MainMenuVO" id="main">
+<!-- 	<resultMap type="com.kh.project.common.vo.MainMenuVO" id="main">
+		<id column="MAIN_NO"					property="mainNo"/>
+		<result column="MENU_NAME" 				property="menuName"/>
+		<result column="MEM_NO" 				property="memNo"/>
+		<result column="MENU_URL" 				property="mainUrl"/>
+	</resultMap>
+	
+	<resultMap type="com.kh.project.common.vo.SideMenuVO" id="side">
 		<id column="MAIN_NO"					property="mainNo"/>
 		<result column="MENU_NAME" 				property="menuName"/>
 		<result column="MEM_NO" 				property="memNo"/>
@@ -15,7 +22,7 @@
 			, MENU_NAME
 		FROM MAIN_MENU
 		ORDER BY MAIN_NO
-	</select>
+	</select> -->
 	
 </mapper>
 

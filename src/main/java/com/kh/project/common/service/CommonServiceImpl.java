@@ -13,9 +13,9 @@ public class CommonServiceImpl implements CommonService{
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
-	@Override
-	public List<MainMenuVO> sltMenuList() {
-		return sqlSession.selectList("menuMapper.sltMenuList");
-	}
+//	@Override
+//	public List<MainMenuVO> sltMenuList() {
+//		return sqlSession.selectList("menuMapper.sltMenuList");
+//	}
 	
 }

@@ -32,6 +32,7 @@
 	<!-- 로그인 -->
 	<select id="login" resultMap="member">
 		SELECT MEM_NO
+			  ,MEM_NAME 
 			  ,MEM_AUTH
 		FROM   MEMBER
 		WHERE  MEM_NO = #{memNo}

@@ -118,8 +118,8 @@ section {
 				<c:when test="${sessionScope.loginInfo.memAuth eq 3}">
 					<li><a class="nav-link link-light mmn" href="#">내 정보</a>
 	      				<ul id="sub-menu">
-					        <li><a href="#" aria-label="subemnu">submenu</a></li>
-				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+					        <li><a href="/emp/chkInfoJsp" aria-label="subemnu">내 정보 조회</a></li>
+				        	<li><a href="/portal/regMemberJsp" aria-label="subemnu">내 정보 수정</a></li>
 				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
 				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
 					    </ul>
@@ -165,10 +165,10 @@ section {
 					<c:otherwise>
 						<li><a class="nav-link link-light mmn" href="#">내 정보</a>
 	      				<ul id="sub-menu">
-					        <li><a href="#" aria-label="subemnu">submenu</a></li>
-				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
-				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
-				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
+					        <li><a href="/stuInfo/chkInfoJsp" aria-label="subemnu">내 정보 조회</a></li>
+				        	<li><a href="/stuInfo/changeInfoJsp" aria-label="subemnu">내 정보 수정</a></li>
+				        	<li><a href="/stuInfo/chkPwJsp" aria-label="subemnu">비밀번호 변경</a></li>
+				        	<li><a href="/stuInfo/chkTimetableJsp" aria-label="subemnu">시간표</a></li>
 					    </ul>
 					</li>
 		    		<li><a class="nav-link link-light mmn" href="/stuManage/goMain">학적관리</a>
@@ -194,14 +194,6 @@ section {
 				        	<li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li>
 					    </ul>
 		    		</li>
-			    	<li><a class="nav-link link-light mmn" href="/board/job">취업정보</a>
-			    		<ul id="sub-menu">
-				        	<li><a class="nav-link link-light" aria-label="subemnu" href="/board/job">JobKorea</a></li>
-				        	<li><a class="nav-link link-light" aria-label="subemnu" href="/board/saramin">Saramin</a></li>
-				        	<li><a href="#" aria-label="subemnu">그리핀도르</a></li>
-				        	<li><a href="#" aria-label="subemnu">래번클로</a></li>
-			        	</ul>
-				    </li>
 				    <li><a class="nav-link link-light mmn" href="/stuManage/goMain">수정씨 jsp 이동하는 경로(학생)</a>
 	      				<ul id="sub-menu">
 					        <li><a href="#" aria-label="subemnu">submenu</a></li>
