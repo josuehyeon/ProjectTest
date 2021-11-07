@@ -109,5 +109,16 @@ public class LectureServiceImpl implements LectureService{
 	public void deleteEnrolmentOne(EnrolmentVO enrolmentVO) {
 		sqlSession.delete("lectureMapper.deleteEnrolmentOne", enrolmentVO);
 	}
+
+	@Override	//성적등록메뉴, 교수 번호로 담당 강의 조회 -ksj
+	public List<LectureVO> selectLectureListWithProfNo(LectureVO lectureVO) {
+		return sqlSession.selectList("lectureMapper.selectLectureListWithProfNo", lectureVO) ;
+	}
+
+	@Override //관리자: 성적관리, 학생 성적 등록 -ksj 
+	public List<EnrolmentVO> selectStuNoForRegStuGrade(EnrolmentVO enrolmentVO) {
+		return sqlSession.selectList("lectureMapper.selectStuNoForRegStuGrade", enrolmentVO);
+	}
+
 	
 }

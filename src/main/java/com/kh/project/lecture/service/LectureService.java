@@ -62,5 +62,10 @@ public interface LectureService {
 	//수강신청테이블에서 하나씩 삭제
 	void deleteEnrolmentOne(EnrolmentVO enrolmentVO);
 	
+	//성적등록메뉴, 교수 번호로 담당 강의 조회
+	List<LectureVO> selectLectureListWithProfNo(LectureVO lectureVO);
 	
+	
+	//수강신청 테이블에서 LEC_ID 조회 -ksj
+	List<EnrolmentVO> selectStuNoForRegStuGrade(EnrolmentVO enrolmentVO);
 }

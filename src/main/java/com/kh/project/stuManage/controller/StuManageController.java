@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.admin.vo.EditStatusVO;
 import com.kh.project.lecture.service.LectureService;
+import com.kh.project.lecture.vo.EnrolmentVO;
+import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.portal.service.PortalService;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.service.StuInfoService;
@@ -171,12 +173,31 @@ public class StuManageController {
 		return "stuManage/show_stu_detail";
 	}	
 	
+	//Ajax: 학과 목록 조회 -ksj
 	@ResponseBody
 	@PostMapping("/selectCollegeAjax")
 	public List<DeptVO> selectCollegeAjax(CollegeVO collegeVO) {
-		// 학과 목록 조회
 		return lectureService.selectDeptList2(collegeVO);
 	}	
+	
+	//이동 "관리자: 성적관리, 학생 성적 등록 -ksj
+	@GetMapping("/regGradeJsp")
+	public String regGradeJsp( LectureVO lectureVO , Model model, HttpSession session) {
+		//로그인 세션 정보 가져오기
+		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
+		lectureVO.setProfNo(member.getMemNo());
+		
+		model.addAttribute("lecInfo", lectureService.selectLectureListWithProfNo(lectureVO));
+		return "stuManage/reg_stu_grade";
+	}
+	
+	//Ajax: 강의 셀렉트
+	@ResponseBody
+	@PostMapping("/clickLecShowStudent")
+	public List<EnrolmentVO> clickLecShowStudent(EnrolmentVO enrolmentVO) {
+		return lectureService.selectStuNoForRegStuGrade(enrolmentVO);
+	}
+	
 		
 		
 }

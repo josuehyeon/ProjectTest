@@ -44,5 +44,7 @@ public interface StuManageService {
 
 	int selectWaitCnt(int memNo);
 	
+	//성적등록> 해당 강의 수강하는 학생의 목록 조회
+	
 	
 }

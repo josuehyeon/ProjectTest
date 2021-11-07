@@ -1,6 +1,7 @@
 package com.kh.project.gradeManage.vo;
 
 import com.kh.project.lecture.vo.LectureVO;
+import com.kh.project.portal.vo.MemberVO;
 
 public class StuGradeVO {
 	public String subjectId;
@@ -11,6 +12,8 @@ public class StuGradeVO {
 	public GradeVO gradeInfo;
 	public LectureVO lectureInfo;
 	public SemesterVO semesterInfo;
+	private MemberVO memberInfo;
+	
 	
 	public String getSubjectId() {
 		return subjectId;
@@ -59,6 +62,12 @@ public class StuGradeVO {
 	}
 	public void setSemesterInfo(SemesterVO semesterInfo) {
 		this.semesterInfo = semesterInfo;
+	}
+	public MemberVO getMemberInfo() {
+		return memberInfo;
+	}
+	public void setMemberInfo(MemberVO memberInfo) {
+		this.memberInfo = memberInfo;
 	}
 	
 

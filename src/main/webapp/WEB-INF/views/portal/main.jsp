@@ -51,6 +51,9 @@
 
 <span>관리자 내 정보관리</span>
 	<a href="/stuManage/">내 정보 조회</a>
-
+<span>관리자: 학생관리> 성적관리</span>
+	<a href="/stuManage/regGradeJsp">성적등록</a>
+	
+	
 </body>
 </html>
