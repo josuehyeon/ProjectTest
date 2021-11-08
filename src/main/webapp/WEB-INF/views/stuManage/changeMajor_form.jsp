@@ -125,8 +125,8 @@ tr, td{
   <c:forEach items="${changeMajorList }" var="changeMajorInfo">
     <tr>
       <th scope="row">${changeMajorInfo.changeId }</th>
-      <td>${changeMajorInfo.collName }</td>
-      <td>${changeMajorInfo.deptName }</td>
+      <td>${changeMajorInfo.collegeInfo.collName }</td>
+      <td>${changeMajorInfo.deptInfo.deptName }</td>
       <td>${changeMajorInfo.upCollName }</td>
       <td>${changeMajorInfo.upDeptName }</td>
       <td>${changeMajorInfo.insertDate }</td>
