@@ -153,7 +153,6 @@ function savedata(jsondata) {
 	 
 }
 
-
 </script>
 <style>
 
@@ -168,7 +167,9 @@ function savedata(jsondata) {
     max-width: 1100px;
     margin: 0 auto;
   }
-
+.fc-event-title fc-sticky {
+	background-color: #0f1756;
+}
 </style>
 </head>
 <body>
