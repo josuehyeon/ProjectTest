@@ -21,6 +21,7 @@ public interface StuInfoService {
 	
 	//시간표 조회 (임시)
 	List<LectureViewVO> selectTimetableList();
+	//////
 	
 	
 
