@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 @font-face {
-     font-family: 'S-CoreDream-5Medium';
-     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
+    font-family: 'NanumBarunpen';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,
@@ -23,7 +23,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,
 nav,section {
   display: block;
 }
-
 ol,
 ul {
   list-style: none;
@@ -40,6 +39,8 @@ q:after {
   content: none;
 }
 body {
+	font-family: 'NanumBarunpen';
+	text-align: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #decebf;
@@ -82,63 +83,65 @@ tr, td{
 th, td {
   text-align: center;
 }
-/* body {
-  line-height: 1;
-  font-family: 'S-CoreDream-5Medium'; 
-  font-size: 18px;
-  		background-image: url("C:\Users\admin\Desktop\img\hbdcollage");
-} */
+
 td{
 	text-align: center;
-	
+}
+table {
+  text-align: center;
+  margin: auto 0;
+}
+.container-fluid{
+	width: 90%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+tr, td{
+	text-align: center;
+}
+.col{
+	text-align: center;
+}
+.row{
+	text-align: center;
+}
+th, td {
+  text-align: center;
+}
+td{
+	text-align: center;
+}
+thead{
+	text-align: center;
+}
+table {
+  text-align: center;
+  margin: auto 0;
+}
+.container-fluid{
+	width: 90%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+tr, td{
+	text-align: center;
+}
+.col{
+	text-align: center;
+}
+.row{
+	text-align: center;
+}
+th, td {
+  text-align: center;
+}
+td{
+	text-align: center;
+}
+thead{
+	text-align: center;
 }
 
-	/*  body, html{width:100%;height: 100%;overflow-x: hidden;}
-    .header{
-        width: 100%;
-        height: 50px;
-        background: #ddd;
-    }
-    .menu_btn{
-        text-align: right;
-        padding: 10px;
-    }
-    .menu_bg{
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.7);
-        position: absolute;
-        top:0;
-        display: none;
-    }
-    .sidebar_menu{
- display: none;
-        width: 50%;
-        height: 100%;
-        background: #e98282;
-        position: absolute;
-        top:0;
-        right: -50%;
-        
-    }
-    .close_btn{
-        width: 25px;
-        height: 25px;
-        margin:10px;
-    }
-    .close_btn > a{
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-    .menu_wrap{
-        list-style: none;
-        padding: 20px 20px;   
-    }
-    .menu_wrap li a{
-        color: #fff;
-        text-decoration: none;
-    }	 */
 
 
 

@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 <title><tiles:insertAttribute name="title"/></title>
 <!-- 태그 초기화 작업 -->
-<link rel="stylesheet" href="/resources/common/reset.css">
-<link rel="stylesheet" href="/resources/common/CommonMenu.css">
 <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/resources/common/reset.css">
+<link rel="stylesheet" href="/resources/common/CommonMenu.css?ver=1">
 
 <!-- 제이쿼리 문법을 로딩 -->
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -24,36 +24,6 @@ body {
 	background-color: #decebf;
 	background-repeat: no-repeat;
 	background-size: cover;
-}
-.aaa{
-	background-color: aqua;
-}
-table {
-  text-align: center;
-  margin: auto 0;
-}
-.container-fluid{
-	width: 90%;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-tr, td{
-	text-align: center;
-}
-.col{
-	text-align: center;
-}
-.row{
-	text-align: center;
-}
-th, td {
-  text-align: center;
-}
-td{
-	text-align: center;
-}
-thead{
-	text-align: center;
 }
 </style>
 </head>
