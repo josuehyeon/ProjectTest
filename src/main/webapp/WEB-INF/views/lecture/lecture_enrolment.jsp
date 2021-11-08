@@ -16,7 +16,7 @@ iframe {
 	height: 900px;
 }
 </style>
-<script type="text/javascript" src="/resources/sample/js/lecture_enrolment.js?ver=2223222222222593"></script>
+<script type="text/javascript" src="/resources/sample/js/lecture_enrolment.js?ver=2122193"></script>
 </head>
 <body>
 <form action="/lecture/goEnrolment" method="post">
@@ -25,6 +25,7 @@ iframe {
     <label for="collegeList" class="form-label">단대</label>
       <!-- 단과대선택 -->
       <select class="form-select" id="collegeList" name="collNo">
+      	  <option value="0">전체</option>
       	<c:forEach items="${collegeList }" var="collegeInfo">
       	  <option value="${collegeInfo.collNo }">${collegeInfo.collName }</option>
       	</c:forEach>
@@ -33,6 +34,7 @@ iframe {
   <div class="col" id="tableDiv">
     <label for="deptList" class="form-label">학과</label>
        <select class="form-select" id="deptList" name="deptId">
+       	  <option value="">전체</option>
        	<c:forEach items="${deptList }" var="deptInfo">
        	  <option value="${deptInfo.deptId }">${deptInfo.deptName }</option>
        	</c:forEach>

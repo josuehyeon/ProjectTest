@@ -54,6 +54,7 @@ $(document).ready(function(){
 	        	  var str ='';
 	              str += '<label for="deptList" class="form-label">학과</label>';
 	              str += '<select class="form-select" id="deptList" name="deptId">';
+	              str += '<option value="">전체</option>';
 	              console.log(result.deptList);
 	              $(result.deptList).each(function(index, element){
 	            	  str += '<option value="'+ element.deptId + '">' + element.deptName + '</option>';	
