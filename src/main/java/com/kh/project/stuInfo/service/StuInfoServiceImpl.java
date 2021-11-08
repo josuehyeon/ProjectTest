@@ -6,9 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kh.project.admin.vo.EditStatusVO;
-import com.kh.project.lecture.vo.LectureVO;
-import com.kh.project.lecture.vo.LectureViewVO;
+import com.kh.project.lecture.vo.TimetableViewVO;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 
@@ -33,9 +31,14 @@ public class StuInfoServiceImpl implements StuInfoService {
 	}
 
 	@Override	//시간표 조회 (임시)
-	public List<LectureViewVO> selectTimetableList() {
-		return sqlSession.selectList("lectureMapper.selectTimetableList");
+	public List<TimetableViewVO> selectTimetableList(int stuNo) {
+		return sqlSession.selectList("lectureMapper.selectTimetableList", stuNo);
 	}
+
+	//@Override	//학생 목록 조회
+	//public List<StudentVO> selectStudentList() {
+	//	return sqlSession.selectList("studentMapper.selectStudentList");
+	//}
 
 	
 

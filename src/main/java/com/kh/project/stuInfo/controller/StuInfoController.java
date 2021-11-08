@@ -91,9 +91,13 @@ public class StuInfoController {
 	
 	//이동 "시간표 조회"
 	@GetMapping("/chkTimetableJsp")
-	public String chkTimetableJsp(Model model) {
+	public String chkTimetableJsp(MemberVO memberVO ,HttpSession session ,Model model) {
+		//로그인 세션 정보 가져오기
+		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
+		int stuNo = member.getMemNo();
+		System.out.println("??????"+stuNo);
 		//시간표에 필요한 강의 정보 목록
-		model.addAttribute("timetable", stuInfoService.selectTimetableList());
+		model.addAttribute("timetable", stuInfoService.selectTimetableList(stuNo));
 		return "stuInfo/chk_timetable";
 	}
 	

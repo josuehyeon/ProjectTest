@@ -18,13 +18,14 @@
 	</resultMap>
 	
 		<!-- 강의 시간표 테스트용 임시 -->
-	<resultMap type="com.kh.project.lecture.vo.LectureTimeVO" id="lectureTime">
-		<id 	column="TIME_ID" 		property="timeId"/>
-		<result column="DAY" 			property="day"/>
-		<result column="TIME_START" 	property="timeStart"/>
-		<result column="LEC_ROOM" 		property="lecRoom"/>
-		<result column="LEC_ID" 		property="lecId"/>
-		<result column="TIME" 			property="time"/>
+	<resultMap type="com.kh.project.lecture.vo.TimetableViewVO" id="timetableView">
+		<result column="ENROLMENT_ID" 			property="enrolmentId"/>
+		<result column="LEC_ID" 				property="lecId"/>
+		<result column="LEC_NAME" 				property="lecName"/>
+		<result column="LEC_DAY" 				property="lecDay"/>
+		<result column="LEC_PERIOD" 			property="lecPeriod"/>
+		<result column="LEC_CREDIT" 			property="lecCredit"/>
+		<result column="STU_NO" 				property="stuNo"/>
 	</resultMap>	
 	
 	<resultMap type="com.kh.project.lecture.vo.LectureViewVO" id="lectureView">
@@ -53,10 +54,10 @@
 		<result column="LEC_ID" property="lecId"/>
 	</resultMap>
 	<resultMap type="com.kh.project.lecture.vo.EnrolmentVO" id="enrolment">
-		<id column="ENROLMENT_ID" property="enrolmentId"/>
-		<result column="LEC_ID" property="lecId"/>
-		<result column="STU_NO" property="stuNo"/>
-		<association property="lectureViewVO" resultMap="lectureView"/>
+		<id 		column="ENROLMENT_ID" 		property="enrolmentId"/>
+		<result 	column="LEC_ID" 			property="lecId"/>
+		<result 	column="STU_NO" 			property="stuNo"/>
+		<association property="lectureViewVO" 	resultMap="lectureView"/>
 	</resultMap>
 	
 	<insert id="regLecture">
@@ -172,17 +173,16 @@
 		FROM     LECTURE_TIME -->
 		
 	<!-- 강의시간표 작동 확인용 임시 -->
-	<select id="selectTimetableList" resultMap="enrolment">
-		SELECT E.ENROLMENT_ID
-		    ,E.LEC_ID
-		    ,L.LEC_NAME
-		    ,L.LEC_DAY
-		    ,L.LEC_PERIOD
-		    ,L.LEC_CREDIT
-		    ,E.STU_NO
-		FROM ENROLMENT E , LECTURE_VIEW L
+	<select id="selectTimetableList" resultMap="timetableView">
+		SELECT ENROLMENT_ID
+		      ,LEC_ID
+		      ,LEC_NAME
+		      ,LEC_DAY
+		      ,LEC_PERIOD
+		      ,LEC_CREDIT
+		      ,STU_NO
+		FROM TIMETABLE_VIEW
 		WHERE STU_NO = #{stuNo}
-		AND E.LEC_ID = L.LEC_ID
 	</select>
 	
 	<insert id="enrolment">

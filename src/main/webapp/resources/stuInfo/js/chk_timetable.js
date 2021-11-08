@@ -6,14 +6,14 @@ $(document).ready(function(){
 
 	$('.each').each(function(index, element){
 		// 색깔을 담는 배열
-		var colorArray = ["#dc2f02", "#ffd60a", "#c1fba4", "#90f1ef", "#9381ff", "#ffa6c1", "#B2CCFF", "#B5B2FF", "#D1B2FF", "#FFB2F5", "#FFB2D9", "#D5D5D5", "#BDBDBD"];
+		var colorArray = ["#cfedff", "#1e789b", "#7e9cc3", "#aab4ff", "#274381", "#B7F0B1", "#B2EBF4", "#B2CCFF", "#B5B2FF", "#D1B2FF", "#FFB2F5", "#FFB2D9", "#D5D5D5", "#BDBDBD"];
 	
 		var day = $(element).children().eq(0).text(); //mon , tue
 		var timeStart = $(element).children().eq(1).text(); //9, 10
 		var time = $(element).children().eq(2).text(); // 2학점, 3학점 
 		var lecId = $(element).children().eq(3).text(); //강의 코드
 		var first = day + timeStart; // mon9
-		alert('요일'+day +'강의시작시간' + timeStart + '학점' + time + '강의코드' + lecId);
+		//alert('요일'+day +'/강의시작시간' + timeStart + '/학점' + time + '/강의코드' + lecId);
 		
 		if(time==2){
 			//첫 번째 칸 색칠
@@ -44,9 +44,45 @@ $(document).ready(function(){
 		}
 	});
 	
-	// click enrollment 이벤트
-	$(document).on('click', '#enrollment', function() {
-    }); // click enrollment 이벤트 닫기
+	// click lecId 이벤트
+	$(document).on('click', '.lecId', function() {
+		//alert('lecId클릭 성공');
+		//일단 칸에 있는 정보 지우는 거 부터 해볼까
+		$('.test').empty();
+		$('.test').css('background-color','#ffffff');
+		//컬러 팔레트(색을 담은 배열)
+		var colorArray = ["#cfedff", "#1e789b", "#7e9cc3", "#aab4ff", "#B7F0B1", "#B2EBF4", "#B2CCFF", "#B5B2FF", "#D1B2FF", "#FFB2F5", "#FFB2D9", "#D5D5D5", "#BDBDBD","#cfedff", "#1e789b", "#7e9cc3", "#aab4ff", "#B7F0B1", "#B2EBF4", "#B2CCFF", "#B5B2FF", "#D1B2FF", "#FFB2F5", "#FFB2D9", "#D5D5D5", "#BDBDBD"];
+
+		//색칠할 칸 정해주기
+		var thisss = $(this).text();
+		var day = $(this).parent().children().eq(0).text();
+		var timeStart = $(this).parent().children().eq(1).text();
+		var time = $(this).parent().children().eq(2).text();
+		var lecId = $(this).parent().children().eq(3).text();
+		var lecRoom = $(this).parent().children().eq(4).text();
+		var timeId = $(this).parent().children().eq(5).text();
+		//alert('this: ' + thisss);
+		//alert('day: ' + day);
+		//alert('timeStart: ' + timeStart);
+		//alert('time: ' + time);
+		//alert('lecId: ' + lecId);
+		//alert('timeId: ' + timeId);
+		
+		//일단 한칸 칠해보기
+		var td = document.getElementById(timeId);
+		td.style.background= colorArray[i];
+		td.innerHTML = lecId;
+		//두칸 칠하기
+		var second = day + Number(Number(timeStart)+1) ;
+		var td2 = document.getElementById(second);
+		td2.style.background= colorArray[i];
+		td2.innerHTML = lecId;
+		//세칸째 칠하기~~~ㅋㅋㅋㅋ
+		var third = day + Number(Number(timeStart)+2) ;
+		var td3 = document.getElementById(third);
+		td3.style.background= colorArray[i++];
+		td3.innerHTML = lecId;
+    }); // click lecId 이벤트 닫기
 	
 });	//ready function 닫기
 

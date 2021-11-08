@@ -81,7 +81,7 @@
 	</update>
 	
 	<!-- 관리자의 학생 정보 조회 -->
-	<select id="selectStudentList" resultMap="student">
+ 	<select id="selectStudentList" resultMap="student">
 		SELECT S.STU_NO
 			 , S.STU_YEAR
 			 , M.MEM_NAME

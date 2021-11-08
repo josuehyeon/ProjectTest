@@ -2,6 +2,15 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+	<!-- 로그인 페이지만 제외시켜 보기 -->
+	<definition name="empty" template="/WEB-INF/views/template/empty.jsp">
+		<put-attribute name="title" value="Juses대학교"/>
+		<put-attribute name="body" value=""/>
+	</definition>
+
+	<definition name="portal/login" extends="empty">
+		<put-attribute name="body" value="/WEB-INF/views/portal/login.jsp"/>
+	</definition>
 	
 	<!-- 홈페이지 기본 템플릿 -->
 	<definition name="baseLayout" template="/WEB-INF/views/template/base_template.jsp">

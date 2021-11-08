@@ -97,7 +97,7 @@ td{
 				<td>${eachStu.stuNo }</td>
 				<td>${eachStu.stuYear }</td>
 				<td><a href="/stuManage/showStuDetail?memNo=${eachStu.stuNo}">${eachStu.memberInfo.memName}</a></td>
-				<td>${eachStu.collNo}</td>
+				<td>${eachStu.colegeInfo.collName}</td>
 				<td>${eachStu.majorCode }</td>
 				<td>${eachStu.stuStatus}</td>
 			</tr>

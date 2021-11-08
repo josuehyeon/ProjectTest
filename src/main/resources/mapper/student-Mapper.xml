@@ -34,6 +34,19 @@
 		AND      STU_NO = #{stuNo}
 	</select>
 	
+	<select id="selectStudentList" resultMap="student">
+		SELECT   STU_NO
+			  , (SELECT COLL_NAME FROM COLLEGE WHERE COLL_NO = S.COLL_NO) AS COLL_NAME
+			  , (SELECT DEPT_NAME FROM DEPT WHERE DEPT_ID= S.MAJOR_CODE) AS MAJOR_CODE
+              , (SELECT DEPT_NAME FROM DEPT WHERE DEPT_ID = S.MINOR_CODE) AS MINOR_CODE
+			  ,  STU_YEAR
+			  ,  STU_SEM 
+			  ,  STU_STATUS             
+		FROM     STUDENT S , COLLEGE C , DEPT D
+		WHERE    S.COLL_NO = C.COLL_NO
+		AND      S.MAJOR_CODE = D.DEPT_ID
+	</select>
+	
 	<select id="goStopStudy" resultMap="student">
 		SELECT M.MEM_NAME
 			, C.COLL_NAME
