@@ -37,7 +37,7 @@ $(document).ready(function(){
 //함수 선언 영역
 (function($){
 	doubleMajor = function(){
-		var result = confirm('전과신청하시겠습니까?');
+		var result = confirm('복수전공 신청하시겠습니까?');
 		
 		if(result){
 			$('#doubleMajor').submit();
