@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.kh.project.admin.vo.EditStatusVO;
 import com.kh.project.lecture.vo.LectureVO;
+import com.kh.project.lecture.vo.LectureViewVO;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 
@@ -32,7 +33,7 @@ public class StuInfoServiceImpl implements StuInfoService {
 	}
 
 	@Override	//시간표 조회 (임시)
-	public List<LectureVO> selectTimetableList() {
+	public List<LectureViewVO> selectTimetableList() {
 		return sqlSession.selectList("lectureMapper.selectTimetableList");
 	}
 

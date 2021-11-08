@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kh.project.admin.vo.EditStatusVO;
 import com.kh.project.lecture.vo.LectureVO;
+import com.kh.project.lecture.vo.LectureViewVO;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 
@@ -19,7 +20,7 @@ public interface StuInfoService {
 	int changePw(MemberVO memberVO);
 	
 	//시간표 조회 (임시)
-	List<LectureVO> selectTimetableList();
+	List<LectureViewVO> selectTimetableList();
 	
 	
 

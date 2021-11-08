@@ -44,12 +44,11 @@ td{
 		</thead>
 		<c:forEach items="${timetable }" var="each">
 			<tr class="each">
-				<td class="day">${each.day }</td>
-				<td class="timeStart">${each.timeStart }</td>
-				<td class="time">${each.time }</td>
+				<td class="day">${each.lectureViewVO.lecDay }</td>
+				<td class="timeStart">${each.lectureViewVO.lecPeriod }</td>
+				<td class="time">${each.lectureViewVO.lecCredit }</td>
 				<td class="lecId">${each.lecId }</td>
-				<td>${each.lecRoom }</td>
-				<td class="timeId">${each.timeId }</td>
+				<td>${each.lectureViewVO.lecName }</td>
 				</tr>
 		</c:forEach>
 	</table>
