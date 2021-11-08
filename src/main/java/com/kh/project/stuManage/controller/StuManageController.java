@@ -152,13 +152,13 @@ public class StuManageController {
 		}
 	//학생 조회
 	@GetMapping("/showStuList")
-	public String showStuList(DeptVO deptVO , Model model) {
+	public String showStuList(DeptVO deptVO , StudentVO studentVO ,Model model) {
 		//단과 대학 목록 조회
 		model.addAttribute("collList", stuManageService.selectCollegeList());
 		//학과 목록 조회
 		model.addAttribute("deptList", stuManageService.selectDeptList2(deptVO));
 		//학생 목록 조회
-		model.addAttribute("studentList", stuManageService.selectStudentList());
+		model.addAttribute("studentList", stuManageService.selectStudentList(studentVO));
 		return "stuManage/show_stu_info";
 	}		
 	//학생 상세 조회 //ksj

@@ -34,7 +34,7 @@ public interface StuManageService {
 	List<DeptVO> selectDeptList2(DeptVO deptVO);
 	
 	//학생 목록 조회 (ksj)
-	List<StudentVO> selectStudentList();
+	List<StudentVO> selectStudentList(StudentVO studentVO);
 	
 	
 	//휴학신청 목록조회

@@ -75,7 +75,7 @@ td{
 	<table>
 		<tr>
 			<td>검색</td>
-			<td> <input style="width: 515px;" type="text" name="searchValue" value="" placeholder="학번 또는 이름을 검색하세요."> </td>
+			<td> <input style="width: 515px;" type="text" name="searchValue" value="" placeholder="이름을 검색하세요."> </td>
 			<td> <input type="button" value="검색"> </td>
 		</tr>
 	</table>
@@ -97,7 +97,7 @@ td{
 				<td>${eachStu.stuNo }</td>
 				<td>${eachStu.stuYear }</td>
 				<td><a href="/stuManage/showStuDetail?memNo=${eachStu.stuNo}">${eachStu.memberInfo.memName}</a></td>
-				<td>${eachStu.colegeInfo.collName}</td>
+				<td>${eachStu.collegeInfo.collName}</td>
 				<td>${eachStu.majorCode }</td>
 				<td>${eachStu.stuStatus}</td>
 			</tr>

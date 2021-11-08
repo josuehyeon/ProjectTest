@@ -107,14 +107,14 @@
 		FROM LECTURE_VIEW
 		WHERE 1 = 1
 		<if test="lecId != null and !lecId.equals('')">
-		AND LEC_ID = #{lecId}
+			AND LEC_ID = #{lecId}
 		</if>
 		<if test="deptId != null and !deptId.equals('')">
-	    AND DEPT_ID LIKE '%'||UPPER(#{deptId})||'%'
+	    	AND DEPT_ID LIKE '%'||UPPER(#{deptId})||'%'
 	    </if>
 	     <if test="lecName != null and !lecName.equals('')">
-	    AND UPPER(LEC_NAME) LIKE '%'||UPPER(#{lecName})||'%'
-	    </if>
+		    AND UPPER(LEC_NAME) LIKE '%'||UPPER(#{lecName})||'%'
+	    </if>    
 		ORDER BY LEC_ID DESC
 	</select>
 	
@@ -214,7 +214,7 @@
 		SELECT LEC_ID, LEC_NAME FROM LECTURE WHERE PROF_NO = #{profNo}
 	</select>
 	
-	<!-- KSJ -->
+	<!-- KSJ --><!-- 트리거가 되면 stu_Grade에서 학번, 이름, 성적 조회하면 되는데 -->
 	<select id="selectStuNoForRegStuGrade" resultMap="enrolment">
 		SELECT STU_NO,
 			   ENROLMENT_ID,

@@ -25,7 +25,7 @@ tr,td{
 td{
 }
 </style>
-<script type="text/javascript" src="/resources/stuInfo/js/chk_timetable.js?ver=88"></script>
+<script type="text/javascript" src="/resources/stuInfo/js/chk_timetable.js?ver=90"></script>
 </head>
 <body>
 <!-- 강의 테이블 -->	
@@ -33,20 +33,20 @@ td{
 	<table>
 		<thead>
 			<tr>
-				<td>DAY(mon)</td>
-				<td>TIME_START(9)</td>
-				<td>TIME(3학점)</td>
-				<td>LEC_ID</td>
-				<td>LEC_ROOM(101)</td>
+				<td>강의명</td>
+				<td>요일</td>
+				<td>강의시작시간</td>
+				<td>학점</td>
+				<!-- <td>LEC_ID</td> -->
 			</tr>
 		</thead>
 		<c:forEach items="${timetable }" var="each">
 			<tr class="each">
+				<td>${each.lecName }</td>
 				<td class="day">${each.lecDay }</td>
 				<td class="timeStart">${each.lecPeriod }</td>
-				<td class="time">${each.credit}</td>
-				<td class="lecId">${each.lecId }</td>
-				<td>${each.lecRoom }</td>
+				<td class="time">${each.lecCredit}</td>
+				<%-- <td class="lecId">${each.lecId }</td> --%>
 				</tr>
 		</c:forEach>
 	</table>

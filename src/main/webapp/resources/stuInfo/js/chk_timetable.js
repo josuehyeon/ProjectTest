@@ -8,10 +8,11 @@ $(document).ready(function(){
 		// 색깔을 담는 배열
 		var colorArray = ["#cfedff", "#1e789b", "#7e9cc3", "#aab4ff", "#274381", "#B7F0B1", "#B2EBF4", "#B2CCFF", "#B5B2FF", "#D1B2FF", "#FFB2F5", "#FFB2D9", "#D5D5D5", "#BDBDBD"];
 	
-		var day = $(element).children().eq(0).text(); //mon , tue
-		var timeStart = $(element).children().eq(1).text(); //9, 10
-		var time = $(element).children().eq(2).text(); // 2학점, 3학점 
-		var lecId = $(element).children().eq(3).text(); //강의 코드
+		var lecName = $(element).children().eq(0).text(); //mon , tue
+		var day = $(element).children().eq(1).text(); //mon , tue
+		var timeStart = $(element).children().eq(2).text(); //9, 10
+		var time = $(element).children().eq(3).text(); // 2학점, 3학점 
+		//var lecId = $(element).children().eq(4).text(); //강의 코드
 		var first = day + timeStart; // mon9
 		//alert('요일'+day +'/강의시작시간' + timeStart + '/학점' + time + '/강의코드' + lecId);
 		
@@ -19,28 +20,28 @@ $(document).ready(function(){
 			//첫 번째 칸 색칠
 			var td = document.getElementById(first);
 			td.style.background= colorArray[i];
-			td.innerHTML = lecId;
+			td.innerHTML = lecName;
 			//두 번째 칸 색칠
 			var second = day + Number(Number(timeStart)+1) ;
 			var td2 = document.getElementById(second);
 			td2.style.background= colorArray[i++];
-			td2.innerHTML = lecId;
+			td2.innerHTML = lecName;
 		}
 		else if(time==3){
 			//첫 번째 칸 색칠
 			var td = document.getElementById(first);
 			td.style.background= colorArray[i];
-			td.innerHTML = lecId;
+			td.innerHTML = lecName;
 			//두 번째 칸 색칠
 			var second = day + Number(Number(timeStart)+1) ;
 			var td2 = document.getElementById(second);
 			td2.style.background= colorArray[i];
-			td2.innerHTML = lecId;
+			td2.innerHTML = lecName;
 			//세 번째 칸 색칠
 			var third = day + Number(Number(timeStart)+2) ;
 			var td3 = document.getElementById(third);
 			td3.style.background= colorArray[i++];
-			td3.innerHTML = lecId;
+			td3.innerHTML = lecName;
 		}
 	});
 	

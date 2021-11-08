@@ -74,8 +74,8 @@ public class StuManageServiceImpl implements StuManageService{
 
 	
 	 @Override //학생 목록 조회 
-	 public List<StudentVO> selectStudentList() { 
-		 return sqlSession.selectList("memberMapper.selectStudentList"); 
+	 public List<StudentVO> selectStudentList(StudentVO studentVO) { 
+		 return sqlSession.selectList("memberMapper.selectStudentList", studentVO); 
 	 }
 	 	
 

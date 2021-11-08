@@ -90,6 +90,24 @@
 			 , S.STU_STATUS
 		FROM   STUDENT S , MEMBER M
 		WHERE  S.STU_NO =  M.MEM_NO
+		<if test="collNo != null and collNo != 0">
+			AND COLL_NO = #{collNo}
+		</if>
+		<if test="majorCode != null and !majorCode.equals('') ">
+			AND MAJOR_CODE = #{majorCode}
+		</if>
+		<if test="stuYear != null and stuYear != 0">
+			AND STU_YEAR = #{stuYear}
+		</if>
+		<if test="stuStatus != null and !stuStatus.equals('')">
+			AND STU_STATUS = #{stuStatus}
+		</if>
+		<if test="collNo != null and collNo != 0">
+			AND COLL_NO = #{collNo}
+		</if>
+		<if test="searchValue != null and !searchValue.equals('')">
+			AND UPPER(${searchKeyword}) LIKE '%'||UPPER(#{searchValue})||'%'
+		</if>
 	</select>
 	
 	<!-- 임시 비밀번호 보내기 -->
