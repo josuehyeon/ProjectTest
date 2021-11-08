@@ -174,9 +174,9 @@ function savedata(jsondata) {
 </head>
 <body>
 <div> 
-	<input type="button" value="저장" onclick="allsave();">
 </div>
 <div id='calendar'></div>
 dd
+	<input type="button" value="저장" onclick="allsave();">
 </body>
 </html>
