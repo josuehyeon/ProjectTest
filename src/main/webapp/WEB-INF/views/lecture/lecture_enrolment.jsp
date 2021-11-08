@@ -77,8 +77,8 @@ iframe {
       <td>${lectureInfo.lecPeriod }</td>
       <td>
       	<form action="/lecture/enrolment" method="post" id="enrolment">
-	      	 <input type="text" name="lecId" value="${lectureInfo.lecId }">
-	   		 <input type="text" name="stuNo" value="${stuInfo.stuNo }">
+	      	 <input type="hidden" name="lecId" value="${lectureInfo.lecId }">
+	   		 <input type="hidden" name="stuNo" value="${stuInfo.stuNo }">
 	    	<input type="button" class="enrolment" value="신청">
 		</form>
 	  </td>
