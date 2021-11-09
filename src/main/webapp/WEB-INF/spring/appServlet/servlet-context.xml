@@ -52,6 +52,19 @@
 	
 	<context:component-scan base-package="com.kh.project.*.controller" />
 	
+	<!-- interceptor 객체를 생성 수현-->
+	<beans:bean id="lectureInterceptor" class="com.kh.project.common.util.LectureInterceptor"></beans:bean>
 	
+	<!-- interceptor가 실행될 요청 경로를 지정  -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/lecture/goRegLecture"/><!-- 이 경로로 갈때 검문소를 설치할것이다 -->
+			<mapping path="/lecture/updateLectureForm"/><!-- 이 경로로 갈때 검문소를 설치할것이다 -->
+		<!-- 	<mapping path="/*/*"/>모든 경로에 검문소 설치
+			<exclude-mapping path="/board/login"/>여기는 검문소 설치 안할것 -->
+			
+			<beans:ref bean="lectureInterceptor"/> <!-- 위에서 만든 loginInterceptor객체를 쓸것이다 -->
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>
