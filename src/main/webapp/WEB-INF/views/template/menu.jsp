@@ -33,8 +33,6 @@
 	      				<ul id="sub-menu">
 					        <li><a href="/emp/chkInfoJsp" aria-label="subemnu">내 정보 조회</a></li>
 				        	<li><a href="/portal/regMemberJsp" aria-label="subemnu">내 정보 수정</a></li>
-				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
-				        	<li><a href="#" aria-label="subemnu">submenu</a></li>
 					    </ul>
 					</li>
 		    		<li><a class="nav-link link-#00154a mmn" href="/admin/goMain">학생관리(Admin)</a>
@@ -43,23 +41,34 @@
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
-				        	
+					    </ul>
+		    		</li>
+		    		<li><a class="nav-link link-#00154a mmn" href="/admin/goMain">강의 관리 </a>
+				    	<ul id="sub-menu">
+							<li><a href="/lecture/goRegLecture">강의등록</a></li>
+							<li><a href="/lecture/selectLecture">강의리스트</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
 					    </ul>
 		    		</li>
 			    	<li><a class="nav-link link-#00154a mmn" href="/board/infoPark">정보광장</a>
 		      			<ul id="sub-menu">
 				        	<li><a class="nav-link link-#00154a" href="/board/infoPark" aria-label="subemnu">자유게시판</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/board/bdRequest" aria-label="subemnu">건의게시판</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/board/bdRequest" aria-label="subemnu">일정 관리</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/common/calendar" aria-label="subemnu">일정 관리</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/board/bdRequest" aria-label="subemnu">게시판 관리</a></li>
+				        	<li><a href="/common/calendar">학사 관리</a></li>
 					    </ul>
 		    		</li>
 					</c:when>
 					
 					<c:when test="${sessionScope.loginInfo.memAuth eq 2}">
-						<li><a class="nav-link link-#00154a mm" href="/admin/editStatus">학적 변동승인</a>
+						<li><a class="nav-link link-#00154a mm" href="/admin/editStatus">학생 관리</a>
 				    	<ul id="sub-menu">
 				    		<li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li>
+				    		<li><a class="nav-link link-#00154a mm" href="/admin/editStatus">학적 변동승인</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuSwitch" aria-label="subemnu">전과 / 복수전공</a></li>
@@ -69,15 +78,13 @@
 		      			<ul id="sub-menu">
 				        	<li><a class="nav-link link-#00154a" href="/board/infoPark" aria-label="subemnu">자유게시판</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/board/bdRequest" aria-label="subemnu">건의게시판</a></li>
-				        	<li><a href="/lecture/selectLecture">강의리스트</a></li>
-							<li><a href="/lecture/goRegLecture">강의등록</a></li>
-							<li><a href="/common/calendar">달력</a></li>
+							<li><a href="/common/calendar">학사 일정</a></li>
 					    </ul>
 		    			</li>
 					</c:when>
 					
 					<c:otherwise>
-						<li><a class="nav-link link-#00154a mmn" href="#">내 정보</a>
+						<li><a class="nav-link link-#00154a mmn" href="/stuInfo/chkInfoJsp">내 정보</a>
 	      				<ul id="sub-menu">
 					        <li><a href="/stuInfo/chkInfoJsp" aria-label="subemnu">내 정보 조회</a></li>
 				        	<li><a href="/stuInfo/changeInfoJsp" aria-label="subemnu">내 정보 수정</a></li>
@@ -87,7 +94,6 @@
 					</li>
 		    		<li><a class="nav-link link-#00154a mmn" href="/stuManage/goMain">학적관리</a>
 				    	<ul id="sub-menu">
-				    		<li><a href="/lecture/goEnrolment">수강신청</a></li>
 				        	<li><a href="/stuManage/stopStudyInfo"  aria-label="subemnu">>휴학 안내</a></li>
 				        	<li><a href="/stuManage/goStopStudy" aria-label="subemnu">휴학 신청</a></li>
 				        	<li><a href="/stuManage/againStudyInfo" aria-label="subemnu">복학 안내</a></li>
@@ -99,10 +105,18 @@
 				        	<li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li>
 					    </ul>
 		    		</li>
+		    		<li><a class="nav-link link-#00154a mmn" href="/board/infoPark">교과 과정 / 수업</a>
+		      			<ul id="sub-menu">
+				        	<li><a href="/lecture/goEnrolment">수강 신청</a></li>
+				        	<li><a href=/grade/chkGradeJsp>성적 조회</a></li>
+				        	<li><a href=/grade/chkGradeJsp>졸업 요건</a></li>
+					    </ul>
+		    		</li>
 			    	<li><a class="nav-link link-#00154a mmn" href="/board/infoPark">정보광장</a>
 		      			<ul id="sub-menu">
 				        	<li><a class="nav-link link-#00154a" href="/board/infoPark" aria-label="subemnu">자유게시판</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/board/bdRequest" aria-label="subemnu">건의게시판</a></li>
+				        	<li><a href="/common/calendar">학사 일정</a></li>
 					    </ul>
 		    		</li>
 					</c:otherwise>
