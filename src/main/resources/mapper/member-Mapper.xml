@@ -93,6 +93,7 @@
 		<if test="collNo != null and collNo != 0">
 			AND COLL_NO = #{collNo}
 		</if>
+		
 		<if test="majorCode != null and !majorCode.equals('') ">
 			AND MAJOR_CODE = #{majorCode}
 		</if>

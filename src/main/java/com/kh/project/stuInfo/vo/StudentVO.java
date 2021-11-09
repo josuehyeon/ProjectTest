@@ -1,11 +1,12 @@
 package com.kh.project.stuInfo.vo;
 
 import com.kh.project.admin.vo.EditStatusVO;
+import com.kh.project.common.vo.SearchVO;
 import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
 
-public class StudentVO {
+public class StudentVO extends SearchVO{
 	private int stuNo;
 	private int collNo;
 	private String majorCode;

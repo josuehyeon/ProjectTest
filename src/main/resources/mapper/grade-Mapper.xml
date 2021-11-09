@@ -46,8 +46,6 @@
 		<association property="semesterInfo" resultMap="semester" />
 		<association property="memberInfo" resultMap="memberMapper.member" />
 	</resultMap>
-	
-	
 
 	<!-- 학년/학기 리스트 -->
 	<select id="selectSemesterList" resultMap="semester">
@@ -115,12 +113,21 @@
 		  AND SG.STU_NO = #{stuNo}
 	</select>	
 	
-	<!-- 성적등록 페이지: 해당 강의 수강하는 학생의 리스트 -->
-	<select id="" resultMap="stuGrade">
+	<!-- 성적등록 페이지: 해당 강의 수강하는 학생의 리스트 ksj-->
+	<!-- 트리거가 될 경우 stu_Grade에서 학번, 이름, 성적 조회 -->
+	<select id="undetermined1" resultMap="stuGrade">
 		SELECT S.STU_NO, MEM_NAME, GRADE
 		FROM STU_GRADE S, MEMBER M
 		WHERE S.STU_NO = M.MEM_NO
 		AND LEC_ID = 'LEC_001'
+	</select>
+	
+
+	<!--STU_GRADE테이블에 성적을 등록 ksj-->
+	<select id="undetermined2" resultMap="stuGrade">
+		UPDATE STU_GRADE
+		SET GRADE = #{grade}
+		WHERE SUBJECT_ID = #{subjectId}	
 	</select>
 	
 </mapper>
