@@ -44,11 +44,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #decebf;
+	margin: 0 auto;
 	}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 input:focus {
   outline: none;
 }
@@ -62,14 +59,15 @@ a {
 table {
   text-align: center;
   margin: auto 0;
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse: collapse;
+  border-spacing: 0;
 }
 .container-fluid{
 	width: 90%;
 	margin-top: 20px;
 	margin-bottom: 20px;
-}
-body {
-	text-align: center;
 }
 tr, td{
 	text-align: center;
@@ -86,10 +84,6 @@ th, td {
 
 td{
 	text-align: center;
-}
-table {
-  text-align: center;
-  margin: auto 0;
 }
 .container-fluid{
 	width: 90%;
@@ -113,10 +107,6 @@ td{
 }
 thead{
 	text-align: center;
-}
-table {
-  text-align: center;
-  margin: auto 0;
 }
 .container-fluid{
 	width: 90%;

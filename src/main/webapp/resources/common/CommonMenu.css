@@ -11,8 +11,9 @@
 }
 body {
 	font-family: 'NanumBarunpen';
-  	margin: 0;
-  	padding: 0;
+	text-align: center;
+  	margin: 0 auto;
+  	padding: 0px;
   	font-family: "Roboto", serif;
   	display: flex;
   	flex-flow: column nowrap;
@@ -24,7 +25,14 @@ body {
 h1 {
   	margin: 2em 0 1.5em 0;
 }
-
+table {
+  text-align: center;
+  margin: auto 0;
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse: collapse;
+  border-spacing: 0;
+}
 nav {
 	width: 100%;
 	display: flex;
