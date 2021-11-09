@@ -93,7 +93,6 @@
 		<if test="collNo != null and collNo != 0">
 			AND COLL_NO = #{collNo}
 		</if>
-		
 		<if test="majorCode != null and !majorCode.equals('') ">
 			AND MAJOR_CODE = #{majorCode}
 		</if>
@@ -107,7 +106,7 @@
 			AND COLL_NO = #{collNo}
 		</if>
 		<if test="searchValue != null and !searchValue.equals('')">
-			AND UPPER(${searchKeyword}) LIKE '%'||UPPER(#{searchValue})||'%'
+			AND UPPER(M.MEM_NAME) LIKE '%'||UPPER(#{searchValue})||'%'
 		</if>
 	</select>
 	

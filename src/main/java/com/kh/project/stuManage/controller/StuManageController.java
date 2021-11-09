@@ -161,6 +161,15 @@ public class StuManageController {
 		model.addAttribute("studentList", stuManageService.selectStudentList(studentVO));
 		return "stuManage/show_stu_info";
 	}		
+	
+	//ksj
+	@ResponseBody
+	@PostMapping("/selectStudentListOnConditionAjax")
+	public List<StudentVO> selectStudentListOnConditionAjax(StudentVO studentVO) {
+		// 조건에 맞는 학생 목록 조회 Ajax
+		return stuManageService.selectStudentList(studentVO);
+	}
+	
 	//학생 상세 조회 //ksj
 	@GetMapping("/showStuDetail")
 	public String showStuDetail(HttpSession session , Model model,  int memNo) {

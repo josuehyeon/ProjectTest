@@ -172,7 +172,7 @@
             	,LEC_ID
 		FROM     LECTURE_TIME -->
 		
-	<!-- 강의시간표 작동 확인용 임시 -->
+	<!-- 강의시간표용 TimetableView만듦 -->
 	<select id="selectTimetableList" resultMap="timetableView">
 		SELECT ENROLMENT_ID
 		      ,LEC_ID
@@ -214,7 +214,8 @@
 		SELECT LEC_ID, LEC_NAME FROM LECTURE WHERE PROF_NO = #{profNo}
 	</select>
 	
-	<!-- KSJ --><!-- 트리거가 되면 stu_Grade에서 학번, 이름, 성적 조회하면 되는데 -->
+	<!-- 성적등록 강의 선택시 나오는 학생 목록 ksj -->
+	<!-- 트리거가 되면 stu_Grade에서 학번, 이름, 성적 조회하면 되는데 -->
 	<select id="selectStuNoForRegStuGrade" resultMap="enrolment">
 		SELECT STU_NO,
 			   ENROLMENT_ID,
@@ -222,6 +223,8 @@
 		FROM ENROLMENT 
 		WHERE LEC_ID = #{lecId}
 	</select>
+	
+
 			
 </mapper>
 
