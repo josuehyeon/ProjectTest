@@ -28,7 +28,7 @@
 	    	<li><a class="nav-link link-#00154a" href="/portal/mainJsp">HOME</a></li>
 			<c:if test="${not empty sessionScope.loginInfo }">
 			<c:choose>
-				<c:when test="${sessionScope.loginInfo.memAuth eq 3}">
+				<c:when test="${sessionScope.loginInfo.memAuth eq 3}"> <!-- 교직원(관리자) -->
 					<li><a class="nav-link link-#00154a mmn" href="/common/myInfo">내 정보</a>
 	      				<ul id="sub-menu">
 					        <li><a href="/emp/chkInfoJsp" aria-label="subemnu">내 정보 조회</a></li>
@@ -54,7 +54,7 @@
 		    		</li>
 					</c:when>
 					
-					<c:when test="${sessionScope.loginInfo.memAuth eq 2}">
+					<c:when test="${sessionScope.loginInfo.memAuth eq 2}"> <!-- 교수 -->
 						<li><a class="nav-link link-#00154a mm" href="/admin/editStatus">학생 관리</a>
 				    	<ul id="sub-menu">
 				    		<li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li>

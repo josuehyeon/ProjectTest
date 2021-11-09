@@ -8,7 +8,7 @@
 <title><tiles:insertAttribute name="title"/></title>
 <!-- 태그 초기화 작업 -->
 <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="/resources/common/reset.css">
+<link rel="stylesheet" href="/resources/common/reset.css?ver=1">
 <link rel="stylesheet" href="/resources/common/CommonMenu.css?ver=1">
 <link rel="stylesheet" href="/resources/common/CommonBodyCssFrame.css">
 <!-- 제이쿼리 문법을 로딩 -->

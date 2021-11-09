@@ -178,28 +178,6 @@ ul {
 </style>
 </head>
 <body>
-불필요하다 판단되어 사이드, 서브 병합 시킴
-추후 삭제 할 영역
-<%-- <div class="sideDiv">
- ✧ ━━━━━━━━━━━ ✧
- <c:if test="${not empty sessionScope.loginInfo }">
-	<c:choose>
-		<c:when test="${sessionScope.loginInfo.memAuth eq 3}">					
-			<a class="nav-link link-#00154a" href="/admin/selectStu">학생 조회</a><br>
-			<a class="nav-link link-#00154a" href="/admin/manageGrade">성적 관리</a><br>
-			<a class="nav-link link-#00154a" href="/admin/goEditStatusList">학적 변동승인</a><br>
-			<a class="nav-link link-#00154a" href="/admin/stuNotice">학사경고 / 제적</a><br>
-			<a class="nav-link link-#00154a" href="/admin/stuSwitch">전과 / 복수전공</a>
-		</c:when>
-		<c:otherwise>
-			<c:if test="${sessionScope.loginInfo.memAuth eq 1 or 2 }">
-				<a class="nav-link link-#00154a" href="/board/infoPark">자유게시판</a>
-				<a class="nav-link link-#00154a" href="/board/bdRequest">건의게시판</a>
-			</c:if>
-		</c:otherwise>
-	</c:choose>
-</c:if>
-</div> --%>
 <!--  <div id="wrapper">
 	<div class="topbar" style="position: absolute; top:0;">
 	    왼쪽 메뉴
