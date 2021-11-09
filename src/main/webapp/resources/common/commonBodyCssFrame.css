@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+    font-family: 'NanumBarunpen';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.nav-link {
+	color: white;
+}
+body {
+	font-family: 'NanumBarunpen';
+	text-align: center;
+	background-color: #f2e1cf;
+  	margin: 0 auto;
+  	padding: 0px;
+  	font-family: "Roboto", serif;
+  	display: flex;
+  	flex-flow: column nowrap;
+  	justify-content: center;
+  	align-items: center;
+}
+table  {
+	text-align: center;
+	margin: auto 0;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+tr, td, th {
+  text-align: center;
+}
+.col{
+	text-align: center;
+}
+.row{
+	text-align: center;
+}
+/* 리스트 사용 시 기본 디자인 */
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* nav 사용 시 기본 디자인 */
+nav {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	background-color: #000f4c;
+}
+
+/* 기본 색감 팔레트(필수긴 합니당) 
+#000000 - 검정
+#f2e1cf - 밝은 오트밀
+#000038 - 진한 남색
+
+색감은 통일하되 부분 부분 여러분들께서 원하시는 디자인으로 변경 가능하오니 통일성만 지켜주시면 됩니당 !
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

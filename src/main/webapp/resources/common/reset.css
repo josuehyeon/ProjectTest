@@ -43,7 +43,7 @@ body {
 	text-align: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-color: #decebf;
+	background-color: #f2e1cf;
 	margin: 0 auto;
 	}
 input:focus {
@@ -82,16 +82,10 @@ th, td {
   text-align: center;
 }
 
-td{
-	text-align: center;
-}
 .container-fluid{
 	width: 90%;
 	margin-top: 20px;
 	margin-bottom: 20px;
-}
-tr, td{
-	text-align: center;
 }
 .col{
 	text-align: center;
@@ -99,11 +93,8 @@ tr, td{
 .row{
 	text-align: center;
 }
-th, td {
+tr, td, th {
   text-align: center;
-}
-td{
-	text-align: center;
 }
 thead{
 	text-align: center;
@@ -113,19 +104,10 @@ thead{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-tr, td{
-	text-align: center;
-}
 .col{
 	text-align: center;
 }
 .row{
-	text-align: center;
-}
-th, td {
-  text-align: center;
-}
-td{
 	text-align: center;
 }
 thead{

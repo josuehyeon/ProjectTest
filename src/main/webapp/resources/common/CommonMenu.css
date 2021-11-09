@@ -38,20 +38,17 @@ nav {
 	display: flex;
 	justify-content: center;
 	position: relative;
-	background-color: #0f1756;
+	background-color: #000f4c;
 }
-
 ul, li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 #main-menu > li {
   float: left;
   position: relative;
 }
-
 #main-menu > li > a {
   font-size: 0.85rem;
   color: rgba(255,255,255,0.85);
@@ -63,11 +60,9 @@ ul, li {
   border-right: 1px solid rgba(0,0,0,0.15);
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
-
 #main-menu > li:nth-child(1) > a {
   border-left: 1px solid rgba(0,0,0,0.15);
 }
-
 #sub-menu {
   position: absolute;
   background: #182952;
@@ -75,7 +70,6 @@ ul, li {
   visibility: hidden;
   transition: all 0.15s ease-in;
 }
-
 #sub-menu > li {
   padding: 16px 28px;
   border-bottom: 1px solid rgba(0,0,0,0.15);
