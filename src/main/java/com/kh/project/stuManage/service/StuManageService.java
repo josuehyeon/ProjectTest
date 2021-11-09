@@ -37,12 +37,26 @@ public interface StuManageService {
 	List<StudentVO> selectStudentList(StudentVO studentVO);
 	
 	
-	//휴학신청 목록조회
+	//학생 휴학신청 
 	StudentVO goStopStudy(int memNo);
 	
-	int insertStatus(EditStatusVO editStatusVO);
+	int insertStopStudy(EditStatusVO editStatusVO);
 
-	int selectWaitCnt(int memNo);
+	int selectWaitCntStop(int memNo);
+	
+	//학생 복학신청
+	StudentVO goAgainStudy(int memNo);
+	
+	int insertAgainStudy(EditStatusVO editStatusVO);
+
+	int selectWaitCntAgain(int memNo);
+	
+	//학생 자퇴신청
+	StudentVO goExitStudy(int memNo);
+	
+	int insertExitStudy(EditStatusVO editStatusVO);
+
+	int selectWaitCntExit(int memNo);
 	
 	//성적등록> 해당 강의 수강하는 학생의 목록 조회
 	

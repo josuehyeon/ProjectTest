@@ -1,5 +1,7 @@
 package com.kh.project.admin.controller;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -11,13 +13,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.admin.service.AdminService;
 import com.kh.project.admin.vo.EditStatusVO;
+import com.kh.project.lecture.service.LectureService;
+import com.kh.project.stuInfo.vo.StudentVO;
+import com.kh.project.stuManage.service.StuManageService;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
+import com.kh.project.stuManage.vo.CollegeVO;
+import com.kh.project.stuManage.vo.DeptVO;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 	@Resource(name = "adminService")
 	private AdminService adminService;
+	@Resource(name = "stuManageService")
+	private StuManageService stuManageService;
+	@Resource(name = "lectureService")
+	private LectureService lectureService;
 	
 	//메인
 	@GetMapping("/goMain")
@@ -38,51 +49,98 @@ public class AdminController {
 	}
 	
 	//학적 변동승인 페이지 이동
-		@GetMapping("/editStatus")
-		public String editStatus(Model model) {
-			model.addAttribute("selectEditList", adminService.selectEditList());
-			return "admin/editStatus"; 
-		} 
-		
-		//학적변동 승인완료
-		@GetMapping("/editStatus1")
-		public String editStatus1(Model model, EditStatusVO editStatusVO) {
-			int[] a = editStatusVO.getStuNoList();
-			
-			model.addAttribute("updateEdit", adminService.updateEdit(editStatusVO));
-			//휴학 신청페이지에서 학적상태를 휴학으로 변경
-			adminService.updateStudentStatus(editStatusVO);
-			
-			return "redirect:/admin/editStatus";
-		}
-		
-		//학적변동 승인대기로 돌리기
-		@GetMapping("/editStatus2")
-		public String editStatus2(Model model, EditStatusVO editStatusVO) {
-			int[] a = editStatusVO.getStuNoList();
-			model.addAttribute("cancelEdit", adminService.cancelEdit(editStatusVO));
-			return "redirect:/admin/editStatus";
-		}
-		
-		//학적변동 목록삭제
-		@GetMapping("editStatus3")
-		public String editStatus3(Model model, EditStatusVO editStatusVO) {
-			int[] a = editStatusVO.getStuNoList();
-			
-			model.addAttribute("deleteEdit", adminService.deleteEdit(editStatusVO));
-			return "redirect:/admin/editStatus";
-		}
+	@GetMapping("/goEditStatusList")
+	public String editStatus(Model model) {
+		model.addAttribute("selectStopList", adminService.selectStopList());
+		//model.addAttribute("selectAgainList", adminService.selectAgainList());
+		//model.addAttribute("selectExitList", adminService.selectExitList());
+		return "admin/editStatusList"; 
+	}
 	
-	//학사경고, 제적
+	//학적변동 승인완료 1.재학-휴학
+	@GetMapping("/updateStopStatusToStudent")
+	public String updateStopStatusToStudent(Model model, EditStatusVO editStatusVO) {
+		int[] a = editStatusVO.getStuNoList();
+		model.addAttribute("updateStop", adminService.updateStop(editStatusVO));
+		//휴학 신청페이지에서 학적상태 변경 
+		adminService.updateStopStatusToStudent(editStatusVO);
+		System.out.println("휴학");
+		return "redirect:/admin/goEditStatusList"; 
+	}
+	
+	//학적변동 승인완료 2.휴학-복학
+	@GetMapping("/updateAgainStatusToStudent")
+	public String updateAgainStatusToStudent(Model model, EditStatusVO editStatusVO) {
+		int[] a = editStatusVO.getStuNoList();
+		adminService.updateAgain(editStatusVO);
+		//휴학 신청페이지에서 학적상태 변경 
+		adminService.updateAgainStatusToStudent(editStatusVO);
+		System.out.println("복학");
+		return "redirect:/admin/goEditStatusList";
+	}
+	
+	//학적변동 승인완료 3.자퇴
+	@GetMapping("/updateExitStatusToStudent")
+	public String updateExitStatusToStudent(Model model, EditStatusVO editStatusVO) {
+		int[] a = editStatusVO.getStuNoList();
+		adminService.updateExit(editStatusVO);
+		//휴학 신청페이지에서 학적상태 변경 
+		adminService.updateExitStatusToStudent(editStatusVO);
+		System.out.println("자퇴");
+		return "redirect:/admin/goEditStatusList";
+	}
+	
+	//학적변동 승인대기로 돌리기
+	@GetMapping("/editStatus2")
+	public String editStatus2(Model model, EditStatusVO editStatusVO) {
+		int[] a = editStatusVO.getStuNoList();
+		model.addAttribute("cancelEdit", adminService.cancelEdit(editStatusVO));
+		return "redirect:/admin/goEditStatusList";
+	}
+	
+	//학적변동 목록삭제
+	@GetMapping("editStatus3")
+	public String editStatus3(Model model, EditStatusVO editStatusVO) {
+		int[] a = editStatusVO.getStuNoList();
+		
+		model.addAttribute("deleteEdit", adminService.deleteEdit(editStatusVO));
+		return "redirect:/admin/goEditStatusList";
+	}
+
+	//학사경고
 	@GetMapping("/stuNotice")
-	public String stuNotice() {
+	public String stuNotice
+	(Model model, StudentVO studentVO, DeptVO deptVO, ChangeMajorVO changeMajorVO) {
+		//단과 대학 목록 조회
+		model.addAttribute("collList", stuManageService.selectCollegeList());
+		//학과 목록 조회
+		model.addAttribute("deptList", stuManageService.selectDeptList2(deptVO));
+		//학생 목록 조회
+		model.addAttribute("studentList", stuManageService.selectStudentList(studentVO));
+		
 		return "admin/stuNotice";
 	}
 	
-	//전과, 복수전공 페이지
+	//제적
+	@GetMapping("/stuGetOut")
+	public String stuGetOut() {
+		
+		return "admin/stuGetOut";
+	}
+	
+	@ResponseBody
+	@PostMapping("/selectCollegeAjax")
+	public List<DeptVO> selectCollegeAjax(CollegeVO collegeVO) {
+		// 학과 목록 조회
+		return lectureService.selectDeptList2(collegeVO);
+	}
+	
+	//전과신청 승인페이지
 	@GetMapping("/stuSwitch")
 	public String stuSwitch(Model model, ChangeMajorVO changeMajorVO) {
 		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
+		
+		int[] a = ChangeMajorVO.getStuNoList();
 		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
 		return "admin/stuSwitch";
 	}

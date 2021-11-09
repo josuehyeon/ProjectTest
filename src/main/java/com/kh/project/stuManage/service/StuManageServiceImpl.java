@@ -21,19 +21,22 @@ public class StuManageServiceImpl implements StuManageService{
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
+	//휴학 1
 	@Override
 	public StudentVO goStopStudy(int memNo) {
 		return sqlSession.selectOne("studentMapper.goStopStudy", memNo);
 	}
 
+	//휴학 2
 	@Override
-	public int insertStatus(EditStatusVO editStatusVO) {
-		return sqlSession.insert("studentMapper.insertStatus", editStatusVO);
+	public int insertStopStudy(EditStatusVO editStatusVO) {
+		return sqlSession.insert("studentMapper.insertStopStudy", editStatusVO);
 	}
 
+	//휴학 3
 	@Override
-	public int selectWaitCnt(int memNo) {
-		return sqlSession.selectOne("studentMapper.selectWaitCnt", memNo);
+	public int selectWaitCntStop(int memNo) {
+		return sqlSession.selectOne("studentMapper.selectWaitCntStop", memNo);
 	}
 
 	
@@ -78,6 +81,40 @@ public class StuManageServiceImpl implements StuManageService{
 		 return sqlSession.selectList("memberMapper.selectStudentList", studentVO); 
 	 }
 	 	
+	//복학 1
+	@Override
+	public StudentVO goAgainStudy(int memNo) {
+		return sqlSession.selectOne("studentMapper.goAgainStudy", memNo);
+	}
+	
+	//복학 2
+	@Override
+	public int insertAgainStudy(EditStatusVO editStatusVO) {
+		return sqlSession.insert("studentMapper.insertAgainStudy", editStatusVO);
+	}
 
+	//복학 3
+	@Override
+	public int selectWaitCntAgain(int memNo) {
+		return sqlSession.selectOne("studentMapper.selectWaitCntAgain", memNo);
+	}
+
+	//자퇴 1
+	@Override
+	public StudentVO goExitStudy(int memNo) {
+		return sqlSession.selectOne("studentMapper.goExitStudy", memNo);
+	}
+
+	//자퇴 2
+	@Override
+	public int insertExitStudy(EditStatusVO editStatusVO) {
+		return sqlSession.insert("studentMapper.insertExitStudy", editStatusVO);
+	}
+
+	//자퇴 3
+	@Override
+	public int selectWaitCntExit(int memNo) {
+		return sqlSession.selectOne("studentMapper.selectWaitCntExit", memNo);
+	}
 	
 }

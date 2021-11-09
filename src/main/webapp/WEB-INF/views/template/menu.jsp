@@ -39,7 +39,7 @@
 				    	<ul id="sub-menu">
 				        	<li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/goEditStatusList" aria-label="subemnu">학적 변동승인</a></li>	<!-- 11.09 이수정 -->
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
 					    </ul>
 		    		</li>
@@ -58,7 +58,7 @@
 						<li><a class="nav-link link-#00154a mm" href="/admin/editStatus">학생 관리</a>
 				    	<ul id="sub-menu">
 				    		<li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li>
-				    		<li><a class="nav-link link-#00154a mm" href="/admin/editStatus">학적 변동승인</a></li>
+				    		<li><a class="nav-link link-#00154a mm" href="/admin/goEditStatusList">학적 변동승인</a></li>	<!-- 11.09 이수정 -->
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuSwitch" aria-label="subemnu">전과 / 복수전공</a></li>
@@ -70,7 +70,7 @@
 							<li><a href="/lecture/selectLecture">강의리스트</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/admin/permissionToStudent" aria-label="subemnu">학적 변동승인</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/admin/goEditStatusList" aria-label="subemnu">학적 변동승인</a></li>	<!-- 11.09 이수정 -->
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고 / 제적</a></li>
 					    </ul>
 		    			</li>
@@ -99,7 +99,7 @@
 				        	<li><a href="/stuManage/againStudyInfo" aria-label="subemnu">복학 안내</a></li>
 				        	<li><a href="/stuManage/goAgainStudy" aria-label="subemnu">복학 신청</a></li>
 				        	<li><a href="/stuManage/exitInfo" aria-label="subemnu">자퇴 안내</a></li>
-				        	<li><a href="/stuManage/goExit" aria-label="subemnu">자퇴 신청</a></li>
+				        	<li><a href="/stuManage/goExitStudy" aria-label="subemnu">자퇴 신청</a></li>	<!-- 11.09 이수정 -->
 				        	<li><a href="/stuManage/goChangeMajor" aria-label="subemnu">전과 신청</a></li>
 				        	<li><a href="/stuManage/goDoubleMajor" aria-label="subemnu">복수전공 신청</a></li>
 				        	<li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li>

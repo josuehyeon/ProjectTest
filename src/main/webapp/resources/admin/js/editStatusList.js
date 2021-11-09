@@ -28,10 +28,10 @@ $(document).ready(function(){
       
    });
    
-   //
-   $(document).on('click', '.okayBtn', function() { 
+   //1.휴학 승인
+   $(document).on('click', '.stopStudyBtn', function() { 
 	   
-	   alert('승인완료 변경');
+	   alert('휴학 승인완료');
 	   //일단 데이터 여러개를 담을 수 있는 stuNo 변수를 만든다
 	   var stuNoList = new Array();
 	   
@@ -41,7 +41,39 @@ $(document).ready(function(){
 		   stuNoList[index] = stuNo;
 	   });
 	   
-	   location.href = '/admin/editStatus1?stuNoList=' + stuNoList;
+	   location.href = '/admin/updateStopStatusToStudent?stuNoList=' + stuNoList;
+   });
+   
+   //2.복학 승인
+   $(document).on('click', '.againStudyBtn', function() { 
+	   
+	   alert('복학 승인완료');
+	   //일단 데이터 여러개를 담을 수 있는 stuNo 변수를 만든다
+	   var stuNoList = new Array();
+	   
+	   $('.check:checked').each(function(index, element){
+		   var stuNo = $(element).val();
+		   alert( stuNo ); 
+		   stuNoList[index] = stuNo;
+	   });
+	   
+	   location.href = '/admin/updateAgainStatusToStudent?stuNoList=' + stuNoList;
+   });
+   
+   //3.휴학 승인
+   $(document).on('click', '.exitStudyBtn', function() { 
+	   
+	   alert('자퇴 승인완료');
+	   //일단 데이터 여러개를 담을 수 있는 stuNo 변수를 만든다
+	   var stuNoList = new Array();
+	   
+	   $('.check:checked').each(function(index, element){
+		   var stuNo = $(element).val();
+		   alert( stuNo ); 
+		   stuNoList[index] = stuNo;
+	   });
+	   
+	   location.href = '/admin/updateExitStatusToStudent?stuNoList=' + stuNoList;
    });
 
    

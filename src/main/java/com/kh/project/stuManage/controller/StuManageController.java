@@ -65,16 +65,66 @@ public class StuManageController {
 		
 		//일단 학생번호가 필요한데, 학생번호가 회원번호랑 동일하다는 가정...
 		//승인 대기 중인 데이터 조회
-		int waitCnt = stuManageService.selectWaitCnt(memNo);
-		model.addAttribute("waitCnt", waitCnt);
+		int waitCnt = stuManageService.selectWaitCntStop(memNo);
+		model.addAttribute("waitCntStop", waitCnt);
 		return "stuManage/stopStudy";
+	}
+	
+	//복학 신청 들어가기
+	@GetMapping("/goAgainStudy")
+	public String goAgainStudy(HttpSession session , Model model) {
+		
+		//로그인 세션 정보 가져오기
+		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
+		//휴학 신청에 memNo를 넣어서 특정 학생의 데이터를 가져옴
+		int memNo = member.getMemNo();
+		model.addAttribute("againStudyInfo", stuManageService.goAgainStudy(memNo));
+		
+		//일단 학생번호가 필요한데, 학생번호가 회원번호랑 동일하다는 가정...
+		//승인 대기 중인 데이터 조회
+		int waitCnt = stuManageService.selectWaitCntAgain(memNo);
+		model.addAttribute("waitCntAgain", waitCnt);
+		
+		return "stuManage/againStudy";
+	}
+		
+	//자퇴 신청 들어가기
+	@GetMapping("/goExitStudy")
+	public String goExitStudy(HttpSession session , Model model, EditStatusVO editStatusVO) {
+		
+		//로그인 세션 정보 가져오기
+		MemberVO member = (MemberVO)session.getAttribute("loginInfo");
+		//휴학 신청에 memNo를 넣어서 특정 학생의 데이터를 가져옴
+		int memNo = member.getMemNo();
+		model.addAttribute("exitStudyInfo", stuManageService.goExitStudy(memNo));
+		
+		//일단 학생번호가 필요한데, 학생번호가 회원번호랑 동일하다는 가정...
+		//승인 대기 중인 데이터 조회
+		int waitCnt = stuManageService.selectWaitCntExit(memNo);
+		model.addAttribute("waitCntExit", waitCnt);
+		
+		return "stuManage/exitStudy";
 	}
 	
 	//휴학 신청 
 	@PostMapping("/goStopStudy")
 	public String goStopStudy(Model model, EditStatusVO editStatusVO) {
-		model.addAttribute("insertStatusInfo", stuManageService.insertStatus(editStatusVO));
+		model.addAttribute("insertStopInfo", stuManageService.insertStopStudy(editStatusVO));
 		return "redirect:/stuManage/goStopStudy";
+	}
+	
+	//복학 신청
+	@PostMapping("/goAgainStudy")
+	public String goAgainStudy(Model model, EditStatusVO editStatusVO) {
+		model.addAttribute("insertAgainInfo", stuManageService.insertAgainStudy(editStatusVO));
+		return "redirect:/stuManage/goAgainStudy";
+	}
+	
+	//자퇴 신청
+	@PostMapping("/goExitStudy")
+	public String goExitStudy(Model model, EditStatusVO editStatusVO) {
+		model.addAttribute("insertExitInfo", stuManageService.insertExitStudy(editStatusVO));
+		return "redirect:/stuManage/goExitStudy";
 	}
 		
 	//복학 안내
@@ -83,22 +133,10 @@ public class StuManageController {
 		return "stuManage/againStudyInfo";
 	}
 	
-	//복학 신청
-	@GetMapping("/goAgainStudy")
-	public String goAgainStudy() {
-		return "stuManage/goAgainStudy";
-	}
-	
 	//자퇴 안내
 	@GetMapping("/exitInfo")
 	public String exitInfo() {
 		return "stuManage/exitInfo";
-	}
-	
-	//자퇴 신청
-	@GetMapping("/goExit")
-	public String goExit() {
-		return "stuManage/goExit";
 	}
 	
 	//수현10-29

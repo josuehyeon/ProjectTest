@@ -187,7 +187,7 @@ ul {
 		<c:when test="${sessionScope.loginInfo.memAuth eq 3}">					
 			<a class="nav-link link-#00154a" href="/admin/selectStu">학생 조회</a><br>
 			<a class="nav-link link-#00154a" href="/admin/manageGrade">성적 관리</a><br>
-			<a class="nav-link link-#00154a" href="/admin/permissionToStudent">학적 변동승인</a><br>
+			<a class="nav-link link-#00154a" href="/admin/goEditStatusList">학적 변동승인</a><br>
 			<a class="nav-link link-#00154a" href="/admin/stuNotice">학사경고 / 제적</a><br>
 			<a class="nav-link link-#00154a" href="/admin/stuSwitch">전과 / 복수전공</a>
 		</c:when>

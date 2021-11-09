@@ -63,7 +63,41 @@
 		AND S.STU_NO = #{stuNo}
 	</select>
 	
-	<insert id="insertStatus">
+	<!-- 복학 -->
+	<select id="goAgainStudy" resultMap="student">
+		SELECT M.MEM_NAME
+			, C.COLL_NAME
+			, S.STU_YEAR
+			, D.DEPT_NAME
+			, S.MINOR_CODE
+			, TO_CHAR(M.MEM_BIRTH, 'YYYY/MM/DD') AS MEM_BIRTH
+			, S.STU_STATUS
+			, S.STU_NO			
+		FROM STUDENT S , MEMBER M, COLLEGE C, DEPT D
+		WHERE S.MEM_NO = M.MEM_NO
+		AND S.COLL_NO = C.COLL_NO
+		AND S.MAJOR_CODE = D.DEPT_ID
+		AND S.STU_NO = #{stuNo}
+	</select>
+	
+	<!-- 자퇴 -->
+	<select id="goExitStudy" resultMap="student">
+		SELECT M.MEM_NAME
+			, C.COLL_NAME
+			, S.STU_YEAR
+			, D.DEPT_NAME
+			, S.MINOR_CODE
+			, TO_CHAR(M.MEM_BIRTH, 'YYYY/MM/DD') AS MEM_BIRTH
+			, S.STU_STATUS
+			, S.STU_NO			
+		FROM STUDENT S , MEMBER M, COLLEGE C, DEPT D
+		WHERE S.MEM_NO = M.MEM_NO
+		AND S.COLL_NO = C.COLL_NO
+		AND S.MAJOR_CODE = D.DEPT_ID
+		AND S.STU_NO = #{stuNo}
+	</select>
+	
+	<insert id="insertStopStudy">
 		INSERT INTO EDIT_STATUS (
 			EDIT_NO
 		    , STU_NO
@@ -72,14 +106,64 @@
 		) VALUES (
 			(SELECT NVL(MAX(EDIT_NO) + 1, 1) FROM EDIT_STATUS)
 			, #{stuNo}
-			, '재학'
+			, (SELECT STU_STATUS FROM STUDENT WHERE STU_NO = #{stuNo})
 			, '휴학'
+		)
+	</insert>
+	
+	<!-- 복학 -->
+	<insert id="insertAgainStudy">
+		INSERT INTO EDIT_STATUS (
+			EDIT_NO
+		    , STU_NO
+		   	, NOW_STATUS
+		   	, AFTER_STATUS
+		) VALUES (
+			(SELECT NVL(MAX(EDIT_NO) + 1, 1) FROM EDIT_STATUS)
+			, #{stuNo}
+			, (SELECT STU_STATUS FROM STUDENT WHERE STU_NO = #{stuNo})
+			, '복학'
+		)
+	</insert>
+	
+	<!-- 자퇴 -->
+	<insert id="insertExitStudy">
+		INSERT INTO EDIT_STATUS (
+			EDIT_NO
+		    , STU_NO
+		   	, NOW_STATUS
+		   	, AFTER_STATUS
+		) VALUES (
+			(SELECT NVL(MAX(EDIT_NO) + 1, 1) FROM EDIT_STATUS)
+			, #{stuNo}
+			, (SELECT STU_STATUS FROM STUDENT WHERE STU_NO = #{stuNo})
+			, '자퇴'
 		)
 	</insert>
 	
 	<!-- 승인대기인 정보가 있는지 조회 -->
 	<!-- 승인대기인 데이터가 0개 일때만 신청 가능 -->
-	<select id="selectWaitCnt" resultType="int">
+	<select id="selectWaitCntStop" resultType="int">
+		SELECT COUNT(EDIT_NO)
+		FROM EDIT_STATUS
+		WHERE STU_NO = #{stuNo}
+		AND ING_STATUS = '승인대기'
+	</select>
+	
+	<!-- 복학 -->
+	<!-- 승인대기인 정보가 있는지 조회 -->
+	<!-- 승인대기인 데이터가 0개 일때만 신청 가능 -->
+	<select id="selectWaitCntAgain" resultType="int">
+		SELECT COUNT(EDIT_NO)
+		FROM EDIT_STATUS
+		WHERE STU_NO = #{stuNo}
+		AND ING_STATUS = '승인대기'
+	</select>
+	
+	<!-- 자퇴-->
+	<!-- 승인대기인 정보가 있는지 조회 -->
+	<!-- 승인대기인 데이터가 0개 일때만 신청 가능 -->
+	<select id="selectWaitCntExit" resultType="int">
 		SELECT COUNT(EDIT_NO)
 		FROM EDIT_STATUS
 		WHERE STU_NO = #{stuNo}
