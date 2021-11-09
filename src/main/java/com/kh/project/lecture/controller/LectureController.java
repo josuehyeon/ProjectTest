@@ -188,6 +188,14 @@ public class LectureController {
 	//수강신청하는폼
 	@RequestMapping("/goEnrolment")
 	public String goEnrolment(Model model, LectureViewVO lectureViewVO, HttpSession session) {
+		
+		//전체 데이터 수
+		int dataCnt = lectureService.totalLecCnt(lectureViewVO);
+		lectureViewVO.setTotalCnt(dataCnt);
+		//페이징 처리
+		lectureViewVO.setPageInfo();
+		
+		
 		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
 		model.addAttribute("stuInfo", stuManageService.selectStuInfoForChange(result));
 		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));

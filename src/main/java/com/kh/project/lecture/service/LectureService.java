@@ -2,6 +2,7 @@ package com.kh.project.lecture.service;
 
 import java.util.List;
 
+import com.kh.project.board.vo.BoardVO;
 import com.kh.project.lecture.vo.EnrolmentVO;
 import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.lecture.vo.LectureViewVO;
@@ -68,4 +69,7 @@ public interface LectureService {
 	
 	//수강신청 테이블에서 LEC_ID 조회 -ksj
 	List<EnrolmentVO> selectStuNoForRegStuGrade(EnrolmentVO enrolmentVO);
+	
+	//전체 데이터 조회 수
+	int totalLecCnt(LectureViewVO lectureViewVO);
 }

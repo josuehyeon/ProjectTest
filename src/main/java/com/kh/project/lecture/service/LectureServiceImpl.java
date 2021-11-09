@@ -120,5 +120,11 @@ public class LectureServiceImpl implements LectureService{
 		return sqlSession.selectList("lectureMapper.selectStuNoForRegStuGrade", enrolmentVO);
 	}
 
+	@Override
+	public int totalLecCnt(LectureViewVO lectureViewVO) {
+		
+		return sqlSession.selectOne("lectureMapper.totalLecCnt", lectureViewVO);
+	}
+
 	
 }

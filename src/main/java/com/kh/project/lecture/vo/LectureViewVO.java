@@ -1,6 +1,7 @@
 package com.kh.project.lecture.vo;
 
-public class LectureViewVO {
+
+public class LectureViewVO extends PageVO{
 	private String lecName;
 	private int lecCredit;
 	private int collNo;
@@ -17,8 +18,15 @@ public class LectureViewVO {
 	private String collName;
 	private String lecDay;
 	private String lecPeriod;
+	private int rowNum;
 	
 	
+	public int getRowNum() {
+		return rowNum;
+	}
+	public void setRowNum(int rowNum) {
+		this.rowNum = rowNum;
+	}
 	public String getLecDay() {
 		return lecDay;
 	}

@@ -45,6 +45,7 @@
 		<result column="COLL_NAME" property="collName"/>
 		<result column="LEC_DAY" property="lecDay"/>
 		<result column="LEC_PERIOD" property="lecPeriod"/>
+		<result column="ROW_NUM" 			property="rowNum"/>
 	</resultMap>
 	
 	<resultMap type="com.kh.project.lecture.vo.PdfVO" id="pdf">
@@ -87,6 +88,75 @@
 	</insert>
 	
 	<select id="selectLectureList" resultMap="lectureView">
+	SELECT  LEC_NAME
+                    , LEC_CREDIT
+                    , COLL_NO
+                    , DEPT_ID
+                    , PROF_NO
+                    , ASSI_NO
+                    , MAX_NO
+                    , NOW_NO
+                    , LEC_PLAN
+                    , PROF_NAME
+                    , ASSI_NAME
+                    , DEPT_NAME
+                    , LEC_ID
+                    , COLL_NAME
+                    , LEC_DAY
+                    , LEC_PERIOD
+		    , ROW_NUM
+		FROM
+		(
+			SELECT  LEC_NAME
+                    , LEC_CREDIT
+                    , COLL_NO
+                    , DEPT_ID
+                    , PROF_NO
+                    , ASSI_NO
+                    , MAX_NO
+                    , NOW_NO
+                    , LEC_PLAN
+                    , PROF_NAME
+                    , ASSI_NAME
+                    , DEPT_NAME
+                    , LEC_ID
+                    , COLL_NAME
+                    , LEC_DAY
+                    , LEC_PERIOD
+			    , ROWNUM AS ROW_NUM
+			FROM
+			(
+				SELECT 
+                    LEC_NAME
+                    , LEC_CREDIT
+                    , COLL_NO
+                    , DEPT_ID
+                    , PROF_NO
+                    , ASSI_NO
+                    , MAX_NO
+                    , NOW_NO
+                    , LEC_PLAN
+                    , PROF_NAME
+                    , ASSI_NAME
+                    , DEPT_NAME
+                    , LEC_ID
+                    , COLL_NAME
+                    , LEC_DAY
+                    , LEC_PERIOD
+                    FROM LECTURE_VIEW
+                    WHERE 1 = 1
+                     <if test="lecId != null and !lecId.equals('')">
+						AND LEC_ID = #{lecId}
+					</if>
+					<if test="deptId != null and !deptId.equals('')">
+				    	AND DEPT_ID LIKE '%'||UPPER(#{deptId})||'%'
+				    </if>
+                    ORDER BY LEC_ID DESC
+			)
+		)
+		WHERE ROW_NUM &gt;= #{startNum} AND ROW_NUM &lt;= #{endNum}
+	
+	<!-- 
 		SELECT 
 		LEC_NAME
 		, LEC_CREDIT
@@ -112,10 +182,20 @@
 		<if test="deptId != null and !deptId.equals('')">
 	    	AND DEPT_ID LIKE '%'||UPPER(#{deptId})||'%'
 	    </if>
-	     <if test="lecName != null and !lecName.equals('')">
-		    AND UPPER(LEC_NAME) LIKE '%'||UPPER(#{lecName})||'%'
-	    </if>    
-		ORDER BY LEC_ID DESC
+		ORDER BY LEC_ID DESC -->
+	</select>
+	
+	<!--페이징 처리를 위한 전체 데이터의 수  -->	
+	<select id="totalLecCnt" resultType="int">
+		SELECT COUNT(LEC_ID)
+		FROM LECTURE_VIEW
+		WHERE 1 = 1
+        <if test="lecId != null and !lecId.equals('')">
+			AND LEC_ID = #{lecId}
+		</if>
+		<if test="deptId != null and !deptId.equals('')">
+	    	AND DEPT_ID LIKE '%'||UPPER(#{deptId})||'%'
+	    </if>
 	</select>
 	
 	<delete id="deleteLecture">
