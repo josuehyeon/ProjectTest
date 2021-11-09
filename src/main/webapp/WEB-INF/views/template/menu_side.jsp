@@ -89,7 +89,25 @@ input[type="search"] {
     box-shadow: 0 0px 24px 0 rgb(0 0 0 / 6%), 0 1px 0px 0 rgb(0 0 0 / 2%);
     color: black;
 }
-
+.slider .indicators .indicator-item {
+  background-color: #666666;
+  border: 3px solid #ffffff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.slider .indicators .indicator-item.active {
+  background-color: #ffffff;
+}
+.slider {
+  width: 900px;
+  margin: 0 auto;
+}
+.slider .indicators {
+  bottom: 60px;
+  z-index: 100;
+  /* text-align: left; */
+}
 .sub_menu {
     margin-top: 50px;
 }
@@ -178,48 +196,6 @@ ul {
 </style>
 </head>
 <body>
-<!--  <div id="wrapper">
-	<div class="topbar" style="position: absolute; top:0;">
-	    왼쪽 메뉴
-	    <div class="left side-menu">
-	        <div class="sidebar-inner">
-	            <div id="sidebar-menu">
-	                <ul>
-	                    <li class="has_sub"><a href="javascript:void(0);" class="waves-effect">
-	                        <i class="fas fa-bars"></i>
-	                    </a></li>
-	                </ul>
-	            </div>
-	        </div>
-	    </div>
-	    왼쪽 서브 메뉴
-	    <div class="left_sub_menu">
-	        <div class="sub_menu">
-	            <input type="search" name="SEARCH" placeholder="SEARCH">
-	            <h2>TITLE</h2>
-	            <ul class="big_menu">
-	                <li>MENU 1 <i class="arrow fas fa-angle-right"></i></li>
-	                <ul class="small_menu">
-	                    <li><a href="#">소메뉴1-1</a></li>
-	                    <li><a href="#">소메뉴1-2</a></li>
-	                    <li><a href="#">소메뉴1-3</a></li>
-	                    <li><a href="#">소메뉴1-4</a></li>
-	                </ul>
-	            </ul>
-	            <ul class="big_menu">
-	                <li>MENU 2 <i class="arrow fas fa-angle-right"></i></li>
-	                <ul class="small_menu">
-	                    <li><a href="#">소메뉴2-1</a></li>
-	                    <li><a href="#">소메뉴2-2</a></li>
-	                </ul>
-	            </ul>
-	            <ul class="big_menu">
-	                <li>MYPAGE</li>
-	            </ul>
-	        </div>
-	    </div>
-	    <div class="overlay"></div>
-	</div>
-</div> -->
+
 </body>
 </html>

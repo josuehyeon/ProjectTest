@@ -10,11 +10,12 @@
 <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="/resources/common/reset.css?ver=1">
 <link rel="stylesheet" href="/resources/common/CommonMenu.css?ver=2">
-<link rel="stylesheet" href="/resources/common/CommonBodyCssFrame.css">
+<link rel="stylesheet" href="/resources/common/CommonBodyCssFrame.css?ver=1">
 
 <!-- 제이쿼리 문법을 로딩 -->
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="assets/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="/resources/common/subMn"></script>
 <!-- 부트스트랩 사용을 위해 css, js를 로딩 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
@@ -35,11 +36,8 @@ body {
 			<tiles:insertAttribute name="menu"/>
 		</div>
 	</div>
-	<div class="row" style="padding-top: 10px;">
-		<div class="col-2">
-			<tiles:insertAttribute name="side"/>
-		</div>
-		<div class="col-10">
+	<div>
+		<div class="col-12">
 			<tiles:insertAttribute name="body"/>
 		</div>
 	</div>
