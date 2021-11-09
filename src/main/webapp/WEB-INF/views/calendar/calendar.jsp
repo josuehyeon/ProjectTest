@@ -102,13 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     calendar.render();
   });
-
+var jsondata;
 //1. 전체 이벤트 데이터를 추출
 function allsave() {
 	
 	var allEvent = calendar.getEvents();
 	//console.log(allEvent); F12해서 값 확인 할 수 있다.
-
 	var events = new Array();
 	
 	//for문 도는 범위:각 이벤트 갯수만큼  , 총 이벤트 갯수만큼 for문 돌기
@@ -126,7 +125,7 @@ function allsave() {
 	}
 	
 	//JSON.stringify()는 자바스크립트의 값을 JSON 문자열로 변환한다.
-	var jsondata = JSON.stringify(events);
+	jsondata = JSON.stringify(events);
 	
 	//값이 잘 넘어왔는지 콘솔에 찍어보기 F12
 	console.log(jsondata);
@@ -135,19 +134,25 @@ function allsave() {
 }
 
 function savedata(jsondata) {
+	console.log(jsondata);
+	alert(jsondata);
 	$.ajax({
         url: '/common/regCalendar', //요청경로
         type: 'post',
         data:{"alldata":jsondata},  //필요한 데이터
-        dataType: 'json',
-        contentType: 'application/json',
+        /* dataType: 'json',
+        contentType: 'application/json', */
+        contentType: "application/json; charset=UTF-8",
         success: function(result) {
            //ajax 실행 성공 후 실행할 코드 작성
            alert('성공');
         },
-        error: function(){
+        error: function(request,status,error){
          //ajax 실행 실패 시 실행되는 구간
+         
            alert('실패');
+           alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+           console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
         }
  	 });
 	 

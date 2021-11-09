@@ -5,6 +5,14 @@ public class CalendarVO {
 	 private String start;
 	 private String end;
 	 private String allDay;
+	 private String alldata;
+	 
+	public String getAlldata() {
+		return alldata;
+	}
+	public void setAlldata(String alldata) {
+		this.alldata = alldata;
+	}
 	public String getTitle() {
 		return title;
 	}

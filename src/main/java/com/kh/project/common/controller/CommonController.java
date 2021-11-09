@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.empInfo.service.EmpService;
@@ -42,14 +43,29 @@ public class CommonController {
 	}
 	
 	// 
+//	@ResponseBody
+//	@PostMapping("/regCalendar")
+//	public HashMap<String, Object> regCalendar(@RequestBody HashMap<String, Object> map) {
+//		//Map<Object, Object>map = new HashMap<Object, Object>();
+//		System.out.println(map);
+//		
+//		return map;
+//	}
 	@ResponseBody
 	@PostMapping("/regCalendar")
-	public HashMap<String, Object> regCalendar(@RequestBody HashMap<String, Object> map) {
+	public String regCalendar(@RequestParam HashMap<String, Object> map) {
 		//Map<Object, Object>map = new HashMap<Object, Object>();
-		System.out.println(map);
+		System.out.println(map.size());
 		
-		return map;
+		return "a";
 	}
+//	@ResponseBody
+//	@PostMapping("/regCalendar")
+//	public int regCalendar(@RequestParam(value = "event[]") String[] alldata) {
+//		//Map<Object, Object>map = new HashMap<Object, Object>();
+//		
+//		return 1;
+//	}
 
 	//학생, 교수, 교직원(관리자) 모든 내 정보 조회 확인
 	@GetMapping("/myInfo")
