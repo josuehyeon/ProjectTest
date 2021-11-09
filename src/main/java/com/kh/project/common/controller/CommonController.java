@@ -2,6 +2,7 @@ package com.kh.project.common.controller;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -40,13 +41,14 @@ public class CommonController {
 		return "calendar/calendar";
 	}
 	
-	// 강의등록
+	// 
 	@ResponseBody
 	@PostMapping("/regCalendar")
-	public String regCalendar(@RequestBody HashMap<String, Object> map) {
+	public HashMap<String, Object> regCalendar(@RequestBody HashMap<String, Object> map) {
+		//Map<Object, Object>map = new HashMap<Object, Object>();
 		System.out.println(map);
 		
-		return "";
+		return map;
 	}
 
 	//학생, 교수, 교직원(관리자) 모든 내 정보 조회 확인

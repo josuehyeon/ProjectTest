@@ -139,7 +139,7 @@ function savedata(jsondata) {
         url: '/common/regCalendar', //요청경로
         type: 'post',
         data:{"alldata":jsondata},  //필요한 데이터
-        dataType: 'text',
+        dataType: 'json',
         contentType: 'application/json',
         success: function(result) {
            //ajax 실행 성공 후 실행할 코드 작성
