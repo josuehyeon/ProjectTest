@@ -7,11 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-.title{
-	background-color: #4f4d4b;
-	color: white;
-	margin-top: 40px;
-}
 </style>
 </head>
 <body>
