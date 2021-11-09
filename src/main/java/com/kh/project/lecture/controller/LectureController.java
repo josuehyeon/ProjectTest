@@ -50,10 +50,7 @@ public class LectureController {
 	// 강의등록폼
 	@GetMapping("/goRegLecture")
 	public String goRegLecture(Model model) {
-		model.addAttribute("collegeList", lectureService.selectCollegeList());
-		model.addAttribute("deptList", lectureService.selectDeptList());
-		model.addAttribute("empList", lectureService.selectProfList());
-		model.addAttribute("assiList", lectureService.selectAssiList());
+		
 		return "lecture/reg_lecture";
 	}
 
@@ -169,10 +166,7 @@ public class LectureController {
 	// 강의 수정 폼으로 가기
 	@GetMapping("/updateLectureForm")
 	public String updateLectureForm(Model model, LectureViewVO lectureViewVO) {
-		model.addAttribute("collegeList", lectureService.selectCollegeList());
-		model.addAttribute("deptList", lectureService.selectDeptList());
-		model.addAttribute("empList", lectureService.selectProfList());
-		model.addAttribute("assiList", lectureService.selectAssiList());
+		
 		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
 		return "lecture/update_lecture";
 	}
