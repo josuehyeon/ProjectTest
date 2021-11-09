@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
       editable: true,
       dayMaxEvents: true, // allow "more" link when too many events
       events: [
-        {
+     /*    {
           title: 'All Day Event',
           start: '2020-09-01'
         },
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
           title: 'Click for Google',
           url: 'http://google.com/',
           start: '2020-09-28'
-        }
+        } */
       ]
     });
 
@@ -128,9 +128,8 @@ function allsave() {
 	jsondata = JSON.stringify(events);
 	
 	//값이 잘 넘어왔는지 콘솔에 찍어보기 F12
-	console.log(jsondata);
-	
 	savedata(jsondata);
+	console.log(jsondata);
 }
 
 function savedata(jsondata) {

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kh.project.common.vo.CalendarVO;
 import com.kh.project.empInfo.service.EmpService;
 import com.kh.project.lecture.vo.RegLectureSelectBoxVO;
 import com.kh.project.portal.service.PortalService;
@@ -42,23 +43,25 @@ public class CommonController {
 		return "calendar/calendar";
 	}
 	
-	// 
+
 //	@ResponseBody
 //	@PostMapping("/regCalendar")
-//	public HashMap<String, Object> regCalendar(@RequestBody HashMap<String, Object> map) {
+//	public HashMap<String, Object> regCalendar(@RequestParam HashMap<String, Object> alldata) {
 //		//Map<Object, Object>map = new HashMap<Object, Object>();
-//		System.out.println(map);
+//		System.out.println(alldata.get("title"));
 //		
-//		return map;
+//		return alldata;
 //	}
 	@ResponseBody
 	@PostMapping("/regCalendar")
-	public String regCalendar(@RequestParam HashMap<String, Object> map) {
-		//Map<Object, Object>map = new HashMap<Object, Object>();
-		System.out.println(map.size());
+	public void regCalendar(@RequestBody List<HashMap<String, Object>> list) {
+		//Map<Object, Object>map = new Hash'Map<Object, Object>();
+		System.out.println(list.get(0).get("title"));
 		
-		return "a";
+		//return alldata;
 	}
+
+	//--------------------------------------------------------------------
 //	@ResponseBody
 //	@PostMapping("/regCalendar")
 //	public int regCalendar(@RequestParam(value = "event[]") String[] alldata) {
