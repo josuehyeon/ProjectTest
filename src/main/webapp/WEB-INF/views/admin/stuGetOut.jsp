@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuSwitch.js?ver=1"></script>
+<script type="text/javascript" src="/resources/admin/js/stuSwitch.js?ver=5"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -26,15 +26,15 @@ div > span{
 </style>
 </head>
 <body>
-학사경고 페이지
-<form action="/admin/stuNotice" method="post">
+제적 페이지
+<form action="#" method="post">
 
 <table>
 	<tr>
 		<td>대학</td>
 		<td>
 			<select name="collNo" id="collList">
-				<option value="0">전체</option>
+				<option>전체</option>
 				<c:forEach items="${collList }" var="coll">
 					<option value="${coll.collNo }">
 						${coll.collName }
@@ -57,8 +57,8 @@ div > span{
 	<tr>
 		<td>전공</td>
 		<td id="deptTd">
-			<select name="majorCode">
-				<option value="">전체</option>
+			<select name="deptId">
+				<option>전체</option>
 				<c:forEach items="${deptList }" var="dept">
 					<option value="${dept.deptId }">${dept.deptName }</option>
 				</c:forEach>
@@ -67,12 +67,12 @@ div > span{
 		<td>학적</td>
 		<td>
 			<select name="stuStatus">
-				<option value="">전체</option>
-				<option value="재학">재학</option>
-				<option value="휴학">휴학</option>
-				<option value="복학">복학</option>
-				<option value="자퇴">자퇴</option>
-				<option value="제적">제적</option>
+				<option value="0">전체</option>
+				<option value="1">재학</option>
+				<option value="2">휴학</option>
+				<option value="3">복학</option>
+				<option value="4">자퇴</option>
+				<option value="5">제적</option>
 			</select>
 		</td>
 	</tr>
@@ -82,10 +82,9 @@ div > span{
 	<tr>
 		<td>검색</td>
 		<td><input type="text" style="width: 515px;" placeholder="학번 또는 이름을 검색하세요."></td>
-		<td><input type="submit" value="검색"></td>
+		<td><input type="button" value="검색"></td>
 	</tr>
 </table>
-</form>
 <div>
 	<span style="color: red;">*학생의 이름을 클릭하면 학생의 상세페이지로 이동</span>
 </div>
@@ -188,13 +187,13 @@ div > span{
 					</div>
 				</td>
 				<td>${student.collNo }</td>
-				<td>${student.deptInfo.deptName }</td>
+				<td>${student.majorCode }</td>
 				<td></td>
 			</tr>
 		</c:forEach>
 	</table>
 </div>
 
-
+</form>
 </body>
 </html>
