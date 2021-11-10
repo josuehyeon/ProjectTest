@@ -108,13 +108,14 @@ public class AdminController {
 	}
 
 	//학사경고
-	@GetMapping("/stuNotice")
+	@RequestMapping("/stuNotice")
 	public String stuNotice
-	(Model model, StudentVO studentVO, DeptVO deptVO, ChangeMajorVO changeMajorVO) {
+//	(Model model, StudentVO studentVO, DeptVO deptVO, ChangeMajorVO changeMajorVO) {
+		(Model model, StudentVO studentVO) {
 		//단과 대학 목록 조회
 		model.addAttribute("collList", stuManageService.selectCollegeList());
 		//학과 목록 조회
-		model.addAttribute("deptList", stuManageService.selectDeptList2(deptVO));
+		model.addAttribute("deptList", stuManageService.selectDeptList2(studentVO.getDeptInfo()));
 		//학생 목록 조회
 		model.addAttribute("studentList", stuManageService.selectStudentList(studentVO));
 		
