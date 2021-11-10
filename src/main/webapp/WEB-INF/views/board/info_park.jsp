@@ -37,31 +37,19 @@ thead{
 	color: white;
 	margin-bottom: 20px;
 }
-.Ht{
-	border-top: 30px; border-bottom: 30px;
-	background-color: #a8a8a8;
-	color: white;	
-	margin-bottom: 1px;
-}
+.Ht{border-top: 30px; border-bottom: 30px; background-color: #000038; color: white;	margin-top:40px; margin-bottom: 1px;}
 .btnDiv{
 	text-align: center;
 	margin: 0 auto;
-	background-color: #212529;
+	background-color: #000038;
 	color: white;
-	width: 300px;
+	width: 100px;
 	margin-top: 25px;
 }
-.pagingDiv a{
-	color: black;
-	text-decoration: none;
-}
-a.sltedPage{
-	color: blue;
-	font-weight: bold;
-}
-.trh{
-	height: 30px;
-}
+.pagingDiv a{color: black;text-decoration: none;}
+a.sltedPage{color: blue;font-weight: bold;}
+.trh{height: 30px;}
+.bdCl{margin-left: 0 auto;margin-right: 0 auto;}
 </style>
 </head>
 <body>
@@ -70,7 +58,7 @@ a.sltedPage{
 		<div class="row">
 			<div class="col-12">
 				<div class="Ht">✦ 자유게시판 ✦</div>
-				<table>
+				<table class="bdCl">
 					<thead>
 						<tr>
 							<td style="text-align: center;">No</td>
@@ -105,13 +93,10 @@ a.sltedPage{
 					</c:choose>
 					</tbody>
 				</table>
-				<div class="btnDiv">
-					<a class="" href="/form/inlog">글 작성</a>
-				</div>
 				<div class="pagingDiv">
 					<div class="row">
 						<div class="col-11">
-									<nav aria-label="Page navigation example">
+							<nav aria-label="Page navigation example">
 							  <ul class="pagination justify-content-center">
 							    <li class="page-item <c:if test="${!boardVO.prev }">disabled</c:if>">
 							      <a class="page-link" href="/board/infoPark?nowPage=${boardVO.beginPage - 1 }" aria-label="Previous">
@@ -128,6 +113,9 @@ a.sltedPage{
 							    </li>
 							  </ul>
 							</nav>
+							<div class="btnDiv">
+								<a class="" href="/form/inlog">글 작성</a>
+							</div>
 						</div>
 					</div>
 				</div>
