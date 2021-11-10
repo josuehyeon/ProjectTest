@@ -22,6 +22,7 @@ import com.kh.project.stuManage.service.StuManageService;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
 import com.kh.project.stuManage.vo.CollegeVO;
 import com.kh.project.stuManage.vo.DeptVO;
+import com.kh.project.stuManage.vo.DoubleMajorVO;
 
 @Controller
 @RequestMapping("/admin")
@@ -168,13 +169,24 @@ public class AdminController {
 	@PostMapping("/stuSwitch1")
 	public String stuSwitch1(Model model, ChangeMajorVO changeMajorVO) {
 		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
-		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
+		model.addAttribute("modalStuInfoCM", adminService.modalStuInfoCM(changeMajorVO));
 		return "admin/stuSwitch";
 	}
 	
+	//복수전공 신청 페이지
+	@GetMapping("/stuDouble")
+	public String stuDouble(Model model) {
+		model.addAttribute("AdminDoubleMajorRequestList", adminService.AdminDoubleMajorRequestList());
+		return "admin/stuSwitch";
+	}
 	
-	
-	
+	//전과신청 목록 띄우기
+	@PostMapping("/stuDouble1")
+	public String stuDouble1(Model model, DoubleMajorVO doubleMajorVO) {
+		model.addAttribute("AdminDoubleMajorRequestList", adminService.AdminDoubleMajorRequestList());
+		model.addAttribute("modalStuInfoDM", adminService.modalStuInfoDM(doubleMajorVO));
+		return "admin/stuSwitch";
+	}
 	
 	@ResponseBody
 	@PostMapping("/stuSwitchAjax")

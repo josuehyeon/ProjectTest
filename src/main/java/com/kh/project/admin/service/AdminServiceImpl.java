@@ -10,6 +10,7 @@ import com.kh.project.admin.vo.AdminVO;
 import com.kh.project.admin.vo.EditStatusVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
+import com.kh.project.stuManage.vo.DoubleMajorVO;
 
 @Service("adminService")
 public class AdminServiceImpl implements AdminService{
@@ -42,23 +43,6 @@ public class AdminServiceImpl implements AdminService{
 		return sqlSession.delete("editStatusMapper.deleteEdit", editStatusVO);
 	}	
 
-	//전과 신청 목록
-	@Override
-	public List<ChangeMajorVO> AdminChangeMajorRequestList() {
-		return sqlSession.selectList("changeMajorMapper.AdminChangeMajorRequestList");
-	}
-
-	//전과 신청목록에서 모달로 개인정보 띄우기
-	@Override
-	public ChangeMajorVO modalStuInfo(ChangeMajorVO changeMajorVO) {
-		return sqlSession.selectOne("changeMajorMapper.modalStuInfo", changeMajorVO);
-	}
-	
-	@Override
-	public List<AdminVO> selectNotice(StudentVO studentVO) {
-		return sqlSession.selectList("adminMapper.selectNotice", studentVO);
-	}
-
 	//복학
 	@Override
 	public void updateAgain(EditStatusVO editStatusVO) {
@@ -82,5 +66,35 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 
+	//전과 신청 목록
+	@Override
+	public List<ChangeMajorVO> AdminChangeMajorRequestList() {
+		return sqlSession.selectList("changeMajorMapper.AdminChangeMajorRequestList");
+	}
+
+	//전과 신청목록에서 모달로 개인정보 띄우기
+	@Override
+	public ChangeMajorVO modalStuInfoCM(ChangeMajorVO changeMajorVO) {
+		return sqlSession.selectOne("changeMajorMapper.modalStuInfoCM", changeMajorVO);
+	}
+	
+	@Override
+	public List<AdminVO> selectNotice(StudentVO studentVO) {
+		return sqlSession.selectList("adminMapper.selectNotice", studentVO);
+	}
+
+	
+	//복수전공 신청목록
+	@Override
+	public List<DoubleMajorVO> AdminDoubleMajorRequestList() {
+		return sqlSession.selectList("doubleMapper.AdminDoubleMajorRequestList");
+	}
+
+	@Override
+	public DoubleMajorVO modalStuInfoDM(DoubleMajorVO doubleMajorVO) {
+		return sqlSession.selectOne("doubleMapper.modalStuInfoDM", doubleMajorVO);
+	}
+	
+	
 	
 }

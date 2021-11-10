@@ -65,21 +65,21 @@ td{
 								<tr>
 									<td rowspan="3">이미지첨부</td>
 									<td>학번</td>
-									<td>${modalStuInfo.studentInfo.stuNo }</td>
+									<td>${modalStuInfoCM.studentInfo.stuNo }</td>
 									<td>이름</td>
-									<td>${modalStuInfo.memberInfo.memName }</td>
+									<td>${modalStuInfoCM.memberInfo.memName }</td>
 								</tr>
 								<tr>
 									<td>전공</td>
-									<td>${modalStuInfo.doubleMajorInfo.deptName }</td>
+									<td>${modalStuInfoCM.doubleMajorInfo.deptName }</td>
 									<td>부전공</td>
-									<td>${modalStuInfo.studentInfo.minorCode }</td>
+									<td>${modalStuInfoCM.studentInfo.minorCode }</td>
 								</tr>
 								<tr>
 									<td>학년/성별</td>
-									<td>${modalStuInfo.studentInfo.stuYear }학년/${modalStuInfo.memberInfo.memGen}</td>
+									<td>${modalStuInfoCM.studentInfo.stuYear }학년/${modalStuInfoCM.memberInfo.memGen}</td>
 									<td>학적상태</td>
-									<td>${modalStuInfo.studentInfo.stuStatus }</td>
+									<td>${modalStuInfoCM.studentInfo.stuStatus }</td>
 								</tr>
 							</table>
 						</div>
@@ -88,21 +88,21 @@ td{
 							<table>
 								<tr>
 									<td>생년월일</td>
-									<td>${modalStuInfo.memberInfo.memBirth }</td>
+									<td>${modalStuInfoCM.memberInfo.memBirth }</td>
 									<td>이메일</td>
-									<td>${modalStuInfo.memberInfo.memEmail }</td>
+									<td>${modalStuInfoCM.memberInfo.memEmail }</td>
 								</tr>
 								<tr>
 									<td>전화번호</td>
-									<td>${modalStuInfo.memberInfo.memTel }</td>
+									<td>${modalStuInfoCM.memberInfo.memTel }</td>
 									<td>휴대폰</td>
-									<td>${modalStuInfo.memberInfo.memPhone }</td>
+									<td>${modalStuInfoCM.memberInfo.memPhone }</td>
 								</tr>
 								<tr>
 									<td>우편번호</td>
-									<td>${modalStuInfo.memberInfo.postcode }</td>
+									<td>${modalStuInfoCM.memberInfo.postcode }</td>
 									<td>주소</td>
-									<td>${modalStuInfo.memberInfo.memAddr }</td>
+									<td>${modalStuInfoCM.memberInfo.memAddr }</td>
 								</tr>
 							</table>
 						</div>
@@ -138,17 +138,17 @@ td{
 		<td>신청일</td>
 	</tr>
 	<tbody>
-		<c:forEach items="${AdminChangeMajorRequestList }" var="changeMajorInfo">
+		<c:forEach items="${AdminDoubleMajorRequestList }" var="doubleMajorInfo">
 		<tr>
-			<td>${changeMajorInfo.changeId }</td>
-			<td>${changeMajorInfo.collegeInfo.collName }</td>
-			<td>${changeMajorInfo.deptInfo.deptName }</td>
-			<td>${changeMajorInfo.stuNo }</td>
-			<td>${changeMajorInfo.memberInfo.memName }</td>
-			<td>${changeMajorInfo.studentInfo.stuYear }</td>
-			<td>${changeMajorInfo.studentInfo.stuStatus }</td>
-			<td>${changeMajorInfo.upCollName }</td>
-			<td>${changeMajorInfo.upDeptName }</td>
+			<td>${doubleMajorInfo.changeId }</td>
+			<td>${doubleMajorInfo.collegeInfo.collName }</td>
+			<td>${doubleMajorInfo.deptInfo.deptName }</td>
+			<td>${doubleMajorInfo.stuNo }</td>
+			<td>${doubleMajorInfo.memberInfo.memName }</td>
+			<td>${doubleMajorInfo.studentInfo.stuYear }</td>
+			<td>${doubleMajorInfo.studentInfo.stuStatus }</td>
+			<td>${doubleMajorInfo.upCollName }</td>
+			<td>${doubleMajorInfo.upDeptName }</td>
 			<td>
 				<!-- Button trigger modal -->
 				<input type="button" class="btn btn-primary modalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"  value="처리대기">
@@ -169,21 +169,21 @@ td{
 								<tr>
 									<td rowspan="3">이미지첨부</td>
 									<td>학번</td>
-									<td>${modalStuInfo.studentInfo.stuNo }</td>
+									<td>${modalStuInfoDM.studentInfo.stuNo }</td>
 									<td>이름</td>
-									<td>${modalStuInfo.memberInfo.memName }</td>
+									<td>${modalStuInfoDM.memberInfo.memName }</td>
 								</tr>
 								<tr>
 									<td>전공</td>
-									<td>${modalStuInfo.doubleMajorInfo.deptName }</td>
+									<td>${modalStuInfoDM.doubleMajorInfo.deptName }</td>
 									<td>부전공</td>
-									<td>${modalStuInfo.studentInfo.minorCode }</td>
+									<td>${modalStuInfoDM.studentInfo.minorCode }</td>
 								</tr>
 								<tr>
 									<td>학년/성별</td>
-									<td>${modalStuInfo.studentInfo.stuYear }학년/${modalStuInfo.memberInfo.memGen}</td>
+									<td>${modalStuInfoDM.studentInfo.stuYear }학년/${modalStuInfoDM.memberInfo.memGen}</td>
 									<td>학적상태</td>
-									<td>${modalStuInfo.studentInfo.stuStatus }</td>
+									<td>${modalStuInfoDM.studentInfo.stuStatus }</td>
 								</tr>
 							</table>
 						</div>
@@ -192,21 +192,21 @@ td{
 							<table>
 								<tr>
 									<td>생년월일</td>
-									<td>${modalStuInfo.memberInfo.memBirth }</td>
+									<td>${modalStuInfoDM.memberInfo.memBirth }</td>
 									<td>이메일</td>
-									<td>${modalStuInfo.memberInfo.memEmail }</td>
+									<td>${modalStuInfoDM.memberInfo.memEmail }</td>
 								</tr>
 								<tr>
 									<td>전화번호</td>
-									<td>${modalStuInfo.memberInfo.memTel }</td>
+									<td>${modalStuInfoDM.memberInfo.memTel }</td>
 									<td>휴대폰</td>
-									<td>${modalStuInfo.memberInfo.memPhone }</td>
+									<td>${modalStuInfoDM.memberInfo.memPhone }</td>
 								</tr>
 								<tr>
 									<td>우편번호</td>
-									<td>${modalStuInfo.memberInfo.postcode }</td>
+									<td>${modalStuInfoDM.memberInfo.postcode }</td>
 									<td>주소</td>
-									<td>${modalStuInfo.memberInfo.memAddr }</td>
+									<td>${modalStuInfoDM.memberInfo.memAddr }</td>
 								</tr>
 							</table>
 						</div>
@@ -219,7 +219,7 @@ td{
 				  </div>
 				</div>
 			</td>
-			<td>${changeMajorInfo.insertDate }</td>
+			<td>${doubleMajorInfo.insertDate }</td>
 		</tr>
 		</c:forEach>
 	</tbody>

@@ -6,6 +6,7 @@ import com.kh.project.admin.vo.AdminVO;
 import com.kh.project.admin.vo.EditStatusVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
+import com.kh.project.stuManage.vo.DoubleMajorVO;
 
 public interface AdminService {
 	
@@ -34,10 +35,20 @@ public interface AdminService {
 	
 	void updateExitStatusToStudent(EditStatusVO editStatusVO);
 	
-	
+	//전과 신청목록
 	List<ChangeMajorVO> AdminChangeMajorRequestList();
 	
-	ChangeMajorVO modalStuInfo(ChangeMajorVO changeMajorVO);
+	ChangeMajorVO modalStuInfoCM(ChangeMajorVO changeMajorVO);
 	
 	List<AdminVO> selectNotice(StudentVO studentVO);
+	
+	//복수전공 신청목록
+	List<DoubleMajorVO> AdminDoubleMajorRequestList();
+	
+	DoubleMajorVO modalStuInfoDM(DoubleMajorVO doubleMajorVO);
+	
 }
+
+
+
+

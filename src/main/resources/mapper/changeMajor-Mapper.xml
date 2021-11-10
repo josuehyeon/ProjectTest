@@ -111,18 +111,18 @@
 		AND CM.DEPT_ID = D.DEPT_ID
 	</select>
 	
-	<select id="modalStuInfo" resultMap="changeMajor">
+	<select id="modalStuInfoCM" resultMap="changeMajor">
 		SELECT M.MEM_NAME
 			, S.STU_NO
-			, S.STU_YEAR
-			, M.MEM_GEN
 			, CM.COLL_NO
 			, (SELECT DEPT_NAME FROM DEPT WHERE DEPT_ID = CM.DEPT_ID) AS DEPT_NAME
 			, S.MINOR_CODE
-			, M.MEM_EMAIL
-			, M.MEM_BIRTH
-			, M.MEM_TEL
+			, S.STU_YEAR
+			, M.MEM_GEN
 			, S.STU_STATUS
+			, M.MEM_BIRTH
+			, M.MEM_EMAIL
+			, M.MEM_TEL
 			, M.MEM_PHONE
 			, M.POSTCODE
 			, M.MEM_ADDR

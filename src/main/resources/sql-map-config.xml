@@ -23,6 +23,7 @@
 		<mapper resource="/mapper/cate-Mapper.xml"/>
 		<mapper resource="/mapper/menu-Mapper.xml"/>		
 		<mapper resource="/mapper/editStatus-Mapper.xml"/>
+		<mapper resource="/mapper/admin-Mapper.xml"/>
 	</mappers>
 </configuration>
 
