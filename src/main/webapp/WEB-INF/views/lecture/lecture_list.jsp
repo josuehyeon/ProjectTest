@@ -60,7 +60,8 @@ table {
 </head>
 <body>
 
-<table class="table">
+<table class="table" style="margin-top: 30px;">
+<caption align="top">강의리스트</caption>
   <thead>
     <tr>
       <th scope="col">강의ID</th>
