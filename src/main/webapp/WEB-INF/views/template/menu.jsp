@@ -60,7 +60,7 @@
 						<li><a class="nav-link link-#00154a mm" href="/admin/editStatus">학생관리</a>
 				    	<ul id="sub-menu">
 				    		<li><a class="nav-link link-#00154a" href="/stuManage/showStuList" aria-label="subemnu">학생 조회</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/grade/chkGradeJsp" aria-label="subemnu">성적 관리</a></li>
+				        	<li><a class="nav-link link-#00154a" href="/stuManage/regGradeJsp" aria-label="subemnu">성적 관리</a></li>
 				    		<li><a class="nav-link link-#00154a mm" href="/admin/goEditStatusList">학적 변동승인</a></li>	<!-- 11.09 이수정 -->
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuGetOut" aria-label="subemnu">제적</a></li> <!-- 11.10 이수정 -->

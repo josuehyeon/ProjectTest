@@ -9,11 +9,11 @@ public class SemesterVO {
 	private String semName;
 	private List<StuGradeVO> stuGradeList;
 	
-	public int getSem_id() {
+	public int getSemId() {
 		return semId;
 	}
-	public void setSem_id(int sem_id) {
-		this.semId = sem_id;
+	public void setSemId(int semId) {
+		this.semId = semId;
 	}
 	public int getYear() {
 		return year;
