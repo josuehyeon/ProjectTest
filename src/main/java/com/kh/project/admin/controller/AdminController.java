@@ -127,7 +127,7 @@ public class AdminController {
 		model.addAttribute("studentList", stuManageService.selectStudentList(studentVO));
 		
 		//모달 학생정보
-		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
+		//model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
 		
 		return "admin/stuNotice";
 	}
@@ -143,8 +143,8 @@ public class AdminController {
 		//학생 목록 조회
 		model.addAttribute("studentList", stuManageService.selectStudentList(studentVO));
 		
-		//모달 학생정보
-		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
+//		//모달 학생정보
+//		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
 		
 		return "admin/stuGetOut";
 	}
@@ -160,18 +160,21 @@ public class AdminController {
 	@GetMapping("/stuSwitch")
 	public String stuSwitch(Model model, ChangeMajorVO changeMajorVO) {
 		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
-		
-		int[] a = changeMajorVO.getStuNoList();
-		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
+//		int[] a = changeMajorVO.getStuNoList();
 		return "admin/stuSwitch";
 	}
 	
 	//전과신청 목록 띄우기
 	@PostMapping("/stuSwitch1")
-	public String stuSwitch1(Model model) {
+	public String stuSwitch1(Model model, ChangeMajorVO changeMajorVO) {
 		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
+		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
 		return "admin/stuSwitch";
 	}
+	
+	
+	
+	
 	
 	@ResponseBody
 	@PostMapping("/stuSwitchAjax")

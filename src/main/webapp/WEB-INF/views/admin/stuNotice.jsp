@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=1ㄹ"></script>
+<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=1"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -101,18 +101,18 @@ div > span{
 			<td>전공</td>
 			<td>경고횟수</td>
 		</tr>
-		<c:forEach items="${studentList }" var="student">
+		<c:forEach items="${studentList }" var="student" varStatus="status">
 			<tr>
 				<td>${student.stuNo }</td>
 				<td>${student.stuYear }</td>
 				<td>${student.memberInfo.memName}
 					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop${stauts.index}">
 					  이름
 					</button>
 					
 					<!-- Modal -->
-					<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal fade" id="staticBackdrop${stauts.index}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 					  <div class="modal-dialog">
 					    <div class="modal-content">
 					      <div class="modal-header">
@@ -136,11 +136,11 @@ div > span{
 								</tr>
 								<tr>
 									<td class="td_1">단과대학</td>
-									<td class="td_2">${student.collNo }</td>
+									<td class="td_2">${student.collegeInfo.collName }</td>
 								</tr>
 								<tr>
 									<td class="td_1">전공</td>
-									<td class="td_2">${student.majorCode }</td>
+									<td class="td_2">${student.deptInfo.deptName }</td>
 								</tr>
 								<tr>
 									<td class="td_1">이메일</td>
@@ -189,7 +189,7 @@ div > span{
 					  </div>
 					</div>
 				</td>
-				<td>${student.collNo }</td>
+				<td>${student.collegeInfo.collName }</td>
 				<td>${student.deptInfo.deptName }</td>
 				<td></td>
 			</tr>
