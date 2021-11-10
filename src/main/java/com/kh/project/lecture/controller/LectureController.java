@@ -88,6 +88,9 @@ public class LectureController {
 		lectureViewVO.setTotalCnt(dataCnt);
 		//페이징 처리
 		lectureViewVO.setPageInfo();
+		
+		
+		
 		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
 		return "lecture/lecture_list";
 	}
