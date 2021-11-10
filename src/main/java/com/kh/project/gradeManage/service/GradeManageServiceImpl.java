@@ -44,8 +44,8 @@ public class GradeManageServiceImpl implements GradeManageService {
 	}
 	
 	@Override //수강신청시 STU_GRADE에도 학생과 강의 정보 등록 (성적은 null)
-	public void insertIntoStuGradeWOGrade(GradeVO gradeVO) {
-		sqlSession.insert("gradeMapper.insertIntoStuGradeWOGrade", gradeVO);
+	public void insertIntoStuGradeWOGrade(StuGradeVO stuGradeVO) {
+		sqlSession.insert("gradeMapper.insertIntoStuGradeWOGrade", stuGradeVO);
 	}
 	
 

@@ -26,6 +26,6 @@ public interface GradeManageService {
 	StuGradeVO totalSumAvg(StuGradeVO stuGradeVO);
 	
 	//학과 어쩌고 -ksj
-	void insertIntoStuGradeWOGrade(GradeVO gradeVO);
+	void insertIntoStuGradeWOGrade(StuGradeVO stuGradeVO);
 
 }
