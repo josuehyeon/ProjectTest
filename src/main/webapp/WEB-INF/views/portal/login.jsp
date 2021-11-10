@@ -111,13 +111,13 @@ input{
 				</div>
 				
 				<!-- 비밀번호 변경 Modal 버튼 -->
-				<span data-bs-toggle="modal" data-bs-target="#passwordModal"><span style="color: red;">*</span>비밀번호 변경</span>
+				<span data-bs-toggle="modal" data-bs-target="#passwordModal"><span style="color: red;">*</span>비밀번호 찾기</span>
 				<!--비밀번호 변경 Modal 내용 -->
 				<div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog"> 
 						<div class="modal-content"> 
 							<div class="modal-header"> 
-								<h5 class="modal-title" id="exampleModalLabel">비밀번호 변경</h5>
+								<h5 class="modal-title" id="exampleModalLabel">비밀번호 찾기</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
 							</div>
 							<div class="modal-body">
