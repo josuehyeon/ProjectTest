@@ -6,12 +6,13 @@ $(document).ready(function(){
 		
 		//ajax 사용
 		$.ajax({
-	        url: '/stuManage/clickLecShowStudent', //요청경로
+	        url: '/stuManage/clickLectureShowStudent', //요청경로
 	        type: 'post',
 	        data:{'lecId':lecId}, //필요한 데이터
 	        success: function(result) {
 	        	//ajax 실행 성공 시 실행되는 구간
 
+	        	alert(result);
 	        	$('#studentListDiv').empty();
 	        	
 	        	var str ='';
@@ -23,9 +24,9 @@ $(document).ready(function(){
 		        	
 		        	$(result).each(function(index, element){
 	          	  		str += '<tr>' ;
+	          	  		str += '<td>' + element.memberInfo.memName + '</td>'	;
 	          	  		str += '<td>' + element.stuNo + '</td>'	;
-	          	  		str += '<td>' + element.enrolmentId + '</td>'	;
-	          	  		str += '<td>havent decided </td>' ;	
+	          	  		str += '<td>' + element.grade + '</td>' ;	
 	          	  		str += '</tr>' ;
 	            	});
 	            	

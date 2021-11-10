@@ -14,7 +14,7 @@ td{
 	border: 1px solid black;
 }
 </style>
-<script type="text/javascript" src="/resources/stuManage/js/reg_stu_grade.js?ver=1"></script>
+<script type="text/javascript" src="/resources/stuManage/js/reg_stu_grade.js?ver=4"></script>
 </head>
 <body>
 <label>강의 목록</label>

@@ -27,5 +27,8 @@ public interface GradeManageService {
 	
 	//학과 어쩌고 -ksj
 	void insertIntoStuGradeWOGrade(StuGradeVO stuGradeVO);
+	
+	//성적 등록을 위한 학생 목록
+	List<StuGradeVO> selectStudentListForStuGrade(StuGradeVO stuGradeVO);
 
 }

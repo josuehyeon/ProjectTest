@@ -47,6 +47,11 @@ public class GradeManageServiceImpl implements GradeManageService {
 	public void insertIntoStuGradeWOGrade(StuGradeVO stuGradeVO) {
 		sqlSession.insert("gradeMapper.insertIntoStuGradeWOGrade", stuGradeVO);
 	}
+
+	@Override //성적 등록을 위한 학생 리스트
+	public List<StuGradeVO> selectStudentListForStuGrade(StuGradeVO stuGradeVO) {
+		return null;
+	}
 	
 
 }

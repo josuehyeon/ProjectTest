@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.admin.vo.EditStatusVO;
+import com.kh.project.gradeManage.service.GradeManageService;
+import com.kh.project.gradeManage.vo.StuGradeVO;
 import com.kh.project.lecture.service.LectureService;
 import com.kh.project.lecture.vo.EnrolmentVO;
 import com.kh.project.lecture.vo.LectureVO;
@@ -41,6 +43,9 @@ public class StuManageController {
 	
 	@Resource(name = "lectureService")
 	private LectureService lectureService;
+	
+	@Resource(name = "gradeManageService")
+	private GradeManageService gradeManageService;
 	
 	//메인으로가기
 	@GetMapping("/goMain")
@@ -240,9 +245,9 @@ public class StuManageController {
 	
 	//Ajax: 강의 셀렉트
 	@ResponseBody
-	@PostMapping("/clickLecShowStudent")
-	public List<EnrolmentVO> clickLecShowStudent(EnrolmentVO enrolmentVO) {
-		return lectureService.selectStuNoForRegStuGrade(enrolmentVO);
+	@PostMapping("/clickLectureShowStudent")
+	public List<StuGradeVO> clickLectureShowStudent(StuGradeVO stuGradeVO) {
+		return gradeManageService.selectStudentListForStuGrade(stuGradeVO) ;
 	}
 	
 		

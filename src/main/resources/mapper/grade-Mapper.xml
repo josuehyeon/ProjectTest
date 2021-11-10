@@ -115,11 +115,16 @@
 	
 	<!-- 성적등록 페이지: 해당 강의 수강하는 학생의 리스트 ksj-->
 	<!-- stu_Grade에서 학번, 이름, 성적 조회 -->
-	<select id="undetermined1" resultMap="stuGrade">
-		SELECT S.STU_NO, MEM_NAME, GRADE
-		FROM STU_GRADE S, MEMBER M
-		WHERE S.STU_NO = M.MEM_NO
+	<select id="selectStudentListForStuGrade" resultMap="stuGrade">
+		SELECT LEC_ID
+			 , STU_NO
+			 , SEM_ID
+			 , MEM_NAME
+			 , NVL(GRADE, '미등록') AS GRADE
+		FROM STU_GRADE S , MEMBER M
+		WHERE STU_NO = MEM_NO
 		AND LEC_ID = #{lecId}
+		AND SEM_ID = (SELECT TO_CHAR(SYSDATE, 'YYYY')||CASE WHEN TO_CHAR(SYSDATE, 'MM') >=7 THEN '2' ELSE '1' END SEM_ID FROM DUAL)
 	</select>
 	
 	
