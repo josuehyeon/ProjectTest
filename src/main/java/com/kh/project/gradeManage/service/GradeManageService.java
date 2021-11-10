@@ -2,6 +2,7 @@ package com.kh.project.gradeManage.service;
 
 import java.util.List;
 
+import com.kh.project.gradeManage.vo.GradeVO;
 import com.kh.project.gradeManage.vo.SemesterVO;
 import com.kh.project.gradeManage.vo.StuGradeVO;
 import com.kh.project.portal.vo.MemberVO;
@@ -23,5 +24,8 @@ public interface GradeManageService {
 	
 	//총 이수학점, 총 평점평균
 	StuGradeVO totalSumAvg(StuGradeVO stuGradeVO);
+	
+	//학과 어쩌고 -ksj
+	void insertIntoStuGradeWOGrade(GradeVO gradeVO);
 
 }

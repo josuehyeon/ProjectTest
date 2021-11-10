@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kh.project.gradeManage.vo.GradeVO;
 import com.kh.project.gradeManage.vo.SemesterVO;
 import com.kh.project.gradeManage.vo.StuGradeVO;
 import com.kh.project.portal.vo.MemberVO;
@@ -40,6 +41,11 @@ public class GradeManageServiceImpl implements GradeManageService {
 	@Override //총 이수학점 , 평점평균
 	public StuGradeVO totalSumAvg(StuGradeVO stuGradeVO) {
 		return sqlSession.selectOne("gradeMapper.totalSumAvg", stuGradeVO);
+	}
+	
+	@Override //수강신청시 STU_GRADE에도 학생과 강의 정보 등록 (성적은 null)
+	public void insertIntoStuGradeWOGrade(GradeVO gradeVO) {
+		sqlSession.insert("gradeMapper.insertIntoStuGradeWOGrade", gradeVO);
 	}
 	
 

@@ -20,6 +20,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.kh.project.common.util.FileUploadUtil;
+import com.kh.project.gradeManage.service.GradeManageService;
+import com.kh.project.gradeManage.vo.GradeVO;
 import com.kh.project.lecture.service.LectureService;
 import com.kh.project.lecture.vo.EnrolmentVO;
 import com.kh.project.lecture.vo.LectureVO;
@@ -40,6 +42,9 @@ public class LectureController {
 
 	@Resource(name = "lectureService")
 	private LectureService lectureService;
+	
+	@Resource(name = "gradeManageService")
+	private GradeManageService gradeManageService;
 
 	// 메인페이지
 	@GetMapping("/goMain")
@@ -208,8 +213,9 @@ public class LectureController {
 	
 	//수강신청
 	@PostMapping("/enrolment")
-	public String enrolment(EnrolmentVO enrolmentVO) {
+	public String enrolment(EnrolmentVO enrolmentVO, GradeVO gradeVO) {
 		lectureService.enrolment(enrolmentVO);
+		gradeManageService.insertIntoStuGradeWOGrade(gradeVO);
 		return "redirect:/lecture/goEnrolment";
 	}
 	
