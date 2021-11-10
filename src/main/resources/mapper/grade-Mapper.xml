@@ -126,15 +126,15 @@
 	<!--STU_GRADE테이블에 성적을 등록 ksj-->
 	<insert id="insertIntoStuGradeWOGrade">
 		INSERT INTO STU_GRADE (
-		SUBJECT_ID
-		,LEC_ID
-		,STU_NO
-		,SEM_ID
+			SUBJECT_ID
+			,LEC_ID
+			,STU_NO
+			,SEM_ID
 		) VALUES(
-		,#{stuNo}||#{lecId}
-		,#{lecId}
-		,#{stuNo}
-		,(SELECT TO_CHAR(SYSDATE, 'YYYY')||CASE WHEN TO_CHAR(SYSDATE, 'MM') >=7 THEN '2' ELSE '1' END SEM_ID FROM DUAL)
+			#{stuNo}||#{lecId}||(SELECT TO_CHAR(SYSDATE, 'YYYY')||CASE WHEN TO_CHAR(SYSDATE, 'MM') >=7 THEN '2' ELSE '1' END SEM_ID FROM DUAL)
+			,#{lecId}
+			,#{stuNo}
+			,(SELECT TO_CHAR(SYSDATE, 'YYYY')||CASE WHEN TO_CHAR(SYSDATE, 'MM') >=7 THEN '2' ELSE '1' END SEM_ID FROM DUAL)
 		)
 	</insert>
 	
