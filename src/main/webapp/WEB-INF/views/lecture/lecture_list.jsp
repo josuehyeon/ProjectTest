@@ -15,6 +15,46 @@ iframe {
 .modal-content{
 	height: 900px;
 }
+
+table {
+	background-color: white;
+}
+.btn{
+  background:#000f4c;
+  color:#fff;
+  border:none;
+  position:relative;
+  /* height:35px; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+   opacity:0.65;
+}
+.btn:hover{
+  background:#fff;
+  color:#000f4c;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
 </style>
 <script type="text/javascript" src="/resources/sample/js/lecture_list.js?ver=222222222222259"></script>
 </head>
@@ -48,8 +88,8 @@ iframe {
       <td>${lectureInfo.lecDay }</td>
       <td>${lectureInfo.lecPeriod }</td>
       <td>
-	      <input type="button" class="delete" value="삭제" data-lecId="${lectureInfo.lecId }">
-		  <input type="button" class="update" value="수정" data-lecId="${lectureInfo.lecId }">
+	      <input type="button" class="delete btn" value="삭제" data-lecId="${lectureInfo.lecId }">
+		  <input type="button" class="update btn" value="수정" data-lecId="${lectureInfo.lecId }">
 	  </td>
     </tr>
 </c:forEach>
