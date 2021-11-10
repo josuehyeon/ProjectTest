@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuGetOut.js?ver="></script>
+<script type="text/javascript" src="/resources/admin/js/stuGetOut.js?ver=2"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -19,16 +19,19 @@ div > span{
 }
 .td_1{
 	width: 100px;
+	text-align: center;
 }
 .td_2{
 	width: 150px;
+}
+#table{
+	width: 450px;
 }
 </style>
 </head>
 <body>
 제적 페이지
 <form action="/admin/stuGetOut" method="post">
-
 <table>
 	<tr>
 		<td>대학</td>
@@ -52,7 +55,7 @@ div > span{
 				<option value="4">4학년</option>
 			</select>
 		</td>
-		<!-- <td rowspan="2"><input type="button" value="조회"></td> -->
+		<td rowspan="2"><input type="button" value="조회"></td>
 	</tr>
 	<tr>
 		<td>전공</td>
@@ -87,7 +90,7 @@ div > span{
 </table>
 </form>
 <div>
-	<span style="color: red;">*학생의 이름을 클릭하면 학생의 상세페이지로 이동</span>
+	<span style="color: red;">*학생의 이름을 클릭하면 학생 제적 페이지가 열립니다.</span>
 </div>
 <div>
 	<table>
@@ -119,55 +122,35 @@ div > span{
 					      </div>
 					      <div class="modal-body">
 					        <div>
-							<table>
+							<table id="table">
 								<tr>
 									<td class="td_1">학번</td>
-									<td class="td_2">2010어쩌구</td>
+									<td class="td_2">${student.stuNo }</td>
 								</tr>
 								<tr>
 									<td class="td_1">이름</td>
-									<td class="td_2">김김김</td>
+									<td class="td_2">${student.memberInfo.memName }</td>
 								</tr>
 								<tr>
 									<td class="td_1">학년</td>
-									<td class="td_2">1</td>
+									<td class="td_2">${student.stuYear }</td>
 								</tr>
 								<tr>
 									<td class="td_1">단과대학</td>
-									<td class="td_2">인문사회대학</td>
+									<td class="td_2">${student.collNo }</td>
 								</tr>
 								<tr>
 									<td class="td_1">전공</td>
-									<td class="td_2">국어국문학과</td>
+									<td class="td_2">${student.majorCode }</td>
 								</tr>
 								<tr>
 									<td class="td_1">이메일</td>
-									<td class="td_2">aaa@gmail.com</td>
-								</tr>
-								<tr>
-									<td class="td_1">경고학기</td>
-									<td class="td_2">
-										<select>
-											<option>2021</option>
-											<option>2020</option>
-										</select>년도
-										<select>
-											<option>1</option>
-											<option>2</option>
-										</select>학기
-									</td>
+									<td class="td_2">${student.memberInfo.memEmail }</td>
 								</tr>
 								<tr>
 									<td class="td_1">사유</td>
 									<td class="td_2">
-										<select>
-											<option>이수학점 미달</option>
-											<option>평균학점 미달</option>
-											<option>학칙위반</option>
-											<option>부정행위</option>
-											<option>수강신청 미시행</option>
-											<option>등록금 미납</option>
-										</select>
+										<textarea rows="5" cols="45" placeholder="제적 사유를 입력 하세요."></textarea>
 									</td>
 								</tr>
 								<tr>

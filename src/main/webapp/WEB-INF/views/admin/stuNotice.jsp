@@ -89,7 +89,7 @@ div > span{
 </table>
 </form>
 <div>
-	<span style="color: red;">*학생의 이름을 클릭하면 학생의 상세페이지로 이동</span>
+	<span style="color: red;">*학생의 이름을 클릭하면 학사경고 페이지가 열립니다.</span>
 </div>
 <div>
 	<table>
@@ -124,27 +124,27 @@ div > span{
 							<table id="table">
 								<tr>
 									<td class="td_1">학번</td>
-									<td class="td_2">${studentInfo.stuNo }</td>
+									<td class="td_2">${student.stuNo }</td>
 								</tr>
 								<tr>
 									<td class="td_1">이름</td>
-									<td class="td_2">${memberInfo.memName }</td>
+									<td class="td_2">${student.memberInfo.memName }</td>
 								</tr>
 								<tr>
 									<td class="td_1">학년</td>
-									<td class="td_2">${studentInfo.stuYear }</td>
+									<td class="td_2">${student.stuYear }</td>
 								</tr>
 								<tr>
 									<td class="td_1">단과대학</td>
-									<td class="td_2">${studentInfo.collNo }</td>
+									<td class="td_2">${student.collNo }</td>
 								</tr>
 								<tr>
 									<td class="td_1">전공</td>
-									<td class="td_2">${studentInfo.majorCode }</td>
+									<td class="td_2">${student.majorCode }</td>
 								</tr>
 								<tr>
 									<td class="td_1">이메일</td>
-									<td class="td_2">${memberInfo.memEmail }</td>
+									<td class="td_2">${student.memberInfo.memEmail }</td>
 								</tr>
 								<tr>
 									<td class="td_1">경고학기</td>

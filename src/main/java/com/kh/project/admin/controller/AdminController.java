@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.kh.project.admin.service.AdminService;
 import com.kh.project.admin.vo.EditStatusVO;
 import com.kh.project.lecture.service.LectureService;
+import com.kh.project.portal.service.PortalService;
+import com.kh.project.portal.vo.MemberVO;
+import com.kh.project.stuInfo.service.StuInfoService;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.service.StuManageService;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
@@ -29,6 +32,11 @@ public class AdminController {
 	private StuManageService stuManageService;
 	@Resource(name = "lectureService")
 	private LectureService lectureService;
+	@Resource(name = "stuInfoService")
+	private StuInfoService stuInfoService;
+	@Resource(name = "portalService")
+	private PortalService portalService;
+	
 	
 	//메인
 	@GetMapping("/goMain")
@@ -110,8 +118,7 @@ public class AdminController {
 	//학사경고
 	@RequestMapping("/stuNotice")
 	public String stuNotice
-//	(Model model, StudentVO studentVO, DeptVO deptVO, ChangeMajorVO changeMajorVO) {
-		(Model model, StudentVO studentVO) {
+		(Model model, StudentVO studentVO, ChangeMajorVO changeMajorVO) {
 		//단과 대학 목록 조회
 		model.addAttribute("collList", stuManageService.selectCollegeList());
 		//학과 목록 조회
@@ -119,12 +126,25 @@ public class AdminController {
 		//학생 목록 조회
 		model.addAttribute("studentList", stuManageService.selectStudentList(studentVO));
 		
+		//모달 학생정보
+		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
+		
 		return "admin/stuNotice";
 	}
 	
 	//제적
 	@GetMapping("/stuGetOut")
-	public String stuGetOut() {
+	public String stuGetOut
+	(Model model, StudentVO studentVO, ChangeMajorVO changeMajorVO) {
+		//단과 대학 목록 조회
+		model.addAttribute("collList", stuManageService.selectCollegeList());
+		//학과 목록 조회
+		model.addAttribute("deptList", stuManageService.selectDeptList2(studentVO.getDeptInfo()));
+		//학생 목록 조회
+		model.addAttribute("studentList", stuManageService.selectStudentList(studentVO));
+		
+		//모달 학생정보
+		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
 		
 		return "admin/stuGetOut";
 	}
@@ -141,7 +161,7 @@ public class AdminController {
 	public String stuSwitch(Model model, ChangeMajorVO changeMajorVO) {
 		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
 		
-		int[] a = ChangeMajorVO.getStuNoList();
+		int[] a = changeMajorVO.getStuNoList();
 		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
 		return "admin/stuSwitch";
 	}
