@@ -112,6 +112,7 @@
 		    		<li><a class="nav-link link-#00154a mmn" href="/board/infoPark">교과 과정 / 수업</a>
 		      			<ul id="sub-menu">
 				        	<li><a href="/lecture/goEnrolment">수강 신청</a></li>
+				        	<li><a href="/lecture/selectLecture">강의리스트</a></li>
 				        	<li><a href=/grade/chkGradeJsp>성적 조회</a></li>
 				        	<li><a href=/grade/chkGradeJsp>졸업 요건</a></li>
 					    </ul>
