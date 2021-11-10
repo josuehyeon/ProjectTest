@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="/resources/portal/js/login.js?ver=12"></script>
 <style type="text/css">
+<link rel="stylesheet" href="animate.min.css">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Staatliches&display=swap');
 *{
 	margin: 0;
 }
@@ -16,14 +18,20 @@ body{
 	-ms-overflow-style: none; 
 	margin: 0;
 }
-::-webkit-scrollbar{ display: none; }
 .tableDiv{
 padding: 0px;
 }
 .leftTd{
+	left:0;right:0;top:0;bottom:0;
+	overflow:hidden;
 	background-color: #445893;
+	max-width: 100%;
+	max-height: 100%;
 }
 table{
+	width: 100vw;
+    height: 100vh;
+    height: 100%;
 	margin: 0 auto;
 	padding-top: 100px;
 	background-color: #292e56;
@@ -32,8 +40,10 @@ table{
 	height: 794px;
 }
 .bt{
+	padding-top: 30px;
 	margin-top: 80px;
 }
+::-webkit-scrollbar{ display: none; }
 td{
 	text-align: center;
 	vertical-align: middle;
@@ -62,17 +72,17 @@ input{
 <div class="tableDiv">
 	<table>
 		<colgroup>
-			<col width="40%;">
-			<col width="60%;">
+			<col width="30%;">
+			<col width="70%;">
 		</colgroup>
 		<tr>
-			<td class="leftTd">
-				<img src="/resources/portal/images/뚜비.PNG">
+			<td class="leftTd" height = "0">
+				<div style = "height:100%"><img src="/resources/common/images/lomeme.jpg" style="object-fit: cover;"></div>
 			</td>
 			<td>
 				<img src="/resources/portal/images/JesusLogo.png" style="width: 200px;">
 				<div class="welcomeDiv">
-					<span style="color: white;">
+					<span style="color: white;" class="animated fadeInRight">
 						예수대학교 포탈시스템 방문을 환영합니다.
 					</span>
 				</div>
@@ -80,7 +90,7 @@ input{
 					<span style="color: white;">아이디 로그인은, 학번 및 교직원 번호를 이용해 주세요.</span>
 				</div>
 				<form action="/portal/login" method="post" autocomplete="off">
-					<div>
+					<div class="fadeInRight box animate four">
 						<input type="text" name="memNo" id="memNo" placeholder="아이디를 입력하세요" required autofocus> <!-- autofocus=>페이지 로드될 때 자동으로 focus -->
 					</div>
 					<div id="enter"></div>
