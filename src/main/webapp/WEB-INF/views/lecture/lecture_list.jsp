@@ -53,15 +53,41 @@ iframe {
 	  </td>
     </tr>
 </c:forEach>
-
-
-
-
-
-
-
   </tbody>
 </table>
+
+	<div class="pagingDiv">
+		<div class="row">
+			<div class="col-11">
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+						<li
+							class="page-item <c:if test="${!lectureViewVO.prev }">disabled</c:if>">
+							<a class="page-link"
+							href="/lecture/selectLecture?nowPage=${lectureViewVO.beginPage - 1 }"
+							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+						</a>
+						</li>
+						<c:forEach begin="${lectureViewVO.beginPage }"
+							end="${lectureViewVO.endPage }" var="pageNumber">
+							<li
+								class="page-item <c:if test="${lectureViewVO.nowPage eq pageNumber }">active</c:if>">
+								<a class="page-link"
+								href="/lecture/selectLecture?nowPage=${pageNumber }">${pageNumber }</a>
+							</li>
+						</c:forEach>
+						<li
+							class="page-item <c:if test="${!lectureViewVO.next }">disabled</c:if>">
+							<a class="page-link"
+							href="/lecture/selectLecture?nowPage=${lectureViewVO.endPage + 1 }"
+							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+						</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
 
 <div class="modal" tabindex="-1" id="pdfModal">
   <div class="modal-dialog modal-lg">

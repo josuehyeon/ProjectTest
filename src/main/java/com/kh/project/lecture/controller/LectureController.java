@@ -83,6 +83,11 @@ public class LectureController {
 	// 강의 리스트 조회
 	@GetMapping("/selectLecture")
 	public String selectLecture(Model model, LectureViewVO lectureViewVO) {
+		//전체 데이터 수
+		int dataCnt = lectureService.totalLecCnt(lectureViewVO);
+		lectureViewVO.setTotalCnt(dataCnt);
+		//페이징 처리
+		lectureViewVO.setPageInfo();
 		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));
 		return "lecture/lecture_list";
 	}
