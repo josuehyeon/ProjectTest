@@ -1,34 +1,28 @@
 //화면 로딩 후 바로 실행
 $(document).ready(function(){
 	//이벤트 처리
-	$(document).on('change', '#collegeList', function() {
-		var collNo = $('#collegeList').val();
+	$(document).on('click', '#okayBtn', function() {
+		var stuNo = $(this).attr('data-stuNo');
 		
-		//ajax 사용
+//		var yellowReason = $(this).closest('.yellowReason').val();
+		var yellReason = $(this).parent().prev().find('.yellowReason').val();
+		
+		var email = $(this).parent().prev().find('.emailTd').text();
+		
+		
 		$.ajax({
-	        url: '/stuManage/selectCollegeAjax', //요청경로
+	        url: '/admin/mailNoticeAjax', //요청경로
 	        type: 'post',
-	        data:{'collNo':collNo}, //필요한 데이터
+	        data:{'stuNo':stuNo , 'yellReason':yellReason, 'email':email}, //필요한 데이터
 	        success: function(result) {
-	        	//ajax 실행 성공 시 실행되는 구간
-	        	$('#deptTd').empty();
 	        	
-	        	var str ='';
-		        	str += '<select>';
-		        	
-		        	$(result).each(function(index, element){
-	          	  		str += '<option value="'+ element.deptId + '">' + element.deptName + '</option>';	
-	            	});
-	            	
-		        	str += '</select>';ㄹㄹㄹㄹㄹㄹㄹㄹ
-	              
-	            $('#deptTd').append(str);
 	        },
 	        error: function(){
 	        	//ajax 실행 실패 시 실행되는 구간
-	        	alert('실패');
-	        }
-	  }); //ajax 닫기
+	        	alert('error');
+	        } //error 닫기
+		}); //ajax 닫기
+		
     }); //change collegeList 이벤트 닫기
     
 	

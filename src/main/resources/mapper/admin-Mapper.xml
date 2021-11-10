@@ -18,6 +18,26 @@
 		<association property="deptInfo" resultMap="deptMapper.dept"/>
 	</resultMap>
 	
+	<insert id="insertYellowCard">
+		INSERT INTO YELLOW_CARD (
+		    YELL_NO
+		    , STU_NO
+		    , YELL_SEMESTER
+		    , YELL_REASON
+		) VALUES (
+		    (SELECT NVL(MAX(YELL_NO) + 1, 1) FROM YELLOW_CARD)
+		    , #{stuNo}
+		    , (SELECT CASE
+		        WHEN TO_NUMBER(SUBSTR(TO_CHAR(SYSDATE, 'YYYYMMDD'), 5, 2)) &lt;= 6 THEN 1
+		        ELSE 2
+		        END 
+		        FROM DUAL)
+		    , #{yellReason}
+		)
+	</insert>
+		
+
+	
 	
 
 </mapper>

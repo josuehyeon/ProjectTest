@@ -47,6 +47,8 @@ public interface AdminService {
 	
 	DoubleMajorVO modalStuInfoDM(DoubleMajorVO doubleMajorVO);
 	
+	void insertYellowCard(AdminVO adminVO);
+	
 }
 
 

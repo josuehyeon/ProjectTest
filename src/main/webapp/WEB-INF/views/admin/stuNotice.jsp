@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=1"></script>
+<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=11"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -105,14 +105,14 @@ div > span{
 			<tr>
 				<td>${student.stuNo }</td>
 				<td>${student.stuYear }</td>
-				<td>${student.memberInfo.memName}
+				<td><span data-bs-toggle="modal" data-bs-target="#staticBackdrop${status.index}">${student.memberInfo.memName}</span>
 					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop${stauts.index}">
+					<%-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop${status.index}">
 					  이름
-					</button>
+					</button> --%>
 					
 					<!-- Modal -->
-					<div class="modal fade" id="staticBackdrop${stauts.index}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal fade" id="staticBackdrop${status.index}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 					  <div class="modal-dialog">
 					    <div class="modal-content">
 					      <div class="modal-header">
@@ -144,7 +144,7 @@ div > span{
 								</tr>
 								<tr>
 									<td class="td_1">이메일</td>
-									<td class="td_2">${student.memberInfo.memEmail }</td>
+									<td class="td_2 emailTd">${student.memberInfo.memEmail }</td>
 								</tr>
 								<tr>
 									<td class="td_1">경고학기</td>
@@ -162,7 +162,7 @@ div > span{
 								<tr>
 									<td class="td_1">사유</td>
 									<td class="td_2">
-										<select>
+										<select class="yellowReason">
 											<option value="이수학점 미달">이수학점 미달</option>
 											<option value="평균학점 미달">평균학점 미달</option>
 											<option value="학칙위반">학칙위반</option>
@@ -183,7 +183,7 @@ div > span{
 					      </div>
 					      <div class="modal-footer">
 					        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="notOkayBtn">취소</button>
-					        <button type="button" class="btn btn-primary" id="okayBtn">확인</button>
+					        <button type="button" class="btn btn-primary" id="okayBtn" data-stuNo="${student.stuNo}">확인</button>
 					      </div>
 					    </div>
 					  </div>

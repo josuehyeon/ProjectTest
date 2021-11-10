@@ -23,8 +23,8 @@ public class ChangeMajorVO {
 	private DeptVO deptInfo;
 	private StudentVO studentInfo;
 	private MemberVO memberInfo;
-	private DoubleMajorVO doubleMajorInfo;
 	private int[] stuNoList;
+	private DoubleMajorVO doubleMajorInfo;
 	
 	
 	

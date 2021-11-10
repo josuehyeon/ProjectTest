@@ -87,12 +87,17 @@ public class AdminServiceImpl implements AdminService{
 	//복수전공 신청목록
 	@Override
 	public List<DoubleMajorVO> AdminDoubleMajorRequestList() {
-		return sqlSession.selectList("doubleMapper.AdminDoubleMajorRequestList");
+		return sqlSession.selectList("doubleMajorMapper.AdminDoubleMajorRequestList");
 	}
 
 	@Override
 	public DoubleMajorVO modalStuInfoDM(DoubleMajorVO doubleMajorVO) {
-		return sqlSession.selectOne("doubleMapper.modalStuInfoDM", doubleMajorVO);
+		return sqlSession.selectOne("doubleMajorMapper.modalStuInfoDM", doubleMajorVO);
+	}
+
+	@Override
+	public void insertYellowCard(AdminVO adminVO) {
+		sqlSession.insert("adminMapper.insertYellowCard", adminVO);
 	}
 	
 	

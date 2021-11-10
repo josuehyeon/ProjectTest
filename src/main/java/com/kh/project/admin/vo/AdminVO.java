@@ -17,6 +17,16 @@ public class AdminVO {	//학사경고, 제적 테이블
 	private String getOutDate;
 	private String getOutReason;
 	
+	private String email;
+	
+	
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public int getYellNo() {
 		return yellNo;
 	}

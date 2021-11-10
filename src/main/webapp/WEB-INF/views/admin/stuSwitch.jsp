@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuSwitch.js?ver=2"></script>
+<script type="text/javascript" src="/resources/admin/js/stuSwitch.js?ver=1"></script>
 <style type="text/css">
 td{
 	border: 1px solid black;
@@ -140,15 +140,15 @@ td{
 	<tbody>
 		<c:forEach items="${AdminDoubleMajorRequestList }" var="doubleMajorInfo">
 		<tr>
-			<td>${doubleMajorInfo.changeId }</td>
+			<td>${doubleMajorInfo.doubleId }</td>
 			<td>${doubleMajorInfo.collegeInfo.collName }</td>
 			<td>${doubleMajorInfo.deptInfo.deptName }</td>
 			<td>${doubleMajorInfo.stuNo }</td>
 			<td>${doubleMajorInfo.memberInfo.memName }</td>
 			<td>${doubleMajorInfo.studentInfo.stuYear }</td>
 			<td>${doubleMajorInfo.studentInfo.stuStatus }</td>
-			<td>${doubleMajorInfo.upCollName }</td>
-			<td>${doubleMajorInfo.upDeptName }</td>
+			<td>${doubleMajorInfo.collName }</td>
+			<td>${doubleMajorInfo.deptName }</td>
 			<td>
 				<!-- Button trigger modal -->
 				<input type="button" class="btn btn-primary modalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"  value="처리대기">
