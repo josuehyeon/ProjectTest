@@ -23,7 +23,7 @@ public interface BoardService {
 	void dltBoard(BoardVO bvo);
 	
 	//게시글 상세 보기
-	BoardVO detailBoard(int boardNo);
+	BoardVO detailBoard(BoardVO bvo);
 	
 	//전체 데이터 조회 수
 	int totalBoardCnt(BoardVO boardVO);

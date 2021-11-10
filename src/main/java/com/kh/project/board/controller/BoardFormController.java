@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kh.project.board.service.BoardService;
+import com.kh.project.board.vo.BoardVO;
 import com.kh.project.board.vo.CommVO;
 
 @Controller
@@ -30,16 +31,17 @@ public class BoardFormController {
 		return "boardForm/board/board_form";
 	}
 	//게시글 보기
-	@RequestMapping("/detail")
-	public String doDetail(Model md, int boardNo, CommVO cvo) {
-		md.addAttribute("board", boardService.detailBoard(boardNo));
+	@GetMapping("/detail")
+	public String doDetail(Model md, BoardVO bvo, CommVO cvo) {
+		md.addAttribute("board", boardService.detailBoard(bvo));
 		md.addAttribute("commList", boardService.sltCommList(cvo));
 		return "boardForm/board/board_detail";
 	}
 	//댓글 등록
 	@PostMapping("/istComm")
-	public String doIstComm(Model md, int boardNo, CommVO cvo) {
+	public String doIstComm(Model md, BoardVO bvo, CommVO cvo) {
 		boardService.istComm(cvo);
+		md.addAttribute("boardNo", bvo);
 		md.addAttribute("nowDate", getNowDateToString());
 		return "redirect:/form/detail";
 	}

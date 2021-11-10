@@ -12,17 +12,17 @@
 }
 body{
 	margin: 0;
-	background-color: #eeeeee;
+	background-color: #445893;
 }
 .tableDiv{
 }
 table{
 	margin: 0 auto;
 	padding-top: 100px;
-	background-color: white;
+	background-color: #1c307a;
 	margin-top: 10px;
 	text-align: center;
-	width: 1000px;
+	width: 100%;
 }
 td{
 	text-align: center;

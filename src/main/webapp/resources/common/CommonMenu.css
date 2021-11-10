@@ -69,20 +69,20 @@ ul, li {
   opacity: 0;
   visibility: hidden;
   transition: all 0.15s ease-in;
-  z-index: 3;
+  z-index: 7;
 }
 #sub-menu > li {
   padding: 12px 20px;
   border-bottom: 1px solid rgba(0,0,0,0.15);
   width: 367.5px;
-  z-index: 3;
+  z-index: 7;
 }
 
 #sub-menu > li >  a {
   color: rgba(255,255,255,0.6);
   text-decoration: none;
   text-align: center;
-  z-index: 3;
+  z-index: 7;
 }
 
 #main-menu > li:hover #sub-menu {
@@ -90,7 +90,7 @@ ul, li {
   visibility: visible;
   text-align: center;
   width: 400px;
-  z-index: 3;
+  z-index: 7;
 }
 
 #sub-menu > li >  a:hover {

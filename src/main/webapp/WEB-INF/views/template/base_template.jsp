@@ -8,9 +8,9 @@
 <title><tiles:insertAttribute name="title"/></title>
 <!-- 태그 초기화 작업 -->
 <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="/resources/common/reset.css?ver=10">
-<link rel="stylesheet" href="/resources/common/CommonMenu.css?ver=19">
-<link rel="stylesheet" href="/resources/common/CommonBodyCssFrame.css?ver=9">
+<link rel="stylesheet" href="/resources/common/reset.css?ver=13">
+<link rel="stylesheet" href="/resources/common/CommonMenu.css?ver=24">
+<link rel="stylesheet" href="/resources/common/CommonBodyCssFrame.css?ver=10">
 
 <!-- 제이쿼리 문법을 로딩 -->
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -23,9 +23,10 @@
 body {
 	font-family: 'NanumBarunpen';
 	text-align: center;
-	background-color: #f2e1cf;
+	background-color: #cfd8e2;
 	background-repeat: no-repeat;
 	background-size: cover;
+	margin: 0 auto;
 }
 .a {
 	 color: white;

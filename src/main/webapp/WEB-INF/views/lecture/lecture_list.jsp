@@ -55,6 +55,7 @@ table {
   width:100%;
   transition:800ms ease all;
 }
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
 </style>
 <script type="text/javascript" src="/resources/sample/js/lecture_list.js?ver=222222222222259"></script>
 </head>
@@ -99,8 +100,8 @@ table {
 
 	<div class="pagingDiv">
 		<div class="row">
-			<div class="col-11">
-				<nav aria-label="Page navigation example">
+			<div class="col-12">
+				<div aria-label="Page navigation example" class="pageNa">
 					<ul class="pagination justify-content-center">
 						<li
 							class="page-item <c:if test="${!lectureViewVO.prev }">disabled</c:if>">
@@ -125,7 +126,7 @@ table {
 						</a>
 						</li>
 					</ul>
-				</nav>
+				</div>
 			</div>
 		</div>
 	</div>

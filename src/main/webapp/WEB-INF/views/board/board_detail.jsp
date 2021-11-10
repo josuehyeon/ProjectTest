@@ -14,9 +14,16 @@
 <div>
 	<div>
 		<div>
-			<div class="title">
-				제목 ${board.boardTitle } | ${board.boardNo } | ${board.boardWriter }
+		<table>
+			<tr class="title">
+				<td>제목</td>
+				<td>${board.boardTitle }</td>
+			</tr>
+		</table>
+			<div>
+				| ${board.boardNo } | ${board.boardWriter }
 			</div>
+			
 			<div class="content">
 				${board.boardContent }
 			</div>
@@ -25,7 +32,7 @@
 </div>
 	${board.readCnt }
 	<input type="hidden" name="boardNo" value="${board.boardNo }">
-	<input type="submit" value="글 삭제"> <a href="/board/dltBd?boardNo=${board.boardNo }"></a>
+	<input type="submit" value="글 삭제">
 	<div>
 		<textarea rows="5" cols="120" style="resize: none; margin: 0 auto; verrical-align" placeholder="타인에게 상처를 입히는 발언은 제재 당할 수 있음을 알립니다." id="isComm" name="commContent"></textarea>
 	</div>

@@ -46,7 +46,7 @@ thead{
 	width: 100px;
 	margin-top: 25px;
 }
-.pageNa{margin-left: 0 auto; margin-right: 0 auto;}
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
 .pagingDiv a{color: black;text-decoration: none;}
 a.sltedPage{color: blue;font-weight: bold;}
 .trh{height: 30px;}
@@ -78,7 +78,7 @@ a.sltedPage{color: blue;font-weight: bold;}
 									<tr class="trh">
 										<td>${board.rowNum }</td>
 										<td>${board.boardWriter }</td>
-										<td><a href="/form/detail?boardNo=${board.boardNo }" >${board.boardTitle }</a></td>
+										<td><a href="/form/detail?boardNo=${board.boardNo }">${board.boardTitle }</a></td>
 										<td>${board.boardDate }</td>
 										<td>${board.readCnt }</td>
 										<td>${board.commCnt }</td>

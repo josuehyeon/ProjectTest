@@ -51,16 +51,7 @@ public class BoardController {
 		md.addAttribute("boardList", boardService.selectBoardList(boardVO));
 		return "board/board_request";
 	}
-	//취업 정보 게시판 / 잡코리아
-	@GetMapping("job")
-	public String doCommunity() {
-		return "board/job_korea";
-	}
-	//사람인 이동
-	@GetMapping("saramin")
-	public String dosaram() {
-		return "board/saramin";
-	}
+	
 	//게시글 등록 후 이동
 	@PostMapping("istBd")
 	public String doIstBoard(BoardVO bvo) {

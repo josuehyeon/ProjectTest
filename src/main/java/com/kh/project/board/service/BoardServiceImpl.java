@@ -41,8 +41,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public BoardVO detailBoard(int boardNo) {
-		return sqlSession.selectOne("boardMapper.detailBoard", boardNo);
+	public BoardVO detailBoard(BoardVO bvo) {
+		return sqlSession.selectOne("boardMapper.detailBoard", bvo);
 	}
 
 	@Override

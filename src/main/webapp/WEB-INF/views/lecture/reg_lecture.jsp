@@ -55,15 +55,13 @@
   width:100%;
   transition:800ms ease all;
 }
-
-
 </style>
 </head>
 <body>
 <div class="row justify-content-center">
    <div class="col-11">
       <div class="row">
-         <div class="col-5" style="border-bottom: 2px solid #0d6efd; font-style: italic; font-weight: bold; margin-top: 20px; margin: 0 auto;">
+         <div class="col-5" style="border-bottom: 2px solid #000f4c; font-style: italic; font-weight: bold; margin-top: 20px; margin: 0 auto;">
             <h5 style="text-align: center; margin-top: 20px;">REGISTRATION LECTURE</h5>
          </div>
       </div>
