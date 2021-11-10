@@ -154,8 +154,9 @@
                     ORDER BY LEC_ID DESC
 			)
 		)
+		<if test="startNum != 0 and !startNum.equals('') and endNum != 0 and !endNum.equals('')">
 		WHERE ROW_NUM &gt;= #{startNum} AND ROW_NUM &lt;= #{endNum}
-	
+		</if>
 	<!-- 
 		SELECT 
 		LEC_NAME
