@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="/resources/portal/js/login.js?ver=12"></script>
@@ -11,18 +13,26 @@
 	margin: 0;
 }
 body{
+	-ms-overflow-style: none; 
 	margin: 0;
-	background-color: #445893;
 }
+::-webkit-scrollbar{ display: none; }
 .tableDiv{
+padding: 0px;
+}
+.leftTd{
+	background-color: #445893;
 }
 table{
 	margin: 0 auto;
 	padding-top: 100px;
-	background-color: #1c307a;
-	margin-top: 10px;
+	background-color: #292e56;
 	text-align: center;
 	width: 100%;
+	height: 794px;
+}
+.bt{
+	margin-top: 80px;
 }
 td{
 	text-align: center;
@@ -36,7 +46,14 @@ input{
 	height: 50px;
 }
 .welcomeDiv{
-	margin-bottom: 50px;
+	margin-top: 25px;
+}
+.welcomeDivT{margin-top:8px; margin-bottom: 40px;}
+.ccr{color: #525b96;}
+.ccr:hover {
+	color: #ccd2ff;
+	font-weight: bold;
+	cursor: pointer;
 }
 </style>
 </head>
@@ -45,8 +62,8 @@ input{
 <div class="tableDiv">
 	<table>
 		<colgroup>
-			<col width="50%;">
-			<col width="50%;">
+			<col width="40%;">
+			<col width="60%;">
 		</colgroup>
 		<tr>
 			<td class="leftTd">
@@ -55,9 +72,12 @@ input{
 			<td>
 				<img src="/resources/portal/images/JesusLogo.png" style="width: 200px;">
 				<div class="welcomeDiv">
-					<span>
+					<span style="color: white;">
 						예수대학교 포탈시스템 방문을 환영합니다.
 					</span>
+				</div>
+				<div class="welcomeDivT">
+					<span style="color: white;">아이디 로그인은, 학번 및 교직원 번호를 이용해 주세요.</span>
 				</div>
 				<form action="/portal/login" method="post" autocomplete="off">
 					<div>
@@ -74,7 +94,7 @@ input{
 					</div>
 				</form>
 				<!-- 아이디 찾기 Modal 버튼 -->
-				<span data-bs-toggle="modal" data-bs-target="#idModal"><span style="color: red;">*</span>아이디 찾기</span>
+				<span data-bs-toggle="modal" data-bs-target="#idModal" class="ccr"><span style="color: #c5d4ff;">*</span>아이디 찾기</span>
 				<!--아이디 찾기 Modal 내용 -->
 				<div class="modal fade" id="idModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog"> 
@@ -111,7 +131,7 @@ input{
 				</div>
 				
 				<!-- 비밀번호 변경 Modal 버튼 -->
-				<span data-bs-toggle="modal" data-bs-target="#passwordModal"><span style="color: red;">*</span>비밀번호 찾기</span>
+				<span data-bs-toggle="modal" data-bs-target="#passwordModal" class="ccr"><span style="color: #c5d4ff;">*</span>비밀번호 찾기</span>
 				<!--비밀번호 변경 Modal 내용 -->
 				<div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog"> 
@@ -148,14 +168,12 @@ input{
 						</div>
 					</div>
 				</div>
-				<div>
-					<span>아이디 로그인은, 학번 및 교직원 번호를 이용해 주세요.</span>
+				<div class="bt"> 
+					<span style="color: white;">COPYRIGHT©2019 JESUS UNIVERSITY. ALL RIGHTS RESERVED.</span>
 				</div>
 			</td>
 		</tr>
 	</table>	
 </div>
-<span>COPYRIGHT©2019 JESUS UNIVERSITY. ALL RIGHTS RESERVED.</span>
-
 </body>
 </html>
