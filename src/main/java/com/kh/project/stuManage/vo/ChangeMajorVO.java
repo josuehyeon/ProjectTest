@@ -24,13 +24,16 @@ public class ChangeMajorVO {
 	private StudentVO studentInfo;
 	private MemberVO memberInfo;
 	private DoubleMajorVO doubleMajorInfo;
-	static int[] stuNoList;
+	private int[] stuNoList;
 	
-	public static int[] getStuNoList() {
+	
+	
+	
+	public int[] getStuNoList() {
 		return stuNoList;
 	}
-	public static void setStuNoList(int[] stuNoList) {
-		ChangeMajorVO.stuNoList = stuNoList;
+	public void setStuNoList(int[] stuNoList) {
+		this.stuNoList = stuNoList;
 	}
 	public DoubleMajorVO getDoubleMajorInfo() {
 		return doubleMajorInfo;

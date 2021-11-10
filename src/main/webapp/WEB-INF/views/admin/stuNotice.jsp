@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuSwitch.js?ver=1"></script>
+<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=1ㄹ"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -23,12 +23,14 @@ div > span{
 .td_2{
 	width: 150px;
 }
+#table{
+	width: 450px;
+}
 </style>
 </head>
 <body>
 학사경고 페이지
 <form action="/admin/stuNotice" method="post">
-
 <table>
 	<tr>
 		<td>대학</td>
@@ -119,41 +121,41 @@ div > span{
 					      </div>
 					      <div class="modal-body">
 					        <div>
-							<table>
+							<table id="table">
 								<tr>
 									<td class="td_1">학번</td>
-									<td class="td_2">2010어쩌구</td>
+									<td class="td_2">${studentInfo.stuNo }</td>
 								</tr>
 								<tr>
 									<td class="td_1">이름</td>
-									<td class="td_2">김김김</td>
+									<td class="td_2">${memberInfo.memName }</td>
 								</tr>
 								<tr>
 									<td class="td_1">학년</td>
-									<td class="td_2">1</td>
+									<td class="td_2">${studentInfo.stuYear }</td>
 								</tr>
 								<tr>
 									<td class="td_1">단과대학</td>
-									<td class="td_2">인문사회대학</td>
+									<td class="td_2">${studentInfo.collNo }</td>
 								</tr>
 								<tr>
 									<td class="td_1">전공</td>
-									<td class="td_2">국어국문학과</td>
+									<td class="td_2">${studentInfo.majorCode }</td>
 								</tr>
 								<tr>
 									<td class="td_1">이메일</td>
-									<td class="td_2">aaa@gmail.com</td>
+									<td class="td_2">${memberInfo.memEmail }</td>
 								</tr>
 								<tr>
 									<td class="td_1">경고학기</td>
 									<td class="td_2">
 										<select>
-											<option>2021</option>
-											<option>2020</option>
+											<option value="2021">2021</option>
+											<option value="2020">2020</option>
 										</select>년도
 										<select>
-											<option>1</option>
-											<option>2</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
 										</select>학기
 									</td>
 								</tr>
@@ -161,12 +163,12 @@ div > span{
 									<td class="td_1">사유</td>
 									<td class="td_2">
 										<select>
-											<option>이수학점 미달</option>
-											<option>평균학점 미달</option>
-											<option>학칙위반</option>
-											<option>부정행위</option>
-											<option>수강신청 미시행</option>
-											<option>등록금 미납</option>
+											<option value="이수학점 미달">이수학점 미달</option>
+											<option value="평균학점 미달">평균학점 미달</option>
+											<option value="학칙위반">학칙위반</option>
+											<option value="부정행위">부정행위</option>
+											<option value="수강신청 미시행">수강신청 미시행</option>
+											<option value="등록금 미납">등록금 미납</option>
 										</select>
 									</td>
 								</tr>

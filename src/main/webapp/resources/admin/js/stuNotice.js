@@ -20,7 +20,7 @@ $(document).ready(function(){
 	          	  		str += '<option value="'+ element.deptId + '">' + element.deptName + '</option>';	
 	            	});
 	            	
-		        	str += '</select>';
+		        	str += '</select>';ㄹㄹㄹㄹㄹㄹㄹㄹ
 	              
 	            $('#deptTd').append(str);
 	        },
