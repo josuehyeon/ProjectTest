@@ -33,7 +33,7 @@ th, td {
 }
 thead{
 	text-align: center;
-	background-color: #212529; 
+	background-color: #55597a; 
 	color: white;
 	margin-bottom: 20px;
 }
@@ -46,6 +46,7 @@ thead{
 	width: 100px;
 	margin-top: 25px;
 }
+.pageNa{margin-left: 0 auto; margin-right: 0 auto;}
 .pagingDiv a{color: black;text-decoration: none;}
 a.sltedPage{color: blue;font-weight: bold;}
 .trh{height: 30px;}
@@ -95,8 +96,8 @@ a.sltedPage{color: blue;font-weight: bold;}
 				</table>
 				<div class="pagingDiv">
 					<div class="row">
-						<div class="col-11">
-							<nav aria-label="Page navigation example">
+						<div class="col-12">
+							<div aria-label="Page navigation example" class="pageNa">
 							  <ul class="pagination justify-content-center">
 							    <li class="page-item <c:if test="${!boardVO.prev }">disabled</c:if>">
 							      <a class="page-link" href="/board/infoPark?nowPage=${boardVO.beginPage - 1 }" aria-label="Previous">
@@ -112,7 +113,7 @@ a.sltedPage{color: blue;font-weight: bold;}
 							      </a>
 							    </li>
 							  </ul>
-							</nav>
+							</div>
 							<div class="btnDiv">
 								<a class="" href="/form/inlog">글 작성</a>
 							</div>

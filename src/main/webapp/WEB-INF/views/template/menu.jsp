@@ -109,7 +109,7 @@
 				        	<!-- <li><a href="/stuManage/showStuList" aria-label="subemnu">학생조회</a></li> -->	<!-- 11.09 이수정 -->
 					    </ul>
 		    		</li>
-		    		<li><a class="nav-link link-#00154a mmn" href="/board/infoPark">교과 과정 / 수업</a>
+		    		<li><a class="nav-link link-#00154a mmn" href="/lecture/goEnrolment">교과 과정 / 수업</a>
 		      			<ul id="sub-menu">
 				        	<li><a href="/lecture/goEnrolment">수강 신청</a></li>
 				        	<li><a href="/lecture/selectLecture">강의리스트</a></li>

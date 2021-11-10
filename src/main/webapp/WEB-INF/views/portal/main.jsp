@@ -28,7 +28,7 @@ ul,li{list-style:none;}
   <div class="slide">
     <ul style="width: 100%">
       <li><img src="/resources/common/images/meme1.jpg"></li>
-      <li></li>
+      <li><img src="/resources/common/images/testmeme.jsp"></li>
       <li></li>
       <li></li>
     </ul>

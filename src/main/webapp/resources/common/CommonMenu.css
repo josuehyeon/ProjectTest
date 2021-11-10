@@ -21,7 +21,6 @@ body {
   	align-items: center;
   	overflow-x: hidden;  
 }
-
 h1 {
   	margin: 2em 0 1.5em 0;
 }
@@ -48,6 +47,7 @@ ul, li {
 #main-menu > li {
   float: left;
   position: relative;
+  width: 400px;
 }
 #main-menu > li > a {
   font-size: 0.85rem;
@@ -69,24 +69,28 @@ ul, li {
   opacity: 0;
   visibility: hidden;
   transition: all 0.15s ease-in;
-  z-index: 2;
+  z-index: 3;
 }
 #sub-menu > li {
-  padding: 16px 28px;
+  padding: 12px 20px;
   border-bottom: 1px solid rgba(0,0,0,0.15);
-  z-index: 2;
+  width: 367.5px;
+  z-index: 3;
 }
 
 #sub-menu > li >  a {
   color: rgba(255,255,255,0.6);
   text-decoration: none;
-  z-index: 2;
+  text-align: center;
+  z-index: 3;
 }
 
 #main-menu > li:hover #sub-menu {
   opacity: 1;
   visibility: visible;
-  z-index: 2;
+  text-align: center;
+  width: 400px;
+  z-index: 3;
 }
 
 #sub-menu > li >  a:hover {
