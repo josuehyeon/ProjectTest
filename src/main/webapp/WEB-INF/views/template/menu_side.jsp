@@ -89,7 +89,25 @@ input[type="search"] {
     box-shadow: 0 0px 24px 0 rgb(0 0 0 / 6%), 0 1px 0px 0 rgb(0 0 0 / 2%);
     color: black;
 }
-
+.slider .indicators .indicator-item {
+  background-color: #666666;
+  border: 3px solid #ffffff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.slider .indicators .indicator-item.active {
+  background-color: #ffffff;
+}
+.slider {
+  width: 900px;
+  margin: 0 auto;
+}
+.slider .indicators {
+  bottom: 60px;
+  z-index: 100;
+  /* text-align: left; */
+}
 .sub_menu {
     margin-top: 50px;
 }
@@ -178,70 +196,6 @@ ul {
 </style>
 </head>
 <body>
-불필요하다 판단되어 사이드, 서브 병합 시킴
-추후 삭제 할 영역
-<%-- <div class="sideDiv">
- ✧ ━━━━━━━━━━━ ✧
- <c:if test="${not empty sessionScope.loginInfo }">
-	<c:choose>
-		<c:when test="${sessionScope.loginInfo.memAuth eq 3}">					
-			<a class="nav-link link-#00154a" href="/admin/selectStu">학생 조회</a><br>
-			<a class="nav-link link-#00154a" href="/admin/manageGrade">성적 관리</a><br>
-			<a class="nav-link link-#00154a" href="/admin/goEditStatusList">학적 변동승인</a><br>
-			<a class="nav-link link-#00154a" href="/admin/stuNotice">학사경고 / 제적</a><br>
-			<a class="nav-link link-#00154a" href="/admin/stuSwitch">전과 / 복수전공</a>
-		</c:when>
-		<c:otherwise>
-			<c:if test="${sessionScope.loginInfo.memAuth eq 1 or 2 }">
-				<a class="nav-link link-#00154a" href="/board/infoPark">자유게시판</a>
-				<a class="nav-link link-#00154a" href="/board/bdRequest">건의게시판</a>
-			</c:if>
-		</c:otherwise>
-	</c:choose>
-</c:if>
-</div> --%>
-<!--  <div id="wrapper">
-	<div class="topbar" style="position: absolute; top:0;">
-	    왼쪽 메뉴
-	    <div class="left side-menu">
-	        <div class="sidebar-inner">
-	            <div id="sidebar-menu">
-	                <ul>
-	                    <li class="has_sub"><a href="javascript:void(0);" class="waves-effect">
-	                        <i class="fas fa-bars"></i>
-	                    </a></li>
-	                </ul>
-	            </div>
-	        </div>
-	    </div>
-	    왼쪽 서브 메뉴
-	    <div class="left_sub_menu">
-	        <div class="sub_menu">
-	            <input type="search" name="SEARCH" placeholder="SEARCH">
-	            <h2>TITLE</h2>
-	            <ul class="big_menu">
-	                <li>MENU 1 <i class="arrow fas fa-angle-right"></i></li>
-	                <ul class="small_menu">
-	                    <li><a href="#">소메뉴1-1</a></li>
-	                    <li><a href="#">소메뉴1-2</a></li>
-	                    <li><a href="#">소메뉴1-3</a></li>
-	                    <li><a href="#">소메뉴1-4</a></li>
-	                </ul>
-	            </ul>
-	            <ul class="big_menu">
-	                <li>MENU 2 <i class="arrow fas fa-angle-right"></i></li>
-	                <ul class="small_menu">
-	                    <li><a href="#">소메뉴2-1</a></li>
-	                    <li><a href="#">소메뉴2-2</a></li>
-	                </ul>
-	            </ul>
-	            <ul class="big_menu">
-	                <li>MYPAGE</li>
-	            </ul>
-	        </div>
-	    </div>
-	    <div class="overlay"></div>
-	</div>
-</div> -->
+
 </body>
 </html>
