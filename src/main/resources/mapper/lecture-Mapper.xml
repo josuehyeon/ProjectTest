@@ -270,10 +270,12 @@
 			ENROLMENT_ID
 			, LEC_ID
 			, STU_NO
+			, SEM_ID
 		) VALUES (
 		(SELECT 'ENROL_'||LPAD(NVL(MAX(TO_NUMBER(SUBSTR(ENROLMENT_ID, 7, 3))), 0)+1, 3, '0') FROM ENROLMENT)
 			, #{lecId}
 			, #{stuNo}
+			, (SELECT TO_CHAR(SYSDATE, 'YYYY')||CASE WHEN TO_CHAR(SYSDATE, 'MM') >=7 THEN '2' ELSE '1' END SEM_ID FROM DUAL)
 		)
 	</insert>
 	
@@ -303,8 +305,6 @@
 		FROM ENROLMENT 
 		WHERE LEC_ID = #{lecId}
 	</select>
-	
-
 			
 </mapper>
 

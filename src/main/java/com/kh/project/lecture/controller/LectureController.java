@@ -195,7 +195,6 @@ public class LectureController {
 		//페이징 처리
 		lectureViewVO.setPageInfo();
 		
-		
 		MemberVO result = (MemberVO)session.getAttribute("loginInfo");
 		model.addAttribute("stuInfo", stuManageService.selectStuInfoForChange(result));
 		model.addAttribute("lectureList", lectureService.selectLectureList(lectureViewVO));

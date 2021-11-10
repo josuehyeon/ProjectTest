@@ -8,18 +8,28 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="/resources/stuManage/js/show_stu_info.js?ver=20"></script>
 <style type="text/css">
+div{
+	margin-top: 
+}
 table {
 	width: 600px;
+	background-color: white;
 }
 td{
 	border: 1px solid black;
+}
+input[type=text]{
+	width: 99%;
+}
+#upper{
+	margin-top: 50px;
 }
 </style>
 </head>
 <body>
 <!-- 대학/학년/전공/학적: 조회 -->
 <form action="/stuManage/stuManageList" method="post" id="searchForm">
-	<div>
+	<div id="upper">
 		<table>
 			<tr>
 				<td>대학</td>
@@ -41,8 +51,8 @@ td{
 						<option value="4">4학년</option>
 					</select> 
 				</td>
-				<td rowspan="2">
-					<input type="button" id="showMeSelect" value="조회"><!--조회 버튼!!!!!!!!!!!!!!!!!!!! -->
+				<td rowspan="3">
+					<input type="button" id="showMeSelect" value="검색"><!--조회 버튼!!!!!!!!!!!!!!!!!!!! -->
 				</td>
 			</tr>
 			<tr>
@@ -74,15 +84,14 @@ td{
 		<table>
 			<tr>
 				<td>검색</td>
-				<td> <input type="text" name="searchValue" id="searchValue"> </td>
-				<td> <input type="button" id="searchBtn" value="검색"> </td><!-- 검색버튼!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+				<td> <input type="text" name="searchValue" id="searchValue" placeholder="이름"> </td>
 			</tr>
 		</table>
 	</div>
 </form>
 <!-- 학생 목록 조회 -->
 <div id="studentList">
-	<span>*학생의 이름을 클릭하면 학생의 상세페이지로 이동</span>
+	<span style="color: red; font-size: 12px;">*학생의 이름을 클릭하면 학생의 상세페이지로 이동합니다</span>
 	<table id="studentListTable">
 		<tr>
 			<td>학번</td>
