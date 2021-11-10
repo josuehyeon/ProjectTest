@@ -15,12 +15,53 @@ iframe {
 .modal-content{
 	height: 900px;
 }
+
+table {
+	background-color: white;
+}
+.btn{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+ /*  height:60px; */
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+.btn:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
 </style>
 <script type="text/javascript" src="/resources/sample/js/lecture_enrolment.js?ver=2122193"></script>
 </head>
 <body>
 <form action="/lecture/goEnrolment" method="post">
-<div class="row">
+<div class="row" style="padding-top: 30px;">
   <div class="col">
     <label for="collegeList" class="form-label">단대</label>
       <!-- 단과대선택 -->
@@ -40,10 +81,10 @@ iframe {
        	</c:forEach>
        </select>
   </div>
-<div class="col">
- <label for="" class="form-label"></label>
-	<input type="submit" class="btn btn-primary" value="검색">
-</div>
+  <div class="col">
+	 <label for="dd" class="form-label">&nbsp;</label>
+		<input type="submit" class="btn btn-primary" value="검색" style="width: 500px;">
+  </div>
 </div>
 </form>
 
@@ -80,7 +121,7 @@ iframe {
       	<form action="/lecture/enrolment" method="post" id="enrolment">
 	      	 <input type="hidden" name="lecId" value="${lectureInfo.lecId }">
 	   		 <input type="hidden" name="stuNo" value="${stuInfo.stuNo }">
-	    	<input type="button" class="enrolment" value="신청">
+	    	<input type="button" class="enrolment btn" value="신청">
 		</form>
 	  </td>
     </tr>
@@ -144,7 +185,7 @@ iframe {
       <td>${enrolmentInfo.lectureViewVO.lecDay }</td>
       <td>${enrolmentInfo.lectureViewVO.lecPeriod }</td>
       <td>
-	      <input type="button" value="빼기" onclick="deleteEnrol('${enrolmentInfo.enrolmentId}');">
+	      <input type="button" value="빼기" onclick="deleteEnrol('${enrolmentInfo.enrolmentId}');" class="btn">
 		  
 	  </td>
     </tr>
