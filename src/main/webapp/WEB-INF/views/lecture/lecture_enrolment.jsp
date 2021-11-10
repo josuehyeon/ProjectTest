@@ -20,7 +20,7 @@ table {
 	background-color: white;
 }
 .btn{
-  background:#1AAB8A;
+  background:#000f4c;
   color:#fff;
   border:none;
   position:relative;
@@ -30,10 +30,11 @@ table {
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
+   opacity:0.65;
 }
 .btn:hover{
   background:#fff;
-  color:#1AAB8A;
+  color:#000f4c;
 }
 .btn:before,.btn:after{
   content:'';
@@ -88,7 +89,7 @@ table {
 </div>
 </form>
 
-<table class="table">
+<table class="table table-hover">
 <caption align="top">강의리스트</caption>
   <thead>
     <tr>
@@ -122,6 +123,7 @@ table {
 	      	 <input type="hidden" name="lecId" value="${lectureInfo.lecId }">
 	   		 <input type="hidden" name="stuNo" value="${stuInfo.stuNo }">
 	    	<input type="button" class="enrolment btn" value="신청">
+	    	
 		</form>
 	  </td>
     </tr>
@@ -156,7 +158,7 @@ table {
 
 
 
-<table class="table">
+<table class="table table-hover">
 <caption align="top">수강신청</caption>
   <thead>
     <tr>
@@ -197,7 +199,7 @@ table {
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h10 class="modal-title">강의자료</h10>
+        <div class="modal-title">강의자료</div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
