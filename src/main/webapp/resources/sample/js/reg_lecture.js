@@ -14,7 +14,7 @@ $(document).ready(function(){
 	        	$('#tableDiv').empty();
 	        	
 	        	  var str ='';
-	        	  str += '<div class="col-6">';
+	        	  str += '<div class="col">';
 	              str += '<!-- 학과선택 -->	';
 	              str += '<label for="deptList" class="form-label">학과</label>';
 	              str += '<select class="form-select" id="deptList" name="deptId">';
@@ -25,7 +25,7 @@ $(document).ready(function(){
 	              str += '</select>';
 	              str += '</div>';
 	              str += '<!-- 담당교수 -->';
-	              str += '<div class="col-6">';
+	              str += '<div class="col">';
 	              str += '<label for="empList" class="form-label">담당교수</label>';
 	              str += '<select class="form-select" id="empList" name="profNo">';
 	              $(result.profList).each(function(index, element){
@@ -34,7 +34,7 @@ $(document).ready(function(){
 	              str += '</select>';
 	              str += '</div>';
 	              str += '<!-- 담당조교 -->	';
-	              str += '<div class="col-6">';
+	              str += '<div class="col">';
 	              str += '<label for="itemCategory" class="form-label">담당조교</label>';
 	              str += '<select class="form-select" id="itemCategory" name="assiNo">';
 	              $(result.assiList).each(function(index, element){

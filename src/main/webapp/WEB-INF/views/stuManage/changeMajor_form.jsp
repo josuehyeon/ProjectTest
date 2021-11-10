@@ -35,6 +35,10 @@ tr, td{
 input {
 	border: none;
 }
+caption {
+	color: black;
+	font-weight: bold;
+}
 
 </style>
 </head>
@@ -119,7 +123,7 @@ input {
 		</tr>
 		<tr>
 			<td colspan="4" class="line"><input type="button" value="신청하기" onclick="changeMajor();"
-			style="background-color: #336699; color: white; width: 100%;" ></td>
+			style="background-color: #336699; color: white; width: 100%;"></td>
 		</tr>
 		</table>
 		</form>

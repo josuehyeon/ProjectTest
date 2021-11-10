@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+
 iframe {
 	width: 100%;
 	height: 95%;
@@ -24,8 +25,7 @@ table {
   color:#fff;
   border:none;
   position:relative;
- /*  height:60px; */
-  font-size:1.6em;
+  height:35px;
   padding:0 2em;
   cursor:pointer;
   transition:800ms ease all;
