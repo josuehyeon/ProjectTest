@@ -131,6 +131,7 @@
                 <div class="col">
                   <label for="lecDay" class="form-label">강의요일선택</label>
                <select class="form-select" id="" name="lecDay">
+                  	<option value="${lectureList[0].lecDay}">${lectureList[0].lecDay}</option>
                   	  <option value="월">월</option>
                   	  <option value="화">화</option>
                   	  <option value="수">수</option>
@@ -141,15 +142,33 @@
                <div class="col">
                   <label for="lecPeriod" class="form-label">강의교시선택</label>
                <select class="form-select" id="" name="lecPeriod">
-                  	  <option value="9">1</option>
-                  	  <option value="10">2</option>
-                  	  <option value="11">3</option>
-                  	  <option value="12">4</option>
-                  	  <option value="13">5</option>
-                  	  <option value="14">6</option>
-                  	  <option value="15">7</option>
-                  	  <option value="16">8</option>
-                  	  <option value="17">9</option>
+               		  <option value="9" <c:if test="${lectureList[0].lecPeriod eq 9}">
+                  	  	  selected
+                  	  </c:if>>1</option>
+               		  <option value="10" <c:if test="${lectureList[0].lecPeriod eq 10}">
+                  	  	  selected
+                  	  </c:if>>2</option>
+               		  <option value="11" <c:if test="${lectureList[0].lecPeriod eq 11}">
+                  	  	  selected
+                  	  </c:if>>3</option>
+               		  <option value="12" <c:if test="${lectureList[0].lecPeriod eq 12}">
+                  	  	  selected
+                  	  </c:if>>4</option>
+               		  <option value="13" <c:if test="${lectureList[0].lecPeriod eq 13}">
+                  	  	  selected
+                  	  </c:if>>5</option>
+               		  <option value="14" <c:if test="${lectureList[0].lecPeriod eq 14}">
+                  	  	  selected
+                  	  </c:if>>6</option>
+               		  <option value="15" <c:if test="${lectureList[0].lecPeriod eq 15}">
+                  	  	  selected
+                  	  </c:if>>7</option>
+               		  <option value="16" <c:if test="${lectureList[0].lecPeriod eq 16}">
+                  	  	  selected
+                  	  </c:if>>8</option>
+               		  <option value="17" <c:if test="${lectureList[0].lecPeriod eq 17}">
+                  	  	  selected
+                  	  </c:if>>9</option>
                   </select>
                  </div>
                <div class="col text-center" style="margin-top: 10px;">
