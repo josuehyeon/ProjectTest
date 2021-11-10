@@ -23,6 +23,7 @@ public class StudentVO extends SearchVO{
 	private String minorName;
 	private EditStatusVO editStatusInfo;
 	
+	
 	public EditStatusVO getEditStatusInfo() {
 		return editStatusInfo;
 	}

@@ -3,9 +3,10 @@ package com.kh.project.gradeManage.vo;
 import java.util.List;
 
 public class SemesterVO {
-	public int semId;
-	public int year;
-	public int semester;
+	private int semId;
+	private int year;
+	private int semester;
+	private String semName;
 	private List<StuGradeVO> stuGradeList;
 	
 	public int getSem_id() {
@@ -31,6 +32,12 @@ public class SemesterVO {
 	}
 	public void setStuGradeList(List<StuGradeVO> stuGradeList) {
 		this.stuGradeList = stuGradeList;
+	}
+	public String getSemName() {
+		return semName;
+	}
+	public void setSemName(String semName) {
+		this.semName = semName;
 	}
 	
 	

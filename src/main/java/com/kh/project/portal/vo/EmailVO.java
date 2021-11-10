@@ -5,6 +5,7 @@ public class EmailVO {
 	private String to;
 	private String subject;
 	private String contents;
+	
 	public String getFrom() {
 		return from;
 	}

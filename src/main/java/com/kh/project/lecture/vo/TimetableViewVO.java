@@ -8,6 +8,7 @@ public class TimetableViewVO {
 	private String lecPeriod;
 	private int lecCredit;
 	private int stuNo;
+	
 	public String getEnrolmentId() {
 		return enrolmentId;
 	}

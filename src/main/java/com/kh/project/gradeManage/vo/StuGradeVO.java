@@ -4,14 +4,14 @@ import com.kh.project.lecture.vo.LectureVO;
 import com.kh.project.portal.vo.MemberVO;
 
 public class StuGradeVO {
-	public String subjectId;
-	public String lecId;
-	public String grade;
-	public int stuNo;
-	public int semId;
-	public GradeVO gradeInfo;
-	public LectureVO lectureInfo;
-	public SemesterVO semesterInfo;
+	private String subjectId;
+	private String lecId;
+	private String grade;
+	private int stuNo;
+	private int semId;
+	private GradeVO gradeInfo;
+	private LectureVO lectureInfo;
+	private SemesterVO semesterInfo;
 	private MemberVO memberInfo;
 	
 	

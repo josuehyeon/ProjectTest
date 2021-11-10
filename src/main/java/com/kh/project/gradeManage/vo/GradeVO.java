@@ -1,8 +1,8 @@
 package com.kh.project.gradeManage.vo;
 
 public class GradeVO {
-	public String grade;
-	public double score;
+	private String grade;
+	private double score;
 	
 	public String getGrade() {
 		return grade;
