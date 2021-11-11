@@ -69,7 +69,7 @@ table {
       <select class="form-select" id="collegeList" name="collNo">
       	  <option value="0">전체</option>
       	<c:forEach items="${collegeList }" var="collegeInfo">
-      	  <option value="${collegeInfo.collNo }">${collegeInfo.collName }</option>
+      	  <option value="${collegeInfo.collNo }" <c:if test="${lectureViewVO.collNo eq collegeInfo.collNo }">selected</c:if>>${collegeInfo.collName }</option>
       	</c:forEach>
       </select>
   </div>
@@ -78,7 +78,7 @@ table {
        <select class="form-select" id="deptList" name="deptId">
        	  <option value="">전체</option>
        	<c:forEach items="${deptList }" var="deptInfo">
-       	  <option value="${deptInfo.deptId }">${deptInfo.deptName }</option>
+       	  <option value="${deptInfo.deptId }" <c:if test="${lectureViewVO.deptId eq deptInfo.deptId }">selected</c:if>>${deptInfo.deptName }</option>
        	</c:forEach>
        </select>
   </div>
