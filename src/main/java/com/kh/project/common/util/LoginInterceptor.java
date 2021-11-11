@@ -18,8 +18,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		Object object = session.getAttribute("loginInfo");
 		//만약 로그인이 되어있지 않으면
 		if (object == null) {
-			//로그인 페이지로 다시 보냄
-			response.sendRedirect("/portal/loginJsp");
+			//로그아웃 처리를 한다
+			response.sendRedirect("/portal/logout");
 			//더 이상 컨트롤러 요청으로 가지 않도록 false로 반환한다
 			return false;
 			

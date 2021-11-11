@@ -59,7 +59,7 @@ public class PortalController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("loginInfo");
-		return "redirect:/portal/loginJsp";
+		return "portal/logout_result";
 	}
 
 	//처리 "이메일 보내기"
