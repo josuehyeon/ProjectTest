@@ -6,7 +6,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/gradeManage/chk_grade.js?ver=4"></script>
+<style type="text/css">
+.selectDiv{
+	margin-top: 50px;
+}
+table{
+	width: 700px;
+	background-color: white;
+}
+td{
+	border: 1px solid black;
+	height: 30px;
+}
+#gradeTableDiv{
+	margin-top: 30px;
+}
+thead{
+	background-color: gray;
+}
+</style>
+<script type="text/javascript" src="/resources/gradeManage/chk_grade.js?ver=5"></script>
 </head>
 <body>
 <!-- <div>
@@ -18,7 +37,8 @@
 </div> -->
 
 <!-- 학년, 학기 리스트(feat.foreach) -->
-<div>
+<div class="selectDiv">
+	<label for="semesterSelector">학기</label>
 	<select id="semesterSelector">
 		<option value="0">전체</option>
 		<c:forEach items="${semesterList}" var="semester">
@@ -29,16 +49,18 @@
 <!-- 학생 성적 리스트 테이블(feat.foreach) -->
 <div id="gradeTableDiv">
 	<table>
-		<tr>
-			<td>학년</td>
-			<td>학기</td>
-			<td>학번</td>
-			<td>과목코드</td>
-			<td>과목명</td>
-			<td>학점</td>
-			<td>등급</td>
-			<td>점수</td>
-		</tr>
+		<thead>
+			<tr>
+				<td>학년</td>
+				<td>학기</td>
+				<td>학번</td>
+				<td>과목코드</td>
+				<td>과목명</td>
+				<td>학점</td>
+				<td>등급</td>
+				<td>점수</td>
+			</tr>
+		</thead>
 		 <c:forEach items="${gradeList }" var="grade">
 			<tr>
 				<td>${grade.semesterInfo.year}</td>
