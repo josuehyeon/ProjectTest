@@ -89,6 +89,7 @@
                   	</c:forEach>
                   </select>
                </div>
+               <div id="profDiv">
                   <!-- 담당교수 -->	
                   <div class="col">
                   	 <label for="empList" class="form-label">담당교수</label>
@@ -107,6 +108,7 @@
                   	</c:forEach>
                   </select>
                   </div>
+                </div>
                </div>
                <div>
                <div class="col">
