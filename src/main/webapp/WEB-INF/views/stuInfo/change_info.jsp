@@ -30,35 +30,46 @@
 table{
 	border: 1px solid black;
 	width: 600px;
+	background-color: white;
 }
 tr,td{
 	border: 1px solid black;
 }
+.tableDiv{
+	margin-top: 80px;
+}
+.column{
+	background-color: gray;
+}
+.btnDiv{
+	margin-top: 5px;
+}
+input{
+	background-color: #cccccc;
+}
 </style>
 </head>
 <body>
-학생 로그인>내정보>내정보관리>내정보 *수정*
-
 <!-- 변경하면 안되는 정보 그냥 표시만 되게 해둘 것 -->
-<div>
+<div class="tableDiv">
 	<table>
 		<tr>
-			<td rowspan="3">이미지첨부</td>
-			<td>학번</td>
+			<td rowspan="3"><img src="/resources/stuInfo/images/${memberInfo.memIdpic }.jpg"></td>
+			<td class="column">학번</td>
 			<td>${studentInfo.stuNo }</td>
-			<td>이름</td>
+			<td class="column">이름</td>
 			<td>${memberInfo.memName }</td>
 		</tr>
 		<tr>
-			<td>소속</td>
-			<td>${studentInfo.collegeInfo.collName } / ${studentInfo.majorCode }</td>
-			<td>부전공</td>
+			<td class="column">소속</td>
+			<td>${studentInfo.collegeInfo.collName }&nbsp;${studentInfo.majorCode }</td>
+			<td class="column">부전공</td>
 			<td>${studentInfo.minorCode }</td>
 		</tr>
 		<tr>
-			<td>학년/학기</td>
-			<td>${studentInfo.stuYear }학년/${studentInfo.stuSem }학기</td>
-			<td>학적상태</td>
+			<td class="column">학년/학기</td>
+			<td>${studentInfo.stuYear }학년&nbsp;${studentInfo.stuSem }학기</td>
+			<td class="column">학적상태</td>
 			<td>${studentInfo.stuStatus }</td>
 		</tr>
 	</table>
@@ -67,34 +78,42 @@ tr,td{
 <form action="/stuInfo/changeInfo" method="post">
 	<div>
 		<table>
+			<colgroup>
+				<col width="10%;">
+				<col width="40%;">
+				<col width="10%;">
+				<col width="40%;">
+			</colgroup>
 			<tr>
-				<td>생년월일</td>
+				<td class="column">생년월일</td>
 				<td>${memberInfo.memBirth }</td>
-				<td>이메일</td>
-				<td><input type="text" name="memEmail" value="${memberInfo.memEmail}"></td>
+				<td class="column">이메일</td>
+				<td><input type="text" name="memEmail" value="${memberInfo.memEmail}" style="width: 100%;"></td>
 			</tr>
 			<tr>
-				<td>전화번호</td>
-				<td> <input type="text" name="memTel" value="${memberInfo.memTel}s"></td>
-				<td>휴대폰</td>
-				<td> <input type="text" name="memPhone" value="${memberInfo.memPhone}"> </td>
+				<td class="column">전화번호</td>
+				<td> <input type="text" name="memTel" value="${memberInfo.memTel}" style="width: 100%;"></td>
+				<td class="column">휴대폰</td>
+				<td> <input type="text" name="memPhone" value="${memberInfo.memPhone}" style="width: 100%;"> </td>
 			</tr>
 			<tr>
-				<td>우편번호</td>
+				<td class="column">우편번호</td>
 				<td>
 					<input type="text" name="postcode" id="postcode" value="${memberInfo.postcode }" placeholder="우편번호" required style="width: 25%;" readonly>
-					<input type="button" class="btn" onclick="openPostCode();" value="클릭 우편번호 찾기" style="width: 25%; padding: 0; font-size: 16pt;">
+					<input type="button" class="btn" onclick="openPostCode();" value="우편번호 찾기" style="width: 35%; padding: 0; font-size: 12pt; background-color: gray;">
 				</td>
-				<td>주소</td>
+				<td class="column">주소</td>
 				<td>
-					<input type="text" name="memAddr" id="roadAddress" value="${memberInfo.memAddr }" placeholder="주소" required readonly>
+					<input type="text" name="memAddr" id="roadAddress" value="${memberInfo.memAddr }" placeholder="주소" required readonly style="width: 100%;">
 						
 				</td>
 			</tr>
 		</table>
 	</div>
+	<div class="btnDiv">
+		<input type="submit" value="변경">
+	</div>
 	<input type="hidden" name="memNo" value="${studentInfo.stuNo }">
-	<input type="submit" value="변경">
 	<div class="eachInputDiv">
 	</div>
 </form>
