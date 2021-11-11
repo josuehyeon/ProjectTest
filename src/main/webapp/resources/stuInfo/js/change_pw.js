@@ -59,9 +59,9 @@ $(document).ready(function(){
 		var pwJTest = !pwJ.test($('#newPw').val()); // =>영어만 있거나, 숫자만 있거나, 공백이 있거나, 자리수가 안 맞으면 => true
 		
 		if(pwJTest){
-			var str = '영어와 숫자를 모두 포함하여야 하며, 6~10자리 사이여야 합니다.';
+			var str = '영어와 숫자를 모두 포함하여야 하며, 6~10자리 사이로 입력해 주십시오.';
 			$('#newPwSpan').append(str);
-		} // if(pwJTest) 닫기
+		}// if(pwJTest) 닫기
 		
 		if( newPw==newPwCheck && !pwJTest ){
 			$('#changePwForm').submit();

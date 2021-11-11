@@ -23,11 +23,11 @@
 span{
 	color: red;
 }
-#newPwCheck{
-
+#btnDiv{
+	margin-top: 10px;
 }
 </style>
-<script type="text/javascript" src="/resources/stuInfo/js/change_pw.js?ver=117"></script>
+<script type="text/javascript" src="/resources/stuInfo/js/change_pw.js?ver=119"></script>
 </head>
 <body>
 	<!-- 비밀번호 변경 Div -->
@@ -52,9 +52,9 @@ span{
 		 		<span id="newPwSpan" style="font-size: 14px;"></span>
 				<span id="newPwCheckSpan" style="font-size: 14px;"></span>
 		</div>
-	<!-- 비밀번호 변경 버튼 Div -->	
+	<!-- 비밀번호 변경 버튼 Div -->
 		<div id="btnDiv">
-			<input type="button" value="비번변경" onclick="changePw();">
+			<input type="button" value="비밀번호 변경" onclick="changePw();">
 		</div>
 	<!-- hidden으로 세션에 저장된 MEM_NO 보내기 -->	
 		<input type="hidden" name="memNo" value="${sessionScope.loginInfo.memNo }">
