@@ -24,6 +24,13 @@ td{
 thead{
 	background-color: gray;
 }
+select{
+	height: 100%;
+	width: 100%;
+}
+.column{
+	background-color: gray;
+}
 </style>
 <script type="text/javascript" src="/resources/gradeManage/chk_grade.js?ver=5"></script>
 </head>
@@ -38,13 +45,21 @@ thead{
 
 <!-- 학년, 학기 리스트(feat.foreach) -->
 <div class="selectDiv">
-	<label for="semesterSelector">학기</label>
-	<select id="semesterSelector">
-		<option value="0">전체</option>
-		<c:forEach items="${semesterList}" var="semester">
-			<option value="${semester.semId}">${semester.semName}</option>
-		</c:forEach>
-	</select>
+	<table>
+		<tr>
+			<td class="column">
+				<label for="semesterSelector">학기</label>
+			</td>
+			<td>
+				<select id="semesterSelector">
+					<option value="0">전체</option>
+					<c:forEach items="${semesterList}" var="semester">
+						<option value="${semester.semId}">${semester.semName}</option>
+					</c:forEach>
+				</select>
+			</td>
+		</tr>
+	</table>
 </div>
 <!-- 학생 성적 리스트 테이블(feat.foreach) -->
 <div id="gradeTableDiv">

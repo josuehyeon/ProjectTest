@@ -93,6 +93,7 @@
 				        	<li><a href="/stuInfo/changeInfoJsp" aria-label="subemnu">내 정보 수정</a></li>
 				        	<li><a href="/stuInfo/chkPwJsp" aria-label="subemnu">비밀번호 변경</a></li>
 				        	<li><a href="/stuInfo/chkTimetableJsp" aria-label="subemnu">시간표</a></li>
+				        	<li><a href=/grade/graduationJsp aria-label="subemnu">졸업 요건</a></li>
 					    </ul>
 					</li>
 		    		<li><a class="nav-link link-#00154a mmn" href="/stuManage/goMain">학적관리</a>
@@ -113,7 +114,6 @@
 				        	<li><a href="/lecture/goEnrolment">수강 신청</a></li>
 				        	<li><a href="/lecture/selectLecture">강의리스트</a></li>
 				        	<li><a href=/grade/chkGradeJsp>성적 조회</a></li>
-				        	<li><a href=/grade/chkGradeJsp>졸업 요건</a></li>
 					    </ul>
 		    		</li>
 			    	<li><a class="nav-link link-#00154a mmn" href="/board/infoPark">정보광장</a>

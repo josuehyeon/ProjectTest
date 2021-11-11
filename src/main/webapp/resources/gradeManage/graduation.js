@@ -21,7 +21,7 @@ $(document).ready(function() {
 				$('#gradeTableDiv').empty();// 선택한 태그를 제외한 하위태그 모두를 지워버린다.
 					var str = '';
 					str += '<table>'
-					str +=		'<tr>'
+					str +=		'<tr class="column">'
 					str += 			'<td>학년</td>'
 					str += 			'<td>학기</td>'
 					str += 			'<td>학번</td>'
@@ -68,9 +68,9 @@ $(document).ready(function() {
 					var str = '';
 					str += '<table>'
 					str += 		'<tr>'
-					str += 			'<td>총 이수학점</td>'
+					str += 			'<td class="column">총 이수학점</td>'
 					str += 			'<td>'+result.lectureInfo.lecCredit+'</td>'
-					str += 			'<td>평점평균</td>'
+					str += 			'<td class="column">평점평균</td>'
 					str += 			'<td>'+result.gradeInfo.score+'</td>'
 					str += 		'</tr>'
 					str += '</table>'
