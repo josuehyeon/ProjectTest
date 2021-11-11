@@ -170,11 +170,16 @@ public class AdminController {
 	@GetMapping("/stuSwitch")
 	public String stuSwitch(Model model, ChangeMajorVO changeMajorVO) {
 		model.addAttribute("AdminChangeMajorRequestList", adminService.AdminChangeMajorRequestList());
-//		int[] a = changeMajorVO.getStuNoList();
 		
 		//복수전공 신청 페이지
 		model.addAttribute("AdminDoubleMajorRequestList", adminService.AdminDoubleMajorRequestList());
 		return "admin/stuSwitch";
+	}
+	
+	@ResponseBody
+	@PostMapping("/stuSwitchAjax")
+	public StudentVO stuSwitchAjax(Model model, StudentVO studentVO) {
+		return adminService.selectModalStudent(studentVO);
 	}
 	
 	//전과신청 목록 띄우기

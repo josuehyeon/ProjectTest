@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=11"></script>
+<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=15"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -25,6 +25,9 @@ div > span{
 }
 #table{
 	width: 450px;
+}
+#memName:hover {
+	cursor: pointer;
 }
 </style>
 </head>
@@ -128,7 +131,7 @@ div > span{
 								</tr>
 								<tr>
 									<td class="td_1">이름</td>
-									<td class="td_2">${student.memberInfo.memName }</td>
+									<td class="td_2" id="memName">${student.memberInfo.memName }</td>
 								</tr>
 								<tr>
 									<td class="td_1">학년</td>
@@ -191,7 +194,7 @@ div > span{
 				</td>
 				<td>${student.collegeInfo.collName }</td>
 				<td>${student.deptInfo.deptName }</td>
-				<td></td>
+				<td>${student.yellowCnt }</td>
 			</tr>
 		</c:forEach>
 	</table>

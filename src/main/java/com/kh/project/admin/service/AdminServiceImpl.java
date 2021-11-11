@@ -99,6 +99,11 @@ public class AdminServiceImpl implements AdminService{
 	public void insertYellowCard(AdminVO adminVO) {
 		sqlSession.insert("adminMapper.insertYellowCard", adminVO);
 	}
+
+	@Override
+	public StudentVO selectModalStudent(StudentVO studentVO) {
+		return sqlSession.selectOne("adminMapper.selectModalStudent", studentVO);
+	}
 	
 	
 	

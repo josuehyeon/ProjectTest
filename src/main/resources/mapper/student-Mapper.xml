@@ -14,6 +14,7 @@
 		<result column="STU_STATUS" property="stuStatus" />
 		<result column="MAJOR_NAME" property="majorName" />
 		<result column="MINOR_NAME" property="minorName" />
+		<result column="YELLOW_CNT" property="yellowCnt" />
 		<association property="memberInfo" resultMap="memberMapper.member"/>
 		<association property="collegeInfo" resultMap="collegeMapper.college"/>
 		<association property="deptInfo" resultMap="deptMapper.dept"/>

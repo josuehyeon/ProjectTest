@@ -9,13 +9,18 @@ $(document).ready(function(){
 		
 		var email = $(this).parent().prev().find('.emailTd').text();
 		
+		var modalId = $(this).closest('.modal').attr('id');
 		
 		$.ajax({
 	        url: '/admin/mailNoticeAjax', //요청경로
 	        type: 'post',
 	        data:{'stuNo':stuNo , 'yellReason':yellReason, 'email':email}, //필요한 데이터
 	        success: function(result) {
+	        	$('#' + modalId).modal('hide');
 	        	
+	        	$('#' + modalId).on('hidden.bs.modal', function (e) {
+	        		alert('메일 전송됐습니다');
+	        	});
 	        },
 	        error: function(){
 	        	//ajax 실행 실패 시 실행되는 구간
@@ -27,6 +32,8 @@ $(document).ready(function(){
     
 	
 	
+
+
 	
 });
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kh.project.admin.vo.AdminVO;
 import com.kh.project.admin.vo.EditStatusVO;
+import com.kh.project.portal.vo.MemberVO;
 import com.kh.project.stuInfo.vo.StudentVO;
 import com.kh.project.stuManage.vo.ChangeMajorVO;
 import com.kh.project.stuManage.vo.DoubleMajorVO;
@@ -48,6 +49,10 @@ public interface AdminService {
 	DoubleMajorVO modalStuInfoDM(DoubleMajorVO doubleMajorVO);
 	
 	void insertYellowCard(AdminVO adminVO);
+	
+	//전과, 복전 공통모달
+	//admin 매퍼에 쿼리작성함
+	StudentVO selectModalStudent(StudentVO studentVO);
 	
 }
 

@@ -23,7 +23,16 @@ public class StudentVO extends SearchVO{
 	private String minorName;
 	private EditStatusVO editStatusInfo;
 	
+	private int yellowCnt;
 	
+	
+	
+	public int getYellowCnt() {
+		return yellowCnt;
+	}
+	public void setYellowCnt(int yellowCnt) {
+		this.yellowCnt = yellowCnt;
+	}
 	public EditStatusVO getEditStatusInfo() {
 		return editStatusInfo;
 	}
