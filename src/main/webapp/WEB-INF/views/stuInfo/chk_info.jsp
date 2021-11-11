@@ -18,7 +18,8 @@ tr,td{
 	border: 1px solid black;
 }
 .column{
-	background-color: gray;
+	background-color: #003264;
+	color: white;
 }
 .btnDiv{
 	margin-top: 5px;

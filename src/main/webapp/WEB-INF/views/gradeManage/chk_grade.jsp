@@ -22,17 +22,19 @@ td{
 	margin-top: 30px;
 }
 thead{
-	background-color: gray;
+	background-color: #003264;
+	color: white;
 }
 select{
 	height: 100%;
 	width: 100%;
 }
 .column{
-	background-color: gray;
+	background-color: #003264;
+	color: white;
 }
 </style>
-<script type="text/javascript" src="/resources/gradeManage/chk_grade.js?ver=5"></script>
+<script type="text/javascript" src="/resources/gradeManage/chk_grade.js?ver=9"></script>
 </head>
 <body>
 <!-- <div>
@@ -64,12 +66,20 @@ select{
 <!-- 학생 성적 리스트 테이블(feat.foreach) -->
 <div id="gradeTableDiv">
 	<table>
+		<colgroup>
+			<col width="10%">
+			<col width="10%">
+			<col width="10%">
+			<col width="40%"> 
+			<col width="10%">
+			<col width="10%">
+			<col width="10%">
+		</colgroup>
 		<thead>
 			<tr>
 				<td>학년</td>
 				<td>학기</td>
 				<td>학번</td>
-				<td>과목코드</td>
 				<td>과목명</td>
 				<td>학점</td>
 				<td>등급</td>
@@ -81,7 +91,6 @@ select{
 				<td>${grade.semesterInfo.year}</td>
 				<td>${grade.semesterInfo.semester}</td>
 				<td>${grade.stuNo}</td>
-				<td>${grade.lecId}</td>
 				<td>${grade.lectureInfo.lecName}</td>
 				<td>${grade.lectureInfo.lecCredit}</td>
 				<td>${grade.grade}</td>

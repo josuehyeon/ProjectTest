@@ -60,13 +60,21 @@ $(document).ready(function(){
 				$('#studentListTable').empty();
 				
 				var str ='';
-				str += '<tr>';
-				str += '<td>학번</td>';
-				str += '<td>학년</td>';
-				str += '<td>이름</td>';
-				str += '<td>소속 대학</td>';
-				str += '<td>전공</td>';
-				str += '<td>학적상태</td>';
+				str +='<colgroup>';
+				str +='<col width="10%;">';
+				str +='<col width="10%;">';
+				str +='<col width="15%;">';
+				str +='<col width="20%;">';
+				str +='<col width="35%;">';
+				str +='<col width="10%;">';
+				str +='</colgroup>';
+				str += '<tr class="column">';
+				str += 		'<td>학번</td>';
+				str += 		'<td>학년</td>';
+				str += 		'<td>이름</td>';
+				str += 		'<td>소속 대학</td>';
+				str += 		'<td>전공</td>';
+				str += 		'<td>학적상태</td>';
 				str += '</tr>';
 				
 				$(result).each(function(index, element){
@@ -74,8 +82,8 @@ $(document).ready(function(){
 					str += '<td>' +  element.stuNo  + '</td>';
 					str += '<td>' + element.stuYear + '</td>';
 					str += '<td><a href="/stuManage/showStuDetail?memNo=' + element.stuNo  + '">' + element.memberInfo.memName + '</a></td>';
-					str += '<td>' + element.collNo     + '</td>';
-					str += '<td>' + element.majorCode + '</td>';
+					str += '<td>' + element.collegeInfo.collName     + '</td>';
+					str += '<td>' + element.deptInfo.deptName + '</td>';
 					str += '<td>' + element.stuStatus  + '</td>';
 					str += '</tr>';
 				});

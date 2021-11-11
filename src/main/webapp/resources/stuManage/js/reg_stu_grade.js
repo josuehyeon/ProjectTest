@@ -17,7 +17,7 @@ $(document).ready(function(){
 	        	
 	        	var str ='';
 	        	str += '<table>' ; 
-	        	str += '<tr>' ;
+	        	str += '<tr class="column">' ;
 	        	str += '<td>학번</td>';
 	        	str += '<td>이름</td>';
 	        	str += '<td>성적</td>';

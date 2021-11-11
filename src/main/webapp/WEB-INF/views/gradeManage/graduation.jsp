@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/gradeManage/graduation.js?ver=10"></script>
+<script type="text/javascript" src="/resources/gradeManage/graduation.js?ver=12"></script>
 <style type="text/css">
 table{
 	border: 1px solid black;
@@ -22,9 +22,11 @@ tr,td{
 }
 select {
 	width: 70%;
+	height: 100%;
 }
 .column{
-	background-color: gray;
+	background-color: #003264;
+	color: white;
 }
 </style>
 </head>
@@ -69,22 +71,29 @@ select {
 <!-- 학생 성적 리스트 테이블(feat.foreach) -->
 <div id="gradeTableDiv">
 	<table>
+		<colgroup>
+			<col width="10%">
+			<col width="7%">
+			<col width="13%">
+			<col width="40%">
+			<col width="10%">
+			<col width="10%">
+			<col width="10%">
+		</colgroup>
 		<tr>
 			<td class="column">학년</td>
 			<td class="column">학기</td>
 			<td class="column">학번</td>
-			<td class="column">과목코드</td>
 			<td class="column">과목명</td>
 			<td class="column">학점</td>
 			<td class="column">등급</td>
 			<td class="column">점수</td>
 		</tr>
-		 <c:forEach items="${gradeList }" var="grade">
+		<c:forEach items="${gradeList }" var="grade">
 			<tr>
 				<td>${grade.semesterInfo.year}</td>
 				<td>${grade.semesterInfo.semester}</td>
 				<td>${grade.stuNo}</td>
-				<td>${grade.lecId}</td>
 				<td>${grade.lectureInfo.lecName}</td>
 				<td>${grade.lectureInfo.lecCredit}</td>
 				<td>${grade.grade}</td>

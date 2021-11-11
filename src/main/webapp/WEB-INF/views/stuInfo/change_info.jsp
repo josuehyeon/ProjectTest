@@ -39,13 +39,17 @@ tr,td{
 	margin-top: 80px;
 }
 .column{
-	background-color: gray;
+	background-color: #003264;
+	color: white;
 }
 .btnDiv{
 	margin-top: 5px;
 }
 input{
-	background-color: #cccccc;
+	background-color: #dddddd;
+}
+input:focus {
+	background-color: #aaaaaa;
 }
 </style>
 </head>
@@ -88,7 +92,7 @@ input{
 				<td class="column">생년월일</td>
 				<td>${memberInfo.memBirth }</td>
 				<td class="column">이메일</td>
-				<td><input type="text" name="memEmail" value="${memberInfo.memEmail}" style="width: 100%;"></td>
+				<td><input type="text" name="memEmail" value="${memberInfo.memEmail}" style="width: 100%;" autocomplete="none"></td>
 			</tr>
 			<tr>
 				<td class="column">전화번호</td>
@@ -100,7 +104,7 @@ input{
 				<td class="column">우편번호</td>
 				<td>
 					<input type="text" name="postcode" id="postcode" value="${memberInfo.postcode }" placeholder="우편번호" required style="width: 25%;" readonly>
-					<input type="button" class="btn" onclick="openPostCode();" value="우편번호 찾기" style="width: 35%; padding: 0; font-size: 12pt; background-color: gray;">
+					<input type="button" class="btn" onclick="openPostCode();" value="우편번호 찾기" style="width: 35%; padding: 0; font-size: 12pt; background-color: #003264; color: white;">
 				</td>
 				<td class="column">주소</td>
 				<td>

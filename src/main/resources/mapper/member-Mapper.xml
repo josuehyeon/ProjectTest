@@ -48,6 +48,7 @@
 			  ,POSTCODE
 			  ,TO_CHAR(MEM_BIRTH , 'YYYY-MM-DD') MEM_BIRTH
 			  ,MEM_IDPIC
+			  ,MEM_NAME
 		FROM   MEMBER
 		WHERE  MEM_NO = #{memNo}		
 	</select>

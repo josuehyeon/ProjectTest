@@ -6,23 +6,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/stuManage/js/show_stu_info.js?ver=20"></script>
+<script type="text/javascript" src="/resources/stuManage/js/show_stu_info.js?ver=22"></script>
 <style type="text/css">
 div{
 	margin-top: 
 }
 table {
-	width: 600px;
+	width: 700px;
 	background-color: white;
 }
 td{
 	border: 1px solid black;
 }
 input[type=text]{
-	width: 99%;
+	width: 100%;
 }
 #upper{
 	margin-top: 50px;
+}
+.column{
+	background-color: #003264;
+	color: white;
+}
+#showMeSelect{
+	width: 100%;
+	height: 100%;
 }
 </style>
 </head>
@@ -32,18 +40,18 @@ input[type=text]{
 	<div id="upper">
 		<table>
 			<tr>
-				<td>대학</td>
+				<td class="column">대학</td>
 				<td> 
-					<select name="collNo" id="collegeList">
+					<select name="collNo" id="collegeList" style="width: 100%; height: 100%;">
 						<option value="0">전체</option>
 						<c:forEach items="${collList}" var="eachColl">
 							<option value="${eachColl.collNo }">${eachColl.collName }</option>
 						</c:forEach>
 					</select> 
 				</td>
-				<td>학년</td>
+				<td class="column">학년</td>
 				<td> 
-					<select name="stuYear" id="stuYear">
+					<select name="stuYear" id="stuYear" style="width: 100%; height: 100%;">
 						<option value="0">전체</option>
 						<option value="1">1학년</option>
 						<option value="2">2학년</option>
@@ -51,23 +59,23 @@ input[type=text]{
 						<option value="4">4학년</option>
 					</select> 
 				</td>
-				<td rowspan="3">
+				<td rowspan="2">
 					<input type="button" id="showMeSelect" value="검색"><!--조회 버튼!!!!!!!!!!!!!!!!!!!! -->
 				</td>
 			</tr>
 			<tr>
-				<td>전공</td>
+				<td class="column">전공</td>
 				<td id="deptTd"> 
-					<select name="deptId" id="deptId">
+					<select name="deptId" id="deptId" style="width: 100%; height: 100%;">
 						<option value="">전체</option>
 					 	<c:forEach items="${deptList }" var="eachDept">
 							<option value="${eachDept.deptId }">${eachDept.deptName }</option>
 						</c:forEach>
 					</select> 
 				</td>
-				<td>학적</td> <!-- 학적상태 형태:(재학 0 / 휴학 1 / 복학 2/ 자퇴3 / 제적 4) --> 
+				<td class="column">학적</td> <!-- 학적상태 형태:(재학 0 / 휴학 1 / 복학 2/ 자퇴3 / 제적 4) --> 
 				<td> 
-					<select name="stuStatus" id="stuStatus">
+					<select name="stuStatus" id="stuStatus" style="width: 100%; height: 100%;">
 						<option value="">전체</option>
 						<option value="재학">재학</option>
 						<option value="휴학">휴학</option>
@@ -83,7 +91,7 @@ input[type=text]{
 	<div>
 		<table>
 			<tr>
-				<td>검색</td>
+				<td class="column">검색</td>
 				<td> <input type="text" name="searchValue" id="searchValue" placeholder="이름"> </td>
 			</tr>
 		</table>
@@ -93,7 +101,15 @@ input[type=text]{
 <div id="studentList">
 	<span style="color: red; font-size: 12px;">*학생의 이름을 클릭하면 학생의 상세페이지로 이동합니다</span>
 	<table id="studentListTable">
-		<tr>
+		<colgroup>
+			<col width="10%;">
+			<col width="10%;">
+			<col width="15%;">
+			<col width="20%;">
+			<col width="35%;">
+			<col width="10%;">
+		</colgroup>
+		<tr class="column">
 			<td>학번</td>
 			<td>학년</td>
 			<td>이름</td>
@@ -106,8 +122,8 @@ input[type=text]{
 				<td>${eachStu.stuNo }</td>
 				<td>${eachStu.stuYear }</td>
 				<td><a href="/stuManage/showStuDetail?memNo=${eachStu.stuNo}">${eachStu.memberInfo.memName}</a></td>
-				<td>${eachStu.collNo}</td>
-				<td>${eachStu.majorCode }</td>
+				<td>${eachStu.collegeInfo.collName}</td>
+				<td>${eachStu.deptInfo.deptName }</td>
 				<td>${eachStu.stuStatus}</td>
 			</tr>
 		</c:forEach>
