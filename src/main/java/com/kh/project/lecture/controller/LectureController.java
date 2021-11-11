@@ -79,6 +79,24 @@ public class LectureController {
 
 		return vo;
 	}
+	
+	// 강의등록
+	@ResponseBody
+	@PostMapping("/selectDeptAjax")
+	public RegLectureSelectBoxVO selectDeptAjax(CollegeVO collegeVO) {
+		
+	
+		// 교수 목록 조회
+		List<EmpVO> profList = lectureService.selectProfList2(collegeVO);
+		// 조교 목록 조회
+		List<EmpVO> assiList = lectureService.selectAssiList2(collegeVO);
+		
+		RegLectureSelectBoxVO vo = new RegLectureSelectBoxVO();
+		vo.setProfList(profList);
+		vo.setAssiList(assiList);
+		
+		return vo;
+	}
 
 	// 강의 리스트 조회
 	@GetMapping("/selectLecture")

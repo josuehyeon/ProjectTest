@@ -1,6 +1,6 @@
 package com.kh.project.stuManage.vo;
 
-public class CollegeVO {
+public class CollegeVO extends DeptVO{
 	private int collNo;
 	private String collName;
 	

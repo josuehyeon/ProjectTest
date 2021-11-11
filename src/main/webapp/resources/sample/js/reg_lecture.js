@@ -58,7 +58,7 @@ $(document).ready(function(){
 	//학과에따른 교수조교수 나오게
 	//이벤트 처리
 	$(document).on('change', '#deptList', function() {
-		var collNo = $('#deptList').val();
+		var deptId = $('#deptList').val();
 		
 		//ajax 사용
 		$.ajax({
