@@ -155,9 +155,6 @@ table {
 						</div>
 					</div>
 				</div>
-
-
-
 <table class="table table-hover">
 <caption align="top">수강신청</caption>
   <thead>
