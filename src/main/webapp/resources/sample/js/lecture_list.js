@@ -29,6 +29,11 @@ $(document).ready(function(){
             type: 'get',
             data:{'lecId':lecId}, //필요한 데이터
             success: function(result) {
+            	if(result.originPdfName==null){
+            		alert('첨부파일이 없습니다');
+            		return;
+            	}
+            	
             	$('.modal-body').empty();
             	
             	var str = '<iframe src="/resources/pdfs/' + result.attachedPdfName + '"></iframe>';

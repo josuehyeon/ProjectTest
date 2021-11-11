@@ -57,7 +57,7 @@ table {
 }
 .pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
 </style>
-<script type="text/javascript" src="/resources/sample/js/lecture_list.js?ver=222222222222259"></script>
+<script type="text/javascript" src="/resources/sample/js/lecture_list.js?ver=22122259"></script>
 </head>
 <body>
 
