@@ -30,6 +30,13 @@ $(document).ready(function(){
    
    //1.휴학 승인
    $(document).on('click', '.stopStudyBtn', function() { 
+	   //체크된 체크박스의 개수
+	   var b = $('.check:checked').length;
+	   if(b == 0){
+		   alert('선택한 학생이 없습니다');
+		   return;
+	   }
+	   
 	   
 	   alert('휴학 승인완료');
 	   //일단 데이터 여러개를 담을 수 있는 stuNo 변수를 만든다
@@ -46,6 +53,13 @@ $(document).ready(function(){
    
    //2.복학 승인
    $(document).on('click', '.againStudyBtn', function() { 
+	 //체크된 체크박스의 개수
+	   var b = $('.check:checked').length;
+	   if(b == 0){
+		   alert('선택한 학생이 없습니다');
+		   return;
+	   }
+	   
 	   
 	   alert('복학 승인완료');
 	   //일단 데이터 여러개를 담을 수 있는 stuNo 변수를 만든다
@@ -62,6 +76,13 @@ $(document).ready(function(){
    
    //3.휴학 승인
    $(document).on('click', '.exitStudyBtn', function() { 
+	 //체크된 체크박스의 개수
+	   var b = $('.check:checked').length;
+	   if(b == 0){
+		   alert('선택한 학생이 없습니다');
+		   return;
+	   }
+	   
 	   
 	   alert('자퇴 승인완료');
 	   //일단 데이터 여러개를 담을 수 있는 stuNo 변수를 만든다
@@ -78,6 +99,13 @@ $(document).ready(function(){
 
    
    $(document).on('click', '.notOkayBtn', function(){
+	 //체크된 체크박스의 개수
+	   var b = $('.check:checked').length;
+	   if(b == 0){
+		   alert('선택한 학생이 없습니다');
+		   return;
+	   }
+	   
 	   alert('승인대기 변경');
 	   var stuNoList = new Array();
 	   
@@ -92,6 +120,13 @@ $(document).ready(function(){
    }); 
    
    $(document).on('click', '.deleteBtn', function(){
+	 //체크된 체크박스의 개수
+	   var b = $('.check:checked').length;
+	   if(b == 0){
+		   alert('선택한 학생이 없습니다');
+		   return;
+	   }
+	   
 	   alert('중복 삭제');
 	   var stuNoList = new Array();
 	   

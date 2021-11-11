@@ -104,6 +104,16 @@ public class AdminServiceImpl implements AdminService{
 	public StudentVO selectModalStudent(StudentVO studentVO) {
 		return sqlSession.selectOne("adminMapper.selectModalStudent", studentVO);
 	}
+
+	@Override
+	public void updateChange(StudentVO studentVO) {
+		sqlSession.update("adminMapper.updateChange", studentVO);
+	}
+
+	@Override
+	public void updateRealChange(StudentVO studentVO) {
+		sqlSession.update("adminMapper.updateRealChange", studentVO);
+	}
 	
 	
 	

@@ -54,6 +54,10 @@ public interface AdminService {
 	//admin 매퍼에 쿼리작성함
 	StudentVO selectModalStudent(StudentVO studentVO);
 	
+	void updateChange(StudentVO studentVO);
+	
+	void updateRealChange(StudentVO studentVO);
+	
 }
 
 

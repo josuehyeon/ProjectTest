@@ -72,6 +72,21 @@
 		AND M.MEM_NO = #{stuNo}
 	</select>
 	
+	<update id="updateChange">
+		UPDATE CHANGE_MAJOR
+		SET
+		UPDATE_DATE = SYSDATE
+		, STATUS = 'Y'
+		WHERE STU_NO = #{stuNo}
+	</update>
+	
+	<update id="updateRealChange">
+		UPDATE STUDENT
+		SET
+		COLL_NO = (SELECT UP_COLL FROM CHANGE_MAJOR WHERE STU_NO = #{stuNo})
+		, MAJOR_CODE = (SELECT UP_DEPT FROM CHANGE_MAJOR WHERE STU_NO = #{stuNo})
+		WHERE STU_NO = #{stuNo}
+	</update>
 	
 
 </mapper>

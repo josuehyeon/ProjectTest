@@ -39,6 +39,34 @@ $(document).ready(function(){
 	   $('#exampleModal').modal('show');
    });
    
+   
+   
+   $(document).on('click', '#modalAjax', function() {
+	   var stuNo = $('.stuNoTd').text();
+	   
+	   // ajax로 선택한 학생의 정보를 조회
+	   $.ajax({
+	        url: '/admin/stuSwitchRealAjax', //요청경로
+	        type: 'post',
+	        data:{'stuNo':stuNo}, //필요한 데이터
+	        success: function(result) {
+	        	$('#exampleModal').modal('hide');
+	        	
+	        	$('#exampleModal').on('hidden.bs.modal', function (e) {
+	        		alert('승인되었습니다');
+	        		location.href = '/admin/stuSwitch';
+	        	});
+	        },
+	        error: function(){
+	        	//ajax 실행 실패 시 실행되는 구간
+	        	alert('error');
+	        } //error 닫기
+		}); //ajax 닫기
+	   
+	   
+	  
+   });
+   
 });
 
 /* 함수선언 영역*/

@@ -181,6 +181,13 @@ public class AdminController {
 	public StudentVO stuSwitchAjax(Model model, StudentVO studentVO) {
 		return adminService.selectModalStudent(studentVO);
 	}
+
+	@ResponseBody
+	@PostMapping("/stuSwitchRealAjax")
+	public void stuSwitchRealAjax(Model model, StudentVO studentVO) {
+		adminService.updateChange(studentVO);
+		adminService.updateRealChange(studentVO);
+	}
 	
 	//전과신청 목록 띄우기
 	@PostMapping("/stuSwitch1")

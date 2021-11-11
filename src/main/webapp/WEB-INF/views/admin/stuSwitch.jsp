@@ -47,7 +47,7 @@ td{
 			<td>
 				<!-- Button trigger modal -->
 				<!-- <input type="button" class="btn btn-primary modalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"  value="처리대기"> -->
-				<input type="button" class="btn btn-primary modalBtn" value="처리대기" data-stuNo="${changeMajorInfo.stuNo }">
+				<input type="button" class="btn btn-primary modalBtn" value='<c:choose><c:when test="${changeMajorInfo.status eq 'N' }">처리대기</c:when><c:otherwise>승인완료</c:otherwise></c:choose>' data-stuNo="${changeMajorInfo.stuNo }">
 			</td>
 			<td>${changeMajorInfo.insertDate }</td>
 		</tr>
@@ -172,7 +172,7 @@ td{
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-        <button type="button" class="btn btn-primary" id="modal">승인하기</button>
+        <button type="button" class="btn btn-primary" id="modalAjax">승인하기</button>
       </div>
     </div>
   </div>
