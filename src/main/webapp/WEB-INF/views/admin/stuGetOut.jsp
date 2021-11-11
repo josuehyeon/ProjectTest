@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuGetOut.js?ver=2"></script>
+<script type="text/javascript" src="/resources/admin/js/stuGetOut.js?ver=3"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -19,13 +19,15 @@ div > span{
 }
 .td_1{
 	width: 100px;
-	text-align: center;
 }
 .td_2{
 	width: 150px;
 }
 #table{
 	width: 450px;
+}
+#nameMouse:hover {
+	cursor: pointer;
 }
 </style>
 </head>
@@ -55,7 +57,8 @@ div > span{
 				<option value="4">4학년</option>
 			</select>
 		</td>
-		<td rowspan="2"><input type="button" value="조회"></td>
+		<!-- <td rowspan="2"><input type="button" value="조회"></td> -->
+		<td rowspan="2"><input type="submit" value="검색"></td>
 	</tr>
 	<tr>
 		<td>전공</td>
@@ -82,15 +85,15 @@ div > span{
 </table>
 <div></div>
 <table>
-	<tr>
+	<!-- <tr>
 		<td>검색</td>
 		<td><input type="text" style="width: 515px;" placeholder="학번 또는 이름을 검색하세요."></td>
 		<td><input type="submit" value="검색"></td>
-	</tr>
+	</tr> -->
 </table>
 </form>
 <div>
-	<span style="color: red;">*학생의 이름을 클릭하면 학생 제적 페이지가 열립니다.</span>
+	<span style="color: red;">*학생의 이름을 클릭하면 제적 페이지가 열립니다.</span>
 </div>
 <div>
 	<table>
@@ -102,18 +105,18 @@ div > span{
 			<td>전공</td>
 			<td>경고횟수</td>
 		</tr>
-		<c:forEach items="${studentList }" var="student">
+		<c:forEach items="${studentList }" var="student" varStatus="status">
 			<tr>
 				<td>${student.stuNo }</td>
 				<td>${student.stuYear }</td>
-				<td>${student.memberInfo.memName}
+				<td><span data-bs-toggle="modal" data-bs-target="#staticBackdrop${status.index}">${student.memberInfo.memName}</span>
 					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+					<%-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop${status.index}">
 					  이름
-					</button>
+					</button> --%>
 					
 					<!-- Modal -->
-					<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal fade" id="staticBackdrop${status.index}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 					  <div class="modal-dialog">
 					    <div class="modal-content">
 					      <div class="modal-header">
@@ -129,7 +132,7 @@ div > span{
 								</tr>
 								<tr>
 									<td class="td_1">이름</td>
-									<td class="td_2">${student.memberInfo.memName }</td>
+									<td class="td_2"><div id="nameMouse">${student.memberInfo.memName }</div></td>
 								</tr>
 								<tr>
 									<td class="td_1">학년</td>
@@ -137,20 +140,35 @@ div > span{
 								</tr>
 								<tr>
 									<td class="td_1">단과대학</td>
-									<td class="td_2">${student.collNo }</td>
+									<td class="td_2">${student.collegeInfo.collName }</td>
 								</tr>
 								<tr>
 									<td class="td_1">전공</td>
-									<td class="td_2">${student.majorCode }</td>
+									<td class="td_2">${student.deptInfo.deptName }</td>
 								</tr>
 								<tr>
 									<td class="td_1">이메일</td>
-									<td class="td_2">${student.memberInfo.memEmail }</td>
+									<td class="td_2 emailTd">${student.memberInfo.memEmail }</td>
+								</tr>
+								<tr>
+									<td class="td_1">경고학기</td>
+									<td class="td_2">
+										<select>
+											<option value="2021">2021</option>
+											<option value="2020">2020</option>
+										</select>년도
+										<select>
+											<option value="1">1</option>
+											<option value="2">2</option>
+										</select>학기
+									</td>
 								</tr>
 								<tr>
 									<td class="td_1">사유</td>
 									<td class="td_2">
-										<textarea rows="5" cols="45" placeholder="제적 사유를 입력 하세요."></textarea>
+										<textarea rows="5" cols="45" class="getOutReason" placeholder="제적 사유를 입력 하세요">
+											
+										</textarea>
 									</td>
 								</tr>
 								<tr>
@@ -164,15 +182,15 @@ div > span{
 					      </div>
 					      <div class="modal-footer">
 					        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="notOkayBtn">취소</button>
-					        <button type="button" class="btn btn-primary" id="okayBtn">확인</button>
+					        <button type="button" class="btn btn-primary" id="okayBtn" data-stuNo="${student.stuNo}">확인</button>
 					      </div>
 					    </div>
 					  </div>
 					</div>
 				</td>
-				<td>${student.collNo }</td>
+				<td>${student.collegeInfo.collName }</td>
 				<td>${student.deptInfo.deptName }</td>
-				<td></td>
+				<td>${student.yellowCnt }</td>
 			</tr>
 		</c:forEach>
 	</table>

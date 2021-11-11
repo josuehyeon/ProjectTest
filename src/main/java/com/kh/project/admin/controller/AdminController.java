@@ -199,7 +199,7 @@ public class AdminController {
 		//복수전공 목록 띄우기
 		model.addAttribute("AdminDoubleMajorRequestList", adminService.AdminDoubleMajorRequestList());
 		model.addAttribute("modalStuInfoDM", adminService.modalStuInfoDM(doubleMajorVO));
-		System.out.println(adminService.AdminDoubleMajorRequestList());
+		
 		return "admin/stuSwitch";
 	}
 	

@@ -26,7 +26,7 @@ div > span{
 #table{
 	width: 450px;
 }
-#memName:hover {
+#nameMouse:hover {
 	cursor: pointer;
 }
 </style>
@@ -57,7 +57,8 @@ div > span{
 				<option value="4">4학년</option>
 			</select>
 		</td>
-		<td rowspan="2"><input type="button" value="조회"></td>
+		<!-- <td rowspan="2"><input type="button" value="조회"></td> -->
+		<td rowspan="2"><input type="submit" value="검색"></td>
 	</tr>
 	<tr>
 		<td>전공</td>
@@ -84,11 +85,11 @@ div > span{
 </table>
 <div></div>
 <table>
-	<tr>
+	<!-- <tr>
 		<td>검색</td>
 		<td><input type="text" style="width: 515px;" placeholder="학번 또는 이름을 검색하세요."></td>
 		<td><input type="submit" value="검색"></td>
-	</tr>
+	</tr> -->
 </table>
 </form>
 <div>
@@ -131,7 +132,7 @@ div > span{
 								</tr>
 								<tr>
 									<td class="td_1">이름</td>
-									<td class="td_2" id="memName">${student.memberInfo.memName }</td>
+									<td class="td_2"><div id="nameMouse">${student.memberInfo.memName }</div></td>
 								</tr>
 								<tr>
 									<td class="td_1">학년</td>
