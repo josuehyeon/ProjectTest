@@ -15,8 +15,8 @@
 	background-color: #eeeeee;
 }
 .spanDiv{
-	margin-top: 80px;
-	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 50px;
 }
 span{
 	color: red;
@@ -29,13 +29,13 @@ span{
 <form action="/stuInfo/chkPw" method="post">
  	<div id="checkPwDiv">
 		<div class="spanDiv">
-			<p><span>*</span>현재 비밀번호를 확인해주세요</p>
+			<h4><b><span>*</span>현재 비밀번호 확인</b></h4>
 		</div>
-			<label for="memPw">
+		<label for="memPw">
 			현재 비밀번호
 		</label>
-			<input type="hidden" name="memNo" id="memNo" value="${sessionScope.loginInfo.memNo }">
 		<input type="password" name="memPw" id="memPw" autofocus required>
+		<input type="hidden" name="memNo" id="memNo" value="${sessionScope.loginInfo.memNo }">
 		<input type="submit" value="비번확인" onclick="checkPw();">
 	</div>
 </form>
