@@ -148,6 +148,9 @@
                      <if test="lecId != null and !lecId.equals('')">
 						AND LEC_ID = #{lecId}
 					</if>
+                     <if test="collNo != 0">
+						AND COLL_NO = #{collNo}
+					</if>
 					<if test="deptId != null and !deptId.equals('')">
 				    	AND DEPT_ID LIKE '%'||UPPER(#{deptId})||'%'
 				    </if>
