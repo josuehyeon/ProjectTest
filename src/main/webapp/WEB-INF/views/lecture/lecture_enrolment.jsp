@@ -133,8 +133,8 @@ table {
 
 	<div class="pagingDiv">
 					<div class="row">
-						<div class="col-11">
-									<nav aria-label="Page navigation example">
+						<div class="col-12">
+									<div aria-label="Page navigation example">
 							  <ul class="pagination justify-content-center">
 							    <li class="page-item <c:if test="${!lectureViewVO.prev }">disabled</c:if>">
 							      <a class="page-link" href="/lecture/goEnrolment?nowPage=${lectureViewVO.beginPage - 1 }" aria-label="Previous">
@@ -151,7 +151,7 @@ table {
 							      </a>
 							    </li>
 							  </ul>
-							</nav>
+							</div>
 						</div>
 					</div>
 				</div>
