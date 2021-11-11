@@ -86,7 +86,7 @@ public class StuInfoController {
 	@PostMapping("/changePw")
 	public String changePw(MemberVO memberVO) {
 		stuInfoService.changePw(memberVO);
-		return "redirect:/stuInfo/chkInfoJsp";
+		return "stuInfo/change_pw_result";
 	}
 	
 	//이동 "시간표 조회"

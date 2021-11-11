@@ -31,7 +31,7 @@ span{
 </head>
 <body>
 	<!-- 비밀번호 변경 Div -->
-	<form action="/student/changePw" method="post" id="changePwForm">
+	<form action="/stuInfo/changePw" method="post" id="changePwForm">
 		<div id ="changePwDiv">
 			<div class="spanDiv">
 				<h4><b><span>*</span>현재 비밀번호 확인</b></h4>
