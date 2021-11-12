@@ -15,6 +15,7 @@
 <div>
 <div>
 	<div style="text-align: right;">
+		<img alt="" src="">
 		<c:if test="${not empty sessionScope.loginInfo }">
 			${sessionScope.loginInfo.memNo }님 반갑습니다.
 			<a href="/portal/logout">로그아웃</a> <!-- 일단 여기 넣어놓음 -->
