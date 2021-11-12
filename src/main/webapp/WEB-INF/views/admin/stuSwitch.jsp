@@ -81,8 +81,8 @@ td{
 			<td>${doubleMajorInfo.memberInfo.memName }</td>
 			<td>${doubleMajorInfo.studentInfo.stuYear }</td>
 			<td>${doubleMajorInfo.studentInfo.stuStatus }</td>
-			<td>${doubleMajorInfo.collName }</td>
-			<td>${doubleMajorInfo.deptName }</td>
+			<td>${doubleMajorInfo.doubleCollName }</td>
+			<td>${doubleMajorInfo.doubleDeptName }</td>
 			<td>
 				<!-- Button trigger modal -->
 				<!-- <input type="button" class="btn btn-primary modalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"  value="처리대기"> -->
