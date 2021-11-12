@@ -12,64 +12,93 @@
 
 <script type="text/javascript" src="/resources/stuManage/js/againStudy.js?ver=2"></script>
 <style type="text/css">
-td{
-	border: 1px solid black;
+.stuInfo{
+	width: 900px;
+	margin: 0 auto;
+	padding-top: 30px;
 }
 table{
+	border: 2px solid white;
 	margin: 0 auto;
+	background-color: white;
+	width: 900px;
+	border-bottom-color: #336699;
+	
+}
+tr, td{
+	border: 1px solid #dee2e6;
+
+}
+.line{
+	background-color: #336699;
+	color: white;
+	border-right: solid #000f4c;
+	border-left: solid #000f4c; 
+	
+}
+input {
+	border: none;
+}
+caption {
+	color: black;
+	font-weight: bold;
 }
 </style>
 </head>
 <body>
-복학신청페이지~~~
+<div class="stuInfo">
 
 <form action="/stuManage/goAgainStudy" method="post" id="againStudyForm">
 	<table>
+<caption align="top">복학신청</caption>
 		<tr>
-			<td>학번</td>
+			<td class="line">학번</td>
 			<td><input type="text" name="stuNo" value="${againStudyInfo.stuNo}" readonly></td>
 		</tr>
 		<tr>
-			<td>이름</td>
+			<td class="line">이름</td>
 			<td><input type="text" name="memName" value="${againStudyInfo.memberInfo.memName}"  readonly></td>
 		</tr>
 		<tr>
-			<td>학년</td>
+			<td class="line">학년</td>
 			<td><input type="text" name="stuYear" value="${againStudyInfo.stuYear}"  readonly></td>
 		</tr>
 		<tr>
-			<td>학적상태</td>
+			<td class="line">학적상태</td>
 			<td><input type="text" name="stuStatus" value="${againStudyInfo.stuStatus}"  readonly></td>
 		</tr>
 		<tr>
-			<td>전공명</td>
+			<td class="line">전공명</td>
 			<td><input type="text" name="deptName" value="${againStudyInfo.deptInfo.deptName}"  readonly></td>
 		</tr>
 		<tr>
-			<td>단과대학</td>
+			<td class="line">단과대학</td>
 			<td><input type="text" name="collName" value="${againStudyInfo.collegeInfo.collName}"  readonly></td>
 		</tr>
 		<tr>
-			<td>생일</td>
+			<td class="line">생일</td>
 			<td><input type="text" name="memBirth" value="${againStudyInfo.memberInfo.memBirth}"  readonly></td>
 		</tr>
 		<tr>
-			<td>부전공</td>
+			<td class="line">부전공</td>
 			<td><input type="text" name="minorCode" value="${againStudyInfo.minorCode}"  readonly></td>
 		</tr>
 	</table>
 	<c:choose>
 		<c:when test="${againStudyInfo.stuStatus eq '휴학' and waitCntAgain eq 0}">
 			<div>
-				<input type="button" value="복학신청" id="againStudyBtn">
+				<input type="button" class="line" value="복학신청" id="againStudyBtn"
+				style="background-color: #336699; color: white; width: 100%;">
 			</div>
 		</c:when>
 		<c:otherwise>
 			<div>
-				<input type="button" value="복학신청" id="againStudyBtn" disabled>
+				<input type="button" class="line" value="복학신청" id="againStudyBtn" disabled
+				style="background-color: #336699; color: white; width: 100%;">
 			</div>
 		</c:otherwise>
 	</c:choose>
 </form>
+</div>
 </body>
 </html>

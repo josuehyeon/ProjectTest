@@ -12,74 +12,101 @@
 
 <script type="text/javascript" src="/resources/stuManage/js/exitStudy.js?ver=2"></script>
 <style type="text/css">
-td{
-	border: 1px solid black;
+.stuInfo{
+	width: 900px;
+	margin: 0 auto;
+	padding-top: 30px;
 }
 table{
+	border: 2px solid white;
 	margin: 0 auto;
+	background-color: white;
+	width: 900px;
+	border-bottom-color: #336699;
+	
+}
+tr, td{
+	border: 1px solid #dee2e6;
+
+}
+.line{
+	background-color: #336699;
+	color: white;
+	border-right: solid #000f4c;
+	border-left: solid #000f4c; 
+	
+}
+input {
+	border: none;
+}
+caption {
+	color: black;
+	font-weight: bold;
 }
 </style>
 </head>
 <body>
-자퇴~~~
+<div class="stuInfo">
 
 <form action="/stuManage/goExitStudy" method="post" id="exitStudyForm">
 	<table>
+	<caption align="top">자퇴신청</caption>
 		<tr>
-			<td>학번</td>
+			<td class="line">학번</td>
 			<td><input type="text" name="stuNo" value="${exitStudyInfo.stuNo}" readonly></td>
 		</tr>
 		<tr>
-			<td>이름</td>
+			<td class="line">이름</td>
 			<td><input type="text" name="memName" value="${exitStudyInfo.memberInfo.memName}"  readonly></td>
 		</tr>
 		<tr>
-			<td>학년</td>
+			<td class="line">학년</td>
 			<td><input type="text" name="stuYear" value="${exitStudyInfo.stuYear}"  readonly></td>
 		</tr>
 		<tr>
-			<td>학적상태</td>
+			<td class="line">학적상태</td>
 			<td><input type="text" name="stuStatus" value="${exitStudyInfo.stuStatus}"  readonly></td>
 		</tr>
 		<tr>
-			<td>전공명</td>
+			<td class="line">전공명</td>
 			<td><input type="text" name="deptName" value="${exitStudyInfo.deptInfo.deptName}"  readonly></td>
 		</tr>
 		<tr>
-			<td>단과대학</td>
+			<td class="line">단과대학</td>
 			<td><input type="text" name="collName" value="${exitStudyInfo.collegeInfo.collName}"  readonly></td>
 		</tr>
 		<tr>
-			<td>생일</td>
+			<td class="line">생일</td>
 			<td><input type="text" name="memBirth" value="${exitStudyInfo.memberInfo.memBirth}"  readonly></td>
 		</tr>
 		<tr>
-			<td>부전공</td>
+			<td class="line">부전공</td>
 			<td><input type="text" name="minorCode" value="${exitStudyInfo.minorCode}"  readonly></td>
 		</tr>
 	</table>
 	<c:choose>
 		<c:when test="${exitStudyInfo.stuStatus eq '휴학' and waitCntExit eq 0}">
 			<div>
-				<input type="button" value="자퇴신청" id="exitStudyBtn">
+				<input type="button" class="line" value="자퇴신청" id="exitStudyBtn" style="background-color: #336699; color: white; width: 100%;">
 			</div>
 		</c:when>
 		<c:when test="${exitStudyInfo.stuStatus eq '복학' and waitCntExit eq 0}">
 			<div>
-				<input type="button" value="자퇴신청" id="exitStudyBtn">
+				<input type="button" class="line" value="자퇴신청" id="exitStudyBtn" style="background-color: #336699; color: white; width: 100%;">
 			</div>
 		</c:when>
 		<c:when test="${exitStudyInfo.stuStatus eq '재학' and waitCntExit eq 0}">
 			<div>
-				<input type="button" value="자퇴신청" id="exitStudyBtn">
+				<input type="button" class="line" value="자퇴신청" id="exitStudyBtn" style="background-color: #336699; color: white; width: 100%;">
 			</div>
 		</c:when>
 		<c:otherwise>
 			<div>
-				<input type="button" value="자퇴신청" id="exitStudyBtn" disabled>
+				<input type="button" class="line" value="자퇴신청" id="exitStudyBtn" disabled style="background-color: #336699; color: white; width: 100%;">
 			</div>
 		</c:otherwise>
 	</c:choose>
 </form>
+</div>
 </body>
 </html>
