@@ -58,6 +58,15 @@ public interface AdminService {
 	
 	void updateRealChange(StudentVO studentVO);
 	
+	void insertGetOut(AdminVO adminVO);
+	
+	void updateGetOut(AdminVO adminVO);
+	
+	void updateOkayDoubleMajor(StudentVO studentVO);
+
+	void regDoubleMajor(StudentVO studentVO);
+	
+	
 }
 
 

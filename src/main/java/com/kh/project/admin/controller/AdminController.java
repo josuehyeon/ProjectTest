@@ -1,10 +1,12 @@
 package com.kh.project.admin.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.mail.internet.MimeMessage;
 
+import org.springframework.aop.aspectj.AspectJAdviceParameterNameDiscoverer.AmbiguousBindingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -75,14 +77,50 @@ public class AdminController {
 		return "admin/editStatusList"; 
 	}
 	
-	//학적변동 승인완료 1.재학-휴학
+	//일괄 처리
 	@GetMapping("/updateStopStatusToStudent")
 	public String updateStopStatusToStudent(Model model, EditStatusVO editStatusVO) {
-		int[] a = editStatusVO.getStuNoList();
-		model.addAttribute("updateStop", adminService.updateStop(editStatusVO));
+//		editStatusVO.setStuNoList(editStatusVO.getStuNoListStop());
+//		adminService.updateStop(editStatusVO);
+//		editStatusVO.setStuNoList(editStatusVO.getStuNoListExit());
+//		adminService.updateExit(editStatusVO);
+//		editStatusVO.setStuNoList(editStatusVO.getStuNoListAgain());
+//		adminService.updateAgain(editStatusVO);
+		
+		
+		//휴학
+		if(editStatusVO.getStuNoListStop().length != 0) {
+			adminService.updateStopStatusToStudent(editStatusVO);
+		}
+		//복학
+		if(editStatusVO.getStuNoListAgain().length != 0) {
+			adminService.updateAgainStatusToStudent(editStatusVO);
+		}
+		//자퇴
+		if(editStatusVO.getStuNoListExit().length != 0) {
+			adminService.updateExitStatusToStudent(editStatusVO);
+		}
+		
+		int arrLen = editStatusVO.getStuNoListAgain().length + editStatusVO.getStuNoListExit().length + editStatusVO.getStuNoListStop().length;
+		
+		
+		int[] stuNoList = new int[arrLen];
+		for(int i = 0 ; i < editStatusVO.getStuNoListAgain().length ; i++) {
+			stuNoList[i] = editStatusVO.getStuNoListAgain()[i];
+		}
+		for(int i = 0 ; i < editStatusVO.getStuNoListExit().length ; i++) {
+			stuNoList[editStatusVO.getStuNoListAgain().length] = editStatusVO.getStuNoListExit()[i];
+		}
+		for(int i = 0 ; i < editStatusVO.getStuNoListStop().length ; i++) {
+			stuNoList[editStatusVO.getStuNoListAgain().length + editStatusVO.getStuNoListExit().length] = editStatusVO.getStuNoListStop()[i];
+		}
+		
+		editStatusVO.setStuNoList(stuNoList);
+		//model.addAttribute("updateStop", adminService.updateStop(editStatusVO));
 		//휴학 신청페이지에서 학적상태 변경 
-		adminService.updateStopStatusToStudent(editStatusVO);
-		System.out.println("휴학");
+		//adminService.updateStopStatusToStudent(editStatusVO);
+		adminService.updateStop(editStatusVO);
+		//System.out.println("휴학");
 		return "redirect:/admin/goEditStatusList"; 
 	}
 	
@@ -100,6 +138,16 @@ public class AdminController {
 	//학적변동 승인완료 3.자퇴
 	@GetMapping("/updateExitStatusToStudent")
 	public String updateExitStatusToStudent(Model model, EditStatusVO editStatusVO) {
+		int[] a = editStatusVO.getStuNoList();
+		adminService.updateExit(editStatusVO);
+		//휴학 신청페이지에서 학적상태 변경 
+		adminService.updateExitStatusToStudent(editStatusVO);
+		System.out.println("자퇴");
+		return "redirect:/admin/goEditStatusList";
+	}
+	
+	@GetMapping("/updateStopStatusToStudent1")
+	public String updateStopStatusToStudent1(Model model, EditStatusVO editStatusVO) {
 		int[] a = editStatusVO.getStuNoList();
 		adminService.updateExit(editStatusVO);
 		//휴학 신청페이지에서 학적상태 변경 
@@ -143,15 +191,26 @@ public class AdminController {
 	}
 	
 	//제적
-	@GetMapping("/stuGetOut")
+	@RequestMapping("/stuGetOut")
 	public String stuGetOut
 	(Model model, StudentVO studentVO, ChangeMajorVO changeMajorVO) {
 		//단과 대학 목록 조회
 		model.addAttribute("collList", stuManageService.selectCollegeList());
 		//학과 목록 조회
 		model.addAttribute("deptList", stuManageService.selectDeptList2(studentVO.getDeptInfo()));
+		
 		//학생 목록 조회
-		model.addAttribute("studentList", stuManageService.selectStudentList(studentVO));
+		List<StudentVO> stuList = stuManageService.selectStudentList(studentVO);
+		
+		//학생 중 경고가 3회 이상인 학생 목록 
+		List<StudentVO> result = new ArrayList<StudentVO>();
+		
+		for(StudentVO e : stuList){
+			if(e.getYellowCnt() >= 3) {
+				result.add(e);
+			}
+		}
+		model.addAttribute("studentList", result);
 		
 //		//모달 학생정보
 //		model.addAttribute("modalStuInfo", adminService.modalStuInfo(changeMajorVO));
@@ -229,6 +288,44 @@ public class AdminController {
 		mailSender.send(preparator); 
 		
 	}
+	
+	@ResponseBody
+	@PostMapping("/mailGetOutAjax")
+	public void mailGetOutAjax(AdminVO adminVO) {
+		//제적 정보 추가
+		adminService.insertGetOut(adminVO);
+		
+		//학생 상태 제적으로 변경
+		adminService.updateGetOut(adminVO);
+		
+		//메일 보내기
+		final MimeMessagePreparator preparator = new MimeMessagePreparator() { 
+			@Override 
+			public void prepare(MimeMessage mimeMessage) throws Exception { 
+				final MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8"); 
+				
+				helper.setFrom("crytalleehope@gmail.com"); 
+				//helper.setTo(adminVO.getEmail());
+				helper.setTo("pepe52928282@gmail.com");
+				helper.setSubject("대학교 제적 알림");
+				
+				String imsiPw = adminVO.getGetOutReason() + " 사유로 제적되었습니다.";
+				
+				helper.setText(imsiPw, true); 
+			} 
+		}; 
+		mailSender.send(preparator); 
+		
+	}
+	
+	
+	@ResponseBody
+	@PostMapping("/stuDoubleRealAjax")
+	public void stuDoubleRealAjax(Model model, StudentVO studentVO) {
+		adminService.updateOkayDoubleMajor(studentVO);
+		adminService.regDoubleMajor(studentVO);
+	}
+	
 	
 	
 }

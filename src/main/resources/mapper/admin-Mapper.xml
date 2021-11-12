@@ -88,6 +88,39 @@
 		WHERE STU_NO = #{stuNo}
 	</update>
 	
+	<insert id="insertGetOut">
+		INSERT INTO GET_OUT (
+			GETOUT_NO
+			, STU_NO
+			, GETOUT_REASON
+		) VALUES (
+			(SELECT NVL(MAX(GETOUT_NO) + 1 , 1) FROM GET_OUT)
+			, #{stuNo}
+			, #{getOutReason}
+		)
+		
+	</insert>
+	
+	<update id="updateGetOut">
+		UPDATE STUDENT
+		SET
+		STU_STATUS = '제적'
+		WHERE STU_NO = #{stuNo}
+	</update>
+
+	<update id="updateOkayDoubleMajor">
+		UPDATE DOUBLE_MAJOR
+		SET
+		STATUS = 'Y'
+		, UPDATE_DATE = SYSDATE
+		WHERE STU_NO = #{stuNo}
+	</update>
+
+	<update id="regDoubleMajor">
+		UPDATE STUDENT
+		SET MINOR_CODE = (SELECT DOUBLE_DEPT FROM DOUBLE_MAJOR WHERE STU_NO = #{stuNo})
+		WHERE STU_NO = #{stuNo}
+	</update>
 
 </mapper>
 

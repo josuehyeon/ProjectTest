@@ -50,7 +50,7 @@
 		SET
 		STU_STATUS = '휴학'
 		WHERE STU_NO IN
-		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
+		<foreach collection="stuNoListStop" open="(" separator="," close=")" item="stuNo">
 			#{stuNo}
 		</foreach>
 	</update>
@@ -107,7 +107,7 @@
 		SET
 		STU_STATUS = '복학'
 		WHERE STU_NO IN
-		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
+		<foreach collection="stuNoListAgain" open="(" separator="," close=")" item="stuNo">
 			#{stuNo}
 		</foreach>
 	</update>
@@ -145,7 +145,7 @@
 		SET
 		STU_STATUS = '자퇴'
 		WHERE STU_NO IN
-		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
+		<foreach collection="stuNoListExit" open="(" separator="," close=")" item="stuNo">
 			#{stuNo}
 		</foreach>
 	</update>

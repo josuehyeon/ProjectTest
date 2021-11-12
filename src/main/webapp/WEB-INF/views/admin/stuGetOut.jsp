@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuGetOut.js?ver=3"></script>
+<script type="text/javascript" src="/resources/admin/js/stuGetOut.js?ver=4"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -166,9 +166,7 @@ div > span{
 								<tr>
 									<td class="td_1">사유</td>
 									<td class="td_2">
-										<textarea rows="5" cols="45" class="getOutReason" placeholder="제적 사유를 입력 하세요">
-											
-										</textarea>
+										<textarea rows="5" cols="45" class="getOutReason" placeholder="제적 사유를 입력 하세요"></textarea>
 									</td>
 								</tr>
 								<tr>

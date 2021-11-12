@@ -114,7 +114,23 @@ public class AdminServiceImpl implements AdminService{
 	public void updateRealChange(StudentVO studentVO) {
 		sqlSession.update("adminMapper.updateRealChange", studentVO);
 	}
+
+	@Override
+	public void insertGetOut(AdminVO adminVO) {
+		sqlSession.insert("adminMapper.insertGetOut", adminVO);
+	}
 	
-	
+	@Override
+	public void updateGetOut(AdminVO adminVO) {
+		sqlSession.update("adminMapper.updateGetOut", adminVO);
+	}
+	@Override
+	public void updateOkayDoubleMajor(StudentVO studentVO) {
+		sqlSession.update("adminMapper.updateOkayDoubleMajor", studentVO);
+	}
+	@Override
+	public void regDoubleMajor(StudentVO studentVO) {
+		sqlSession.update("adminMapper.regDoubleMajor", studentVO);
+	}
 	
 }

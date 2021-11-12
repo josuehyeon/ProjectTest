@@ -3,16 +3,12 @@ $(document).ready(function(){
 	//이벤트 처리
 	$(document).on('click', '#okayBtn', function() {
 		var stuNo = $(this).attr('data-stuNo');
-		
-//		var yellowReason = $(this).closest('.yellowReason').val();
-		var yellReason = $(this).parent().prev().find('.getOutReason').val();
-		
+		var getOutReason = $(this).parent().prev().find('.getOutReason').val();
 		var email = $(this).parent().prev().find('.emailTd').text();
-		
 		var modalId = $(this).closest('.modal').attr('id');
 		
 		$.ajax({
-	        url: '/admin/mailNoticeAjax', //요청경로
+	        url: '/admin/mailGetOutAjax', //요청경로
 	        type: 'post',
 	        data:{'stuNo':stuNo , 'getOutReason':getOutReason, 'email':email}, //필요한 데이터
 	        success: function(result) {

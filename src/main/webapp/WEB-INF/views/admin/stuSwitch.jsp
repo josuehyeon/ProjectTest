@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuSwitch.js?ver=6"></script>
+<script type="text/javascript" src="/resources/admin/js/stuSwitch.js?ver=7"></script>
 <style type="text/css">
 td{
 	border: 1px solid black;
@@ -47,7 +47,7 @@ td{
 			<td>
 				<!-- Button trigger modal -->
 				<!-- <input type="button" class="btn btn-primary modalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"  value="처리대기"> -->
-				<input type="button" class="btn btn-primary modalBtn" value='<c:choose><c:when test="${changeMajorInfo.status eq 'N' }">처리대기</c:when><c:otherwise>승인완료</c:otherwise></c:choose>' data-stuNo="${changeMajorInfo.stuNo }">
+				<input type="button" class="btn btn-primary modalBtn" value='<c:choose><c:when test="${changeMajorInfo.status eq 'N' }">처리대기</c:when><c:otherwise>승인완료</c:otherwise></c:choose>' data-stuNo="${changeMajorInfo.stuNo }" data-type="1">
 			</td>
 			<td>${changeMajorInfo.insertDate }</td>
 		</tr>
@@ -86,7 +86,7 @@ td{
 			<td>
 				<!-- Button trigger modal -->
 				<!-- <input type="button" class="btn btn-primary modalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"  value="처리대기"> -->
-				<input type="button" class="btn btn-primary modalBtn" value="처리대기" data-stuNo="${doubleMajorInfo.stuNo }">
+				<input type="button" class="btn btn-primary modalBtn" value="<c:choose><c:when test="${doubleMajorInfo.status eq 'N' }">처리대기</c:when><c:otherwise>승인완료</c:otherwise></c:choose>" data-stuNo="${doubleMajorInfo.stuNo }" data-type="2">
 			</td>
 			<td>${doubleMajorInfo.insertDate }</td>
 		</tr>
@@ -110,6 +110,7 @@ td{
         
         <!-- STUDENT 테이블에서 오는 정보 -->
 		<div>
+			<input type="hidden" id="type" value="">
 			<table  style="width: 460px;">
 				<colgroup>
 					<col width="20%">
@@ -172,7 +173,7 @@ td{
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-        <button type="button" class="btn btn-primary" id="modalAjax">승인하기</button>
+        <button type="button" class="btn btn-primary" id="modalAjax" >승인하기</button>
       </div>
     </div>
   </div>

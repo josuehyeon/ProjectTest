@@ -16,8 +16,33 @@ public class EditStatusVO {
 	private MemberVO memberInfo;
 	private int[] stuNoList;
 	
+	private int[] stuNoListExit;
+	private int[] stuNoListStop;
+	private int[] stuNoListAgain;
 	
 	
+	
+	
+	
+	
+	public int[] getStuNoListExit() {
+		return stuNoListExit;
+	}
+	public void setStuNoListExit(int[] stuNoListExit) {
+		this.stuNoListExit = stuNoListExit;
+	}
+	public int[] getStuNoListStop() {
+		return stuNoListStop;
+	}
+	public void setStuNoListStop(int[] stuNoListStop) {
+		this.stuNoListStop = stuNoListStop;
+	}
+	public int[] getStuNoListAgain() {
+		return stuNoListAgain;
+	}
+	public void setStuNoListAgain(int[] stuNoListAgain) {
+		this.stuNoListAgain = stuNoListAgain;
+	}
 	public int[] getStuNoList() {
 		return stuNoList;
 	}

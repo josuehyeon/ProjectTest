@@ -1,4 +1,27 @@
 $(document).ready(function(){ 
+		
+	//라디오 버튼 클릭 시
+	$(document).on('click', '.statusRadio', function() {
+		//승인대기, 승인완료 값 가져 옴
+		var value = $(this).val();
+		var stuNo = $(this).attr('data-stuNo');
+		var type = $(this).attr('data-type');
+		
+		if(type == '자퇴'){
+			alert('승인되었습니다');
+			location.href = '/admin/updateExitStatusToStudent?stuNoListExit=' + stuNo;
+		}
+		else if(type == '휴학'){
+			alert('승인되었습니다');
+			location.href = '/admin/updateStopStatusToStudent1?stuNoListStop=' + stuNo;
+		}
+		else if(type == '복학'){
+			alert('승인되었습니다');
+			location.href = '/admin/updateAgainStatusToStudent?stuNoListAgain=' + stuNo;
+		}
+	
+	}); 
+	
 	//전체 체크 박스 값 변경시
 	$(document).on('click', '#checkAll', function() {
       //전체 체크박스의 체크 여부를 판단
@@ -28,7 +51,7 @@ $(document).ready(function(){
       
    });
    
-   //1.휴학 승인
+   //일괄처리
    $(document).on('click', '.stopStudyBtn', function() { 
 	   //체크된 체크박스의 개수
 	   var b = $('.check:checked').length;
@@ -38,17 +61,36 @@ $(document).ready(function(){
 	   }
 	   
 	   
-	   alert('휴학 승인완료');
+	   alert('승인완료');
 	   //일단 데이터 여러개를 담을 수 있는 stuNo 변수를 만든다
-	   var stuNoList = new Array();
+	   var stuNoListStop = new Array();
+	   var stuNoListExit = new Array();
+	   var stuNoListAgain = new Array();
+	   
+	   var exitCnt = 0;
+	   var stopCnt = 0;
+	   var againCnt = 0;
 	   
 	   $('.check:checked').each(function(index, element){
 		   var stuNo = $(element).val();
-		   alert( stuNo ); 
-		   stuNoList[index] = stuNo;
+		   var type = $(element).attr('data-type');
+		   
+		   if(type == '자퇴'){
+			   stuNoListExit[exitCnt] = stuNo;
+			   exitCnt++;
+			}
+			else if(type == '휴학'){
+				stuNoListStop[stopCnt] = stuNo;
+				stopCnt++;
+			}
+			else if(type == '복학'){
+				stuNoListAgain[againCnt] = stuNo;
+				againCnt++;
+			}
+		   
 	   });
 	   
-	   location.href = '/admin/updateStopStatusToStudent?stuNoList=' + stuNoList;
+	   location.href = '/admin/updateStopStatusToStudent?stuNoListExit=' + stuNoListExit + '&stuNoListStop=' + stuNoListStop + '&stuNoListAgain=' + stuNoListAgain;
    });
    
    //2.복학 승인
@@ -142,4 +184,33 @@ $(document).ready(function(){
 
 });   
    
-   
+/* 함수선언 영역*/
+(function($){
+     exitStudy = function(){
+    	 $.ajax({
+ 	        url: '/admin/stuDoubleRealAjax', //요청경로
+ 	        type: 'post',
+ 	        data:{'stuNo':stuNo}, //필요한 데이터
+ 	        success: function(result) {
+ 	        	$('#exampleModal').modal('hide');
+ 	        	
+ 	        	$('#exampleModal').on('hidden.bs.modal', function (e) {
+ 	        		alert('승인되었습니다');
+ 	        		location.href = '/admin/stuSwitch';
+ 	        	});
+ 	        },
+ 	        error: function(){
+ 	        	//ajax 실행 실패 시 실행되는 구간
+ 	        	alert('error');
+ 	        } //error 닫기
+ 		}); //ajax 닫기
+     }
+     
+     stopStudy = function(){
+    	 
+     }
+     
+     againStudy = function(){
+    	 
+     }
+})(jQuery);   
