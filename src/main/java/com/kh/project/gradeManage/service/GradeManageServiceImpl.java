@@ -50,8 +50,7 @@ public class GradeManageServiceImpl implements GradeManageService {
 
 	@Override //성적 등록을 위한 학생 리스트
 	public List<StuGradeVO> selectStudentListForStuGrade(StuGradeVO stuGradeVO) {
-		return null;
+		return sqlSession.selectList("gradeMapper.selectStudentListForStuGrade", stuGradeVO) ;
 	}
-	
 
 }

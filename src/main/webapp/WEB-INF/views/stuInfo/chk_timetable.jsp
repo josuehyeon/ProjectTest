@@ -14,22 +14,34 @@ table{
 	/* position: absolute; */
 	table-layout: fixed; /* 글자를 추가해도 테이블 크기는 일정하게 */
 	width: 700px;
+	background-color: white;
 }
 thead{
-	background-color: #cccccc;
+	background-color: #003264;
+	color: white;
 }
 tr,td{
 	border: 1px solid black;
 	text-align: center;
+	height: 30px;
 }
 td{
+}
+.upperDiv{
+	margin-top: 50px;
+}
+.lowerDiv{
+	margin-top: 50px;
+}
+.timetable td{
+	height: 30px;
 }
 </style>
 <script type="text/javascript" src="/resources/stuInfo/js/chk_timetable.js?ver=90"></script>
 </head>
 <body>
-<!-- 강의 테이블 -->	
-<div>
+<!-- 강의 테이블 -->
+<div class="upperDiv">
 	<table>
 		<thead>
 			<tr>
@@ -52,7 +64,7 @@ td{
 	</table>
 </div>
 <!-- 강의 시간표 -->
-<div>
+<div class="lowerDiv">
 	<table class="timetable">
 		<colgroup>
 			<col width="20%">
