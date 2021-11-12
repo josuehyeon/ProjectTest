@@ -13,29 +13,75 @@
 <script type="text/javascript" src="/resources/admin/js/editStatusList.js?ver=18"></script> 
 
 <style type="text/css">
-td{
-	border: 1px solid black;
+iframe {
+	width: 100%;
+	height: 95%;
+	
 }
-table{
-	margin: 0 auto;
+.modal-content{
+	height: 900px;
 }
+
+table {
+	background-color: white;
+}
+.btn{
+  background:#000f4c;
+  color:#fff;
+  border:none;
+  position:relative;
+  /* height:35px; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+   opacity:0.65;
+}
+.btn:hover{
+  background:#fff;
+  color:#000f4c;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
 </style>
 </head>
 <body>
+<div class="stuInfo">
+
 <!-- 휴학 -->
-<table>
+<table class="table table-hover" style="margin-top: 30px;">
+	
 	<tr>
-		<td>
+		<td scope="col">
 			<input type="checkbox" id="checkAll">
 		</td>
-		<td>No</td>
-		<td>학번</td>
-		<td>이름</td>
-		<td>기존학적</td>
-		<td>변경신청</td>
-		<td>신청일</td>
-		<td>승인일</td>
-		<td>승인상태</td>
+		<td scope="col">No</td>
+		<td scope="col">학번</td>
+		<td scope="col">이름</td>
+		<td scope="col">기존학적</td>
+		<td scope="col">변경신청</td>
+		<td scope="col">신청일</td>
+		<td scope="col">승인일</td>
+		<td scope="col">승인상태</td>
 	</tr>
 	<!-- 1 휴학 -->
 	<c:forEach items="${selectStopList }" var="stop" varStatus="statusStop">
@@ -130,11 +176,12 @@ table{
 </table>
 <div>　</div>
 <div>
-	<input type="button" value="일괄승인" class="stopStudyBtn" >
+	<input type="button" value="일괄승인" class="stopStudyBtn btn" style="background-color: #336699; color: white; width: 100%;" >
 <!-- 	<input type="button" value="복학승인" class="againStudyBtn" >
 	<input type="button" value="자퇴승인" class="exitStudyBtn" >
 	<input type="button" value="승인유예" class="notOkayBtn" >
 	<input type="button" value="삭제" class="deleteBtn" >  -->
+</div>
 </div>
 </body>
 </html>
