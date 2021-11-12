@@ -90,6 +90,10 @@ $(document).ready(function(){
 		   
 	   });
 	   
+	   console.log(stuNoListExit);
+	   console.log(stuNoListStop);
+	   console.log(stuNoListAgain);
+	   
 	   location.href = '/admin/updateStopStatusToStudent?stuNoListExit=' + stuNoListExit + '&stuNoListStop=' + stuNoListStop + '&stuNoListAgain=' + stuNoListAgain;
    });
    

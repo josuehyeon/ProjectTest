@@ -108,11 +108,13 @@ public class AdminController {
 		for(int i = 0 ; i < editStatusVO.getStuNoListAgain().length ; i++) {
 			stuNoList[i] = editStatusVO.getStuNoListAgain()[i];
 		}
+		int cnt1 = editStatusVO.getStuNoListAgain().length;
 		for(int i = 0 ; i < editStatusVO.getStuNoListExit().length ; i++) {
-			stuNoList[editStatusVO.getStuNoListAgain().length] = editStatusVO.getStuNoListExit()[i];
+			stuNoList[cnt1++] = editStatusVO.getStuNoListExit()[i];
 		}
+		int cnt2 = editStatusVO.getStuNoListAgain().length + editStatusVO.getStuNoListExit().length;
 		for(int i = 0 ; i < editStatusVO.getStuNoListStop().length ; i++) {
-			stuNoList[editStatusVO.getStuNoListAgain().length + editStatusVO.getStuNoListExit().length] = editStatusVO.getStuNoListStop()[i];
+			stuNoList[cnt2++] = editStatusVO.getStuNoListStop()[i];
 		}
 		
 		editStatusVO.setStuNoList(stuNoList);
@@ -146,13 +148,13 @@ public class AdminController {
 		return "redirect:/admin/goEditStatusList";
 	}
 	
+	//휴학
 	@GetMapping("/updateStopStatusToStudent1")
 	public String updateStopStatusToStudent1(Model model, EditStatusVO editStatusVO) {
 		int[] a = editStatusVO.getStuNoList();
 		adminService.updateExit(editStatusVO);
 		//휴학 신청페이지에서 학적상태 변경 
-		adminService.updateExitStatusToStudent(editStatusVO);
-		System.out.println("자퇴");
+		adminService.updateStopStatusToStudent(editStatusVO);
 		return "redirect:/admin/goEditStatusList";
 	}
 	

@@ -26,8 +26,9 @@ div > span{
 #table{
 	width: 450px;
 }
-#nameMouse:hover {
+.nameMouse:hover{
 	cursor: pointer;
+	font-weight: bold;
 }
 </style>
 </head>
@@ -109,7 +110,7 @@ div > span{
 			<tr>
 				<td>${student.stuNo }</td>
 				<td>${student.stuYear }</td>
-				<td><span data-bs-toggle="modal" data-bs-target="#staticBackdrop${status.index}">${student.memberInfo.memName}</span>
+				<td><span class="nameMouse" data-bs-toggle="modal" data-bs-target="#staticBackdrop${status.index}">${student.memberInfo.memName}</span>
 					<!-- Button trigger modal -->
 					<%-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop${status.index}">
 					  이름
@@ -132,7 +133,7 @@ div > span{
 								</tr>
 								<tr>
 									<td class="td_1">이름</td>
-									<td class="td_2"><div id="nameMouse">${student.memberInfo.memName }</div></td>
+									<td class="td_2">${student.memberInfo.memName }</td>
 								</tr>
 								<tr>
 									<td class="td_1">학년</td>

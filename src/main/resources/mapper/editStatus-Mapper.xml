@@ -96,7 +96,7 @@
 		ING_STATUS = '승인완료'
 		, APPROVAL_DATE = SYSDATE
 		WHERE STU_NO IN 
-		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
+		<foreach collection="stuNoListAgain" open="(" separator="," close=")" item="stuNo">
 			#{stuNo}
 		</foreach>
 	</update>
@@ -134,7 +134,7 @@
 		ING_STATUS = '승인완료'
 		, APPROVAL_DATE = SYSDATE
 		WHERE STU_NO IN 
-		<foreach collection="stuNoList" open="(" separator="," close=")" item="stuNo">
+		<foreach collection="stuNoListExit" open="(" separator="," close=")" item="stuNo">
 			#{stuNo}
 		</foreach>
 	</update>
