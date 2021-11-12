@@ -73,7 +73,7 @@ table {
       <th scope="col">교수</th>
       <th scope="col">조교수</th>
       <th scope="col">강의요일</th>
-      <th scope="col">강의교시</th>
+      <th scope="col">강의시간</th>
       <th scope="col"></th>
     </tr>
   </thead>
