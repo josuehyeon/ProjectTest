@@ -1,6 +1,8 @@
 package com.kh.project.stuManage.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -246,11 +248,19 @@ public class StuManageController {
 	//Ajax: 강의 셀렉트
 	@ResponseBody
 	@PostMapping("/clickLectureShowStudent")
-	public List<StuGradeVO> clickLectureShowStudent(StuGradeVO stuGradeVO) {
-		return gradeManageService.selectStudentListForStuGrade(stuGradeVO) ;
+	public Map<String, Object> clickLectureShowStudent(StuGradeVO stuGradeVO) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("studentList", gradeManageService.selectStudentListForStuGrade(stuGradeVO));
+		map.put("gradeList", gradeManageService.gradeList());
+		return map;
 	}
 	
-		
+//	@ResponseBody
+//	   @PostMapping("/serchDateAjax")
+//	   public Map<String, Object> serchDate(OrderInfoVO orderInfoVO){
+//	      map.put("statusInfo", adminService.selectStatus());
+//	      map.put("selectBySerchDateList", adminService.serchDate(orderInfoVO));
+//	   }
 		
 }
 

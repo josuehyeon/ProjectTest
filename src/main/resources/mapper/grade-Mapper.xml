@@ -46,6 +46,12 @@
 		<association property="semesterInfo" resultMap="semester" />
 		<association property="memberInfo" resultMap="memberMapper.member" />
 	</resultMap>
+	
+	<!-- 학점 목록: A B C D F -->
+	<select id="gradeList" resultMap="grade">
+		SELECT GRADE
+		FROM GRADE
+	</select>
 
 	<!-- 학년/학기 리스트 -->
 	<select id="selectSemesterList" resultMap="semester">

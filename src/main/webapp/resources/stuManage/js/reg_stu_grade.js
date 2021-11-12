@@ -11,8 +11,11 @@ $(document).ready(function(){
 	        data:{'lecId':lecId}, //필요한 데이터
 	        success: function(result) {
 	        	//ajax 실행 성공 시 실행되는 구간
+	        	
+	        	var studentList = result.studentList;
+	        	var gradeList = result.gradeList;
 
-	        	alert(result);
+	        	//alert(result);
 	        	$('#studentListDiv').empty();
 	        	
 	        	var str ='';
@@ -21,16 +24,34 @@ $(document).ready(function(){
 	        	str += '<td>학번</td>';
 	        	str += '<td>이름</td>';
 	        	str += '<td>성적</td>';
-		        	
-		        	$(result).each(function(index, element){
-	          	  		str += '<tr>' ;
-	          	  		str += '<td>' + element.memberInfo.memName + '</td>'	;
-	          	  		str += '<td>' + element.stuNo + '</td>'	;
-	          	  		str += '<td>' + element.grade + '</td>' ;	
+	        	str += '<td></td>';
+	        	str += '</tr>' ;
+		        	$(studentList).each(function(index, element1){
+	          	  		str += 		'<tr>' ;
+	          	  		str += 		'<td>' + element1.stuNo + '</td>'	;
+	          	  		str += 		'<td>' + element1.memberInfo.memName + '</td>'	;
+	          	  		str += 		'<td>'
+          	  			str += 		'<select class="grade">'
+          	  				if(element1.grade =='미등록'){
+          	  					str += 	'<option selected> 미등록</option>';
+          	  				}else{
+          	  					str += 	'<option> 미등록</option>';
+          	  				}
+							        	$(gradeList).each(function(index, element2){
+							        		if(element1.grade ==element2.grade){
+							          	  		str += '<option value="'+ element2.grade + '" selected>' + element2.grade +  '</option>'
+							          	  	}else{
+							          	  		str += '<option value="'+ element2.grade + '">' + element2.grade +  '</option>'
+							          	  	}
+							          	       /*str += '<option value="'+ element2.statusName + '" selected>' + element2.statusName + '</option>'*/
+						          	  	});
+	          	  		str += '</select>';
+          	  			str += '</td>';
+          	  			str += '<td><input type="button" value="성적등록/변경" id="btn" data-stuNo="' + element1.stuNo + '"></td>';
 	          	  		str += '</tr>' ;
 	            	});
-	            	
 		        	str += '</table>';
+	            	
 	              
 	            $('#studentListDiv').append(str);
 	        },
@@ -40,10 +61,14 @@ $(document).ready(function(){
 	        }
 	  }); //ajax 닫기
     }); //change collegeList 이벤트 닫기
-    
-	
-	
-	
+	$(document).on('click', '#btn', function() {
+		alert('연결');
+		var aa = $(this).attr('data-stuNo');
+//		var aa = $(this).attr('data-stuno');
+		var vv = $('.grade').val();
+		alert(aa);
+		alert(vv);
+	}); //change collegeList 이벤트 닫기
 });
 
 //함수 선언 영역
@@ -52,27 +77,3 @@ $(document).ready(function(){
 	//};
    
 })(jQuery);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

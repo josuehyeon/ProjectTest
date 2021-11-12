@@ -53,4 +53,9 @@ public class GradeManageServiceImpl implements GradeManageService {
 		return sqlSession.selectList("gradeMapper.selectStudentListForStuGrade", stuGradeVO) ;
 	}
 
+	@Override
+	public List<GradeVO> gradeList() {
+		return sqlSession.selectList("gradeMapper.gradeList");
+	}
+
 }

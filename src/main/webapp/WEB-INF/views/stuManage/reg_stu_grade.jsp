@@ -23,7 +23,7 @@ td{
 	margin-top: 5px;
 }
 </style>
-<script type="text/javascript" src="/resources/stuManage/js/reg_stu_grade.js?ver=5"></script>
+<script type="text/javascript" src="/resources/stuManage/js/reg_stu_grade.js?ver=32"></script>
 </head>
 <body>
 <table style="margin-top: 20px;">
@@ -31,15 +31,14 @@ td{
 		<td class="column">
 			<label>강의 목록</label>
 			<select id="lectureSelect" style="width: 70%;">
-					<option>전체</option>
-					<c:forEach items="${lecInfo }" var="each">
-						<option value="${each.lecId }" >${each.lecName}</option>
-					</c:forEach>
+				<option>전체</option>
+				<c:forEach items="${lecInfo }" var="each">
+					<option value="${each.lecId }" >${each.lecName}</option>
+				</c:forEach>
 			</select>
 		</td>
 	</tr>
 </table>
-
 <div id="studentListDiv">
 	<table>
 		<tr class="column">

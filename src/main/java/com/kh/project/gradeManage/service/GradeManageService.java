@@ -31,4 +31,6 @@ public interface GradeManageService {
 	//성적 등록을 위한 학생 목록
 	List<StuGradeVO> selectStudentListForStuGrade(StuGradeVO stuGradeVO);
 
+	//학점 목록
+	List<GradeVO> gradeList();
 }
