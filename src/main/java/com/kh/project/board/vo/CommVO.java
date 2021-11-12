@@ -5,17 +5,9 @@ public class CommVO {
 	private int boardNo;
 	private String commContent;
 	private String commDate;
-	private int commWriter;
+	private String commWriter;
 	
-	
-	public CommVO(int commNo, int boardNo, String commContent, String commDate, int commWriter) {
-		super();
-		this.commNo = commNo;
-		this.boardNo = boardNo;
-		this.commContent = commContent;
-		this.commDate = commDate;
-		this.commWriter = commWriter;
-	}
+	public CommVO() {}
 	
 	public int getCommNo() {
 		return commNo;
@@ -42,10 +34,10 @@ public class CommVO {
 	public void setCommDate(String commDate) {
 		this.commDate = commDate;
 	}
-	public int getCommWriter() {
+	public String getCommWriter() {
 		return commWriter;
 	}
-	public void setCommWriter(int commWriter) {
+	public void setCommWriter(String commWriter) {
 		this.commWriter = commWriter;
 	}
 	

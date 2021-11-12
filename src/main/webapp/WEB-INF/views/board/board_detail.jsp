@@ -10,7 +10,7 @@
 </style>
 </head>
 <body>
-<form action="/board/istComm" method="post">
+<form action="/form/istComm" method="post">
 <div>
 	<div>
 		<div>
@@ -34,10 +34,17 @@
 	<input type="hidden" name="boardNo" value="${board.boardNo }">
 	<input type="submit" value="글 삭제">
 	<div>
+		<input type="text" name="commWriter" value="${sessionScope.loginInfo.memName }">
 		<textarea rows="5" cols="120" style="resize: none; margin: 0 auto; verrical-align" placeholder="타인에게 상처를 입히는 발언은 제재 당할 수 있음을 알립니다." id="isComm" name="commContent"></textarea>
 	</div>
 	<input type="submit" value="댓글 등록" id="commIst">
 	<div>
+		<c:forEach items="${commList }" var="comm">
+			${comm.commWriter } | ${comm.commContent } | ${comm.commDate }
+		</c:forEach>
+		<c:if test="${empty commList }">
+			등록된 댓글이 없습니다. : (
+		</c:if>
 	</div>
 </form>
 </body>

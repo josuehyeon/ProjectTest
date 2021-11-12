@@ -6,13 +6,12 @@ public class BoardVO extends PageVO{
 	private int boardNo;
 	private String boardTitle;
 	private String boardContent;
-	private int boardWriter;
+	private String boardWriter;
 	private String boardDate;
 	private int readCnt;
 	private int cateNo;
 	private int commCnt;
 	private int rowNum;
-	
 	
 	public int getRowNum() {
 		return rowNum;
@@ -38,10 +37,10 @@ public class BoardVO extends PageVO{
 	public void setBoardContent(String boardContent) {
 		this.boardContent = boardContent;
 	}
-	public int getBoardWriter() {
+	public String getBoardWriter() {
 		return boardWriter;
 	}
-	public void setBoardWriter(int boardWriter) {
+	public void setBoardWriter(String boardWriter) {
 		this.boardWriter = boardWriter;
 	}
 	public String getBoardDate() {

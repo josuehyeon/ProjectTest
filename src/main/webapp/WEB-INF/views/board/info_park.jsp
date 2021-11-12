@@ -78,7 +78,7 @@ a.sltedPage{color: blue;font-weight: bold;}
 									<tr class="trh">
 										<td>${board.rowNum }</td>
 										<td>${board.boardWriter }</td>
-										<td><a href="/form/detail?boardNo=${board.boardNo }">${board.boardTitle }</a></td>
+										<td><a href="/form/boDetail?boardNo=${board.boardNo }">${board.boardTitle }</a></td>
 										<td>${board.boardDate }</td>
 										<td>${board.readCnt }</td>
 										<td>${board.commCnt }</td>

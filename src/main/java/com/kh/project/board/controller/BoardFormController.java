@@ -30,20 +30,33 @@ public class BoardFormController {
 		model.addAttribute("nowDate", getNowDateToString());
 		return "boardForm/board/board_form";
 	}
-	//게시글 보기
-	@GetMapping("/detail")
-	public String doDetail(Model md, BoardVO bvo, CommVO cvo) {
-		md.addAttribute("board", boardService.detailBoard(bvo));
+//	//게시글 보기
+//	@GetMapping("/detail")
+//	public String doDetail(Model md, BoardVO bvo, CommVO cvo) {
+//		md.addAttribute("board", boardService.detailBoard(bvo));
+////		md.addAttribute("commList", boardService.sltCommList(cvo));
+//		return "boardForm/board/board_detail";
+//	}
+	
+	// 게시글 상세 보기 2
+	@GetMapping("/boDetail")
+	public String boDetail(Model md, BoardVO boardVO, CommVO cvo) {
+		md.addAttribute("board", boardService.detailBoard(boardVO));
 		md.addAttribute("commList", boardService.sltCommList(cvo));
+		md.addAttribute("nowDate", getNowDateToString());
 		return "boardForm/board/board_detail";
 	}
 	//댓글 등록
+//	@PostMapping("/insertComment")
+//	public String insertComment() {
+//		
+//	}
 	@PostMapping("/istComm")
 	public String doIstComm(Model md, BoardVO bvo, CommVO cvo) {
 		boardService.istComm(cvo);
 		md.addAttribute("boardNo", bvo);
 		md.addAttribute("nowDate", getNowDateToString());
-		return "redirect:/form/detail";
+		return "redirect:/form/boDetail";
 	}
 	
 	   private String getNowDateToString() {
