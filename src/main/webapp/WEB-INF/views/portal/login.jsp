@@ -7,16 +7,56 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/portal/js/login.js?ver=12"></script>
+<script type="text/javascript" src="/resources/portal/js/login.js?ver=13"></script>
 <style type="text/css">
 <link rel="stylesheet" href="animate.min.css">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Staatliches&display=swap');
 *{
 	margin: 0;
 }
+.btn{
+  background:#000f4c;
+  color:#fff;
+  border:none;
+  position:relative;
+  /* height:35px; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+   opacity:0.65;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+.btn:hover{
+  background:#fff;
+  color:#000f4c;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
 body{
 	-ms-overflow-style: none; 
 	margin: 0;
+	background-color: #292e56;
 }
 .tableDiv{
 padding: 0px;
@@ -24,7 +64,7 @@ padding: 0px;
 .leftTd{
 	left:0;right:0;top:0;bottom:0;
 	overflow:hidden;
-	background-color: #445893;
+	background-color: #292e56;
 	max-width: 100%;
 	max-height: 100%;
 }
@@ -65,6 +105,7 @@ input{
 	font-weight: bold;
 	cursor: pointer;
 }
+.bl:focus {outline-color: #1AAB8A; outline: 1px solid #ccd2ff;}
 </style>
 </head>
 <body>
@@ -72,12 +113,12 @@ input{
 <div class="tableDiv">
 	<table>
 		<colgroup>
-			<col width="30%;">
-			<col width="70%;">
+			<col width="25%;">
+			<col width="75%;">
 		</colgroup>
 		<tr>
 			<td class="leftTd" height = "0">
-				<div style = "height:100%"><img src="/resources/common/images/lomeme.jpg" style="object-fit: cover;"></div>
+				<div style = "height:100%"><img src="/resources/common/images/lomeme.jpg" style="object-fit: cover;" height="1000px;"></div>
 			</td>
 			<td>
 				<img src="/resources/portal/images/JesusLogo.png" style="width: 200px;">
@@ -91,16 +132,16 @@ input{
 				</div>
 				<form action="/portal/login" method="post" autocomplete="off">
 					<div class="fadeInRight box animate four">
-						<input type="text" name="memNo" id="memNo" placeholder="아이디를 입력하세요" required autofocus> <!-- autofocus=>페이지 로드될 때 자동으로 focus -->
+						<input class="bl" type="text" name="memNo" id="memNo" placeholder="아이디를 입력하세요" required autofocus> <!-- autofocus=>페이지 로드될 때 자동으로 focus -->
 					</div>
 					<div id="enter"></div>
 					<div>
-						<input type="password" name="memPw" placeholder="비밀번호를 입력하세요" required>
+						<input class="bl" type="password" name="memPw" placeholder="비밀번호를 입력하세요" required>
 					</div>
 					<!-- 로그인 버튼 -->
 					<div id="enter"></div>
 					<div>
-						<input type="submit" value="로그인">
+						<input class="btn " type="submit" value="로그인">
 					</div>
 				</form>
 				<!-- 아이디 찾기 Modal 버튼 -->

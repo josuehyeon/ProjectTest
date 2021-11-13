@@ -79,7 +79,7 @@ iframe {
 
 .btn{
   background:#000f4c;
-  color:#ffffff;
+  color:#fff;
   border:none;
   position:relative;
   /* height:35px; */
@@ -89,6 +89,10 @@ iframe {
   outline:none;
    opacity:0.65;
 }
+.btn:hover{
+  background:#fff;
+  color:#000f4c;
+}
 .btn:before,.btn:after{
   content:'';
   position:absolute;
@@ -96,7 +100,7 @@ iframe {
   right:0;
   height:2px;
   width:0;
-  background: #000f4c;
+  background: #b29dcc;
   transition:400ms ease all;
 }
 .btn:after{
@@ -104,17 +108,14 @@ iframe {
   top:inherit;
   left:0;
   bottom:0;
-  color: #000f4c;
 }
 .btn:hover:before,.btn:hover:after{
   width:100%;
   transition:800ms ease all;
 }
-.btn:hover{
-  background:#fff;
-  color:#000f4c;
-}
 .pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
+
+
 .page-item.active .page-link{background-color: #000f4c; z-index: 1; border-color: #000f4c;}
 page-item.active{background-color: none;}
 </style>
@@ -183,7 +184,7 @@ page-item.active{background-color: none;}
 							  </ul>
 							</div>
 							<div class="btnDiv">
-								<a class="btn update btn" href="/form/inlog" style="color: #ffffff; width: 130px; font-size: 15px;">글 작성</a>
+								<a class="btn update btn" href="/form/inlog" style="width: 100px; font-size: 15px;">글 작성</a>
 							</div>
 						</div>
 					</div>

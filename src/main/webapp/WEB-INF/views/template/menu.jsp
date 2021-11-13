@@ -36,7 +36,7 @@
 				        	<li><a class="nav-link link-#00154a" href="/portal/regMemberJsp" aria-label="subemnu">내 정보 수정</a></li>
 					    </ul>
 					</li>
-		    		<li><a class="nav-link link-#00154a mmn" href="#">학생관리</a>	<!-- 11.09 이수정 -->
+		    		<li><a class="nav-link link-#00154a mmn" href="/admin/selectStu">학생관리</a>	<!-- 11.09 이수정 -->
 				    	<ul id="sub-menu">
 				        	<li><a class="nav-link link-#00154a" href="/admin/selectStu" aria-label="subemnu">학생 조회</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/grade/chkGradeJsp" aria-label="subemnu">성적 관리</a></li>
@@ -67,7 +67,7 @@
 				        	<li><a class="nav-link link-#00154a" href="/admin/stuSwitch" aria-label="subemnu">전과 / 복수전공</a></li>
 					    </ul>
 		    			</li>
-		    			<li><a class="nav-link link-#00154a mmn" href="#">강의 관리 </a>
+		    			<li><a class="nav-link link-#00154a mmn" href="/lecture/goRegLecture">강의 관리 </a>
 				    	<ul id="sub-menu">
 							<li><a class="nav-link link-#00154a" href="/lecture/goRegLecture" aria-label="subemnu">강의등록</a></li>
 							<li><a class="nav-link link-#00154a" href="/lecture/selectLecture" aria-label="subemnu">강의리스트</a></li>
@@ -91,7 +91,7 @@
 				        	<li><a class="nav-link link-#00154a" href=/grade/graduationJsp aria-label="subemnu">졸업 요건</a></li>
 					    </ul>
 					</li>
-		    		<li><a class="nav-link link-#00154a mmn" href="#">학적관리</a>
+		    		<li><a class="nav-link link-#00154a mmn" href="/stuManage/stopStudyInfo">학적관리</a>
 				    	<ul id="sub-menu">
 				        	<li><a class="nav-link link-#00154a" href="/stuManage/stopStudyInfo"  aria-label="subemnu">휴학 안내</a></li>	<!-- 11.09 이수정 -->
 				        	<li><a class="nav-link link-#00154a" href="/stuManage/goStopStudy" aria-label="subemnu">휴학 신청</a></li>

@@ -18,10 +18,11 @@ $(document).ready(function(){
 	        data:{'memNo':memNo , 'memName':memName}, //필요한 데이터
 	        success: function(result) {
 	        	//ajax 실행 성공 시 실행되는 구간
-	        	alert(result.memEmail+'/'+memEmail);
+//	        	alert(result.memEmail+'/'+memEmail);
 	        	
 	        	if(result.memEmail ==memEmail){
 					$('#sendMail').submit();
+					alert('임시 비밀번호가 발급되었습니다.');
 				}else{
 		        	alert('이메일 주소를 확인해주세요');
 				}
