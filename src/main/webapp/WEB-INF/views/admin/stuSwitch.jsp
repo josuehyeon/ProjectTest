@@ -129,7 +129,7 @@ caption {
 					<col width="25%">
 				</colgroup>
 				<tr>
-					<td rowspan="3">이미지첨부</td>
+					<td rowspan="3"><img src="/resources/admin/stuSwitch/${memberInfo.memIdpic }.jpg"></td>
 					<td>학번</td>
 					<td class="stuNoTd"></td>
 					<td>이름</td>
