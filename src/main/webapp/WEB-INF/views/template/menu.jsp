@@ -72,10 +72,6 @@
 				    	<ul id="sub-menu">
 							<li><a class="nav-link link-#00154a" href="/lecture/goRegLecture" aria-label="subemnu">강의등록</a></li>
 							<li><a class="nav-link link-#00154a" href="/lecture/selectLecture" aria-label="subemnu">강의리스트</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/admin/manageGrade" aria-label="subemnu">성적 관리</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/admin/goEditStatusList" aria-label="subemnu">학적 변동승인</a></li>	<!-- 11.09 이수정 -->
-				        	<li><a class="nav-link link-#00154a" href="/admin/stuNotice" aria-label="subemnu">학사경고</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/admin/stuGetOut" aria-label="subemnu">제적</a></li> <!-- 11.10 이수정 -->
 					    </ul>
 		    			</li>
 		    			<li><a class="nav-link link-#00154a mmn" href="/board/infoPark">정보광장</a>
