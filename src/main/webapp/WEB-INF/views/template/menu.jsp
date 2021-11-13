@@ -56,7 +56,6 @@
 					    </ul>
 		    		</li>
 					</c:when>
-					
 					<c:when test="${sessionScope.loginInfo.memAuth eq 2}"> <!-- 교수 -->
 						<li><a class="nav-link link-#00154a mm" href="/admin/editStatus">학생관리</a>
 				    	<ul id="sub-menu">
@@ -82,7 +81,6 @@
 					    </ul>
 		    			</li>
 					</c:when>
-					
 					<c:otherwise>
 						<li><a class="nav-link link-#00154a mmn" href="/stuInfo/chkInfoJsp">내 정보</a>
 	      				<ul id="sub-menu">
