@@ -6,10 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
 <script type="text/javascript" src="/resources/stuManage/js/againStudy.js?ver=2"></script>
 <style type="text/css">
 .stuInfo{
@@ -18,19 +14,19 @@
 	padding-top: 30px;
 }
 table{
-	border: 2px solid white;
+	border: 2px solid #1d2040;
 	margin: 0 auto;
 	background-color: white;
 	width: 900px;
-	border-bottom-color: #336699;
-	
+	border-bottom-color: #55597a;
+	margin-bottom: 20px;
 }
 tr, td{
-	border: 1px solid #dee2e6;
+	border: 1px solid #1d2040;
 
 }
 .line{
-	background-color: #336699;
+	background-color: #55597a;
 	color: white;
 	border-right: solid #000f4c;
 	border-left: solid #000f4c; 
@@ -43,6 +39,90 @@ caption {
 	color: black;
 	font-weight: bold;
 }
+iframe {
+	width: 100%;
+	height: 95%;
+	
+}
+.modal-content{
+	height: 900px;
+}
+
+table{
+	border: 1px solid #1d2040;
+	margin: 0 auto;
+	background-color: white;
+	width: 900px;
+	border-bottom-color: #55597a;
+	
+}
+tr, td{
+	border: 1px solid #1d2040;
+
+}
+.line{
+	background-color: #55597a;;
+	color: white;
+	border-right: solid #1d2040;
+	border-left: solid #1d2040;
+	
+}
+input {
+	border: none;
+}
+caption {
+	color: black;
+	font-weight: bold;
+}
+iframe {
+	width: 100%;
+	height: 95%;
+	
+}
+.modal-content{
+	height: 900px;
+}
+
+table {
+	background-color: white;
+}
+.btn{
+  background:#000f4c;
+  color:#fff;
+  border:none;
+  position:relative;
+  /* height:35px; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+   opacity:0.65;
+}
+.btn:hover{
+  background:#fff;
+  color:#000f4c;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
 </style>
 </head>
 <body>
@@ -87,14 +167,14 @@ caption {
 	<c:choose>
 		<c:when test="${againStudyInfo.stuStatus eq '휴학' and waitCntAgain eq 0}">
 			<div>
-				<input type="button" class="line" value="복학신청" id="againStudyBtn"
-				style="background-color: #336699; color: white; width: 100%;">
+				<input type="button" class="line update btn" value="복학신청" id="againStudyBtn"
+				style="margin-top: 30px;">
 			</div>
 		</c:when>
 		<c:otherwise>
 			<div>
-				<input type="button" class="line" value="복학신청" id="againStudyBtn" disabled
-				style="background-color: #336699; color: white; width: 100%;">
+				<input type="button" class="line update btn" value="복학신청" id="againStudyBtn" disabled
+				style="margin-top: 30px;">
 			</div>
 		</c:otherwise>
 	</c:choose>

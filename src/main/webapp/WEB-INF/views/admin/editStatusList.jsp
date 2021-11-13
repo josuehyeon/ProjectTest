@@ -57,7 +57,7 @@ iframe {
   left:0;
   bottom:0;
 }
-.btn:hover:before,.btn:hover:after{
+.btn:hover:before, .btn:hover:after{
   width:100%;
   transition:800ms ease all;
 }

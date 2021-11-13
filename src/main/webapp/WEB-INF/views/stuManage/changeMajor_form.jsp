@@ -14,19 +14,19 @@
 	padding-top: 30px;
 }
 table{
-	border: 2px solid white;
+	border: 1px solid #55597a;
 	margin: 0 auto;
 	background-color: white;
 	width: 900px;
-	border-bottom-color: #336699;
+	border-bottom-color: #55597a;
 	
 }
 tr, td{
-	border: 1px solid #dee2e6;
+	border: 1px solid #55597a;
 
 }
 .line{
-	background-color: #336699;
+	background-color: #55597a;
 	color: white;
 	border-right: solid #000f4c;
 	border-left: solid #000f4c; 
@@ -39,7 +39,55 @@ caption {
 	color: black;
 	font-weight: bold;
 }
+iframe {
+	width: 100%;
+	height: 95%;
+	
+}
+.modal-content{
+	height: 900px;
+}
 
+table {
+	background-color: white;
+}
+.btn{
+  background:#55597a;
+  color:#fff;
+  border:none;
+  position:relative;
+  /* height:35px; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+   opacity:0.65;
+}
+.btn:hover{
+  background:#ffffff;
+  color:#000f4c;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
 </style>
 </head>
 <body>
@@ -121,11 +169,9 @@ caption {
 				<input type="text" name="reason" style="border-color: white; width: 100%;">
 			</td>
 		</tr>
-		<tr>
-			<td colspan="4" class="line"><input type="button" value="신청하기" onclick="changeMajor();"
-			style="background-color: #336699; color: white; width: 100%;"></td>
-		</tr>
 		</table>
+		<input class="line update btn" type="button" value="신청하기" onclick="changeMajor();"
+			style="margin-top: 30px;">
 		</form>
 		
 		<table class="table">
