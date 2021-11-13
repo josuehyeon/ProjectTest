@@ -113,7 +113,6 @@
 		    		<li><a class="nav-link link-#00154a mmn" href="/lecture/goEnrolment">교과 과정 / 수업</a>
 		      			<ul id="sub-menu">
 				        	<li><a class="nav-link link-#00154a" href="/lecture/goEnrolment" aria-label="subemnu">수강 신청</a></li>
-				        	<li><a class="nav-link link-#00154a" href="/lecture/selectLecture" aria-label="subemnu">강의리스트</a></li>
 				        	<li><a class="nav-link link-#00154a" href=/grade/chkGradeJsp aria-label="subemnu">성적 조회</a></li>
 					    </ul>
 		    		</li>
