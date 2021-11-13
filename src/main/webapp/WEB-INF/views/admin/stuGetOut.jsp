@@ -34,7 +34,7 @@ caption {
 	color: black;
 	font-weight: bold;
 }
-select{
+.select{
 	width: 100%;
 	height: 100%;
 	padding: 0 auto;
@@ -51,7 +51,7 @@ select{
 	<tr>
 		<td>대학</td>
 		<td>
-			<select name="collNo" id="collList">
+			<select name="collNo" id="collList" class="select">
 				<option value="0">전체</option>
 				<c:forEach items="${collList }" var="coll">
 					<option value="${coll.collNo }">
@@ -62,7 +62,7 @@ select{
 		</td>
 		<td>학년</td>
 		<td>
-			<select name="stuYear">
+			<select name="stuYear" class="select">
 				<option value="0">전체</option>
 				<option value="1">1학년</option>
 				<option value="2">2학년</option>
@@ -76,7 +76,7 @@ select{
 	<tr>
 		<td>전공</td>
 		<td id="deptTd">
-			<select name="majorCode">
+			<select name="majorCode" class="select">
 				<option value="">전체</option>
 				<c:forEach items="${deptList }" var="dept">
 					<option value="${dept.deptId }">${dept.deptName }</option>
@@ -85,7 +85,7 @@ select{
 		</td>
 		<td>학적</td>
 		<td>
-			<select name="stuStatus">
+			<select name="stuStatus" class="select">
 				<option value="">전체</option>
 				<option value="재학">재학</option>
 				<option value="휴학">휴학</option>
