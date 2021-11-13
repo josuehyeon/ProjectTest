@@ -133,7 +133,7 @@ table {
 		<c:when test="${stopStudyInfo.stuStatus eq '재학' and waitCntStop eq 0}">
 			<div>
 				<input type="button" class="line update btn" value="휴학신청" id="stopStudyBtn"
-				style="margin-top: 30px;">
+				style="margin-top: 30px; margin-left: 140px;">
 			</div>
 		</c:when>
 		<c:otherwise>
