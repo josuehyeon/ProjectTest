@@ -34,6 +34,8 @@ table{
 }
 tr,td{
 	border: 1px solid black;
+	height: 30px;
+	vertical-align: middle;
 }
 .tableDiv{
 	margin-top: 80px;
@@ -50,6 +52,10 @@ input{
 }
 input:focus {
 	background-color: #aaaaaa;
+}
+img {
+  object-fit: cover;
+  width: 80px;
 }
 </style>
 </head>

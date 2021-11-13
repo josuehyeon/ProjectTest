@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.kh.project.portal.service.PortalService;
 import com.kh.project.portal.vo.EmailVO;
 import com.kh.project.portal.vo.MemberVO;
+import com.kh.project.stuInfo.service.StuInfoService;
 
 import javax.mail.internet.MimeMessage; 
 import org.springframework.mail.javamail.JavaMailSenderImpl; 
@@ -27,6 +28,8 @@ import org.springframework.core.io.FileSystemResource;
 public class PortalController {
 	@Resource(name = "portalService")
 	private PortalService portalSerivce;
+	@Resource(name = "stuInfoService")
+	private StuInfoService stuInfoSerivce;
 	
 	@Autowired 
 	private JavaMailSenderImpl mailSender;
@@ -64,7 +67,7 @@ public class PortalController {
 
 	//처리 "이메일 보내기"
 	@PostMapping("/sendMail")
-	public String sendMail(EmailVO email) { 
+	public String sendMail(EmailVO email, MemberVO memberVO) { 
 		final MimeMessagePreparator preparator = new MimeMessagePreparator() { 
 			@Override 
 			public void prepare(MimeMessage mimeMessage) throws Exception { 
@@ -75,10 +78,16 @@ public class PortalController {
 				helper.setSubject("임시 비밀번호 발송");
 				
 				String imsiPw = getRamdomPassword(6);
-				helper.setText(imsiPw, true); 
+				helper.setText(imsiPw, true);
+				
+				memberVO.setMemPw(imsiPw);
+				stuInfoSerivce.changePw(memberVO);
 			} 
 		}; 
+		
+	
 		mailSender.send(preparator); 
+		
 		
 		return "portal/send_mail_result"; 
 		
@@ -105,6 +114,7 @@ public class PortalController {
 	public MemberVO chkEmailAjax(MemberVO memberVO) {
 		return portalSerivce.selectEmailToFindPw(memberVO) ;
 	}	
+	
 	
 }
 

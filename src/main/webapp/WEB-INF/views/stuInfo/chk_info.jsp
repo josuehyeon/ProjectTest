@@ -16,6 +16,8 @@ table{
 }
 tr,td{
 	border: 1px solid black;
+	height: 30px;
+	vertical-align: middle;
 }
 .column{
 	background-color: #003264;
@@ -26,6 +28,7 @@ tr,td{
 }
 img {
   object-fit: cover;
+  width: 80px;
 }
 </style>
 </head>
