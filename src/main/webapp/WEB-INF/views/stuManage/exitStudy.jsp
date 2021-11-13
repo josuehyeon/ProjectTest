@@ -132,22 +132,22 @@ table {
 	<c:choose>
 		<c:when test="${exitStudyInfo.stuStatus eq '휴학' and waitCntExit eq 0}">
 			<div>
-				<input class="line update btn" type="button" value="자퇴신청" id="exitStudyBtn" disabled style="margin-top: 30px; margin-left: 140px;">
+				<input class="line update btn" type="button" value="자퇴신청" id="exitStudyBtn" style="margin-top: 30px; margin-left: 140px;">
 			</div>
 		</c:when>
 		<c:when test="${exitStudyInfo.stuStatus eq '복학' and waitCntExit eq 0}">
 			<div>
-				<input class="line update btn" type="button" value="자퇴신청" id="exitStudyBtn" disabled style="margin-top: 30px; margin-left: 140px;">
+				<input class="line update btn" type="button" value="자퇴신청" id="exitStudyBtn" style="margin-top: 30px; margin-left: 140px;">
 			</div>
 		</c:when>
 		<c:when test="${exitStudyInfo.stuStatus eq '재학' and waitCntExit eq 0}">
 			<div>
-				<input class="line update btn" type="button" value="자퇴신청" id="exitStudyBtn" disabled style="margin-top: 30px; margin-left: 140px;">
+				<input class="line update btn" type="button" value="자퇴신청" id="exitStudyBtn" style="margin-top: 30px; margin-left: 140px;">
 			</div>
 		</c:when>
 		<c:otherwise>
 			<div>
-				<input class="line update btn" type="button" value="자퇴신청" id="exitStudyBtn" style="margin-top: 30px; margin-left: 140px;">
+				<input class="line update btn" type="button" value="자퇴신청" id="exitStudyBtn" disabled style="margin-top: 30px; margin-left: 140px;">
 			</div>
 		</c:otherwise>
 	</c:choose>
