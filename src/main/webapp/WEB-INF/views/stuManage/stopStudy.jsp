@@ -139,7 +139,7 @@ table {
 		<c:otherwise>
 			<div>
 				<input type="button" class="line update btn" value="휴학신청" id="stopStudyBtn" disabled
-				style="margin-top: 30px;" >
+				style="margin-top: 30px; margin-left: 140px;" >
 			</div>
 		</c:otherwise>
 	</c:choose>
