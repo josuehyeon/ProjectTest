@@ -157,19 +157,19 @@ input{
 							<div class="modal-body">
 								<form action="/portal/findId" method="post" autocomplete="off">
 									<div class="form-floating mb-3">
-										<input type="text" class="form-control" id="floatingId" placeholder="ID" name="memName" required>
-										<label for="floatingId">Name</label>
+										<input type="text" class="form-control" id="floatingA" placeholder="ID" name="memName" required>
+										<label for="floatingA">Name</label>
 									</div>
 									<!-- <div class="form-floating mb-3">
 										<input type="text" class="form-control" id="floatingBirthDate" placeholder="BirthDate" name="memBirth" required>
 										<label for="floatingBirthDate">Birth Date</label>
 									</div> -->
 									<div class="form-floating mb-3">
-										<input type="text" class="form-control" id="floatingPhoneNum" placeholder="PhoneNumber" name="memPhone" required>
-										<label for="floatingPhoneNum">Phone Number</label>
+										<input type="text" class="form-control" id="floatingB" placeholder="PhoneNumber" name="memPhone" required>
+										<label for="floatingB">Phone Number</label>
 									</div>
 									<div class="col-12 d-grid">
-										<input type="submit" class="btn btn-primary" value="아이디확인" onclick="">
+										<input type="submit" class="btn btn-primary" value="아이디확인" onclick="" id="findIdBtn">
 									</div>
 								</form>
 							</div>
@@ -193,7 +193,7 @@ input{
 							</div>
 							<div class="modal-body">
 							
-								<form action="/portal/sendMail" method="post" id="sendMail">
+								<form action="/portal/sendMail" method="post" id="sendMail" autocomplete="off">
 									<div class="form-floating mb-3">
 										<input type="text" class="form-control" name="memNo" id="floatingMemNo" placeholder="학번" required>
 										<label for="floatingMemNo">Member Number</label>

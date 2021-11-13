@@ -6,6 +6,11 @@ $(document).ready(function(){
 		//$('.modal input:not([type="submit"])').val('');
 	});
 	
+	$(document).on('click', '#findIdBtn', function() {
+	}); //click #sendEmailBtn 닫기
+		var memName = $('#floatingMemNo').val();
+		var memPhone = $('#floatingPhoneNum').val();
+	
 	//이벤트 처리
 	$(document).on('click', '#sendEmailBtn', function() {
 		var memNo = $('#floatingMemNo').val();
@@ -22,7 +27,7 @@ $(document).ready(function(){
 	        	
 	        	if(result.memEmail ==memEmail){
 					$('#sendMail').submit();
-					alert('임시 비밀번호가 발급되었습니다.');
+					//alert('임시 비밀번호가 발급되었습니다.');
 				}else{
 		        	alert('이메일 주소를 확인해주세요');
 				}
