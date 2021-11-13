@@ -137,7 +137,7 @@ page-item.active{background-color: none;}
 					</thead>
 					<tbody>
 					<c:choose>
-						<c:when test="${not empty boardList or cateNo eq 1}">
+						<c:when test="${not empty boardList or cateNo eq 2}">
 							<c:forEach items="${boardList }" var="board">
 								<tbody>
 									<tr class="trh">
@@ -180,7 +180,7 @@ page-item.active{background-color: none;}
 							  </ul>
 							</div>
 							<div class="btnDiv">
-								<a class="btn update btn" href="/form/inlog" style="color: #ffffff; width: 130px;">글 작성</a>
+								<a class="btn update btn" href="/form/inlog" style="color: #ffffff; width: 100px;">글작성</a>
 							</div>
 						</div>
 					</div>
