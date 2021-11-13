@@ -155,7 +155,7 @@ input{
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
 							</div>
 							<div class="modal-body">
-								<form action="/portal/findId" method="post">
+								<form action="/portal/findId" method="post" autocomplete="off">
 									<div class="form-floating mb-3">
 										<input type="text" class="form-control" id="floatingId" placeholder="ID" name="memName" required>
 										<label for="floatingId">Name</label>
