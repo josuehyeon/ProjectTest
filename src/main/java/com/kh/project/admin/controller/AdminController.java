@@ -280,7 +280,7 @@ public class AdminController {
 				helper.setFrom("crytalleehope@gmail.com"); 
 				//helper.setTo(adminVO.getEmail());
 				helper.setTo("pepe52928282@gmail.com");
-				helper.setSubject("대학교 학사경고");
+				helper.setSubject("JESUS대학교 학사경고 알림");
 				
 				String imsiPw = adminVO.getYellReason() + " 사유로 학사경고를 받았습니다.";
 						
@@ -309,9 +309,9 @@ public class AdminController {
 				helper.setFrom("crytalleehope@gmail.com"); 
 				//helper.setTo(adminVO.getEmail());
 				helper.setTo("pepe52928282@gmail.com");
-				helper.setSubject("대학교 제적 알림");
+				helper.setSubject("JESUS대학교 제적 알림");
 				
-				String imsiPw = adminVO.getGetOutReason() + " 사유로 제적되었습니다.";
+				String imsiPw = adminVO.getGetOutReason() + " 사유로 제적을 받았습니다.";
 				
 				helper.setText(imsiPw, true); 
 			} 
