@@ -12,9 +12,9 @@ ul,li{list-style:none;}
 .slide ul{position:relative;height:100%;z-index: 1;}
 .slide li{position:absolute;left:0;right:0;top:0;bottom:0;opacity:0;animation:fade 8s infinite;z-index: 1;}
 .slide li:nth-child(1){animation-delay:0s; z-index: 1;}
-.slide li:nth-child(2){background:#faa;animation-delay:2s; z-index: 1;}
-.slide li:nth-child(3){background:#afa;animation-delay:4s; z-index: 1;}
-.slide li:nth-child(4){background:#aaf;animation-delay:6s; z-index: 1;}
+.slide li:nth-child(2){animation-delay:2s; z-index: 1;}
+.slide li:nth-child(3){animation-delay:4s; z-index: 1;}
+.slide li:nth-child(4){animation-delay:6s; z-index: 1;}
  /* 100 / 8 = 12.5 */
 @keyframes fade {
   0% {opacity:0;}
@@ -24,7 +24,7 @@ ul,li{list-style:none;}
   100% {opacity:0;}
 }
 .nt{width: 90%; text-align: left; margin-top: 30px;}
-section {column-width: 35em;background: #ffffff;padding: 5em 24em;}
+section {background: #ffffff;padding: 3em 3em; font-size: 23px;}
   </style>
 </head>
 <body>
@@ -33,17 +33,16 @@ section {column-width: 35em;background: #ffffff;padding: 5em 24em;}
     <li><img src="/resources/common/images/testmeme.jpg" style="width: 100%; height: 100%; object-fit: cover;"></li>
     <li><img src="/resources/common/images/meme2.jpg" style="width: 100%; height: 100%; object-fit: cover;"></li>
     <li><img src="/resources/common/images/meme4.jpg" style="width: 100%; height: 100%; object-fit: cover;"></li>
-    <li><img src="/resources/common/images/ravenclawrmone.png" style="width: 100%; height: 100%; object-fit: cover;"></li>
+    <li><img src="/resources/common/images/nest.png" style="width: 100%; height: 100%; object-fit: cover;"></li>
   </ul>
 </div>
 <div class="ly-container">
 	<div class="row">
-		<div class="col-11">
-			<h2 class="nt" style="font-family: 'Lora', serif; "> Jesus university Notice</h2>
+		<div class="col-12">
+			<h2 class="nt" style="font-family: 'Lora', serif; margin-bottom: 29px;"> ㅤㅤㅤJesus university Notice</h2>
 		</div>
 		<div>
 			<section>
-				<h2>Title</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Quos fugiat dolor velit, voluptatum vel enim consectetur eligendi
 					molestias quaerat magnam voluptatibus corrupti eos quae

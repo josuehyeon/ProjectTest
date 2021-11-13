@@ -183,7 +183,7 @@ page-item.active{background-color: none;}
 							  </ul>
 							</div>
 							<div class="btnDiv">
-								<a class="btn update btn" href="/form/inlog" style="color: #ffffff; width: 130px;">글 작성</a>
+								<a class="btn update btn" href="/form/inlog" style="color: #ffffff; width: 130px; font-size: 15px;">글 작성</a>
 							</div>
 						</div>
 					</div>

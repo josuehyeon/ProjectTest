@@ -21,9 +21,6 @@ body {
   	align-items: center;
   	overflow-x: hidden;  
 }
-h1 {
-  	margin: 2em 0 1.5em 0;
-}
 table {
   text-align: center;
   margin: auto 0;
@@ -37,17 +34,19 @@ nav {
 	display: flex;
 	justify-content: center;
 	position: relative;
-	background-color: #000f4c;
+	background-color: #000f4c;text-align: center;
 }
 ul, li {
   margin: 0;
   padding: 0;
   list-style: none;
+  text-align: center;
 }
 #main-menu > li {
+	text-align: center;
   float: left;
   position: relative;
-  width: 400px;
+  width: 360px;
 }
 #main-menu > li > a {
   font-size: 0.85rem;
@@ -61,6 +60,7 @@ ul, li {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 #main-menu > li:nth-child(1) > a {
+	text-align: center;
   border-left: 1px solid rgba(0,0,0,0.15);
 }
 #sub-menu {
@@ -76,10 +76,9 @@ ul, li {
 	text-align: center;
   	padding: 12px 20px;
   	border-bottom: 1px solid rgba(0,0,0,0.15);
-  	width: 367.6px;
+  	width: 329px;
   	z-index: 7;
 }
-
 #sub-menu > li >  a {
   color: rgba(255,255,255,0.6);
   text-decoration: none;
@@ -91,11 +90,9 @@ ul, li {
   opacity: 1;
   visibility: visible;
   text-align: center;
-  width: 400px;
+  width: 360px;
   z-index: 7;
 }
 
-#sub-menu > li >  a:hover {
- text-decoration: underline;
-}
+#sub-menu > li >  a:hover {text-decoration: underline;}
 a{color: #000f4c}
