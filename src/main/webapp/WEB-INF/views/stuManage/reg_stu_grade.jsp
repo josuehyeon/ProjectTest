@@ -23,7 +23,7 @@ td{
 	margin-top: 5px;
 }
 </style>
-<script type="text/javascript" src="/resources/stuManage/js/reg_stu_grade.js?ver=32"></script>
+<script type="text/javascript" src="/resources/stuManage/js/reg_stu_grade.js?ver=33"></script>
 </head>
 <body>
 <table style="margin-top: 20px;">
@@ -39,17 +39,19 @@ td{
 		</td>
 	</tr>
 </table>
-<div id="studentListDiv">
-	<table>
-		<tr class="column">
-			<td>학번</td>
-			<td>이름</td>
-			<td>성적</td>
-		</tr>
-		<tr>
-			<td colspan="3">강의를 선택하세요.</td>
-		</tr>
-	</table>
-</div>
+<form action="" method="get">
+	<div id="studentListDiv">
+		<table>
+			<tr class="column">
+				<td>학번</td>
+				<td>이름</td>
+				<td>성적</td>
+			</tr>
+			<tr>
+				<td colspan="3">강의를 선택하세요.</td>
+			</tr>
+		</table>
+	</div>
+</form>
 </body>
 </html>

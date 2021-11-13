@@ -149,6 +149,14 @@
 		)
 	</insert>
 	
+	<update id="updateGrade">
+		UPDATE STU_GRADE
+		SET GRADE = #{grade}
+		WHERE LEC_ID = #{lecId}
+		AND STU_NO= #{stuNo}
+		AND SEM_ID = (SELECT TO_CHAR(SYSDATE, 'YYYY')||CASE WHEN TO_CHAR(SYSDATE, 'MM') >=7 THEN '2' ELSE '1' END SEM_ID FROM DUAL)
+	</update>
+	
 </mapper>
 
 

@@ -33,4 +33,7 @@ public interface GradeManageService {
 
 	//학점 목록
 	List<GradeVO> gradeList();
+	
+	//성적 변경
+	void updateGrade(StuGradeVO stuGradeVO);
 }

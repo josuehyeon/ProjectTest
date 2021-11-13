@@ -58,4 +58,10 @@ public class GradeManageServiceImpl implements GradeManageService {
 		return sqlSession.selectList("gradeMapper.gradeList");
 	}
 
+	@Override
+	public void updateGrade(StuGradeVO stuGradeVO) {
+		sqlSession.update("gradeMapper.updateGrade", stuGradeVO);
+		
+	}
+
 }

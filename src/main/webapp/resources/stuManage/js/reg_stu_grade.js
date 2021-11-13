@@ -63,11 +63,26 @@ $(document).ready(function(){
     }); //change collegeList 이벤트 닫기
 	$(document).on('click', '#btn', function() {
 		alert('연결');
-		var aa = $(this).attr('data-stuNo');
+		var stuNo = $(this).attr('data-stuNo');
 //		var aa = $(this).attr('data-stuno');
-		var vv = $('.grade').val();
-		alert(aa);
-		alert(vv);
+		var grade = $('.grade').val();
+		var lecId = $('#lectureSelect').val();
+//		alert(stuNo);
+//		alert(grade);
+//		alert(lecId);
+		$.ajax({
+	        url: '/stuManage/updateGradeAjax', //요청경로
+	        type: 'post',
+	        data:{'lecId':lecId, 'stuNo':stuNo , 'grade':grade}, //필요한 데이터
+	        success: function(result) {
+	        	//ajax 실행 성공 시 실행되는 구간
+	        	alert('ajax연결 성공');
+	        },
+	        error: function(){
+	        	//ajax 실행 실패 시 실행되는 구간
+	        	alert('실패');
+	        }
+	  }); //ajax 닫기
 	}); //change collegeList 이벤트 닫기
 });
 

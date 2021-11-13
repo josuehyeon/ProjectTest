@@ -255,6 +255,13 @@ public class StuManageController {
 		return map;
 	}
 	
+	//Ajax: 성적 등록
+	@ResponseBody
+	@PostMapping("/updateGradeAjax")
+	public void updateGradeAjax(StuGradeVO stuGradeVO) {
+		gradeManageService.updateGrade(stuGradeVO);
+	}	
+	
 //	@ResponseBody
 //	   @PostMapping("/serchDateAjax")
 //	   public Map<String, Object> serchDate(OrderInfoVO orderInfoVO){
