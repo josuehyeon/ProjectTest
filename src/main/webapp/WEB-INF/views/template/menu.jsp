@@ -9,18 +9,15 @@
 <script type="text/javascript"></script>
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-.topSm{height}
+.topSm{height: 100px;}
 </style>
 </head>
 <body>
 <div>
 <div>
-	<div class="topSm">
-		<img alt="" src="/resources/common/images/jml.png">
-	</div>
-	<div style="text-align: right;">
+	<div style="text-align: right; margin-bottom: 20px; margin-right: 80px;">
 		<c:if test="${not empty sessionScope.loginInfo }">
-			${sessionScope.loginInfo.memNo }님 반갑습니다.
+			${sessionScope.loginInfo.memName }님 반갑습니다.
 			<a href="/portal/logout">로그아웃</a> <!-- 일단 여기 넣어놓음 -->
 			<a href="/portal/mainJsp">메인</a> <!-- 일단 여기 넣어놓음 -->
 		</c:if>

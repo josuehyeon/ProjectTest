@@ -30,36 +30,90 @@ th, td {
 }
 thead{
 	text-align: center;
-	background-color: #212529; 
+	background-color: #55597a; 
 	color: white;
 	margin-bottom: 20px;
-	
 }
-.Ht{
-	border-top: 30px; border-bottom: 30px;
-	background-color: #a8a8a8;
-	color: white;	
-	margin-bottom: 1px;
-}
+.Ht{border-top: 30px; border-bottom: 30px; background-color: #000038; color: white;	margin-top:40px; margin-bottom: 1px; border-radius: 5px;}
 .btnDiv{
 	text-align: center;
 	margin: 0 auto;
-	background-color: #212529;
 	color: white;
-	width: 300px;
+	width: 100px;
 	margin-top: 25px;
 }
-.pagingDiv a{
-	color: black;
-	text-decoration: none;
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
+.pagingDiv a{color: black;text-decoration: none;}
+a.sltedPage{color: blue;font-weight: bold;}
+.trh{height: 30px;}
+.bdCl{margin-left: 0 auto;margin-right: 0 auto;}
+table {
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
 }
-a.sltedPage{
-	color: blue;
-	font-weight: bold;
+.tt{
+	margin: 0 auto;
+	text-align: center;
 }
-.trh{
+.container{
+	
+}
+.tx{
+	text-align: center;
+	margin: 0 auto;
 	height: 30px;
+	vertical-align:middle;
 }
+iframe {
+	width: 100%;
+	height: 95%;
+	
+}
+.modal-content{
+	height: 900px;
+}
+
+.btn{
+  background:#000f4c;
+  color:#ffffff;
+  border:none;
+  position:relative;
+  /* height:35px; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+   opacity:0.65;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #000f4c;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+  color: #000f4c;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+.btn:hover{
+  background:#fff;
+  color:#000f4c;
+}
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
+.page-item.active .page-link{background-color: #000f4c; z-index: 1; border-color: #000f4c;}
+page-item.active{background-color: none;}
 </style>
 </head>
 <body>
@@ -67,10 +121,12 @@ a.sltedPage{
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="Ht">✦ 건의게시판 ✦</div>
-				<table>
+		      <div class="col-5" style="border-bottom: 2px solid #000f4c; font-style: italic; font-weight: bold; margin-top: 20px; margin: 0 auto;">
+    	        <h5 style="text-align: center; margin-top: 20px;">✦ 건의게시판 ✦</h5>
+	         </div>
+				<table class="bdCl">
 					<thead>
-						<tr>
+						<tr style="border-radius: 5px;">
 							<td style="text-align: center;">No</td>
 							<td style="text-align: center;">Writer</td>
 							<td style="text-align: center;">Title</td>
@@ -81,21 +137,19 @@ a.sltedPage{
 					</thead>
 					<tbody>
 					<c:choose>
-						<c:when test="${not empty boardList and cateNo eq 2}">
-							<tr>
+						<c:when test="${not empty boardList or cateNo eq 1}">
 							<c:forEach items="${boardList }" var="board">
 								<tbody>
 									<tr class="trh">
 										<td>${board.rowNum }</td>
 										<td>${board.boardWriter }</td>
-										<td><a href="/form/detail?boardNo=${board.boardNo }" >${board.boardTitle }</a></td>
+										<td><a href="/form/boDetail?boardNo=${board.boardNo }">${board.boardTitle }</a></td>
 										<td>${board.boardDate }</td>
 										<td>${board.readCnt }</td>
 										<td>${board.commCnt }</td>
 									</tr>
 								</tbody>
 							</c:forEach>
-							</tr>
 						</c:when>
 						<c:otherwise>
 							<tr>
@@ -105,13 +159,10 @@ a.sltedPage{
 					</c:choose>
 					</tbody>
 				</table>
-				<div class="btnDiv">
-					<a class="" href="/form/inlog">글 작성</a>
-				</div>
 				<div class="pagingDiv">
 					<div class="row">
-						<div class="col-11">
-									<nav aria-label="Page navigation example">
+						<div class="col-12">
+							<div aria-label="Page navigation example" class="pageNa">
 							  <ul class="pagination justify-content-center">
 							    <li class="page-item <c:if test="${!boardVO.prev }">disabled</c:if>">
 							      <a class="page-link" href="/board/infoPark?nowPage=${boardVO.beginPage - 1 }" aria-label="Previous">
@@ -127,7 +178,10 @@ a.sltedPage{
 							      </a>
 							    </li>
 							  </ul>
-							</nav>
+							</div>
+							<div class="btnDiv">
+								<a class="btn update btn" href="/form/inlog" style="color: #ffffff; width: 130px;">글 작성</a>
+							</div>
 						</div>
 					</div>
 				</div>

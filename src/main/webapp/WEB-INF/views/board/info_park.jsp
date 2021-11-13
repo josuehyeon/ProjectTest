@@ -37,11 +37,10 @@ thead{
 	color: white;
 	margin-bottom: 20px;
 }
-.Ht{border-top: 30px; border-bottom: 30px; background-color: #000038; color: white;	margin-top:40px; margin-bottom: 1px;}
+.Ht{border-top: 30px; border-bottom: 30px; background-color: #000038; color: white;	margin-top:40px; margin-bottom: 1px; border-radius: 5px;}
 .btnDiv{
 	text-align: center;
 	margin: 0 auto;
-	background-color: #000038;
 	color: white;
 	width: 100px;
 	margin-top: 25px;
@@ -51,6 +50,73 @@ thead{
 a.sltedPage{color: blue;font-weight: bold;}
 .trh{height: 30px;}
 .bdCl{margin-left: 0 auto;margin-right: 0 auto;}
+table {
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+}
+.tt{
+	margin: 0 auto;
+	text-align: center;
+}
+.container{
+	
+}
+.tx{
+	text-align: center;
+	margin: 0 auto;
+	height: 30px;
+	vertical-align:middle;
+}
+iframe {
+	width: 100%;
+	height: 95%;
+	
+}
+.modal-content{
+	height: 900px;
+}
+
+.btn{
+  background:#000f4c;
+  color:#ffffff;
+  border:none;
+  position:relative;
+  /* height:35px; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+   opacity:0.65;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #000f4c;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+  color: #000f4c;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+.btn:hover{
+  background:#fff;
+  color:#000f4c;
+}
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
+.page-item.active .page-link{background-color: #000f4c; z-index: 1; border-color: #000f4c;}
+page-item.active{background-color: none;}
 </style>
 </head>
 <body>
@@ -58,10 +124,12 @@ a.sltedPage{color: blue;font-weight: bold;}
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="Ht">✦ 자유게시판 ✦</div>
+		      <div class="col-5" style="border-bottom: 2px solid #000f4c; font-style: italic; font-weight: bold; margin-top: 20px; margin: 0 auto;">
+    	        <h5 style="text-align: center; margin-top: 20px;">✦ 자유게시판 ✦</h5>
+	         </div>
 				<table class="bdCl">
 					<thead>
-						<tr>
+						<tr style="border-radius: 5px;">
 							<td style="text-align: center;">No</td>
 							<td style="text-align: center;">Writer</td>
 							<td style="text-align: center;">Title</td>
@@ -115,7 +183,7 @@ a.sltedPage{color: blue;font-weight: bold;}
 							  </ul>
 							</div>
 							<div class="btnDiv">
-								<a class="" href="/form/inlog">글 작성</a>
+								<a class="btn update btn" href="/form/inlog" style="color: #ffffff; width: 130px;">글 작성</a>
 							</div>
 						</div>
 					</div>

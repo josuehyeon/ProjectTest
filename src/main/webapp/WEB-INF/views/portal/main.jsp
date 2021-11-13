@@ -30,16 +30,16 @@ section {column-width: 35em;background: #ffffff;padding: 5em 24em;}
 <body>
 <div class="slide">
   <ul style="width: 100%">
+    <li><img src="/resources/common/images/testmeme.jpg" style="width: 100%; height: 100%; object-fit: cover;"></li>
+    <li><img src="/resources/common/images/meme2.jpg" style="width: 100%; height: 100%; object-fit: cover;"></li>
     <li><img src="/resources/common/images/meme4.jpg" style="width: 100%; height: 100%; object-fit: cover;"></li>
-    <li><img src="/resources/common/images/testmeme.jsp" style="width: 100%; height: 100%; object-fit: cover;"></li>
-    <li><img src="/resources/common/images/testmeme.jsp" style="width: 100%; height: 100%; object-fit: cover;"></li>
-    <li><img src="/resources/common/images/testmeme.jsp" style="width: 100%; height: 100%; object-fit: cover;"></li>
+    <li><img src="/resources/common/images/ravenclawrmone.png" style="width: 100%; height: 100%; object-fit: cover;"></li>
   </ul>
 </div>
 <div class="ly-container">
 	<div class="row">
 		<div class="col-11">
-			<h2 class="nt" style="font-family: 'Lora', serif; ">━━━━━━━━━━━━━━━━━━━━ Jesus university Notice</h2>
+			<h2 class="nt" style="font-family: 'Lora', serif; "> Jesus university Notice</h2>
 		</div>
 		<div>
 			<section>
