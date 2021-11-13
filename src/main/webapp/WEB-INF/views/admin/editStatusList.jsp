@@ -6,13 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
 <script type="text/javascript" src="/resources/admin/js/editStatusList.js?ver=18"></script> 
 
 <style type="text/css">
+.modal-content{
+	height: 900px;
+}
+
+table {
+	background-color: white;
+}
 iframe {
 	width: 100%;
 	height: 95%;
@@ -22,9 +25,6 @@ iframe {
 	height: 900px;
 }
 
-table {
-	background-color: white;
-}
 .btn{
   background:#000f4c;
   color:#fff;
@@ -175,12 +175,11 @@ table {
 	</c:forEach> --%>
 </table>
 <div>　</div>
-<div>
-	<input type="button" value="일괄승인" class="stopStudyBtn btn" style="background-color: #336699; color: white; width: 100%; height: 50%;" >
-<!-- 	<input type="button" value="복학승인" class="againStudyBtn" >
-	<input type="button" value="자퇴승인" class="exitStudyBtn" >
-	<input type="button" value="승인유예" class="notOkayBtn" >
-	<input type="button" value="삭제" class="deleteBtn" >  -->
+<div class="row">
+	<div class="col-12">
+		<input type="button" value="일괄승인" class="stopStudyBtn update btn" style="background-color: #336699; color: white; width: 120px;" >
+	</div>
+
 </div>
 </div>
 </body>
