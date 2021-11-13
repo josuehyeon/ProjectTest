@@ -176,7 +176,7 @@ table {
 </table>
 <div>　</div>
 <div>
-	<input type="button" value="일괄승인" class="stopStudyBtn btn" style="background-color: #336699; color: white; width: 100%;" >
+	<input type="button" value="일괄승인" class="stopStudyBtn btn" style="background-color: #336699; color: white; width: 100%; height: 50%;" >
 <!-- 	<input type="button" value="복학승인" class="againStudyBtn" >
 	<input type="button" value="자퇴승인" class="exitStudyBtn" >
 	<input type="button" value="승인유예" class="notOkayBtn" >

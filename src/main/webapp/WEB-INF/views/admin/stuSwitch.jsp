@@ -12,25 +12,34 @@ td{
 	border: 1px solid black;
 	margin: 0 auto;
 }
+
+caption {
+	color: black;
+	font-weight: bold;
+}
+.menuTd{
+	background-color: #00154a;
+	color: white;
+}
 </style>
 </head>
 <body>
+<div>　</div>
 <form action="/admin/stuSwitch1" method="post">
-<div>5 전과 / 복수전공</div>
-<div>전과신청목록</div>
 <table>
+<caption align="top">전과신청 목록</caption>
 	<tr>
-		<td>No</td>
-		<td>소속대학</td>
-		<td>소속학과</td>
-		<td>학번</td>
-		<td>이름</td>
-		<td>학년</td>
-		<td>학적상태</td>
-		<td>변경대학</td>
-		<td>변경학과</td>
-		<td>신청상태</td>
-		<td>신청일</td>
+		<td class="menuTd">No</td>
+		<td class="menuTd">소속대학</td>
+		<td class="menuTd">소속학과</td>
+		<td class="menuTd">학번</td>
+		<td class="menuTd">이름</td>
+		<td class="menuTd">학년</td>
+		<td class="menuTd">학적상태</td>
+		<td class="menuTd">변경대학</td>
+		<td class="menuTd">변경학과</td>
+		<td class="menuTd">신청상태</td>
+		<td class="menuTd">신청일</td>
 	</tr>
 	<tbody>
 		<c:forEach items="${AdminChangeMajorRequestList }" var="changeMajorInfo" varStatus="status">
@@ -55,21 +64,21 @@ td{
 	</tbody>
 </table>
 
-
-<div>복수전공 신청목록</div>
+<div>　</div>
 <table>
+<caption align="top">전과신청 목록</caption>
 	<tr>
-		<td>No</td>
-		<td>소속대학</td>
-		<td>소속학과</td>
-		<td>학번</td>
-		<td>이름</td>
-		<td>학년</td>
-		<td>학적상태</td>
-		<td>변경대학</td>
-		<td>변경학과</td>
-		<td>신청상태</td>
-		<td>신청일</td>
+		<td class="menuTd">No</td>
+		<td class="menuTd">소속대학</td>
+		<td class="menuTd">소속학과</td>
+		<td class="menuTd">학번</td>
+		<td class="menuTd">이름</td>
+		<td class="menuTd">학년</td>
+		<td class="menuTd">학적상태</td>
+		<td class="menuTd">변경대학</td>
+		<td class="menuTd">변경학과</td>
+		<td class="menuTd">신청상태</td>
+		<td class="menuTd">신청일</td>
 	</tr>
 	<tbody>
 		<c:forEach items="${AdminDoubleMajorRequestList }" var="doubleMajorInfo" varStatus="status">
@@ -178,7 +187,11 @@ td{
     </div>
   </div>
 </div>
-
+<div>　</div>
+<div>　</div>
+<div>　</div>
+<div>　</div>
+<div>　</div>
 
 
 

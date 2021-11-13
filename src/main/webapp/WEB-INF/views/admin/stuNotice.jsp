@@ -10,9 +10,11 @@
 <style type="text/css">
 table {
 	width: 600px;
+	
 }
 td{
 	border: 1px solid black;
+	
 }
 div > span{
 	text-align: left;
@@ -30,12 +32,23 @@ div > span{
 	cursor: pointer;
 	font-weight: bold;
 }
+caption {
+	color: black;
+	font-weight: bold;
+}
+select{
+	width: 100%;
+	height: 100%;
+	padding: 0 auto;
+	margin: 0 auto;
+}
 </style>
 </head>
 <body>
-학사경고 페이지
+<div>　</div>
 <form action="/admin/stuNotice" method="post">
 <table>
+<caption align="top">학사경고</caption>
 	<tr>
 		<td>대학</td>
 		<td>

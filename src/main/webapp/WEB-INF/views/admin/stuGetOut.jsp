@@ -30,12 +30,24 @@ div > span{
 	cursor: pointer;
 	font-weight: bold;
 }
+caption {
+	color: black;
+	font-weight: bold;
+}
+select{
+	width: 100%;
+	height: 100%;
+	padding: 0 auto;
+	margin: 0 auto;
+}
 </style>
 </head>
 <body>
-제적 페이지
+<div>　</div>
+
 <form action="/admin/stuGetOut" method="post">
 <table>
+<caption align="top">제적</caption>
 	<tr>
 		<td>대학</td>
 		<td>
@@ -94,8 +106,11 @@ div > span{
 </table>
 </form>
 <div>
-	<span style="color: red;">*학생의 이름을 클릭하면 제적 페이지가 열립니다.</span>
+	<span style="color: red;">*학사경고 <span style="font-weight: bold;">3회</span> 이상인 경우 제적페이지에 나타납니다. <span style="font-weight: bold;">이름</span>을 클릭하세요.</span>
 </div>
+<!-- <div>
+	<span style="color: red;">*학생의 이름을 클릭하면 제적 페이지가 열립니다.</span>
+</div> -->
 <div>
 	<table>
 		<tr>
