@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=1"></script>
+<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=4"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -134,7 +134,7 @@ caption {
 					    <div class="modal-content">
 					      <div class="modal-header">
 					        <h5 class="modal-title" id="staticBackdropLabel">학사 경고</h5>
-					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">asdf</button>
+					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					      </div>
 					      <div class="modal-body">
 					        <div>
@@ -179,7 +179,7 @@ caption {
 								<tr>
 									<td class="td_1">사유</td>
 									<td class="td_2">
-										<select class="yellowReason">
+										<select class="yellReason">
 											<option value="이수학점 미달">이수학점 미달</option>
 											<option value="평균학점 미달">평균학점 미달</option>
 											<option value="학칙위반">학칙위반</option>

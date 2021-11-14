@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var stuNo = $(this).attr('data-stuNo');
 		
 		//var yellowReason = $(this).closest('.yellowReason').val();
-		var yellowReason = $(this).parent().prev().find('.yellowReason').val();
+		var yellReason = $(this).parent().prev().find('.yellReason').val();
 		
 		var email = $(this).parent().prev().find('.emailTd').text();
 		
@@ -14,7 +14,7 @@ $(document).ready(function(){
 		$.ajax({
 	        url: '/admin/mailNoticeAjax', //요청경로
 	        type: 'post',
-	        data:{'stuNo':stuNo , 'yellowReason':yellowReason, 'email':email}, //필요한 데이터
+	        data:{'stuNo':stuNo , 'yellReason':yellReason, 'email':email}, //필요한 데이터
 	        success: function(result) {
 	        	$('#' + modalId).modal('hide');
 	        	
