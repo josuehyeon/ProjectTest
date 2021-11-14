@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=15"></script>
+<script type="text/javascript" src="/resources/admin/js/stuNotice.js?ver=1"></script>
 <style type="text/css">
 table {
 	width: 600px;
@@ -99,11 +99,7 @@ caption {
 </table>
 <div></div>
 <table>
-	<!-- <tr>
-		<td>검색</td>
-		<td><input type="text" style="width: 515px;" placeholder="학번 또는 이름을 검색하세요."></td>
-		<td><input type="submit" value="검색"></td>
-	</tr> -->
+
 </table>
 </form>
 <div>
@@ -128,14 +124,13 @@ caption {
 					<%-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop${status.index}">
 					  이름
 					</button> --%>
-					
 					<!-- Modal -->
 					<div class="modal fade" id="staticBackdrop${status.index}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 					  <div class="modal-dialog">
 					    <div class="modal-content">
 					      <div class="modal-header">
 					        <h5 class="modal-title" id="staticBackdropLabel">학사 경고</h5>
-					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">asdf</button>
 					      </div>
 					      <div class="modal-body">
 					        <div>

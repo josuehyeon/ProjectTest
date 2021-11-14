@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var stuNo = $(this).attr('data-stuNo');
 		
 //		var yellowReason = $(this).closest('.yellowReason').val();
-		var yellReason = $(this).parent().prev().find('.getOutReason').val();
+		var getOutReason = $(this).parent().prev().find('.getOutReason').val();
 		
 		var email = $(this).parent().prev().find('.emailTd').text();
 		
