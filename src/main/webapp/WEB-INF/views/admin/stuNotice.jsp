@@ -99,7 +99,11 @@ caption {
 </table>
 <div></div>
 <table>
-
+<!-- <tr>
+		<td>검색</td>
+		<td><input type="text" style="width: 515px;" placeholder="학번 또는 이름을 검색하세요."></td>
+		<td><input type="submit" value="검색"></td>
+	</tr> -->
 </table>
 </form>
 <div>
