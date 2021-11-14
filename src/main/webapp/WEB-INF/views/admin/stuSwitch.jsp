@@ -11,15 +11,57 @@
 td{
 	border: 1px solid black;
 	margin: 0 auto;
+		vertical-align: middle;
+	height: 35px;
 }
-
+table{
+	width: 900px;
+	background-color: white;
+}
 caption {
 	color: black;
 	font-weight: bold;
 }
 .menuTd{
-	background-color: #00154a;
+	background-color: #336699;
 	color: white;
+}
+.btn{
+  background:#336699;
+  color:#fff;
+  border:none;
+  position:relative;
+  /* height:35px; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  opacity: 0.8;
+
+}
+.btn:hover{
+  background:#ffffff;
+  color:#000f4c;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
 </style>
 </head>
@@ -56,7 +98,7 @@ caption {
 			<td>
 				<!-- Button trigger modal -->
 				<!-- <input type="button" class="btn btn-primary modalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"  value="처리대기"> -->
-				<input type="button" class="btn btn-primary modalBtn" value='<c:choose><c:when test="${changeMajorInfo.status eq 'N' }">처리대기</c:when><c:otherwise>승인완료</c:otherwise></c:choose>' data-stuNo="${changeMajorInfo.stuNo }" data-type="1">
+				<input type="button" style="width: 100%; height: 100%;" class="btn btn-primary modalBtn" value='<c:choose><c:when test="${changeMajorInfo.status eq 'N' }">처리대기</c:when><c:otherwise>승인완료</c:otherwise></c:choose>' data-stuNo="${changeMajorInfo.stuNo }" data-type="1">
 			</td>
 			<td>${changeMajorInfo.insertDate }</td>
 		</tr>
@@ -66,7 +108,7 @@ caption {
 
 <div>　</div>
 <table>
-<caption align="top">전과신청 목록</caption>
+<caption align="top">복수전공 신청 목록</caption>
 	<tr>
 		<td class="menuTd">No</td>
 		<td class="menuTd">소속대학</td>
@@ -95,7 +137,7 @@ caption {
 			<td>
 				<!-- Button trigger modal -->
 				<!-- <input type="button" class="btn btn-primary modalBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"  value="처리대기"> -->
-				<input type="button" class="btn btn-primary modalBtn" value="<c:choose><c:when test="${doubleMajorInfo.status eq 'N' }">처리대기</c:when><c:otherwise>승인완료</c:otherwise></c:choose>" data-stuNo="${doubleMajorInfo.stuNo }" data-type="2">
+				<input type="button" style="width: 100%; height: 100%;" class="btn btn-primary modalBtn" value="<c:choose><c:when test="${doubleMajorInfo.status eq 'N' }">처리대기</c:when><c:otherwise>승인완료</c:otherwise></c:choose>" data-stuNo="${doubleMajorInfo.stuNo }" data-type="2">
 			</td>
 			<td>${doubleMajorInfo.insertDate }</td>
 		</tr>
