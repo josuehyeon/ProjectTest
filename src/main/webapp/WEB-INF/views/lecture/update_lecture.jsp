@@ -126,7 +126,7 @@
                </div>
                <div class="col">
                   <label for="formFile" class="form-label">강의자료첨부</label>
-                    <input name="f" class="form-control" type="file" id="formFile">
+                    <input name="file" class="form-control" type="file" id="formFile" value="${lecPdf.originPdfName}">
                </div>
                 <div class="col">
                   <label for="lecDay" class="form-label">강의요일선택</label>
