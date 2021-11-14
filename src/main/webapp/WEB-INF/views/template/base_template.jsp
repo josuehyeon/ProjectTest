@@ -8,9 +8,9 @@
 <title><tiles:insertAttribute name="title"/></title>
 <!-- 태그 초기화 작업 -->
 <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="/resources/common/reset.css?ver=13">
-<link rel="stylesheet" href="/resources/common/CommonMenu.css?ver=30">
-<link rel="stylesheet" href="/resources/common/CommonBodyCssFrame.css?ver=10">
+<link rel="stylesheet" href="/resources/common/reset.css?ver=14">
+<link rel="stylesheet" href="/resources/common/CommonMenu.css?ver=31">
+<link rel="stylesheet" href="/resources/common/CommonBodyCssFrame.css?ver=11">
 
 <!-- 제이쿼리 문법을 로딩 -->
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>

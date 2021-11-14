@@ -30,7 +30,7 @@
 			<c:if test="${not empty sessionScope.loginInfo }">
 			<c:choose>
 				<c:when test="${sessionScope.loginInfo.memAuth eq 3}"><!-- 교직원(관리자) -->
-					<li><a class="nav-link link-#00154a mmn" href="/common/myInfo">내 정보</a>
+					<li><a class="nav-link link-#00154a mmn" href="/emp/chkInfoJsp">내 정보</a>
 	      				<ul id="sub-menu">
 					        <li><a class="nav-link link-#00154a" href="/emp/chkInfoJsp" aria-label="subemnu">내 정보 조회</a></li>
 				        	<li><a class="nav-link link-#00154a" href="/portal/regMemberJsp" aria-label="subemnu">내 정보 수정</a></li>

@@ -96,4 +96,4 @@ ul, li {
 }
 
 #sub-menu > li >  a:hover {text-decoration: underline;}
-a{color: #000f4c}
+a{color: white; text-decoration: none;}

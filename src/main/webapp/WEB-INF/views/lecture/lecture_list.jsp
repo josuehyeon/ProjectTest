@@ -56,6 +56,8 @@ table {
   transition:800ms ease all;
 }
 .pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
+.page-item.active .page-link{background-color: #000f4c; z-index: 1; border-color: #000f4c;}
+page-item.active{background-color: none;}
 </style>
 <script type="text/javascript" src="/resources/sample/js/lecture_list.js?ver=22122259"></script>
 </head>
