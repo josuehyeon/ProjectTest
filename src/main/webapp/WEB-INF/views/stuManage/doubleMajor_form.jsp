@@ -14,22 +14,22 @@
 	padding-top: 30px;
 }
 table{
-	border: 1px solid #1d2040;
+	border: 1px solid white;
 	margin: 0 auto;
 	background-color: white;
 	width: 900px;
-	border-bottom-color: #55597a;
+	border-bottom-color: #000f4c;
 	
 }
 tr, td{
-	border: 1px solid #1d2040;
+	border: 1px solid #dee2e6;
 
 }
 .line{
-	background-color: #55597a;;
+	background-color: #336699;;
 	color: white;
-	border-right: solid #1d2040;
-	border-left: solid #1d2040;
+	border-right: solid #000f4c;
+	border-left: solid #000f4c;
 	
 }
 input {
@@ -169,9 +169,14 @@ table {
 				<input type="text" name="reason" style="border-color: white; width: 100%;">
 			</td>
 		</tr>
+		<tr>
+			<td colspan="4" class="line">
+				<input type="button" value="신청하기" onclick="doubleMajor();"
+			style="width: 100%; border-top: 1px solid #000f4c; border-bottom: 1px solid #000f4c; background-color:#336699; color: white;">
+			</td>
+		</tr>
 		</table>
-		<input class="line update btn" type="button" value="신청하기" onclick="doubleMajor();"
-			style="margin-top: 30px;">
+	
 	</form>
 
 	<table class="table">

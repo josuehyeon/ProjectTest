@@ -14,7 +14,7 @@
 	padding-top: 30px;
 }
 table{
-	border: 1px solid #000f4c;
+	border: 1px solid white;
 	margin: 0 auto;
 	background-color: white;
 	width: 900px;
@@ -22,7 +22,7 @@ table{
 	
 }
 tr, td{
-	border: 1px solid #000f4c;
+	border: 1px solid #dee2e6;
 
 }
 .line{
@@ -170,9 +170,9 @@ table {
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4">
-				<input class="line" type="button" value="신청하기" onclick="changeMajor();"
-			style="width: 100%; border-top: 1px solid #000f4c; border-bottom: 1px solid #000f4c;">
+			<td colspan="4" class="line">
+				<input type="button" value="신청하기" onclick="changeMajor();"
+			style="width: 100%; border-top: 1px solid #000f4c; border-bottom: 1px solid #000f4c; background-color:#336699; color: white;">
 			</td>
 		</tr>
 		</table>
