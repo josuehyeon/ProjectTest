@@ -118,6 +118,49 @@ iframe {
 
 .page-item.active .page-link{background-color: #000f4c; z-index: 1; border-color: #000f4c;}
 page-item.active{background-color: none;}
+table {
+	background-color: white;
+}
+.btn{
+  background:#000f4c;
+  color:#fff;
+  border:none;
+  position:relative;
+  /* height:35px; */
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+   opacity:0.65;
+}
+.btn:hover{
+  background:#fff;
+  color:#000f4c;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+.pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
+.page-item.active .page-link{background-color: #000f4c; z-index: 1; border-color: #000f4c;}
+page-item.active{background-color: none;}
+.bd{border-bottom: 1px solid #55597a;}
 </style>
 </head>
 <body>
@@ -128,42 +171,43 @@ page-item.active{background-color: none;}
 		      <div class="col-5" style="border-bottom: 2px solid #000f4c; font-style: italic; font-weight: bold; margin-top: 20px; margin: 0 auto;">
     	        <h5 style="text-align: center; margin-top: 20px;">✦ 자유게시판 ✦</h5>
 	         </div>
+	         <div class="col-12">
 				<table class="bdCl">
+					<col width="20%">
+					<col width="30%">
+					<col width="30%">
+					<col width="20%">
 					<thead>
 						<tr style="border-radius: 5px;">
 							<td style="text-align: center;">No</td>
 							<td style="text-align: center;">Writer</td>
 							<td style="text-align: center;">Title</td>
 							<td style="text-align: center;">Date</td>
-							<td style="text-align: center;">View</td>
-							<td style="text-align: center;">Comment</td>
 						</tr>
 					</thead>
 					<tbody>
 					<c:choose>
 						<c:when test="${not empty boardList or cateNo eq 1}">
 							<c:forEach items="${boardList }" var="board">
-								<tbody>
+								<tbody class="bd">
 									<tr class="trh">
 										<td>${board.rowNum }</td>
 										<td>${board.boardWriter }</td>
 										<td><a href="/form/boDetail?boardNo=${board.boardNo }">${board.boardTitle }</a></td>
 										<td>${board.boardDate }</td>
-										<td>${board.readCnt }</td>
-										<td>${board.commCnt }</td>
 									</tr>
 								</tbody>
 							</c:forEach>
 						</c:when>
 						<c:otherwise>
-							<tr>
-								<td colspan="5">등록된 게시글이 존재하지 않아요. : (</td>
+							<tr style="text-align: center;">
+								<td colspan="4" style="text-align: center;">등록된 게시글이 존재하지 않아요. : (</td>
 							</tr>
 						</c:otherwise>
 					</c:choose>
 					</tbody>
 				</table>
-				<div class="pagingDiv">
+				<div class="pagingDiv" style="margin-top: 40px;">
 					<div class="row">
 						<div class="col-12">
 							<div aria-label="Page navigation example" class="pageNa">
@@ -184,11 +228,12 @@ page-item.active{background-color: none;}
 							  </ul>
 							</div>
 							<div class="btnDiv">
-								<a class="btn update btn" href="/form/inlog" style="width: 100px; font-size: 15px;">글 작성</a>
+								<a class="btn update btn" href="/form/inlog" style="width: 100px; font-size: 13px;">글작성</a>
 							</div>
 						</div>
 					</div>
 				</div>
+	         </div>
 			</div>
 		</div>
 	</div>
