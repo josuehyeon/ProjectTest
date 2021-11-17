@@ -76,7 +76,7 @@ iframe {
 
 .btn{
   background:#000f4c;
-  color:#fff;
+  color:white !important;
   border:none;
   position:relative;
   /* height:35px; */
@@ -88,7 +88,7 @@ iframe {
 }
 .btn:hover{
   background:#fff;
-  color:#000f4c;
+  color:#000f4c !important;
 }
 .btn:before,.btn:after{
   content:'';
@@ -110,6 +110,31 @@ iframe {
   width:100%;
   transition:800ms ease all;
 }
+
+/* css */
+.boardTableHeadTr > td{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-top: 2px solid #1d1d1d;
+}
+.boardTableBodyTr > td{
+	padding-top: 0.4rem;
+	padding-bottom: 0.4rem;
+	background-color: white;
+	border-bottom: 1px solid #1d1d1d; 
+}
+.boardTableBodyTr > td > a{
+	text-decoration: none;
+}
+.boardTable > tbody:last-child > tr > td{
+	border-bottom: 2px solid #1d1d1d;
+}
+table>tbody:nth-of-type(even)>tr {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: var(--bs-table-striped-color);
+}
+/* ㅎㅎㅎ */
+
 .pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
 .page-item.active .page-link{background-color: #000f4c; z-index: 1; border-color: #000f4c;}
 page-item.active{background-color: none;}
@@ -123,12 +148,20 @@ page-item.active{background-color: none;}
 		      <div class="col-5" style="border-bottom: 2px solid #000f4c; font-style: italic; font-weight: bold; margin-top: 20px; margin: 0 auto;">
     	        <h5 style="text-align: center; margin-top: 20px;">✦ 건의게시판 ✦</h5>
 	         </div>
-				<table class="bdCl">
+				<table class="bdCl boardTable table table-hover">
+					<colgroup>
+						<col width="10%">
+						<col width="auto">
+						<col width="12%">
+						<col width="10%">
+						<col width="5%">
+						<col width="7%">
+					</colgroup>
 					<thead>
-						<tr style="border-radius: 5px;">
+						<tr style="border-radius: 5px;" class="boardTableHeadTr">
 							<td style="text-align: center;">No</td>
+							<td style="text-align: left;" class="ps-3">Title</td>
 							<td style="text-align: center;">Writer</td>
-							<td style="text-align: center;">Title</td>
 							<td style="text-align: center;">Date</td>
 							<td style="text-align: center;">View</td>
 							<td style="text-align: center;">Comment</td>
@@ -139,10 +172,10 @@ page-item.active{background-color: none;}
 						<c:when test="${not empty boardList or cateNo eq 2}">
 							<c:forEach items="${boardList }" var="board">
 								<tbody>
-									<tr class="trh">
+									<tr class="trh boardTableBodyTr">
 										<td>${board.rowNum }</td>
+										<td class="text-start ps-3"><a href="/form/boDetail?boardNo=${board.boardNo }">${board.boardTitle }</a></td>
 										<td>${board.boardWriter }</td>
-										<td><a href="/form/boDetail?boardNo=${board.boardNo }">${board.boardTitle }</a></td>
 										<td>${board.boardDate }</td>
 										<td>${board.readCnt }</td>
 										<td>${board.commCnt }</td>
@@ -158,7 +191,7 @@ page-item.active{background-color: none;}
 					</c:choose>
 					</tbody>
 				</table>
-				<div class="pagingDiv">
+				<div class="pagingDiv" style="margin-top: 40px;">
 					<div class="row">
 						<div class="col-12">
 							<div aria-label="Page navigation example" class="pageNa">
@@ -179,7 +212,7 @@ page-item.active{background-color: none;}
 							  </ul>
 							</div>
 							<div class="btnDiv">
-								<a class="btn update btn" href="/form/inlog" style="width: 100px; font-size: 15px;">글작성</a>
+								<a class="btn update btn" href="/form/inlog" style="width: 100px; font-size: 13px;">글작성</a>
 							</div>
 						</div>
 					</div>

@@ -69,6 +69,14 @@ iframe {
   width:100%;
   transition:800ms ease all;
 }
+
+/* css */
+.boardTableHeadTr > td{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+/* ㅎㅎㅎ */
+
 .pageNa{margin-left: 0 auto; margin-right: 0 auto; z-index: 1;}
 textarea:focus {outline-color: #1AAB8A; outline: 1px solid #a2a0cc;}
 </style>
@@ -78,14 +86,14 @@ textarea:focus {outline-color: #1AAB8A; outline: 1px solid #a2a0cc;}
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-			<table>
+			<table class="mt-3">
 				<col width="15%">
 				<col width="20%">
 				<col width="10%">
 				<col width="15%">
 				<col width="15%">
 				<col width="*%">
-				<tr style="width: 300px;">
+				<tr style="width: 300px;" class="boardTableHeadTr">
 					<td class="tt"  style="border-right: 1px solid #a8a8a8;">제목</td>
 					<td>
 						<input type="text" name="boardTitle" style="width: 150px; border: 0px; border-radius: 5px;">
@@ -103,13 +111,13 @@ textarea:focus {outline-color: #1AAB8A; outline: 1px solid #a2a0cc;}
 					<td><input type="date" name="boardDate" value="${nowDate }" readonly style="border: 0px; border-radius: 5px;"></td>
 				</tr>
 				<tr>
-					<td colspan="6" class="tt" style="height: 50px; vertical-align:middle;">내용</td>
+					<td colspan="6" class="tt py-3" style="height: 50px; vertical-align:middle;">내용</td>
 				</tr>
 				<tr>
 					<td colspan="6"><textarea rows="30" cols="160" name="boardContent" style="resize: none; margin: 0 auto; verrical-align; border: 0px; border-radius: 5px;" placeholder="타인을 불편하게 하는 발언은 제재당할 수 있음을 알립니다." ></textarea></td>
 				</tr>
 				<tr>
-					<td colspan="6" class="tt">
+					<td colspan="6" class="tt py-2 pe-5">
 						작성자 : <input type="text" name="boardWriter" value="${sessionScope.loginInfo.memName }" readonly="readonly" style="border: 0px; border-radius: 5px; width:320px; text-align: center;">
 					</td>
 				</tr>
@@ -118,7 +126,7 @@ textarea:focus {outline-color: #1AAB8A; outline: 1px solid #a2a0cc;}
 	</div>
 </div>
 <div style="text-align: center; margin-top: 35px; margin-bottom: 20px;">
-	<input type="submit" name="글 등록" class="update btn" style="width: 150px;">
+	<input type="submit" name="글 등록" class="btn update btn" style="width: 150px;">
 </div>
 </form>
 </body>

@@ -171,7 +171,7 @@ caption {
 					<col width="25%">
 				</colgroup>
 				<tr>
-					<td rowspan="3"><img src="/resources/stuInfo/images/${memberInfo.memIdpic }.jpg"></td>
+					<td rowspan="3"><img src="/resources/stuInfo/images/teady.jpg" style="overflow: hidden;"></td>
 					<td>학번</td>
 					<td class="stuNoTd"></td>
 					<td>이름</td>
