@@ -80,8 +80,8 @@ table{
 	height: 794px;
 }
 .bt{
-	padding-top: 30px;
-	margin-top: 80px;
+	padding-top: 20px;
+	margin-top: 100px;
 }
 ::-webkit-scrollbar{ display: none; }
 td{
@@ -118,10 +118,10 @@ input{
 		</colgroup>
 		<tr>
 			<td class="leftTd" height = "0">
-				<div style = "height:100%"><img src="/resources/common/images/lomeme.jpg" style="object-fit: cover;" height="1000px;"></div>
+				<div style = "height:100%"><img src="/resources/common/images/lomeme.jpg" style="object-fit: cover;" height="951px;"></div>
 			</td>
 			<td>
-				<img src="/resources/portal/images/JesusLogo.png" style="width: 200px;">
+				<img src="/resources/common/images/tst.png" style="width: 200px;">
 				<div class="welcomeDiv">
 					<span style="color: white;" class="animated fadeInRight">
 						예수대학교 포탈시스템 방문을 환영합니다.
@@ -220,7 +220,7 @@ input{
 					</div>
 				</div>
 				<div class="bt"> 
-					<span style="color: white;">COPYRIGHT©2019 JESUS UNIVERSITY. ALL RIGHTS RESERVED.</span>
+					<span style="color: white;">COPYRIGHT©2022 JESUS UNIVERSITY. ALL RIGHTS RESERVED.</span>
 				</div>
 			</td>
 		</tr>

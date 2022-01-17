@@ -49,7 +49,6 @@ public class AdminController {
 	@Autowired 
 	private JavaMailSenderImpl mailSender;
 	
-	
 	//메인
 	@GetMapping("/goMain")
 	public String goMain() {

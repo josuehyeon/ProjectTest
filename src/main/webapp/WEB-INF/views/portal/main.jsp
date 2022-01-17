@@ -10,7 +10,7 @@
 ul,li{list-style:none;}
 .slide{height:400px;overflow:hidden; border-top: 1px solid #383479;}
 .slide ul{position:relative;height:100%;z-index: 1;}
-.slide li{position:absolute;left:0;right:0;top:0;bottom:0;opacity:0;animation:fade 8s infinite;z-index: 1;}
+.slide li{position:absolute;left:0;right:0;top:0;bottom:0;opacity:0;animation:fade 8s infinite; z-index: 1;}
 .slide li:nth-child(1){animation-delay:0s; z-index: 1;}
 .slide li:nth-child(2){animation-delay:2s; z-index: 1;}
 .slide li:nth-child(3){animation-delay:4s; z-index: 1;}
@@ -23,7 +23,7 @@ ul,li{list-style:none;}
   30% {opacity:0;}
   100% {opacity:0;}
 }
-.nt{width: 90%; text-align: left; margin-top: 30px;}
+.nt{margin-top: 30px; margin-bottom: 25px; text-align: center;}
 section {background: #ffffff;padding: 3em 3em; font-size: 23px;}
   </style>
 </head>
@@ -39,8 +39,9 @@ section {background: #ffffff;padding: 3em 3em; font-size: 23px;}
 <div class="ly-container">
 	<div class="row">
 		<div class="col-12">
-			<h2 class="nt" style="font-family: 'Lora', serif; margin-bottom: 29px;"> ㅤㅤㅤJesus university Notice</h2>
+			<h2 class="nt">Jesus university Notice</h2>
 		</div>
+		<hr>
 		<div>
 			<section>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -75,9 +76,9 @@ section {background: #ffffff;padding: 3em 3em; font-size: 23px;}
 			</section>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row-12">
 		<div class="col-12">
-			<h2 class="nt" style="font-family: 'Lora', serif; margin-bottom: 29px;"> ㅤㅤㅤAnnouncement</h2>
+			<h2 class="nt">Announcement</h2>
 		</div>
 	</div>        
 </div>
