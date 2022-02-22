@@ -10,8 +10,20 @@
 	<mappers>
 		<!-- <mapper resource="/mapper/sample-Mapper.xml"/> -->
 		<mapper resource="/mapper/board-Mapper.xml"/>
+		<mapper resource="/mapper/college-Mapper.xml"/>
+		<mapper resource="/mapper/deptManage-Mapper.xml"/>		
+		<mapper resource="/mapper/dept-Mapper.xml"/>
+		<mapper resource="/mapper/emp-Mapper.xml"/>
+		<mapper resource="/mapper/grade-Mapper.xml"/>		
 		<mapper resource="/mapper/member-Mapper.xml"/>
 		<mapper resource="/mapper/student-Mapper.xml"/>
+		<mapper resource="/mapper/lecture-Mapper.xml"/>
+		<mapper resource="/mapper/changeMajor-Mapper.xml"/>
+		<mapper resource="/mapper/doubleMajor-Mapper.xml"/>
+		<mapper resource="/mapper/cate-Mapper.xml"/>
+		<mapper resource="/mapper/menu-Mapper.xml"/>		
+		<mapper resource="/mapper/editStatus-Mapper.xml"/>
+		<mapper resource="/mapper/admin-Mapper.xml"/>
 	</mappers>
 </configuration>
 
